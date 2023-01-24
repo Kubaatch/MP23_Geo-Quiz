@@ -16,5 +16,15 @@ namespace Geo_Quiz
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TB_Main.Text = "Hello world!";
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

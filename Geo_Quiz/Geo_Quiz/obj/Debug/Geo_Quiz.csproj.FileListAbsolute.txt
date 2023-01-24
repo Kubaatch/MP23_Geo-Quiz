@@ -1,0 +1,11 @@
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\bin\Debug\Geo_Quiz.exe.config
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\bin\Debug\Geo_Quiz.exe
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\bin\Debug\Geo_Quiz.pdb
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.csproj.AssemblyReference.cache
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.csproj.SuggestedBindingRedirects.cache
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.Form1.resources
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.Properties.Resources.resources
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.csproj.GenerateResource.cache
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.csproj.CoreCompileInputs.cache
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.exe
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.pdb
