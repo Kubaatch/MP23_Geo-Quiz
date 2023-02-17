@@ -8,5 +8,6 @@ C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.c
 C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.csproj.CoreCompileInputs.cache
 C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.exe
 C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.pdb
-C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.Main_Menu.resources
-C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.Form2.resources
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.F_Settings.resources
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.F_SignIn.resources
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.F_MainMenu.resources

@@ -1,6 +1,6 @@
 ﻿namespace Geo_Quiz
 {
-    partial class Main_Menu
+    partial class F_MainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -100,7 +100,7 @@
             this.B_Exit.UseVisualStyleBackColor = false;
             this.B_Exit.Click += new System.EventHandler(this.B_Exit_Click);
             // 
-            // Main_Menu
+            // F_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -113,7 +113,7 @@
             this.Controls.Add(this.B_Training);
             this.Controls.Add(this.B_Testing);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Main_Menu";
+            this.Name = "F_MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
             this.ResumeLayout(false);

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Geo_Quiz
 {
-    public partial class Form3 : Form
+    public partial class F_Settings : Form
     {
-        public Form3()
+        public F_Settings()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

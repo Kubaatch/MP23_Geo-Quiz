@@ -16,7 +16,7 @@ namespace Geo_Quiz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main_Menu());
+            Application.Run(new F_SignIn());
         }
     }
 }

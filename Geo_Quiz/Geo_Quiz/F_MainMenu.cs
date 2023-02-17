@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Geo_Quiz
 {
-    public partial class Main_Menu : Form
+    public partial class F_MainMenu : Form
     {
-        public Main_Menu()
+        public F_MainMenu()
         {
             InitializeComponent();
         }
@@ -24,14 +24,14 @@ namespace Geo_Quiz
 
         private void B_Training_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void B_Settings_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 f2 = new Form2();
-            f2.ShowDialog();
+            ActiveForm.Hide();
+            F_Settings f3 = new F_Settings();
+            f3.ShowDialog();
         }
 
         private void B_Exit_Click(object sender, EventArgs e)
