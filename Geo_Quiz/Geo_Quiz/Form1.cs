@@ -10,21 +10,33 @@ using System.Windows.Forms;
 
 namespace Geo_Quiz
 {
-    public partial class Form1 : Form
+    public partial class Main_Menu : Form
     {
-        public Form1()
+        public Main_Menu()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void B_Testing_Click(object sender, EventArgs e)
         {
-            TB_Main.Text = "Hello world!";
+            
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void B_Training_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void B_Settings_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+        }
+
+        private void B_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }         
     }
 }
