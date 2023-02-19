@@ -11,3 +11,5 @@ C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.p
 C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.F_Settings.resources
 C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.F_SignIn.resources
 C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.F_MainMenu.resources
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.F_GameUI.resources
+C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Geo_Quiz\obj\Debug\Geo_Quiz.F_Learn.resources

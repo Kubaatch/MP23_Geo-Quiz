@@ -10,21 +10,20 @@ using System.Windows.Forms;
 
 namespace Geo_Quiz
 {
-    public partial class F_Settings : Form
+    public partial class F_GameUI : Form
     {
-        public F_Settings()
+        public F_GameUI()
         {
             InitializeComponent();
         }
-        private void label1_Click(object sender, EventArgs e)
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //do not delete, has to stay
+
         }
 
-        private void B_Exit_Click(object sender, EventArgs e)
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ActiveForm.Hide();
-            F_MainMenu f1 = new F_MainMenu();
 
         }
     }
