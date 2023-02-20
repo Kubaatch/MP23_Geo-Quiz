@@ -35,10 +35,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(349, 193);
+            this.label1.Location = new System.Drawing.Point(412, 228);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.Size = new System.Drawing.Size(55, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Settings";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -52,10 +52,10 @@
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_Exit.Location = new System.Drawing.Point(663, 428);
+            this.B_Exit.Location = new System.Drawing.Point(898, 531);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(2);
             this.B_Exit.Name = "B_Exit";
-            this.B_Exit.Size = new System.Drawing.Size(62, 31);
+            this.B_Exit.Size = new System.Drawing.Size(75, 35);
             this.B_Exit.TabIndex = 4;
             this.B_Exit.Text = "Return";
             this.B_Exit.UseVisualStyleBackColor = false;
@@ -67,13 +67,13 @@
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(736, 470);
+            this.ClientSize = new System.Drawing.Size(984, 577);
             this.Controls.Add(this.B_Exit);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "F_Settings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form3";
+            this.Text = "Settings";
             this.ResumeLayout(false);
             this.PerformLayout();
 

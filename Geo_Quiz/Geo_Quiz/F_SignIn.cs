@@ -31,7 +31,7 @@ namespace Geo_Quiz
 
         private void B_Exit_Click(object sender, EventArgs e)
         {
-            Close();
+            Environment.Exit(0);
         }
     }
 }

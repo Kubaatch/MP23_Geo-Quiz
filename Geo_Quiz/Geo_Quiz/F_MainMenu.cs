@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Geo_Quiz
@@ -14,7 +7,7 @@ namespace Geo_Quiz
     {
         public F_MainMenu()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void B_Testing_Click(object sender, EventArgs e)
@@ -27,7 +20,7 @@ namespace Geo_Quiz
         private void B_Training_Click(object sender, EventArgs e)
         {
             ActiveForm.Hide();
-            F_GameUI f2 = new F_GameUI();
+            F_Learn f2 = new F_Learn();
             f2.ShowDialog();
         }
 
@@ -40,7 +33,7 @@ namespace Geo_Quiz
 
         private void B_Exit_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }         
+            Environment.Exit(0);
+        }
     }
 }

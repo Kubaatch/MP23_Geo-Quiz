@@ -28,56 +28,206 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Capitals", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("Flags", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup7 = new System.Windows.Forms.ListViewGroup("Population", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup8 = new System.Windows.Forms.ListViewGroup("Area", System.Windows.Forms.HorizontalAlignment.Left);
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.components = new System.ComponentModel.Container();
+            this.B_Exit = new System.Windows.Forms.Button();
+            this.LB_Category = new System.Windows.Forms.ListBox();
+            this.LB_Continents = new System.Windows.Forms.ListBox();
+            this.B_TextBox = new System.Windows.Forms.Button();
+            this.B_ABCD = new System.Windows.Forms.Button();
+            this.T_Category = new System.Windows.Forms.ToolTip(this.components);
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
-            // listView1
+            // B_Exit
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.ForeColor = System.Drawing.SystemColors.Menu;
-            listViewGroup5.Header = "Capitals";
-            listViewGroup5.Name = "Capitals";
-            listViewGroup6.Header = "Flags";
-            listViewGroup6.Name = "Flags";
-            listViewGroup7.Header = "Population";
-            listViewGroup7.Name = "Population";
-            listViewGroup8.Header = "Area";
-            listViewGroup8.Name = "Area";
-            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup5,
-            listViewGroup6,
-            listViewGroup7,
-            listViewGroup8});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(984, 586);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.B_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.B_Exit.AutoSize = true;
+            this.B_Exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.B_Exit.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.B_Exit.Location = new System.Drawing.Point(899, 530);
+            this.B_Exit.Margin = new System.Windows.Forms.Padding(2);
+            this.B_Exit.Name = "B_Exit";
+            this.B_Exit.Size = new System.Drawing.Size(75, 35);
+            this.B_Exit.TabIndex = 5;
+            this.B_Exit.Text = "Return";
+            this.B_Exit.UseVisualStyleBackColor = false;
+            this.B_Exit.Click += new System.EventHandler(this.B_Exit_Click);
+            // 
+            // LB_Category
+            // 
+            this.LB_Category.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Category.FormattingEnabled = true;
+            this.LB_Category.ItemHeight = 30;
+            this.LB_Category.Items.AddRange(new object[] {
+            "Capitals",
+            "Flags",
+            "Area",
+            "Population"});
+            this.LB_Category.Location = new System.Drawing.Point(79, 196);
+            this.LB_Category.Name = "LB_Category";
+            this.LB_Category.Size = new System.Drawing.Size(147, 124);
+            this.LB_Category.TabIndex = 6;
+            this.T_Category.SetToolTip(this.LB_Category, "Enter number of questions you want to have in your test.");
+            this.LB_Category.SelectedIndexChanged += new System.EventHandler(this.LB_Category_SelectedIndexChanged);
+            // 
+            // LB_Continents
+            // 
+            this.LB_Continents.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Continents.FormattingEnabled = true;
+            this.LB_Continents.ItemHeight = 30;
+            this.LB_Continents.Items.AddRange(new object[] {
+            "Europe",
+            "Asia",
+            "Africa",
+            "America (North & Central)",
+            "America (South)",
+            "Oceania"});
+            this.LB_Continents.Location = new System.Drawing.Point(314, 178);
+            this.LB_Continents.Name = "LB_Continents";
+            this.LB_Continents.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.LB_Continents.Size = new System.Drawing.Size(313, 184);
+            this.LB_Continents.TabIndex = 7;
+            this.T_Category.SetToolTip(this.LB_Continents, "Choose continent/s you want to include in your quiz questions\nYou can choose more" +
+        " categories");
+            this.LB_Continents.SelectedIndexChanged += new System.EventHandler(this.LB_Continents_SelectedIndexChanged);
+            // 
+            // B_TextBox
+            // 
+            this.B_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.B_TextBox.Location = new System.Drawing.Point(725, 214);
+            this.B_TextBox.Name = "B_TextBox";
+            this.B_TextBox.Size = new System.Drawing.Size(123, 50);
+            this.B_TextBox.TabIndex = 8;
+            this.B_TextBox.Text = "Written answer";
+            this.T_Category.SetToolTip(this.B_TextBox, "Write answer into a text box");
+            this.B_TextBox.UseVisualStyleBackColor = true;
+            this.B_TextBox.Click += new System.EventHandler(this.B_TextBox_Click);
+            // 
+            // B_ABCD
+            // 
+            this.B_ABCD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.B_ABCD.Location = new System.Drawing.Point(725, 270);
+            this.B_ABCD.Name = "B_ABCD";
+            this.B_ABCD.Size = new System.Drawing.Size(123, 50);
+            this.B_ABCD.TabIndex = 9;
+            this.B_ABCD.Text = "4 options";
+            this.T_Category.SetToolTip(this.B_ABCD, "Choose one correct answer from three options");
+            this.B_ABCD.UseVisualStyleBackColor = true;
+            this.B_ABCD.Click += new System.EventHandler(this.B_ABCD_Click);
+            // 
+            // T_Category
+            // 
+            this.T_Category.IsBalloon = true;
+            this.T_Category.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.T_Category.ToolTipTitle = "Choose category";
+            this.T_Category.Popup += new System.Windows.Forms.PopupEventHandler(this.T_Category_Popup);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(440, 426);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            196,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(65, 33);
+            this.numericUpDown1.TabIndex = 10;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(378, 155);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(186, 16);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Select one or more continents:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(399, 404);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 19);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Number of questions:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(93, 174);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 19);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Choose category:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(721, 192);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 19);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Choose gamemode:";
             // 
             // F_GameUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(984, 586);
-            this.Controls.Add(this.listView1);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(985, 576);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.B_ABCD);
+            this.Controls.Add(this.B_TextBox);
+            this.Controls.Add(this.LB_Continents);
+            this.Controls.Add(this.LB_Category);
+            this.Controls.Add(this.B_Exit);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F_GameUI";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "PickMode";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button B_Exit;
+        private System.Windows.Forms.ListBox LB_Category;
+        private System.Windows.Forms.ListBox LB_Continents;
+        private System.Windows.Forms.Button B_TextBox;
+        private System.Windows.Forms.Button B_ABCD;
+        private System.Windows.Forms.ToolTip T_Category;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

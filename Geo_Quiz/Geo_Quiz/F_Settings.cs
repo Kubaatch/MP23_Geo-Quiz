@@ -25,7 +25,7 @@ namespace Geo_Quiz
         {
             ActiveForm.Hide();
             F_MainMenu f1 = new F_MainMenu();
-
+            f1.ShowDialog();
         }
     }
 }

@@ -95,7 +95,7 @@ Latvia	Riga
 Lebanon	Beirut
 Lesotho	Maseru
 Liberia	Monrovia
-Libya	Tripoli
+Libya	Tripolis
 Liechtenstein	Vaduz
 Lithuania	Vilnius
 Luxembourg	Luxembourg
@@ -174,7 +174,7 @@ Tanzania	Dodoma
 Thailand	Bangkok
 Timor-Leste	Dili
 Togo	Lomé
-Tonga	Nukuʻalofa
+Tonga	Nuku'alofa
 Trinidad and Tobago	Port of Spain
 Tunisia	Tunis
 Turkey	Ankara
