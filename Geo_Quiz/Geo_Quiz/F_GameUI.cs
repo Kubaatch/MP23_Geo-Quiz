@@ -20,7 +20,7 @@ namespace Geo_Quiz
 
         private string Gamemode;
         private string[] Continents;
-        private int QCount;
+        private int QCount = 15;
 
         private void LB_Category_SelectedIndexChanged(object sender, EventArgs e)
         {            
@@ -36,16 +36,15 @@ namespace Geo_Quiz
         {
             QCount = Convert.ToInt32(numericUpDown1.Value);
         }
-
+        
         public void B_TextBox_Click(object sender, EventArgs e)
         {
-            this.Text = "Game on!";
+            this.Text = "Game on!";                  
 
             UC_TextInput uc = new UC_TextInput(Gamemode, Continents, QCount);
             uc.Dock = DockStyle.Fill;
-            this.Controls.Add(uc);
+            Controls.Add(uc);
             uc.BringToFront();
-
         }
 
         private void B_ABCD_Click(object sender, EventArgs e)
@@ -53,7 +52,7 @@ namespace Geo_Quiz
             this.Text = "Game on!";
 
             //add UC_ABCD
-        }
+        }        
 
         private void B_Exit_Click(object sender, EventArgs e)
         {

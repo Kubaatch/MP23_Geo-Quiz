@@ -1,4 +1,6 @@
-﻿namespace Geo_Quiz
+﻿using System.Linq;
+
+namespace Geo_Quiz
 {
     partial class UC_TextInput
     {
@@ -32,6 +34,9 @@
             this.TB_Answer = new System.Windows.Forms.TextBox();
             this.L_Question = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.B_Skip = new System.Windows.Forms.Button();
+            this.L_Result = new System.Windows.Forms.Label();
+            this.L_Country = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // B_Exit
@@ -43,7 +48,7 @@
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_Exit.Location = new System.Drawing.Point(883, 529);
+            this.B_Exit.Location = new System.Drawing.Point(1055, 632);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(75, 35);
@@ -60,7 +65,9 @@
             this.TB_Answer.Size = new System.Drawing.Size(290, 33);
             this.TB_Answer.TabIndex = 7;
             this.TB_Answer.Text = "Enter answer here";
-            this.TB_Answer.TextChanged += new System.EventHandler(this.TB_Answer_TextChanged);
+            this.TB_Answer.Enter += new System.EventHandler(this.TB_Answer_Entered);
+            this.TB_Answer.GotFocus += new System.EventHandler(this.TB_Answer_GotFocus);
+            this.TB_Answer.LostFocus += new System.EventHandler(this.TB_Answer_LostFocus);
             // 
             // L_Question
             // 
@@ -79,8 +86,44 @@
             this.progressBar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.progressBar1.Location = new System.Drawing.Point(0, 0);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(971, 29);
+            this.progressBar1.Size = new System.Drawing.Size(971, 36);
             this.progressBar1.TabIndex = 9;
+            // 
+            // B_Skip
+            // 
+            this.B_Skip.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.B_Skip.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Skip.Location = new System.Drawing.Point(539, 383);
+            this.B_Skip.Name = "B_Skip";
+            this.B_Skip.Size = new System.Drawing.Size(92, 31);
+            this.B_Skip.TabIndex = 10;
+            this.B_Skip.Text = "Skip";
+            this.B_Skip.UseVisualStyleBackColor = false;
+            this.B_Skip.Click += new System.EventHandler(this.B_Skip_Click);
+            // 
+            // L_Result
+            // 
+            this.L_Result.AutoSize = true;
+            this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Result.ForeColor = System.Drawing.Color.Red;
+            this.L_Result.Location = new System.Drawing.Point(404, 417);
+            this.L_Result.Name = "L_Result";
+            this.L_Result.Size = new System.Drawing.Size(48, 62);
+            this.L_Result.TabIndex = 11;
+            this.L_Result.Text = "_";
+            this.L_Result.Visible = false;
+            // 
+            // L_Country
+            // 
+            this.L_Country.AutoSize = true;
+            this.L_Country.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.L_Country.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Country.Location = new System.Drawing.Point(353, 291);
+            this.L_Country.Name = "L_Country";
+            this.L_Country.Size = new System.Drawing.Size(69, 27);
+            this.L_Country.TabIndex = 12;
+            this.L_Country.Text = "___";
+
             // 
             // UC_TextInput
             // 
@@ -89,6 +132,9 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.L_Country);
+            this.Controls.Add(this.L_Result);
+            this.Controls.Add(this.B_Skip);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.L_Question);
             this.Controls.Add(this.TB_Answer);
@@ -106,5 +152,8 @@
         private System.Windows.Forms.TextBox TB_Answer;
         private System.Windows.Forms.Label L_Question;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button B_Skip;
+        private System.Windows.Forms.Label L_Result;
+        private System.Windows.Forms.Label L_Country;
     }
 }

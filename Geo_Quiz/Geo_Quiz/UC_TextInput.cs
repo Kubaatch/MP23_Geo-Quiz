@@ -9,76 +9,83 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Geo_Quiz
 {
     public partial class UC_TextInput : UserControl
     {
-        
-        public UC_TextInput(string Gamemode, string[] Continents, int QCount)
+        GameSpecs GS_Text = new GameSpecs();
+        public string answer;
+
+        public UC_TextInput(string gamemode, string[] continents, int QCount)
         {
-            //GameSpecs gamespecs = new GameSpecs(Gamemode, Continents, QCount);
-            //do something with this lol
+            GS_Text.Gamemode = gamemode;
+            GS_Text.Continents = continents;
+            GS_Text.QCount = QCount;
 
-            string[] countries = GetCountries();
+            //remove unused continents here -> .Skip(x).Take(y);
+            GS_Text.Questions = GetQuestions();
 
-            Random rand = new Random();
-            int Qnumber = rand.Next(1, 196);
+            //editing before I declare it - solve!
+            //L_Country.Text = GS_Text.Questions[0];
 
-            Label L_Country = new Label();
-                L_Country.Text = countries[Qnumber];
-                L_Country.Location = new Point(354, 287);
-                L_Country.AutoSize = true;
-                L_Country.Font = new Font("Microsoft YaHei UI", 12);
-                L_Country.BackColor = SystemColors.ControlLightLight;
-                this.Controls.Add(L_Country);
-            
             InitializeComponent();
         }
 
-        private void TB_Answer_TextChanged(object sender, EventArgs e)
+        private void TB_Answer_Entered(object sender, EventArgs e)
         {
-            string[] capitals = GetCapitals();
+            TB_Answer.Enabled = true;
+            
             int i = 0;
-
-            if (TB_Answer.Text == capitals[i])
+            answer = GS_Text.Questions[i].Split('\t')[1];
+            if (TB_Answer.Text == answer)
             {
-                TB_Answer.Text = "That is correct!";
+                B_Skip.Text = "Next";
+                //edit what button does
+                
+                L_Result.Text = "Correct";
+                L_Result.Visible = true;
+
+                TB_Answer.Enabled = false;
             }
+
+
+            i++;
+        }                
+
+        private void B_Skip_Click(object sender, EventArgs e)
+        {
+
         }
 
-        private string[][] LoadFile()
+        private string[] GetQuestions()
         {
             string[] file = File.ReadAllLines(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Capitals.txt");
-            string separator = "\t";
-            string[] substrings;
-            string[] countries = new string[file.Length];
-            string[] capitals = new string[file.Length];
+            //simplify to work on any computer!    
 
-            for (int i = 0; i < file.Length; i++)
+            string[] questions = new string[GS_Text.QCount];
+            Random rand = new Random();
+
+            int i = 0;
+            while (i < GS_Text.QCount)
             {
-                substrings = file[i].Split(separator.ToCharArray());
-
-                countries[i] = substrings[0];
-                capitals[i] = substrings[1];
+                //CAN REPEAT QUESTIONS!
+                questions[i] = file[rand.Next(1,196)];
+                i++;
             }
 
-            return new string[][] { countries, capitals };
+            return questions;
         }
 
-        private string[] GetCountries()
+        private void TB_Answer_GotFocus(object sender, EventArgs e)
         {
-            string[][] result = LoadFile();
-            string[] countries = result[0];
-
-            return countries;
+            TB_Answer.Text = string.Empty;
         }
-        private string[] GetCapitals()
-        {
-            string[][] result = LoadFile();
-            string[] capitals = result[1];
 
-            return capitals;
+        private void TB_Answer_LostFocus(object sender, EventArgs e)
+        {
+            TB_Answer.Text = "Enter answer here";
         }
 
         private void L_Question_Click(object sender, EventArgs e)

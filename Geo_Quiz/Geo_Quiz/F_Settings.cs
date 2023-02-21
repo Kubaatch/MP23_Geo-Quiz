@@ -18,7 +18,7 @@ namespace Geo_Quiz
         }
         private void label1_Click(object sender, EventArgs e)
         {
-            //do not delete, has to stay
+            //do not delete, has to stay            
         }
 
         private void B_Exit_Click(object sender, EventArgs e)
