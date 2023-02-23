@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,57 +49,51 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameSpecs.cs" />
-    <Compile Include="F_Learn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="F_Learn.Designer.cs">
-      <DependentUpon>F_Learn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="F_GameUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="F_GameUI.Designer.cs">
-      <DependentUpon>F_GameUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="F_MainMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="F_MainMenu.Designer.cs">
-      <DependentUpon>F_MainMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="F_SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_SignIn.Designer.cs">
       <DependentUpon>F_SignIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_Settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="F_Settings.Designer.cs">
-      <DependentUpon>F_Settings.cs</DependentUpon>
-    </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC_GameUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_GameUI.Designer.cs">
+      <DependentUpon>UC_GameUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Learn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Learn.Designer.cs">
+      <DependentUpon>UC_Learn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_MainMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_MainMenu.Designer.cs">
+      <DependentUpon>UC_MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Settings.Designer.cs">
+      <DependentUpon>UC_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Statistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Statistics.Designer.cs">
+      <DependentUpon>UC_Statistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_TextInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_TextInput.Designer.cs">
       <DependentUpon>UC_TextInput.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="F_GameUI.resx">
-      <DependentUpon>F_GameUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="F_Learn.resx">
-      <DependentUpon>F_Learn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="F_MainMenu.resx">
-      <DependentUpon>F_MainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="F_Settings.resx">
-      <DependentUpon>F_Settings.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="F_SignIn.resx">
       <DependentUpon>F_SignIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +107,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC_GameUI.resx">
+      <DependentUpon>UC_GameUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Learn.resx">
+      <DependentUpon>UC_Learn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_MainMenu.resx">
+      <DependentUpon>UC_MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Settings.resx">
+      <DependentUpon>UC_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Statistics.resx">
+      <DependentUpon>UC_Statistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_TextInput.resx">
       <DependentUpon>UC_TextInput.cs</DependentUpon>
     </EmbeddedResource>

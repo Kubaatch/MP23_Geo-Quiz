@@ -85,8 +85,7 @@
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_Exit.Location = new System.Drawing.Point(867, 528);
-            this.B_Exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B_Exit.Location = new System.Drawing.Point(869, 529);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(100, 37);
             this.B_Exit.TabIndex = 6;

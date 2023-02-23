@@ -8,12 +8,12 @@ namespace Geo_Quiz
 {
     internal class GameSpecs
     {
-        private string gamemode;
+        private int gamemode;
         private string[] continents;
         private int qCount;
         private string[] questions;
         
-        public GameSpecs(string ChosenGameMode, string[] ChosenContinents, int ChosenQCount, string[] RandQuestions)
+        public GameSpecs(int ChosenGameMode, string[] ChosenContinents, int ChosenQCount, string[] RandQuestions)
         {
             Gamemode = ChosenGameMode;
             Continents = ChosenContinents;
@@ -23,7 +23,7 @@ namespace Geo_Quiz
 
         public GameSpecs() { }
 
-        public string Gamemode
+        public int Gamemode
         {
             get { return gamemode; }
             set { gamemode = value; }
@@ -46,6 +46,5 @@ namespace Geo_Quiz
             get { return questions; }
             set { questions = value; }
         }
-
     }
 }

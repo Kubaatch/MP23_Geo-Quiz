@@ -1,13 +1,13 @@
 ﻿namespace Geo_Quiz
 {
-    partial class F_GameUI
+    partial class UC_GameUI
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -34,7 +34,7 @@
             this.LB_Continents = new System.Windows.Forms.ListBox();
             this.B_TextBox = new System.Windows.Forms.Button();
             this.B_ABCD = new System.Windows.Forms.Button();
-            this.T_Category = new System.Windows.Forms.ToolTip(this.components);
+            this.TT_PopUp = new System.Windows.Forms.ToolTip(this.components);
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             this.LB_Category.Name = "LB_Category";
             this.LB_Category.Size = new System.Drawing.Size(147, 124);
             this.LB_Category.TabIndex = 6;
-            this.T_Category.SetToolTip(this.LB_Category, "Enter number of questions you want to have in your test.");
+            this.TT_PopUp.SetToolTip(this.LB_Category, "Choose category of questions you want in your test.");
             this.LB_Category.SelectedIndexChanged += new System.EventHandler(this.LB_Category_SelectedIndexChanged);
             // 
             // LB_Continents
@@ -95,42 +95,42 @@
             this.LB_Continents.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.LB_Continents.Size = new System.Drawing.Size(313, 184);
             this.LB_Continents.TabIndex = 7;
-            this.T_Category.SetToolTip(this.LB_Continents, "Choose continent/s you want to include in your quiz questions\nYou can choose more" +
-        " categories");
+            this.TT_PopUp.SetToolTip(this.LB_Continents, "Choose continent/s you want to include in your quiz questions\nYou can choose one " +
+        "or more continents");
             this.LB_Continents.SelectedIndexChanged += new System.EventHandler(this.LB_Continents_SelectedIndexChanged);
             // 
             // B_TextBox
             // 
-            this.B_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.B_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.B_TextBox.Location = new System.Drawing.Point(725, 214);
             this.B_TextBox.Name = "B_TextBox";
             this.B_TextBox.Size = new System.Drawing.Size(123, 50);
             this.B_TextBox.TabIndex = 8;
             this.B_TextBox.Text = "Written answer";
-            this.T_Category.SetToolTip(this.B_TextBox, "Write answer into a text box");
+            this.TT_PopUp.SetToolTip(this.B_TextBox, "In this mode you will write the answer into a text box.");
             this.B_TextBox.UseVisualStyleBackColor = true;
             this.B_TextBox.Click += new System.EventHandler(this.B_TextBox_Click);
             // 
             // B_ABCD
             // 
-            this.B_ABCD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.B_ABCD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.B_ABCD.Location = new System.Drawing.Point(725, 270);
             this.B_ABCD.Name = "B_ABCD";
             this.B_ABCD.Size = new System.Drawing.Size(123, 50);
             this.B_ABCD.TabIndex = 9;
             this.B_ABCD.Text = "4 options";
-            this.T_Category.SetToolTip(this.B_ABCD, "Choose one correct answer from three options");
+            this.TT_PopUp.SetToolTip(this.B_ABCD, "In this mode you will be choosing the correct answer\nfrom four options, where only one is correct");
             this.B_ABCD.UseVisualStyleBackColor = true;
             this.B_ABCD.Click += new System.EventHandler(this.B_ABCD_Click);
             // 
-            // T_Category
+            // TT_PopUp
             // 
-            this.T_Category.IsBalloon = true;
-            this.T_Category.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.T_Category.ToolTipTitle = "Choose category";
-            this.T_Category.Popup += new System.Windows.Forms.PopupEventHandler(this.T_Category_Popup);
+            this.TT_PopUp.IsBalloon = true;
+            this.TT_PopUp.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.TT_PopUp.ToolTipTitle = "Tip: ";
+            this.TT_PopUp.Popup += new System.Windows.Forms.PopupEventHandler(this.TT_PopUp_Popup);
             // 
             // numericUpDown1
             // 
@@ -141,15 +141,22 @@
             0,
             0,
             0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(65, 33);
             this.numericUpDown1.TabIndex = 10;
+            this.TT_PopUp.SetToolTip(this.numericUpDown1, "Enter the number of questions you want to answer.\nYou can use up and down arrows " +
+                 "or enter a specific number by typing.\nMinimum is 5 and maximum 196");
             this.numericUpDown1.Value = new decimal(new int[] {
             15,
             0,
             0,
             0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
             // label2
             // 
@@ -209,7 +216,6 @@
             this.Controls.Add(this.B_Exit);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F_GameUI";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PickMode";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
@@ -218,16 +224,17 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button B_Exit;
+
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox LB_Category;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox LB_Continents;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button B_TextBox;
         private System.Windows.Forms.Button B_ABCD;
-        private System.Windows.Forms.ToolTip T_Category;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button B_Exit;
+        private System.Windows.Forms.ToolTip TT_PopUp;
     }
 }

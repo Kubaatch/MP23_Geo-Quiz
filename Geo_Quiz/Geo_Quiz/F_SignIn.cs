@@ -19,19 +19,20 @@ namespace Geo_Quiz
 
         private void B_Guest_Click(object sender, EventArgs e)
         {
-            ActiveForm.Hide();
-            F_MainMenu f1 = new F_MainMenu();
-            f1.ShowDialog();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            UC_MainMenu uc = new UC_MainMenu();
+            uc.Dock = DockStyle.Fill;
+            Controls.Add(uc);
+            uc.BringToFront();
         }
 
         private void B_Exit_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
