@@ -67,15 +67,16 @@
             this.LB_Category.FormattingEnabled = true;
             this.LB_Category.ItemHeight = 30;
             this.LB_Category.Items.AddRange(new object[] {
-            "Capitals",
             "Flags",
-            "Area",
-            "Population"});
+            "Capitals",
+            "Population",
+            "Area"});
             this.LB_Category.Location = new System.Drawing.Point(79, 196);
             this.LB_Category.Name = "LB_Category";
             this.LB_Category.Size = new System.Drawing.Size(147, 124);
             this.LB_Category.TabIndex = 6;
-            this.TT_PopUp.SetToolTip(this.LB_Category, "Choose category of questions you want in your test.");
+            this.TT_PopUp.SetToolTip(this.LB_Category, "Choose category of questions you want in your test.\n" + 
+                "If you choose none, flags will be automatically selected.");
             this.LB_Category.SelectedIndexChanged += new System.EventHandler(this.LB_Category_SelectedIndexChanged);
             // 
             // LB_Continents
@@ -95,13 +96,13 @@
             this.LB_Continents.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.LB_Continents.Size = new System.Drawing.Size(313, 184);
             this.LB_Continents.TabIndex = 7;
-            this.TT_PopUp.SetToolTip(this.LB_Continents, "Choose continent/s you want to include in your quiz questions\nYou can choose one " +
-        "or more continents");
+            this.TT_PopUp.SetToolTip(this.LB_Continents, "Choose continent/s you want to include in your quiz questions.\nYou can " +
+        "choose one or more continents.\nIf you choose none, you will play as if all were selected.");
             this.LB_Continents.SelectedIndexChanged += new System.EventHandler(this.LB_Continents_SelectedIndexChanged);
             // 
             // B_TextBox
             // 
-            this.B_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.B_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.B_TextBox.Location = new System.Drawing.Point(725, 214);
             this.B_TextBox.Name = "B_TextBox";
@@ -114,14 +115,15 @@
             // 
             // B_ABCD
             // 
-            this.B_ABCD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.B_ABCD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.B_ABCD.Location = new System.Drawing.Point(725, 270);
             this.B_ABCD.Name = "B_ABCD";
             this.B_ABCD.Size = new System.Drawing.Size(123, 50);
             this.B_ABCD.TabIndex = 9;
             this.B_ABCD.Text = "4 options";
-            this.TT_PopUp.SetToolTip(this.B_ABCD, "In this mode you will be choosing the correct answer\nfrom four options, where only one is correct");
+            this.TT_PopUp.SetToolTip(this.B_ABCD, "In this mode you will be choosing the correct answer from\nfour options, " +
+        "where only one is correct");
             this.B_ABCD.UseVisualStyleBackColor = true;
             this.B_ABCD.Click += new System.EventHandler(this.B_ABCD_Click);
             // 
@@ -149,8 +151,8 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(65, 33);
             this.numericUpDown1.TabIndex = 10;
-            this.TT_PopUp.SetToolTip(this.numericUpDown1, "Enter the number of questions you want to answer.\nYou can use up and down arrows " +
-                 "or enter a specific number by typing.\nMinimum is 5 and maximum 196");
+            this.TT_PopUp.SetToolTip(this.numericUpDown1, "Enter the number of questions you want to answer.\nYou can use up " +
+        "and down arrows or enter a specific number by typing.\nMinimum is 5 and maximum 196");
             this.numericUpDown1.Value = new decimal(new int[] {
             15,
             0,
@@ -197,13 +199,12 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Choose gamemode:";
             // 
-            // F_GameUI
+            // UC_GameUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(985, 576);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -215,8 +216,8 @@
             this.Controls.Add(this.LB_Category);
             this.Controls.Add(this.B_Exit);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "F_GameUI";
-            this.Text = "PickMode";
+            this.Name = "UC_GameUI";
+            this.Size = new System.Drawing.Size(985, 576);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

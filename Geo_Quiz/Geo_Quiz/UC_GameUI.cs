@@ -43,19 +43,13 @@ namespace Geo_Quiz
             switch (Gamemode)
             {
                 case 0:
+                    MessageBox.Show("Selected category is not compatible with this mode...", "Warning");
+                    break;
+                default:
                     UC_TextInput uc = new UC_TextInput(Gamemode, Continents, QCount);
                     uc.Dock = DockStyle.Fill;
                     Controls.Add(uc);
                     uc.BringToFront();
-                    break;
-                case 1:
-                    MessageBox.Show("Selected category is not compatible with this mode...", "Warning");
-                    break;
-                case 2:
-                    MessageBox.Show("Selected category is not compatible with this mode...", "Warning");
-                    break;
-                case 3:
-                    MessageBox.Show("Selected category is not compatible with this mode...", "Warning");
                     break;
             }
         }

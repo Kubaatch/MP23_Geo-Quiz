@@ -84,7 +84,7 @@
             this.L_Question.Name = "L_Question";
             this.L_Question.Size = new System.Drawing.Size(262, 27);
             this.L_Question.TabIndex = 8;
-            this.L_Question.Text = "What is the capital city of: ";
+            this.L_Question.Text = "Temp...";                      
             this.L_Question.Click += new System.EventHandler(this.L_Question_Click);
             // 
             // progressBar1
