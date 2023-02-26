@@ -43,7 +43,7 @@ namespace Geo_Quiz
             switch (Gamemode)
             {
                 case 0:
-                    MessageBox.Show("Selected category is not compatible with this mode...", "Warning");
+                    MessageBox.Show("Selected category is not compatible with this mode...", "¯\\_(ツ)_/¯");
                     break;
                 default:
                     UC_TextInput uc = new UC_TextInput(Gamemode, Continents, QCount);
@@ -56,7 +56,8 @@ namespace Geo_Quiz
 
         private void B_ABCD_Click(object sender, EventArgs e)
         {
-            this.Text = "Game on!";
+            //this.Text = "Game on!";
+            MessageBox.Show("This gamemode is not set up yet, sorry...", "¯\\_(ツ)_/¯");
 
             //add UC_ABCD
         }

@@ -31,13 +31,15 @@
             this.B_Exit = new System.Windows.Forms.Button();
             this.TB_Answer = new System.Windows.Forms.TextBox();
             this.L_Question = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.PBar = new System.Windows.Forms.ProgressBar();
             this.B_Skip = new System.Windows.Forms.Button();
             this.L_Result = new System.Windows.Forms.Label();
             this.L_Country = new System.Windows.Forms.Label();
             this.B_Start = new System.Windows.Forms.Button();
             this.L_CorrectResult = new System.Windows.Forms.Label();
             this.B_Next = new System.Windows.Forms.Button();
+            this.L_QCount = new System.Windows.Forms.Label();
+            this.L_Score = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // B_Exit
@@ -82,18 +84,19 @@
             this.L_Question.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_Question.Location = new System.Drawing.Point(353, 255);
             this.L_Question.Name = "L_Question";
-            this.L_Question.Size = new System.Drawing.Size(262, 27);
+            this.L_Question.Size = new System.Drawing.Size(81, 27);
             this.L_Question.TabIndex = 8;
-            this.L_Question.Text = "Temp...";                      
-            this.L_Question.Click += new System.EventHandler(this.L_Question_Click);
+            this.L_Question.Text = "Temp...";
             // 
-            // progressBar1
+            // PBar
             // 
-            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.progressBar1.Location = new System.Drawing.Point(0, 0);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(971, 36);
-            this.progressBar1.TabIndex = 9;
+            this.PBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PBar.Location = new System.Drawing.Point(0, 0);
+            this.PBar.Name = "PBar";
+            this.PBar.Size = new System.Drawing.Size(971, 36);
+            this.PBar.Step = 1;
+            this.PBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.PBar.TabIndex = 9;
             // 
             // B_Skip
             // 
@@ -160,7 +163,6 @@
             this.L_CorrectResult.TabIndex = 14;
             this.L_CorrectResult.Text = "Correct answer is: ";
             this.L_CorrectResult.Visible = false;
-            this.L_CorrectResult.Click += new System.EventHandler(this.L_CorrectResult_Click);
             // 
             // B_Next
             // 
@@ -177,6 +179,33 @@
             this.B_Next.Visible = false;
             this.B_Next.Click += new System.EventHandler(this.B_Next_Click);
             // 
+            // L_QCount
+            // 
+            this.L_QCount.AutoSize = true;
+            this.L_QCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.L_QCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.L_QCount.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_QCount.Location = new System.Drawing.Point(896, 44);
+            this.L_QCount.Margin = new System.Windows.Forms.Padding(5);
+            this.L_QCount.Name = "L_QCount";
+            this.L_QCount.Size = new System.Drawing.Size(70, 26);
+            this.L_QCount.TabIndex = 16;
+            this.L_QCount.Text = "temp...";
+            this.L_QCount.Visible = false;
+            // 
+            // L_Score
+            // 
+            this.L_Score.AutoSize = true;
+            this.L_Score.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.L_Score.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.L_Score.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Score.Location = new System.Drawing.Point(5, 44);
+            this.L_Score.Margin = new System.Windows.Forms.Padding(5);
+            this.L_Score.Name = "L_Score";
+            this.L_Score.Size = new System.Drawing.Size(76, 26);
+            this.L_Score.TabIndex = 17;
+            this.L_Score.Text = "Score: _";
+            // 
             // UC_TextInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -184,13 +213,15 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.L_Score);
+            this.Controls.Add(this.L_QCount);
+            this.Controls.Add(this.B_Start);
             this.Controls.Add(this.B_Next);
             this.Controls.Add(this.L_CorrectResult);
-            this.Controls.Add(this.B_Start);
             this.Controls.Add(this.L_Country);
             this.Controls.Add(this.L_Result);
             this.Controls.Add(this.B_Skip);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.PBar);
             this.Controls.Add(this.L_Question);
             this.Controls.Add(this.TB_Answer);
             this.Controls.Add(this.B_Exit);
@@ -206,12 +237,14 @@
         private System.Windows.Forms.Button B_Exit;
         private System.Windows.Forms.TextBox TB_Answer;
         private System.Windows.Forms.Label L_Question;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar PBar;
         private System.Windows.Forms.Button B_Skip;
         private System.Windows.Forms.Label L_Result;
         private System.Windows.Forms.Label L_Country;
         private System.Windows.Forms.Button B_Start;
         private System.Windows.Forms.Label L_CorrectResult;
         private System.Windows.Forms.Button B_Next;
+        private System.Windows.Forms.Label L_QCount;
+        private System.Windows.Forms.Label L_Score;
     }
 }

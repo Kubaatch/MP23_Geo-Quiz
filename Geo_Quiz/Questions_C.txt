@@ -35,7 +35,7 @@ Portugal	Lisbon	10196709	91590
 Romania	Bucharest	19237691	230170
 Russia	Moscow	145934462	16376870
 San Marino	San Marino	33931	60
-Serbia	Belgrade8737371	87460
+Serbia	Belgrade	8737371	87460
 Slovakia	Bratislava	5459642	48088
 Slovenia	Ljubljana	2078938	20140
 Spain	Madrid	46754778	498800
