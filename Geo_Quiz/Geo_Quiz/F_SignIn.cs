@@ -30,9 +30,14 @@ namespace Geo_Quiz
             Environment.Exit(0);
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void B_SignUp_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("This part of the program is not set up yet, sorry...", "¯\\_(ツ)_/¯");
+        }
 
+        private void B_SignIn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This part of the program is not set up yet, sorry...", "¯\\_(ツ)_/¯");
         }
     }
 }

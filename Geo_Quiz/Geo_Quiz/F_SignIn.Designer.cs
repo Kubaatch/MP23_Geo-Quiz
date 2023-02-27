@@ -29,39 +29,41 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_SignIn));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.B_SignUp = new System.Windows.Forms.Button();
+            this.B_SignIn = new System.Windows.Forms.Button();
             this.B_Guest = new System.Windows.Forms.Button();
             this.B_Exit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // B_SignUp
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(273, 378);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 106);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Sign up";
-            this.button1.UseVisualStyleBackColor = false;
+            this.B_SignUp.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.B_SignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.B_SignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_SignUp.Location = new System.Drawing.Point(273, 378);
+            this.B_SignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B_SignUp.Name = "B_SignUp";
+            this.B_SignUp.Size = new System.Drawing.Size(200, 106);
+            this.B_SignUp.TabIndex = 3;
+            this.B_SignUp.Text = "Sign up";
+            this.B_SignUp.UseVisualStyleBackColor = false;
+            this.B_SignUp.Click += new System.EventHandler(this.B_SignUp_Click);
             // 
-            // button2
+            // B_SignIn
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(508, 378);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(199, 106);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Sign in";
-            this.button2.UseVisualStyleBackColor = false;
+            this.B_SignIn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.B_SignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.B_SignIn.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_SignIn.Location = new System.Drawing.Point(508, 378);
+            this.B_SignIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B_SignIn.Name = "B_SignIn";
+            this.B_SignIn.Size = new System.Drawing.Size(199, 106);
+            this.B_SignIn.TabIndex = 4;
+            this.B_SignIn.Text = "Sign in";
+            this.B_SignIn.UseVisualStyleBackColor = false;
+            this.B_SignIn.Click += new System.EventHandler(this.B_SignIn_Click);
             // 
             // B_Guest
             // 
@@ -112,8 +114,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.B_Exit);
             this.Controls.Add(this.B_Guest);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.B_SignIn);
+            this.Controls.Add(this.B_SignUp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "F_SignIn";
@@ -125,8 +127,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button B_SignUp;
+        private System.Windows.Forms.Button B_SignIn;
         private System.Windows.Forms.Button B_Guest;
         private System.Windows.Forms.Button B_Exit;
         private System.Windows.Forms.PictureBox pictureBox1;

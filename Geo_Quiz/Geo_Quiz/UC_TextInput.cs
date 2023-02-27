@@ -12,14 +12,23 @@ using System.Globalization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Status;
 using System.Media;
+using static System.Windows.Forms.LinkLabel;
+using static System.Net.Mime.MediaTypeNames;
+using Image = System.Drawing.Image;
+using static System.Net.WebRequestMethods;
 
 namespace Geo_Quiz
 {
     public partial class UC_TextInput : UserControl
     {
         readonly GameSpecs GS_Text = new GameSpecs();
+
+        readonly List<Image> flags = new List<Image>();
+        public Image[] qFlags = new Image[0];
+
         public string answer;
         public int qnumber = 0;
+
         public int score = 0;
         public static System.Timers.Timer timer;
         public int timerticked = 0;
@@ -28,14 +37,14 @@ namespace Geo_Quiz
         {
             GS_Text.Gamemode = gamemode;            
             GS_Text.Continents = continents;
-            GS_Text.QCount = QCount;            
-            GS_Text.Questions = GetQuestions();
+            GS_Text.QCount = QCount;
+
+            Array.Resize(ref qFlags, QCount);
 
             timer = new System.Timers.Timer();
             timer.Interval = 500;
             timer.Elapsed += Timer_Elapsed;
-            timer.AutoReset = true;
-
+            timer.AutoReset = true;            
             InitializeComponent();
 
             L_QCount.Text = "1 / " + GS_Text.QCount;
@@ -48,10 +57,10 @@ namespace Geo_Quiz
         {
             if ( f.KeyCode == Keys.Enter)
             {
-                answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Gamemode];
-
                 if (GS_Text.Gamemode == 1)
                 {
+                    answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Gamemode];
+
                     if (TB_Answer.Text.ToLower() == answer.ToLower())
                     {
                         L_Result.Text = "Correct!";
@@ -68,10 +77,26 @@ namespace Geo_Quiz
                 }
                 else if (GS_Text.Gamemode == 0)
                 {
-                
+                    answer = qFlags[qnumber].Tag.ToString().Split('.')[0];
+                    
+                    if (TB_Answer.Text == answer)
+                    {
+                        L_Result.Text = "Correct!";
+                        L_Result.Visible = true;
+                    }
+                    else
+                    {
+                        L_Result.Text = "Wrong...";
+                        L_Result.Visible = true;
+                        
+                        L_CorrectResult.Text += answer;
+                        L_CorrectResult.Visible = true;
+                    }
                 }
                 else
                 {
+                    answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Gamemode];
+
                     double dCorrect = Convert.ToDouble(answer);
                     double dAnswer = Convert.ToDouble(TB_Answer.Text);
 
@@ -132,7 +157,15 @@ namespace Geo_Quiz
             score -= 50;
             L_Score.Text = "Score: " + score;
 
-            answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Gamemode];            
+            if (GS_Text.Gamemode == 0)
+            {
+                answer = qFlags[qnumber].Tag.ToString().Split('.')[0];
+            }
+            else
+            {            
+                answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Gamemode]; 
+            }
+            
             L_CorrectResult.Text += answer;
             L_CorrectResult.Visible = true;
 
@@ -161,7 +194,14 @@ namespace Geo_Quiz
             }
             else
             {
-                L_Country.Text = GS_Text.Questions[qnumber].Split('\t')[0];
+                if (GS_Text.Gamemode == 0)
+                {
+                    PB_Flag.Image = qFlags[qnumber];
+                }
+                else
+                {                
+                    L_Country.Text = GS_Text.Questions[qnumber].Split('\t')[0];
+                }                
 
                 timerticked = 0;
 
@@ -177,10 +217,49 @@ namespace Geo_Quiz
             }
         }
 
+        private void B_Start_Click(object sender, EventArgs e)
+        {
+            switch (GS_Text.Gamemode)
+            {
+                case 0:
+                    L_Question.Visible = false;
+                    L_Country.Visible = false;
+                    
+                    LoadFlags(GS_Text.Continents);
+                    LoadqFlags();
+
+                    PB_Flag.Image = qFlags.First();
+                    PB_Flag.Visible = true;
+                    break;
+                case 1:
+                    GS_Text.Questions = GetQuestions();
+                    L_Question.Text = "What is the capital city of: ";
+                    L_Country.Text = GS_Text.Questions[0].Split('\t')[0];
+
+                    break;
+                case 2:
+                    GS_Text.Questions = GetQuestions();
+                    L_Question.Text = "What is the population of: ";
+                    L_Country.Text = GS_Text.Questions[0].Split('\t')[0];
+                    break;
+                case 3:
+                    GS_Text.Questions = GetQuestions();
+                    L_Question.Text = "What is the area of: ";
+                    L_Country.Text = GS_Text.Questions[0].Split('\t')[0];
+                    break;
+            }
+
+            TB_Answer.Enabled = true;
+            B_Skip.Enabled = true;
+            B_Start.Visible = false;
+
+            timer.Start();
+        }
+
         private string[] GetQuestions()
         {
             string[] lines = new string[0];         
-            string[] file = File.ReadAllLines(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Questions_C.txt");
+            string[] file = System.IO.File.ReadAllLines(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Questions_C.txt");
             //simplify to work on any computer!    
 
             if (GS_Text.Continents == null || GS_Text.Continents.Length == 0)
@@ -226,41 +305,111 @@ namespace Geo_Quiz
             }            
             }
                         
-            Random random = new Random();
+            Random rand = new Random();
             string[] questions = new string[GS_Text.QCount];
 
                 //generated by an AI (ChatGPT)
-            IEnumerable<int> randomIndices = Enumerable.Range(0, lines.Length).OrderBy(x => random.Next()).Distinct().Take(GS_Text.QCount);
-            questions = randomIndices.Select(j => lines[j]).ToArray();
+            IEnumerable<int> tempList = Enumerable.Range(0, lines.Length).OrderBy(x => rand.Next()).Distinct().Take(GS_Text.QCount);
+            questions = tempList.Select(j => lines[j]).ToArray();
                 //end
             
             return questions;
-        }             
-        
-        private void B_Start_Click(object sender, EventArgs e)
+        }
+
+        private void LoadFlags(string[] continents)
         {
-            switch (GS_Text.Gamemode)
+            if (continents == null || continents.Length == 0)
             {
-                case 1:
-                    L_Question.Text = "What is the capital city of: ";
-                    break;
-                case 2:
-                    L_Question.Text = "What is the population of: ";
-                    break;
-                case 3:
-                    L_Question.Text = "What is the area of: ";
-                    break;
+                Array.Resize(ref continents, 6);
+                continents[0] = "Europe";
+                continents[1] = "Asia";
+                continents[2] = "Africa";
+                continents[3] = "America (North & Central)";
+                continents[4] = "America (South)";
+                continents[5] = "Oceania";
             }
 
-            TB_Answer.Enabled = true;
-            B_Skip.Enabled = true;
-            
-            L_Country.Text = GS_Text.Questions[0].Split('\t')[0];
+            if (continents.Contains("Europe"))
+            {
+                string[] files = Directory.GetFiles(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Flags\Europe", "*.png");
+                for (int i = 0; i < files.Length; i++)
+                {
+                    Image image = Image.FromFile(files[i]);
+                    flags.Add(image);
+                    flags.Last().Tag = Path.GetFileName(files[i]);
+                }
+            }
 
-            B_Start.Visible = false;
+            if (continents.Contains("Asia"))
+            {
+                string[] files = Directory.GetFiles(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Flags\Asia", "*.png");
+                for (int i = 0; i < files.Length; i++)
+                {
+                    Image image = Image.FromFile(files[i]);
+                    flags.Add(image);
+                    flags.Last().Tag = Path.GetFileName(files[i]);
+                }
+            }
 
-            timer.Start();
+            if (continents.Contains("Africa"))
+            {
+                string[] files = Directory.GetFiles(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Flags\Africa", "*.png");
+                for (int i = 0; i < files.Length; i++)
+                {
+                    Image image = Image.FromFile(files[i]);
+                    flags.Add(image);
+                    flags.Last().Tag = Path.GetFileName(files[i]);
+                }
+            }
+
+            if (continents.Contains("America (North & Central)"))
+            {
+                string[] files = Directory.GetFiles(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Flags\NandCAmerica", "*.png");
+                for (int i = 0; i < files.Length; i++)
+                {
+                    Image image = Image.FromFile(files[i]);
+                    flags.Add(image);
+                    flags.Last().Tag = Path.GetFileName(files[i]);
+                }
+            }
+
+            if (continents.Contains("America (South)"))
+            {
+                string[] files = Directory.GetFiles(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Flags\SAmerica", " *.png");
+                for (int i = 0; i < files.Length; i++)
+                {
+                    Image image = Image.FromFile(files[i]);
+                    flags.Add(image);
+                    flags.Last().Tag = Path.GetFileName(files[i]);
+                }
+            }
+
+            if (continents.Contains("Oceania"))
+            {
+                string[] files = Directory.GetFiles(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Flags\Oceania", "*.png");
+                for (int i = 0; i < files.Length; i++)
+                {
+                    Image image = Image.FromFile(files[i]);
+                    flags.Add(image);
+                    flags.Last().Tag = Path.GetFileName(files[i]);
+                }
+            }
         }
+
+        private void LoadqFlags()
+        {
+            Random rand = new Random();
+                //generated by an AI (ChatGPT)
+            IEnumerable<int> tempList = Enumerable.Range(0, flags.Count).OrderBy(x => rand.Next()).Distinct().Take(GS_Text.QCount);
+            qFlags = tempList.Select(j =>
+            {
+                Image image = flags[j];
+                image.Tag = Path.GetFileName(image.Tag.ToString());
+                return image;
+            }).ToArray();
+                //end
+        }
+
 
         private void TB_Answer_GotFocus(object sender, EventArgs e)
         {

@@ -38,20 +38,25 @@ namespace Geo_Quiz
 
         public void B_TextBox_Click(object sender, EventArgs e)
         {
-            this.Text = "Game on!";
-
-            switch (Gamemode)
+            if (Continents == null || Continents.Length == 0)
             {
-                case 0:
-                    MessageBox.Show("Selected category is not compatible with this mode...", "¯\\_(ツ)_/¯");
-                    break;
-                default:
+                DialogResult result = MessageBox.Show("You haven't chosen any continents, are you sure you want to continue?"
+                    + "\nSelecting no continents works as if all were selected...", "¯\\_(ツ)_/¯", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
                     UC_TextInput uc = new UC_TextInput(Gamemode, Continents, QCount);
                     uc.Dock = DockStyle.Fill;
                     Controls.Add(uc);
                     uc.BringToFront();
-                    break;
+                }
             }
+            else
+            {
+                UC_TextInput uc = new UC_TextInput(Gamemode, Continents, QCount);
+                uc.Dock = DockStyle.Fill;
+                Controls.Add(uc);
+                uc.BringToFront();            
+            }            
         }
 
         private void B_ABCD_Click(object sender, EventArgs e)
@@ -65,11 +70,6 @@ namespace Geo_Quiz
         private void B_Exit_Click(object sender, EventArgs e)
         {
             Dispose();
-        }
-
-        private void TT_PopUp_Popup(object sender, EventArgs e)
-        {
-        
         }
     }
 }

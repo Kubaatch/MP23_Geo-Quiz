@@ -132,7 +132,6 @@
             this.TT_PopUp.IsBalloon = true;
             this.TT_PopUp.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.TT_PopUp.ToolTipTitle = "Tip: ";
-            this.TT_PopUp.Popup += new System.Windows.Forms.PopupEventHandler(this.TT_PopUp_Popup);
             // 
             // numericUpDown1
             // 

@@ -40,6 +40,8 @@
             this.B_Next = new System.Windows.Forms.Button();
             this.L_QCount = new System.Windows.Forms.Label();
             this.L_Score = new System.Windows.Forms.Label();
+            this.PB_Flag = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Flag)).BeginInit();
             this.SuspendLayout();
             // 
             // B_Exit
@@ -206,6 +208,18 @@
             this.L_Score.TabIndex = 17;
             this.L_Score.Text = "Score: _";
             // 
+            // PB_Flag
+            // 
+            this.PB_Flag.BackColor = System.Drawing.Color.Transparent;
+            this.PB_Flag.Location = new System.Drawing.Point(341, 157);
+            this.PB_Flag.Name = "PB_Flag";
+            this.PB_Flag.Size = new System.Drawing.Size(290, 181);
+            this.PB_Flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB_Flag.TabIndex = 18;
+            this.PB_Flag.TabStop = false;
+            this.PB_Flag.Visible = false;
+            this.PB_Flag.WaitOnLoad = true;
+            // 
             // UC_TextInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,9 +227,9 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.B_Start);
             this.Controls.Add(this.L_Score);
             this.Controls.Add(this.L_QCount);
-            this.Controls.Add(this.B_Start);
             this.Controls.Add(this.B_Next);
             this.Controls.Add(this.L_CorrectResult);
             this.Controls.Add(this.L_Country);
@@ -225,9 +239,11 @@
             this.Controls.Add(this.L_Question);
             this.Controls.Add(this.TB_Answer);
             this.Controls.Add(this.B_Exit);
+            this.Controls.Add(this.PB_Flag);
             this.DoubleBuffered = true;
             this.Name = "UC_TextInput";
             this.Size = new System.Drawing.Size(971, 577);
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Flag)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +262,6 @@
         private System.Windows.Forms.Button B_Next;
         private System.Windows.Forms.Label L_QCount;
         private System.Windows.Forms.Label L_Score;
+        private System.Windows.Forms.PictureBox PB_Flag;
     }
 }
