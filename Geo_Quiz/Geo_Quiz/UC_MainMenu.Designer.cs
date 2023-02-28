@@ -46,7 +46,7 @@
             this.B_Testing.Location = new System.Drawing.Point(310, 205);
             this.B_Testing.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Testing.Name = "B_Testing";
-            this.B_Testing.Size = new System.Drawing.Size(400, 92);
+            this.B_Testing.Size = new System.Drawing.Size(398, 92);
             this.B_Testing.TabIndex = 1;
             this.B_Testing.Text = "Testing Mode";
             this.B_Testing.UseVisualStyleBackColor = false;
@@ -62,7 +62,7 @@
             this.B_Training.Location = new System.Drawing.Point(310, 313);
             this.B_Training.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Training.Name = "B_Training";
-            this.B_Training.Size = new System.Drawing.Size(400, 90);
+            this.B_Training.Size = new System.Drawing.Size(398, 90);
             this.B_Training.TabIndex = 2;
             this.B_Training.Text = "Learning Mode";
             this.B_Training.UseVisualStyleBackColor = false;
@@ -76,7 +76,7 @@
             this.B_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_Settings.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Settings.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_Settings.Location = new System.Drawing.Point(12, 552);
+            this.B_Settings.Location = new System.Drawing.Point(12, 550);
             this.B_Settings.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Settings.Name = "B_Settings";
             this.B_Settings.Size = new System.Drawing.Size(167, 62);
@@ -93,7 +93,7 @@
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_Exit.Location = new System.Drawing.Point(888, 577);
+            this.B_Exit.Location = new System.Drawing.Point(886, 575);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(100, 37);
@@ -107,12 +107,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.B_Exit);
             this.Controls.Add(this.B_Settings);
             this.Controls.Add(this.B_Training);
             this.Controls.Add(this.B_Testing);
             this.Name = "UC_MainMenu";
-            this.Size = new System.Drawing.Size(1000, 625);
+            this.Size = new System.Drawing.Size(998, 623);
             this.ResumeLayout(false);
 
         }

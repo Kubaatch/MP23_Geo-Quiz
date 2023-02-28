@@ -41,6 +41,7 @@
             this.L_QCount = new System.Windows.Forms.Label();
             this.L_Score = new System.Windows.Forms.Label();
             this.PB_Flag = new System.Windows.Forms.PictureBox();
+            this.B_Enter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Flag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_Exit.Location = new System.Drawing.Point(884, 529);
+            this.B_Exit.Location = new System.Drawing.Point(914, 577);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(75, 35);
@@ -68,14 +69,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TB_Answer.Enabled = false;
             this.TB_Answer.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Answer.Location = new System.Drawing.Point(341, 344);
+            this.TB_Answer.Location = new System.Drawing.Point(341, 345);
+            this.TB_Answer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TB_Answer.Name = "TB_Answer";
-            this.TB_Answer.Size = new System.Drawing.Size(290, 33);
+            this.TB_Answer.Size = new System.Drawing.Size(319, 33);
             this.TB_Answer.TabIndex = 7;
             this.TB_Answer.Text = "Enter answer here";
             this.TB_Answer.GotFocus += new System.EventHandler(this.TB_Answer_GotFocus);
             this.TB_Answer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TB_Answer_KeyUpEnter);
-            this.TB_Answer.LostFocus += new System.EventHandler(this.TB_Answer_LostFocus);
             // 
             // L_Question
             // 
@@ -94,8 +95,9 @@
             // 
             this.PBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.PBar.Location = new System.Drawing.Point(0, 0);
+            this.PBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PBar.Name = "PBar";
-            this.PBar.Size = new System.Drawing.Size(971, 36);
+            this.PBar.Size = new System.Drawing.Size(1000, 36);
             this.PBar.Step = 1;
             this.PBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.PBar.TabIndex = 9;
@@ -108,8 +110,9 @@
             this.B_Skip.Enabled = false;
             this.B_Skip.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Skip.Location = new System.Drawing.Point(341, 383);
+            this.B_Skip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Skip.Name = "B_Skip";
-            this.B_Skip.Size = new System.Drawing.Size(92, 31);
+            this.B_Skip.Size = new System.Drawing.Size(102, 31);
             this.B_Skip.TabIndex = 10;
             this.B_Skip.Text = "Skip";
             this.B_Skip.UseVisualStyleBackColor = false;
@@ -135,7 +138,7 @@
             this.L_Country.AutoSize = true;
             this.L_Country.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.L_Country.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Country.Location = new System.Drawing.Point(353, 291);
+            this.L_Country.Location = new System.Drawing.Point(353, 290);
             this.L_Country.Name = "L_Country";
             this.L_Country.Size = new System.Drawing.Size(39, 27);
             this.L_Country.TabIndex = 12;
@@ -148,8 +151,9 @@
             this.B_Start.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.B_Start.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Start.Location = new System.Drawing.Point(341, 250);
+            this.B_Start.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Start.Name = "B_Start";
-            this.B_Start.Size = new System.Drawing.Size(290, 88);
+            this.B_Start.Size = new System.Drawing.Size(320, 89);
             this.B_Start.TabIndex = 13;
             this.B_Start.Text = "START";
             this.B_Start.UseVisualStyleBackColor = false;
@@ -171,15 +175,17 @@
             this.B_Next.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.B_Next.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.B_Next.Enabled = false;
             this.B_Next.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_Next.Location = new System.Drawing.Point(539, 383);
+            this.B_Next.Location = new System.Drawing.Point(558, 383);
+            this.B_Next.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Next.Name = "B_Next";
-            this.B_Next.Size = new System.Drawing.Size(92, 31);
+            this.B_Next.Size = new System.Drawing.Size(103, 31);
             this.B_Next.TabIndex = 15;
             this.B_Next.Text = "Next";
             this.B_Next.UseVisualStyleBackColor = false;
-            this.B_Next.Visible = false;
-            this.B_Next.Click += new System.EventHandler(this.B_Next_Click);
+            this.B_Next.KeyUp += new System.Windows.Forms.KeyEventHandler(this.B_Next_Click);
+            this.B_Next.MouseClick += new System.Windows.Forms.MouseEventHandler(this.B_Next_Click);
             // 
             // L_QCount
             // 
@@ -211,22 +217,40 @@
             // PB_Flag
             // 
             this.PB_Flag.BackColor = System.Drawing.Color.Transparent;
-            this.PB_Flag.Location = new System.Drawing.Point(341, 157);
+            this.PB_Flag.Location = new System.Drawing.Point(341, 158);
+            this.PB_Flag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PB_Flag.Name = "PB_Flag";
-            this.PB_Flag.Size = new System.Drawing.Size(290, 181);
+            this.PB_Flag.Size = new System.Drawing.Size(291, 181);
             this.PB_Flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB_Flag.TabIndex = 18;
             this.PB_Flag.TabStop = false;
             this.PB_Flag.Visible = false;
             this.PB_Flag.WaitOnLoad = true;
             // 
-            // UC_TextInput
+            // B_Enter
             // 
+            this.B_Enter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.B_Enter.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.B_Enter.Enabled = false;
+            this.B_Enter.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Enter.Location = new System.Drawing.Point(449, 383);
+            this.B_Enter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B_Enter.Name = "B_Enter";
+            this.B_Enter.Size = new System.Drawing.Size(103, 31);
+            this.B_Enter.TabIndex = 19;
+            this.B_Enter.Text = "Enter";
+            this.B_Enter.UseVisualStyleBackColor = false;
+            this.B_Enter.Click += new System.EventHandler(this.B_Enter_Click);
+            //
+            // UC_TextInput
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImage = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;            
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.B_Enter);
             this.Controls.Add(this.B_Start);
             this.Controls.Add(this.L_Score);
             this.Controls.Add(this.L_QCount);
@@ -241,8 +265,9 @@
             this.Controls.Add(this.B_Exit);
             this.Controls.Add(this.PB_Flag);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_TextInput";
-            this.Size = new System.Drawing.Size(971, 577);
+            this.Size = new System.Drawing.Size(1000, 625);
             ((System.ComponentModel.ISupportInitialize)(this.PB_Flag)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -263,5 +288,6 @@
         private System.Windows.Forms.Label L_QCount;
         private System.Windows.Forms.Label L_Score;
         private System.Windows.Forms.PictureBox PB_Flag;
+        private System.Windows.Forms.Button B_Enter;
     }
 }

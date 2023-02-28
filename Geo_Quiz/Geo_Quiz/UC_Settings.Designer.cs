@@ -41,7 +41,7 @@
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_Exit.Location = new System.Drawing.Point(915, 580);
+            this.B_Exit.Location = new System.Drawing.Point(913, 578);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(10);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(75, 35);
@@ -65,10 +65,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.B_Exit);
             this.Name = "UC_Settings";
-            this.Size = new System.Drawing.Size(1000, 625);
+            this.Size = new System.Drawing.Size(998, 623);
             this.ResumeLayout(false);
             this.PerformLayout();
 

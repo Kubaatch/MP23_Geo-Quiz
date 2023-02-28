@@ -16,6 +16,7 @@ using static System.Windows.Forms.LinkLabel;
 using static System.Net.Mime.MediaTypeNames;
 using Image = System.Drawing.Image;
 using static System.Net.WebRequestMethods;
+using Geo_Quiz.Properties;
 
 namespace Geo_Quiz
 {
@@ -57,99 +58,114 @@ namespace Geo_Quiz
         {
             if ( f.KeyCode == Keys.Enter)
             {
-                if (GS_Text.Gamemode == 1)
-                {
-                    answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Gamemode];
-
-                    if (TB_Answer.Text.ToLower() == answer.ToLower())
-                    {
-                        L_Result.Text = "Correct!";
-                        L_Result.Visible = true;
-                    }
-                    else
-                    {
-                        L_Result.Text = "Wrong...";
-                        L_Result.Visible = true;
-
-                        L_CorrectResult.Text += answer;
-                        L_CorrectResult.Visible = true;
-                    }
-                }
-                else if (GS_Text.Gamemode == 0)
-                {
-                    answer = qFlags[qnumber].Tag.ToString().Split('.')[0];
-                    
-                    if (TB_Answer.Text == answer)
-                    {
-                        L_Result.Text = "Correct!";
-                        L_Result.Visible = true;
-                    }
-                    else
-                    {
-                        L_Result.Text = "Wrong...";
-                        L_Result.Visible = true;
-                        
-                        L_CorrectResult.Text += answer;
-                        L_CorrectResult.Visible = true;
-                    }
-                }
-                else
-                {
-                    answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Gamemode];
-
-                    double dCorrect = Convert.ToDouble(answer);
-                    double dAnswer = Convert.ToDouble(TB_Answer.Text);
-
-                    if ((dCorrect / 1.15) < dAnswer && dAnswer < (dCorrect * 1.15))
-                    {
-                        L_Result.Text = "Correct!";
-                        L_Result.Visible = true;                                               
-
-                        L_CorrectResult.Text = "The exact number is: ";
-                        L_CorrectResult.Text += answer;
-                        L_CorrectResult.Visible = true;
-                    }
-                    else
-                    {
-                        L_Result.Text = "Wrong...";
-                        L_Result.Visible = true;
-
-                        L_CorrectResult.Text += answer;
-                        L_CorrectResult.Visible = true;
-                    }
-                }
-
-                if (L_Result.Text == "Correct!")
-                {
-                    if (timerticked > 100)
-                    {
-                        score = 0;
-                    }
-                    else
-                    {
-                        score += 100 - timerticked;
-                    }
-                    L_Score.Text = "Score: " + score;
-                }
-                else
-                {
-                    score -= 50;
-                    L_Score.Text = "Score: " + score;
-                }
-
-                qnumber++;
-
-                B_Skip.Visible = false;
-                B_Next.Visible = true;
-
-                TB_Answer.Enabled = false;
+                CheckAnswer();
             }
-        }                     
+        }
+        
+        private void B_Enter_Click(object sender, EventArgs e)
+        {
+            CheckAnswer();
+        }
+
+        private void CheckAnswer()
+        {
+            if (GS_Text.Gamemode == 1)
+            {
+                answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Gamemode];
+
+                if (TB_Answer.Text.ToLower() == answer.ToLower())
+                {
+                    L_Result.Text = "Correct!";
+                    L_Result.ForeColor = Color.Green;
+                    L_Result.Visible = true;
+                }
+                else
+                {
+                    L_Result.Text = "Wrong...";
+                    L_Result.Visible = true;
+
+                    L_CorrectResult.Text += answer;
+                    L_CorrectResult.Visible = true;
+                }
+            }
+            else if (GS_Text.Gamemode == 0)
+            {
+                answer = qFlags[qnumber].Tag.ToString().Split('.')[0];
+
+                if (TB_Answer.Text.ToLower() == answer.ToLower())
+                {
+                    L_Result.Text = "Correct!";
+                    L_Result.ForeColor = Color.Green;
+                    L_Result.Visible = true;
+                }
+                else
+                {
+                    L_Result.Text = "Wrong...";
+                    L_Result.Visible = true;
+
+                    L_CorrectResult.Text += answer;
+                    L_CorrectResult.Visible = true;
+                }
+            }
+            else
+            {
+                answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Gamemode];
+
+                double dCorrect = Convert.ToDouble(answer);
+                double dAnswer = Convert.ToDouble(TB_Answer.Text);
+
+                if ((dCorrect / 1.15) < dAnswer && dAnswer < (dCorrect * 1.15))
+                {
+                    L_Result.Text = "Correct!";
+                    L_Result.ForeColor = Color.Green;
+                    L_Result.Visible = true;
+
+                    L_CorrectResult.Text = "The exact number is: ";
+                    L_CorrectResult.Text += answer;
+                    L_CorrectResult.Visible = true;
+                }
+                else
+                {
+                    L_Result.Text = "Wrong...";
+                    L_Result.Visible = true;
+
+                    L_CorrectResult.Text += answer;
+                    L_CorrectResult.Visible = true;
+                }
+            }
+
+            if (L_Result.Text == "Correct!")
+            {
+                if (timerticked > 100)
+                {
+                    score += 0;
+                }
+                else
+                {
+                    score += 100 - timerticked;
+                }
+                L_Score.Text = "Score: " + score;
+            }
+            else
+            {
+                score -= 50;
+                L_Score.Text = "Score: " + score;
+            }
+
+            B_Skip.Enabled = false;
+            B_Enter.Enabled = false;
+            B_Next.Enabled = true;
+
+            TB_Answer.Enabled = false;
+
+            PBar.Increment(1);            
+        }
 
         private void B_Skip_Click(object sender, EventArgs e)
         {
-            B_Skip.Visible = false;
-            B_Next.Visible = true;
+            B_Skip.Enabled = false;
+            B_Enter.Enabled = false;
+            B_Next.Enabled = true;
 
             L_Result.Text = "Wrong...";
             L_Result.Visible = true;
@@ -170,13 +186,12 @@ namespace Geo_Quiz
             L_CorrectResult.Visible = true;
 
             TB_Answer.Enabled = false;
-            qnumber++;
         }
 
         private void B_Next_Click(object sender, EventArgs e)
         {
-            PBar.Increment(1);
-            L_QCount.Text = qnumber+1 + " / " + GS_Text.QCount;
+            qnumber++;
+            L_QCount.Text = qnumber + 1 + " / " + GS_Text.QCount;
 
             if (qnumber == GS_Text.QCount - 1)
             {
@@ -205,15 +220,19 @@ namespace Geo_Quiz
 
                 timerticked = 0;
 
-                B_Skip.Visible = true;
-                B_Next.Visible = false;
+                B_Skip.Enabled = true;
+                B_Enter.Enabled = true;
+                B_Next.Enabled = false;
 
                 L_Result.Visible = false;
+                L_Result.ForeColor = Color.Red;
                 L_CorrectResult.Visible = false;
                 L_CorrectResult.Text = "Correct answer is: ";
 
                 TB_Answer.Text = "Enter answer here";
                 TB_Answer.Enabled = true;
+
+                TB_Answer.Focus();
             }
         }
 
@@ -251,6 +270,7 @@ namespace Geo_Quiz
 
             TB_Answer.Enabled = true;
             B_Skip.Enabled = true;
+            B_Enter.Enabled = true;
             B_Start.Visible = false;
 
             timer.Start();
@@ -258,9 +278,10 @@ namespace Geo_Quiz
 
         private string[] GetQuestions()
         {
-            string[] lines = new string[0];         
-            string[] file = System.IO.File.ReadAllLines(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Questions_C.txt");
-            //simplify to work on any computer!    
+            string[] lines = new string[0];
+
+            //string[] file = System.IO.File.ReadAllLines(Resources.Questions);            
+            string[] file = Resources.Questions.Split('\n');            
 
             if (GS_Text.Continents == null || GS_Text.Continents.Length == 0)
             {
@@ -330,7 +351,7 @@ namespace Geo_Quiz
             }
 
             if (continents.Contains("Europe"))
-            {
+            {                
                 string[] files = Directory.GetFiles(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Flags\Europe", "*.png");
                 for (int i = 0; i < files.Length; i++)
                 {
@@ -410,16 +431,11 @@ namespace Geo_Quiz
                 //end
         }
 
-
         private void TB_Answer_GotFocus(object sender, EventArgs e)
         {
             TB_Answer.Text = string.Empty;
         }
 
-        private void TB_Answer_LostFocus(object sender, EventArgs e)
-        {
-            TB_Answer.Text = "Enter answer here";
-        }
 
         private void Timer_Elapsed(object sender, EventArgs e)
         {
@@ -430,5 +446,6 @@ namespace Geo_Quiz
         {
             Dispose();
         }
+
     }
 }

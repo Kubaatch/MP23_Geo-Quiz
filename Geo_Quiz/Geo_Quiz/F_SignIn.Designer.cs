@@ -116,6 +116,7 @@
             this.Controls.Add(this.B_Guest);
             this.Controls.Add(this.B_SignIn);
             this.Controls.Add(this.B_SignUp);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "F_SignIn";

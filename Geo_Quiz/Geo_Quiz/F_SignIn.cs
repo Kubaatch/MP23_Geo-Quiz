@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Geo_Quiz
     {
         public F_SignIn()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void B_Guest_Click(object sender, EventArgs e)
