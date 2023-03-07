@@ -11,15 +11,7 @@ namespace Geo_Quiz
         private int gamemode;
         private string[] continents;
         private int qCount;
-        private string[] questions;
-        
-        public GameSpecs(int ChosenGameMode, string[] ChosenContinents, int ChosenQCount, string[] RandQuestions)
-        {
-            Gamemode = ChosenGameMode;
-            Continents = ChosenContinents;
-            QCount = ChosenQCount;
-            Questions = RandQuestions;
-        }
+        private string[] questions;        
 
         public GameSpecs() { }
 

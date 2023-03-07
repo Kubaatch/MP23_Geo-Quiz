@@ -1,4 +1,5 @@
-﻿Albania	Tirana	2877797	27400
+﻿Europe
+Albania	Tirana	2877797	27400
 Andorra	Andorra la Vella	77265	470
 Austria	Vienna	9006398	82409
 Belarus	Minsk	9449323	202910
@@ -45,6 +46,8 @@ Turkey	Ankara	84339067	769630
 Ukraine	Kyiv	43733762	579320
 United Kingdom	London	67886011	241930
 Vatican City	Vatican City	801	0
+
+Asia
 Afghanistan	Kabul	38928346	652860
 Armenia	Yerevan	2963243	28470
 Azerbaijan	Baku	10139177	82658
@@ -92,41 +95,8 @@ United Arab Emirates	Abu Dhabi	9890402	83600
 Uzbekistan	Tashkent	33469203	425400
 Vietnam	Hanoi	97338579	310070
 Yemen	Sana'a	29825964	527970
-Argentina	Buenos Aires	45195774	2736690
-Bolivia	Sucre	11673021	1083300
-Brazil	Brasilia	212559417	8358140
-Chile	Santiago	19116201	743532
-Colombia	Bogotá	50882891	1109500
-Ecuador	Quito	17643054	248360
-Guyana	Georgetown	786552	196850
-Paraguay	Asunción	7132538	397300
-Peru	Lima	32971854	1280000
-Suriname	Paramaribo	586632	156000
-Uruguay	Montevideo	3473730	175020
-Venezuela	Caracas	28435940	882050
-Antigua and Barbuda	Saint John's	97929	440
-Bahamas	Nassau	393244	10010
-Barbados	Bridgetown	287375	430
-Belize	Belmopan	397628	22810
-Canada	Ottawa	37742154	9093510
-Costa Rica	San Jose	5094118	51060
-Cuba	Havana	11326616	106440
-Dominica	Roseau	71986	750
-Dominican Republic	Santo Domingo	10847910	48320
-El Salvador	San Salvador	6486205	20720
-Grenada	Saint George's	112523	340
-Guatemala	Guatemala City	17915568	107160
-Haiti	Port-au-Prince	11402528	27560
-Honduras	Tegucigalpa	9904607	11890
-Jamaica	Kingston	2961167	10830
-Mexico	Mexico City	128932753	1943950
-Nicaragua	Managua	6624554	120340
-Panama	Panama City	4314767	74340
-Saint Kitts and Nevis	Basseterre	53199	260
-Saint Lucia	Castries	183627	610
-Saint Vincent and the Grenadines	Kingstown	110940	390
-Trinidad and Tobago	Port of Spain	1399488	5130
-United States of America	Washington, D.C.	331002651	9147420
+
+Africa
 Algeria	Algiers	43851044	2381740
 Angola	Luanda	32866272	1246700
 Benin	Porto-Novo	12123200	112760
@@ -181,6 +151,47 @@ Tunisia	Tunis	11818619	155360
 Uganda	Kampala	45741007	199810
 Zambia	Lusaka	18383955	743390
 Zimbabwe	Harare	14862924	386850
+
+America (North & Central)
+Antigua and Barbuda	Saint John's	97929	440
+Bahamas	Nassau	393244	10010
+Barbados	Bridgetown	287375	430
+Belize	Belmopan	397628	22810
+Canada	Ottawa	37742154	9093510
+Costa Rica	San Jose	5094118	51060
+Cuba	Havana	11326616	106440
+Dominica	Roseau	71986	750
+Dominican Republic	Santo Domingo	10847910	48320
+El Salvador	San Salvador	6486205	20720
+Grenada	Saint George's	112523	340
+Guatemala	Guatemala City	17915568	107160
+Haiti	Port-au-Prince	11402528	27560
+Honduras	Tegucigalpa	9904607	11890
+Jamaica	Kingston	2961167	10830
+Mexico	Mexico City	128932753	1943950
+Nicaragua	Managua	6624554	120340
+Panama	Panama City	4314767	74340
+Saint Kitts and Nevis	Basseterre	53199	260
+Saint Lucia	Castries	183627	610
+Saint Vincent and the Grenadines	Kingstown	110940	390
+Trinidad and Tobago	Port of Spain	1399488	5130
+United States of America	Washington, D.C.	331002651	9147420
+
+America (South)
+Argentina	Buenos Aires	45195774	2736690
+Bolivia	Sucre	11673021	1083300
+Brazil	Brasilia	212559417	8358140
+Chile	Santiago	19116201	743532
+Colombia	Bogotá	50882891	1109500
+Ecuador	Quito	17643054	248360
+Guyana	Georgetown	786552	196850
+Paraguay	Asunción	7132538	397300
+Peru	Lima	32971854	1280000
+Suriname	Paramaribo	586632	156000
+Uruguay	Montevideo	3473730	175020
+Venezuela	Caracas	28435940	882050
+
+Oceania
 Australia	Canberra	25499884	7682300
 Fiji	Suva	896445	18270
 Kiribati	Tarawa	119449	810

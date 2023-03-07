@@ -1,4 +1,7 @@
-﻿namespace Geo_Quiz
+﻿using System;
+using System.Windows.Forms;
+
+namespace Geo_Quiz
 {
     partial class UC_TextInput
     {
@@ -77,6 +80,7 @@
             this.TB_Answer.Text = "Enter answer here";
             this.TB_Answer.GotFocus += new System.EventHandler(this.TB_Answer_GotFocus);
             this.TB_Answer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TB_Answer_KeyUpEnter);
+            this.TB_Answer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_Answer_KeyDownEnter);
             // 
             // L_Question
             // 

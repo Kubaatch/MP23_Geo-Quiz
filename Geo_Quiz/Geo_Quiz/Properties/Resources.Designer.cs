@@ -61,7 +61,8 @@ namespace Geo_Quiz.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Albania	Tirana	2877797	27400
+        ///   Looks up a localized string similar to Europe
+        ///Albania	Tirana	2877797	27400
         ///Andorra	Andorra la Vella	77265	470
         ///Austria	Vienna	9006398	82409
         ///Belarus	Minsk	9449323	202910
@@ -76,7 +77,7 @@ namespace Geo_Quiz.Properties {
         ///Finland	Helsinki	5540720	303890
         ///France	Paris	65273511	547557
         ///Germany	Berlin	83783942	348560
-        ///Greece	Athens	10423054	12 [rest of string was truncated]&quot;;.
+        ///Greece	Athens	104 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Questions {
             get {

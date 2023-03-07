@@ -32,17 +32,14 @@ namespace Geo_Quiz
             uc.BringToFront();
         }
 
-        private void B_Settings_Click(object sender, EventArgs e)
-        {
-            UC_Settings uc = new UC_Settings();
-            uc.Dock = DockStyle.Fill;
-            Controls.Add(uc);
-            uc.BringToFront();
-        }
-
         private void B_Exit_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void B_Account_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Accounts aren't supported yet.");
         }
     }
 }
