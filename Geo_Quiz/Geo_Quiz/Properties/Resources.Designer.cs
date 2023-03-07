@@ -22,7 +22,7 @@ namespace Geo_Quiz.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Geo_Quiz.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Geo_Quiz.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Geo_Quiz.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -78,7 +78,7 @@ namespace Geo_Quiz.Properties {
         ///Germany	Berlin	83783942	348560
         ///Greece	Athens	10423054	12 [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string Questions {
+        public static string Questions {
             get {
                 return ResourceManager.GetString("Questions", resourceCulture);
             }
@@ -87,7 +87,7 @@ namespace Geo_Quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap world_map {
+        public static System.Drawing.Bitmap world_map {
             get {
                 object obj = ResourceManager.GetObject("world_map", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -97,7 +97,7 @@ namespace Geo_Quiz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap WorldMap_tp {
+        public static System.Drawing.Bitmap WorldMap_tp {
             get {
                 object obj = ResourceManager.GetObject("WorldMap_tp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

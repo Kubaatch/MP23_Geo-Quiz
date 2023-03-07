@@ -1,22 +1,15 @@
 ﻿using System;
 using System.IO;
+using System.IO.Compression;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Timers;
 using System.Windows.Forms;
-using System.Globalization;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Status;
-using System.Media;
-using static System.Windows.Forms.LinkLabel;
-using static System.Net.Mime.MediaTypeNames;
 using Image = System.Drawing.Image;
-using static System.Net.WebRequestMethods;
 using Geo_Quiz.Properties;
+using System.Reflection;
+using System.Web;
 
 namespace Geo_Quiz
 {
@@ -278,9 +271,7 @@ namespace Geo_Quiz
 
         private string[] GetQuestions()
         {
-            string[] lines = new string[0];
-
-            //string[] file = System.IO.File.ReadAllLines(Resources.Questions);            
+            string[] lines = new string[0];          
             string[] file = Resources.Questions.Split('\n');            
 
             if (GS_Text.Continents == null || GS_Text.Continents.Length == 0)
@@ -348,72 +339,28 @@ namespace Geo_Quiz
                 continents[3] = "America (North & Central)";
                 continents[4] = "America (South)";
                 continents[5] = "Oceania";
-            }
+            }            
 
-            if (continents.Contains("Europe"))
-            {                
-                string[] files = Directory.GetFiles(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Flags\Europe", "*.png");
-                for (int i = 0; i < files.Length; i++)
-                {
-                    Image image = Image.FromFile(files[i]);
-                    flags.Add(image);
-                    flags.Last().Tag = Path.GetFileName(files[i]);
-                }
-            }
+            string fixedpath = Directory.GetCurrentDirectory();
+            fixedpath = Path.Combine(fixedpath, "Flags");
 
-            if (continents.Contains("Asia"))
+            for (int i = 0; i < continents.Length; i++)
             {
-                string[] files = Directory.GetFiles(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Flags\Asia", "*.png");
-                for (int i = 0; i < files.Length; i++)
-                {
-                    Image image = Image.FromFile(files[i]);
-                    flags.Add(image);
-                    flags.Last().Tag = Path.GetFileName(files[i]);
-                }
+                string path = Path.Combine(fixedpath, continents[i]);
+                GetContinentFlags(path);
             }
 
-            if (continents.Contains("Africa"))
-            {
-                string[] files = Directory.GetFiles(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Flags\Africa", "*.png");
-                for (int i = 0; i < files.Length; i++)
-                {
-                    Image image = Image.FromFile(files[i]);
-                    flags.Add(image);
-                    flags.Last().Tag = Path.GetFileName(files[i]);
-                }
-            }
+        }
 
-            if (continents.Contains("America (North & Central)"))
-            {
-                string[] files = Directory.GetFiles(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Flags\NandCAmerica", "*.png");
-                for (int i = 0; i < files.Length; i++)
-                {
-                    Image image = Image.FromFile(files[i]);
-                    flags.Add(image);
-                    flags.Last().Tag = Path.GetFileName(files[i]);
-                }
-            }
+        private void GetContinentFlags(string path)
+        {
+            string[] files = Directory.GetFiles(path, "*.png");
 
-            if (continents.Contains("America (South)"))
+            for (int i = 0; i < files.Length; i++)
             {
-                string[] files = Directory.GetFiles(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Flags\SAmerica", " *.png");
-                for (int i = 0; i < files.Length; i++)
-                {
-                    Image image = Image.FromFile(files[i]);
-                    flags.Add(image);
-                    flags.Last().Tag = Path.GetFileName(files[i]);
-                }
-            }
-
-            if (continents.Contains("Oceania"))
-            {
-                string[] files = Directory.GetFiles(@"C:\Users\kubik\source\repos\MP23_Geo-Quiz\Geo_Quiz\Flags\Oceania", "*.png");
-                for (int i = 0; i < files.Length; i++)
-                {
-                    Image image = Image.FromFile(files[i]);
-                    flags.Add(image);
-                    flags.Last().Tag = Path.GetFileName(files[i]);
-                }
+                Image image = Image.FromFile(files[i]);
+                flags.Add(image);
+                flags.Last().Tag = Path.GetFileName(files[i]);
             }
         }
 
