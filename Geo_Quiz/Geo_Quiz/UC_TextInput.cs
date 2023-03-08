@@ -1,17 +1,11 @@
 ﻿using System;
 using System.IO;
-using System.IO.Compression;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Image = System.Drawing.Image;
-using Geo_Quiz.Properties;
-using System.Reflection;
-using System.Web;
-using System.Text.RegularExpressions;
-using System.Runtime.InteropServices;
 
 namespace Geo_Quiz
 {
@@ -29,30 +23,16 @@ namespace Geo_Quiz
         public static System.Timers.Timer timer;
         public int timerticked = 0;
 
-        public UC_TextInput(int gamemode, string[] continents, int QCount)
+        public UC_TextInput(int category, string[] continents, int QCount)
         {
-            GS_Text.Gamemode = gamemode;
-            
-            if (continents == null || continents.Length == 0)
-            {
-                Array.Resize(ref continents, 6);
-                continents[0] = "Europe";
-                continents[1] = "Asia";
-                continents[2] = "Africa";
-                continents[3] = "America (North & Central)";
-                continents[4] = "America (South)";
-                continents[5] = "Oceania";
-            }
+            GS_Text.Category = category;                        
             GS_Text.Continents = continents;
-
             GS_Text.QCount = QCount;
 
             Array.Resize(ref qFlags, QCount);
 
-            timer = new System.Timers.Timer();
-            timer.Interval = 500;
-            timer.Elapsed += Timer_Elapsed;
-            timer.AutoReset = true;            
+            TimerSetup();                        
+            
             InitializeComponent();
 
             L_QCount.Text = "1 / " + GS_Text.QCount;
@@ -76,7 +56,7 @@ namespace Geo_Quiz
 
         private void SelCheckAnswer()
         {
-            switch (GS_Text.Gamemode)
+            switch (GS_Text.Category)
             {
                 case 0:
                     CheckAnswer_0();
@@ -85,12 +65,9 @@ namespace Geo_Quiz
                     CheckAnswer_1();
                     break;
                 case 2:
-                    CheckAnswer_2();
-                    break;
                 case 3:
                     CheckAnswer_2();
                     break;
-
             }
         }
 
@@ -112,7 +89,7 @@ namespace Geo_Quiz
 
         private void CheckAnswer_1()
         {
-            answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Gamemode];
+            answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Category];
             string ansInput = TB_Answer.Text;
 
             if (ansInput.ToLower() == answer.ToLower())
@@ -129,7 +106,7 @@ namespace Geo_Quiz
 
         private void CheckAnswer_2()
         {
-            answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Gamemode];
+            answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Category];
             double dCorrect = Convert.ToDouble(answer);
 
             bool success = double.TryParse(TB_Answer.Text, out double dInput);
@@ -159,7 +136,7 @@ namespace Geo_Quiz
             L_Result.ForeColor = Color.Green;
             L_Result.Visible = true;
 
-            if (GS_Text.Gamemode > 1)
+            if (GS_Text.Category > 1)
             {            
                 L_CorrectResult.Text = "The exact number is: ";
                 L_CorrectResult.Text += answer;
@@ -202,13 +179,13 @@ namespace Geo_Quiz
 
         private void B_Skip_Click(object sender, EventArgs e)
         {           
-            if (GS_Text.Gamemode == 0)
+            if (GS_Text.Category == 0)
             {
                 answer = qFlags[qnumber].Tag.ToString().Split('.')[0];
             }
             else
             {            
-                answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Gamemode]; 
+                answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Category]; 
             }
 
             IfWrong(answer);
@@ -237,7 +214,7 @@ namespace Geo_Quiz
             }
             else
             {
-                if (GS_Text.Gamemode == 0)
+                if (GS_Text.Category == 0)
                 {
                     PB_Flag.Image = qFlags[qnumber];
                 }
@@ -270,8 +247,8 @@ namespace Geo_Quiz
         }
 
         private void B_Start_Click(object sender, EventArgs e)
-        {
-            switch (GS_Text.Gamemode)
+        {   
+            switch (GS_Text.Category)
             {
                 case 0:
                     L_Question.Visible = false;
@@ -283,21 +260,20 @@ namespace Geo_Quiz
                     PB_Flag.Visible = true;
                     break;
                 case 1:
-                    GS_Text.Questions = GetQuestions();
                     L_Question.Text = "What is the capital city of: ";
+                    GS_Text.Questions = GetQuestions();
                     L_Country.Text = GS_Text.Questions[0].Split('\t')[0];
-
                     break;
                 case 2:
-                    GS_Text.Questions = GetQuestions();
                     L_Question.Text = "What is the population of: ";
+                    GS_Text.Questions = GetQuestions();
                     L_Country.Text = GS_Text.Questions[0].Split('\t')[0];
                     break;
                 case 3:
-                    GS_Text.Questions = GetQuestions();
                     L_Question.Text = "What is the area of: ";
+                    GS_Text.Questions = GetQuestions();
                     L_Country.Text = GS_Text.Questions[0].Split('\t')[0];
-                    break;
+                    break;                
             }
 
             TB_Answer.Enabled = true;
@@ -319,7 +295,7 @@ namespace Geo_Quiz
                 
             for (int i = 0; i < GS_Text.Continents.Length; i++)
             {
-                int startIndex = Array.IndexOf(qArr1, GS_Text.Continents[i]);
+                int startIndex = Array.IndexOf(qArr1, GS_Text.Continents[i]) + 1;
                 for (int j = startIndex; j < qArr1.Length; j++)
                 {
                     if (string.IsNullOrWhiteSpace(qArr1[j]))
@@ -377,9 +353,12 @@ namespace Geo_Quiz
             }
         }
 
-        private void TB_Answer_GotFocus(object sender, EventArgs e)
+        private void TimerSetup()
         {
-            TB_Answer.Text = string.Empty;
+            timer = new System.Timers.Timer();
+            timer.Interval = 500;
+            timer.Elapsed += Timer_Elapsed;
+            timer.AutoReset = true;
         }
 
         private void Timer_Elapsed(object sender, EventArgs e)
@@ -399,6 +378,11 @@ namespace Geo_Quiz
                 e.Handled = true;
                 e.SuppressKeyPress = true;                
             }
+        }
+
+        private void TB_Answer_GotFocus(object sender, EventArgs e)
+        {
+            TB_Answer.Text = string.Empty;
         }
     }
 }

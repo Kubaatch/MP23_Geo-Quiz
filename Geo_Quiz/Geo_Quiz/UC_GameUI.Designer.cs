@@ -66,31 +66,18 @@
             this.LB_Category.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Category.FormattingEnabled = true;
             this.LB_Category.ItemHeight = 30;
-            this.LB_Category.Items.AddRange(new object[] {
-            "Flags",
-            "Capitals",
-            "Population",
-            "Area"});
             this.LB_Category.Location = new System.Drawing.Point(79, 196);
             this.LB_Category.Name = "LB_Category";
             this.LB_Category.Size = new System.Drawing.Size(147, 124);
             this.LB_Category.TabIndex = 6;
             this.TT_PopUp.SetToolTip(this.LB_Category, "Choose category of questions you want in your test.\nIf you choose none, flags wil" +
         "l be automatically selected.");
-            this.LB_Category.SelectedIndexChanged += new System.EventHandler(this.LB_Category_SelectedIndexChanged);
             // 
             // LB_Continents
             // 
             this.LB_Continents.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Continents.FormattingEnabled = true;
             this.LB_Continents.ItemHeight = 30;
-            this.LB_Continents.Items.AddRange(new object[] {
-            "Europe",
-            "Asia",
-            "Africa",
-            "America (North & Central)",
-            "America (South)",
-            "Oceania"});
             this.LB_Continents.Location = new System.Drawing.Point(314, 178);
             this.LB_Continents.Name = "LB_Continents";
             this.LB_Continents.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
@@ -98,7 +85,6 @@
             this.LB_Continents.TabIndex = 7;
             this.TT_PopUp.SetToolTip(this.LB_Continents, "Choose continent/s you want to include in your quiz questions.\nYou can choose one" +
         " or more continents.\nIf you choose none, you will play as if all were selected.");
-            this.LB_Continents.SelectedIndexChanged += new System.EventHandler(this.LB_Continents_SelectedIndexChanged);
             // 
             // B_TextBox
             // 
@@ -157,7 +143,6 @@
             0,
             0,
             0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
             // label2
             // 

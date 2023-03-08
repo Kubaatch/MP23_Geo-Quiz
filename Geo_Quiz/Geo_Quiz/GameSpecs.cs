@@ -8,17 +8,17 @@ namespace Geo_Quiz
 {
     internal class GameSpecs
     {
-        private int gamemode;
+        private int category;
         private string[] continents;
         private int qCount;
         private string[] questions;        
 
         public GameSpecs() { }
 
-        public int Gamemode
+        public int Category
         {
-            get { return gamemode; }
-            set { gamemode = value; }
+            get { return category; }
+            set { category = value; }
         }
 
         public string[] Continents
