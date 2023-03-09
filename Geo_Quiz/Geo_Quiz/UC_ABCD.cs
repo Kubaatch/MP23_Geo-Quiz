@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Geo_Quiz
 {
@@ -15,9 +16,14 @@ namespace Geo_Quiz
     {
         readonly Button B_Start = new Button();
         readonly GameSpecs GS_ABCD = new GameSpecs();
+        readonly Random random = new Random();
+
+        readonly string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
 
         private string categoryPrint = "";
         private string labelQuestion;
+
+        private int questionNumber = 0;
 
         readonly List<Image> flags = new List<Image>();
         public Image[] qFlags = new Image[0];
@@ -41,7 +47,7 @@ namespace Geo_Quiz
                 case 0:
                     L_Question.Visible = false;
 
-                    LoadFlags(GS_ABCD.Continents);
+                    LoadFlags();
 
                     PB_Flag.Image = qFlags.First();
                     PB_Flag.Visible = true;
@@ -55,12 +61,11 @@ namespace Geo_Quiz
                 case 3:
                     categoryPrint = "area";
                     break;
-            }
-            
-            labelQuestion = "What is the" + categoryPrint + "of: ";
+            }            
 
             if (GS_ABCD.Category != 0)
             {
+                labelQuestion = "What is the " + categoryPrint + " of:\n";
                 GS_ABCD.Questions = GetQuestions();
                 L_Question.Text = labelQuestion + GS_ABCD.Questions[0].Split('\t')[0];                
             }
@@ -69,21 +74,85 @@ namespace Geo_Quiz
                 L_Question.Text = "What country does this flag belong to?";
             }
 
+            progressBar1.Maximum = GS_ABCD.QCount;
+
             L_Question.Visible = true;
+
+            SetButtonAnswers();
+
             B_A.Visible = true;
             B_B.Visible = true;
             B_C.Visible = true;
             B_D.Visible = true;
         }
 
+        private void SetButtonAnswers()
+        {
+            int correctAnswer = random.Next(3);            
+            switch (correctAnswer)
+            {
+                case 0:
+                    B_A.Tag = "Correct";
+                    SetOtherAnswers();
+                    B_A.Text = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+                    break;
+                case 1:
+                    B_B.Tag = "Correct";
+                    SetOtherAnswers();
+                    B_B.Text = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+                    break;
+                case 2:
+                    B_C.Tag = "Correct";
+                    SetOtherAnswers();
+                    B_C.Text = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+                    break;
+                case 3:
+                    B_D.Tag = "Correct";
+                    SetOtherAnswers();
+                    B_D.Text = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+                    break;
+            }
+
+            //loop through buttons, this is TRASH
+            /*
+            Button[] buttons = new Button[] { B_A, B_B, B_C, B_D };
+            foreach (Button b in buttons)
+            {
+                if (b.Tag.ToString() == "Correct")
+                {
+                    b.Text = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+                }
+                else
+                {
+                    b.Text = GS_ABCD.Questions[random.Next(193)].Split('\t')[GS_ABCD.Category];
+                }
+            }
+            */
+        }
+
+        private void SetOtherAnswers()
+        {
+            B_A.Text = GS_ABCD.Questions[random.Next(GS_ABCD.Questions.Length)].Split('\t')[GS_ABCD.Category];
+            B_B.Text = GS_ABCD.Questions[random.Next(GS_ABCD.Questions.Length)].Split('\t')[GS_ABCD.Category];
+            B_C.Text = GS_ABCD.Questions[random.Next(GS_ABCD.Questions.Length)].Split('\t')[GS_ABCD.Category];
+            B_D.Text = GS_ABCD.Questions[random.Next(GS_ABCD.Questions.Length)].Split('\t')[GS_ABCD.Category];
+        }
+
+        private void AnswerClick(object sender, EventArgs e)
+        {
+            //this happens everytime -> delay to next question
+            questionNumber++;
+            progressBar1.Increment(1);
+        }
+
         private void B_A_Click(object sender, EventArgs e)
         {
-
+            //if this is correct, then +
         }
 
         private void B_B_Click(object sender, EventArgs e)
         {
-
+            //if wrong, then something else
         }
 
         private void B_C_Click(object sender, EventArgs e)
@@ -95,15 +164,14 @@ namespace Geo_Quiz
         {
 
         }
-
+        
         private string[] GetQuestions()
         {
             List<string> tempQsList = new List<string>();
 
-            string fixedpath = Directory.GetCurrentDirectory();
-            fixedpath = Path.Combine(fixedpath, "Flags", "Questions.txt");
+            string path = Path.Combine(filepath, "Questions.txt");
 
-            string[] qArr1 = File.ReadAllLines(fixedpath);
+            string[] qArr1 = File.ReadAllLines(path);
 
             for (int i = 0; i < GS_ABCD.Continents.Length; i++)
             {
@@ -129,15 +197,14 @@ namespace Geo_Quiz
             return questions;
         }
 
-        private void LoadFlags(string[] continents)
+        public void LoadFlags()
         {
-            string fixedpath = Directory.GetCurrentDirectory();
-            fixedpath = Path.Combine(fixedpath, "Flags");
+            string path = Path.Combine(filepath, "");
 
-            for (int i = 0; i < continents.Length; i++)
+            for (int i = 0; i < GS_ABCD.Continents.Length; i++)
             {
-                string path = Path.Combine(fixedpath, continents[i]);
-                GetContinentFlags(path);
+                string continentPath = Path.Combine(path, GS_ABCD.Continents[i]);
+                GetContinentFlags(continentPath);
             }
 
             Random rand = new Random();
@@ -153,7 +220,7 @@ namespace Geo_Quiz
             //end
         }
 
-        private void GetContinentFlags(string path)
+        public void GetContinentFlags(string path)
         {
             string[] files = Directory.GetFiles(path, "*.png");
 
@@ -164,7 +231,6 @@ namespace Geo_Quiz
                 flags.Last().Tag = Path.GetFileName(files[i]);
             }
         }
-
 
         private void B_Exit_Click(object sender, EventArgs e)
         {
@@ -189,7 +255,7 @@ namespace Geo_Quiz
 
             tableLayoutPanel1.SetColumnSpan(B_Start, 2);
             tableLayoutPanel1.SetRowSpan(B_Start, 2);
-            tableLayoutPanel1.Controls.Add(B_Start, 2, 4);
+            tableLayoutPanel1.Controls.Add(B_Start, 1, 4);
         }
 
         private void B_Exit_Click_1(object sender, EventArgs e)

@@ -61,31 +61,6 @@ namespace Geo_Quiz.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Europe
-        ///Albania	Tirana	2877797	27400
-        ///Andorra	Andorra la Vella	77265	470
-        ///Austria	Vienna	9006398	82409
-        ///Belarus	Minsk	9449323	202910
-        ///Belgium	Brussels	11589623	30280
-        ///Bosnia and Herzegovina	Sarajevo	3280819	51000
-        ///Bulgaria	Sofia	6948450	108560
-        ///Croatia	Zagreb	4105267	55960
-        ///Cyprus	Nicosia	1207259	9240
-        ///Czechia	Prague	10708981	77240
-        ///Denmark	Copenhagen	5792202	42430
-        ///Estonia	Tallinn	1326535	42390
-        ///Finland	Helsinki	5540720	303890
-        ///France	Paris	65273511	547557
-        ///Germany	Berlin	83783942	348560
-        ///Greece	Athens	104 [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Questions {
-            get {
-                return ResourceManager.GetString("Questions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap world_map {

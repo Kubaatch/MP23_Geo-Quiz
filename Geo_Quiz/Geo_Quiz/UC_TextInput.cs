@@ -7,6 +7,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Image = System.Drawing.Image;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Geo_Quiz
 {
@@ -14,8 +15,11 @@ namespace Geo_Quiz
     {
         readonly GameSpecs GS_Text = new GameSpecs();
 
-        readonly List<Image> flags = new List<Image>();
-        public Image[] qFlags = new Image[0];
+        readonly static string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
+        readonly static List<Image> flags = new List<Image>();
+        public static Image[] qFlags = new Image[0];
+
+        private string categoryPrint = "";
 
         public string answer;
         public int qnumber = 0;
@@ -249,32 +253,33 @@ namespace Geo_Quiz
 
         private void B_Start_Click(object sender, EventArgs e)
         {
-            string category = "";
+            B_Start.Visible = false;
+
             switch (GS_Text.Category)
             {
                 case 0:
                     L_Question.Visible = false;
                     L_Country.Visible = false;
                     
-                    LoadFlags(GS_Text.Continents);
+                    LoadFlags();
 
                     PB_Flag.Image = qFlags.First();
                     PB_Flag.Visible = true;
                     break;
                 case 1:
-                    category = "capital city";                    
+                    categoryPrint = "capital city";                    
                     break;
                 case 2:
-                    category = "population";
+                    categoryPrint = "population";
                     break;
                 case 3:
-                    category = "area";
+                    categoryPrint = "area";
                     break;                
             }
 
             if (GS_Text.Category != 0)
             {
-                L_Question.Text = "What is the " + category + " of: ";
+                L_Question.Text = "What is the " + categoryPrint + " of: ";
                 GS_Text.Questions = GetQuestions();
                 L_Country.Text = GS_Text.Questions[0].Split('\t')[0];
             }
@@ -282,19 +287,17 @@ namespace Geo_Quiz
             TB_Answer.Enabled = true;
             B_Skip.Enabled = true;
             B_Enter.Enabled = true;
-            B_Start.Visible = false;
 
             timer.Start();
         }
 
         private string[] GetQuestions()
         {            
-            List<string> tempQsList = new List<string>();            
+            List<string> tempQsList = new List<string>();
 
-            string fixedpath = Directory.GetCurrentDirectory();
-            fixedpath = Path.Combine(fixedpath, "Flags", "Questions.txt");
+            string path = Path.Combine(filepath, "Questions.txt");
 
-            string[] qArr1 = File.ReadAllLines(fixedpath); 
+            string[] qArr1 = File.ReadAllLines(path); 
                 
             for (int i = 0; i < GS_Text.Continents.Length; i++)
             {
@@ -320,15 +323,14 @@ namespace Geo_Quiz
             return questions;
         }
 
-        private void LoadFlags(string[] continents)
-        {
-            string fixedpath = Directory.GetCurrentDirectory();
-            fixedpath = Path.Combine(fixedpath, "Flags");
+        public void LoadFlags()
+        {            
+            string path = Path.Combine(filepath, "");
 
-            for (int i = 0; i < continents.Length; i++)
+            for (int i = 0; i < GS_Text.Continents.Length; i++)
             {
-                string path = Path.Combine(fixedpath, continents[i]);
-                GetContinentFlags(path);
+                string continentPath = Path.Combine(path, GS_Text.Continents[i]);
+                GetContinentFlags(continentPath);
             }
 
             Random rand = new Random();
@@ -344,7 +346,7 @@ namespace Geo_Quiz
             //end
         }
 
-        private void GetContinentFlags(string path)
+        public void GetContinentFlags(string path)
         {
             string[] files = Directory.GetFiles(path, "*.png");
 
