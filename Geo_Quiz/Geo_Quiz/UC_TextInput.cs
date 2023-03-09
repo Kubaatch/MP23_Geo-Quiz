@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Image = System.Drawing.Image;
+using System.ComponentModel;
 
 namespace Geo_Quiz
 {
@@ -24,7 +25,7 @@ namespace Geo_Quiz
         public int timerticked = 0;
 
         public UC_TextInput(int category, string[] continents, int QCount)
-        {
+        {            
             GS_Text.Category = category;                        
             GS_Text.Continents = continents;
             GS_Text.QCount = QCount;
@@ -247,7 +248,8 @@ namespace Geo_Quiz
         }
 
         private void B_Start_Click(object sender, EventArgs e)
-        {   
+        {
+            string category = "";
             switch (GS_Text.Category)
             {
                 case 0:
@@ -260,20 +262,21 @@ namespace Geo_Quiz
                     PB_Flag.Visible = true;
                     break;
                 case 1:
-                    L_Question.Text = "What is the capital city of: ";
-                    GS_Text.Questions = GetQuestions();
-                    L_Country.Text = GS_Text.Questions[0].Split('\t')[0];
+                    category = "capital city";                    
                     break;
                 case 2:
-                    L_Question.Text = "What is the population of: ";
-                    GS_Text.Questions = GetQuestions();
-                    L_Country.Text = GS_Text.Questions[0].Split('\t')[0];
+                    category = "population";
                     break;
                 case 3:
-                    L_Question.Text = "What is the area of: ";
-                    GS_Text.Questions = GetQuestions();
-                    L_Country.Text = GS_Text.Questions[0].Split('\t')[0];
+                    category = "area";
                     break;                
+            }
+
+            if (GS_Text.Category != 0)
+            {
+                L_Question.Text = "What is the " + category + " of: ";
+                GS_Text.Questions = GetQuestions();
+                L_Country.Text = GS_Text.Questions[0].Split('\t')[0];
             }
 
             TB_Answer.Enabled = true;
@@ -368,7 +371,13 @@ namespace Geo_Quiz
 
         private void B_Exit_Click(object sender, EventArgs e)
         {
-            Dispose();
+            DialogResult result = MessageBox.Show("Are you sure you want to exit the game?\n" +
+            "You will lose all your progress and your stats will be lost...", "¯\\_(ツ)_/¯", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                Dispose();
+            }
         }
 
         private void TB_Answer_KeyDownEnter(object sender, KeyEventArgs e)

@@ -52,7 +52,7 @@
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_Exit.Location = new System.Drawing.Point(897, 528);
+            this.B_Exit.Location = new System.Drawing.Point(914, 579);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(2);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(75, 35);
@@ -92,7 +92,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.B_TextBox.Location = new System.Drawing.Point(725, 214);
             this.B_TextBox.Name = "B_TextBox";
-            this.B_TextBox.Size = new System.Drawing.Size(121, 50);
+            this.B_TextBox.Size = new System.Drawing.Size(138, 50);
             this.B_TextBox.TabIndex = 8;
             this.B_TextBox.Text = "Written answer";
             this.TT_PopUp.SetToolTip(this.B_TextBox, "In this mode you will write the answer into a text box.");
@@ -105,7 +105,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.B_ABCD.Location = new System.Drawing.Point(725, 270);
             this.B_ABCD.Name = "B_ABCD";
-            this.B_ABCD.Size = new System.Drawing.Size(121, 50);
+            this.B_ABCD.Size = new System.Drawing.Size(138, 50);
             this.B_ABCD.TabIndex = 9;
             this.B_ABCD.Text = "4 options";
             this.TT_PopUp.SetToolTip(this.B_ABCD, "In this mode you will be choosing the correct answer from\nfour options, where onl" +
@@ -147,6 +147,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.LightGray;
             this.label2.Location = new System.Drawing.Point(378, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(186, 16);
@@ -156,6 +157,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightGray;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(399, 404);
             this.label1.Name = "label1";
@@ -166,6 +168,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.LightGray;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(93, 174);
             this.label3.Name = "label3";
@@ -176,8 +179,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.LightGray;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(721, 192);
+            this.label4.Location = new System.Drawing.Point(728, 192);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 19);
             this.label4.TabIndex = 15;
@@ -189,6 +193,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -200,9 +206,10 @@
             this.Controls.Add(this.LB_Continents);
             this.Controls.Add(this.LB_Category);
             this.Controls.Add(this.B_Exit);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_GameUI";
-            this.Size = new System.Drawing.Size(983, 574);
+            this.Size = new System.Drawing.Size(1000, 625);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

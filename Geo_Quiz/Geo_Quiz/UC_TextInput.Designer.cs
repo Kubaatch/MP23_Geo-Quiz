@@ -79,8 +79,8 @@ namespace Geo_Quiz
             this.TB_Answer.TabIndex = 7;
             this.TB_Answer.Text = "Enter answer here";
             this.TB_Answer.GotFocus += new System.EventHandler(this.TB_Answer_GotFocus);
-            this.TB_Answer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TB_Answer_KeyUpEnter);
             this.TB_Answer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_Answer_KeyDownEnter);
+            this.TB_Answer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TB_Answer_KeyUpEnter);
             // 
             // L_Question
             // 
@@ -221,6 +221,7 @@ namespace Geo_Quiz
             // PB_Flag
             // 
             this.PB_Flag.BackColor = System.Drawing.Color.Transparent;
+            this.PB_Flag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PB_Flag.Location = new System.Drawing.Point(341, 158);
             this.PB_Flag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PB_Flag.Name = "PB_Flag";
@@ -246,13 +247,14 @@ namespace Geo_Quiz
             this.B_Enter.Text = "Enter";
             this.B_Enter.UseVisualStyleBackColor = false;
             this.B_Enter.Click += new System.EventHandler(this.B_Enter_Click);
-            //
+            // 
             // UC_TextInput
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;            
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.B_Enter);
             this.Controls.Add(this.B_Start);

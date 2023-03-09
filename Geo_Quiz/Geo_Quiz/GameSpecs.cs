@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,7 @@ namespace Geo_Quiz
         public string[] Questions
         {
             get { return questions; }
-            set { questions = value; }
+            set { questions = value; }        
         }
     }
 }

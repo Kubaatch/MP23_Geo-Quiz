@@ -65,6 +65,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UC_ABCD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ABCD.Designer.cs">
+      <DependentUpon>UC_ABCD.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_GameUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +108,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ABCD.resx">
+      <DependentUpon>UC_ABCD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_GameUI.resx">
       <DependentUpon>UC_GameUI.cs</DependentUpon>

@@ -41,7 +41,19 @@ namespace Geo_Quiz
         }
 
         public void B_TextBox_Click(object sender, EventArgs e)
-        {            
+        {
+            LoadStats();            
+            StartTextInput();
+        }
+
+        private void B_ABCD_Click(object sender, EventArgs e)
+        {
+            LoadStats();
+            StartABCD();
+        }
+
+        private void LoadStats()
+        {
             SelectedCategory = LB_Category.SelectedIndex;
             SelectedContinents = LB_Continents.SelectedItems.Cast<string>().ToArray();
             QuestionCount = Convert.ToInt32(numericUpDown1.Value);
@@ -52,7 +64,7 @@ namespace Geo_Quiz
                     + "\nSelecting no continents works as if all were selected...", "¯\\_(ツ)_/¯", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
-                {                    
+                {
                     goto Success;
                 }
                 else
@@ -61,21 +73,20 @@ namespace Geo_Quiz
                 }
             }
 
-            Success:
-            StartTextInput();
-        }
-
-        private void B_ABCD_Click(object sender, EventArgs e)
-        {
-            //this.Text = "Game on!";
-            MessageBox.Show("This gamemode is not set up yet, sorry...", "¯\\_(ツ)_/¯");
-
-            //add UC_ABCD
+            Success:;
         }
 
         private void StartTextInput()
         {
             UC_TextInput uc = new UC_TextInput(SelectedCategory, SelectedContinents, QuestionCount);
+            uc.Dock = DockStyle.Fill;
+            Controls.Add(uc);
+            uc.BringToFront();
+        }
+
+        private void StartABCD()
+        {
+            UC_ABCD uc = new UC_ABCD(SelectedCategory, SelectedContinents, QuestionCount);
             uc.Dock = DockStyle.Fill;
             Controls.Add(uc);
             uc.BringToFront();
