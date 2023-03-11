@@ -15,8 +15,8 @@ namespace Geo_Quiz
     {
         readonly GameSpecs GS_Text = new GameSpecs();
 
-        readonly static string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
-        readonly static List<Image> flags = new List<Image>();
+        readonly string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
+        readonly List<Image> flags = new List<Image>();
         public static Image[] qFlags = new Image[0];
 
         private string categoryPrint = "";
@@ -58,130 +58,7 @@ namespace Geo_Quiz
         {
             SelCheckAnswer();
         }
-
-        private void SelCheckAnswer()
-        {
-            switch (GS_Text.Category)
-            {
-                case 0:
-                    CheckAnswer_0();
-                    break;
-                case 1:
-                    CheckAnswer_1();
-                    break;
-                case 2:
-                case 3:
-                    CheckAnswer_2();
-                    break;
-            }
-        }
-
-        private void CheckAnswer_0()
-        {
-            answer = qFlags[qnumber].Tag.ToString().Split('.')[0];
-
-            if (TB_Answer.Text.ToLower() == answer.ToLower())
-            {
-                IfCorrect();
-            }
-            else
-            {
-                IfWrong(answer);
-            }
-
-            StatsEdit();                        
-        }
-
-        private void CheckAnswer_1()
-        {
-            answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Category];
-            string ansInput = TB_Answer.Text;
-
-            if (ansInput.ToLower() == answer.ToLower())
-            {
-                IfCorrect();
-            }
-            else
-            {
-                IfWrong(answer);
-            }
-
-            StatsEdit();
-        }
-
-        private void CheckAnswer_2()
-        {
-            answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Category];
-            double dCorrect = Convert.ToDouble(answer);
-
-            bool success = double.TryParse(TB_Answer.Text, out double dInput);
-
-            if (success)
-            {
-                if ((dCorrect / 1.15) < dInput && dInput < (dCorrect * 1.15))
-                {
-                    IfCorrect();
-                }
-                else
-                {
-                    IfWrong(answer);
-                }
-            }
-            else
-            {
-                IfWrong(answer);
-            }
-
-            StatsEdit();
-        }
-
-        private void IfCorrect()
-        {
-            L_Result.Text = "Correct!";
-            L_Result.ForeColor = Color.Green;
-            L_Result.Visible = true;
-
-            if (GS_Text.Category > 1)
-            {            
-                L_CorrectResult.Text = "The exact number is: ";
-                L_CorrectResult.Text += answer;
-                L_CorrectResult.Visible = true;
-            }
-
-            if (timerticked > 100)
-            {
-                score += 0;
-            }
-            else
-            {
-                score += 100 - timerticked;
-            }
-            L_Score.Text = "Score: " + score;
-        }
-
-        private void IfWrong(string answer)
-        {
-            L_Result.Text = "Wrong...";
-            L_Result.Visible = true;
-
-            L_CorrectResult.Text += answer;
-            L_CorrectResult.Visible = true;
-
-            score -= 50;
-            L_Score.Text = "Score: " + score;
-        }
-
-        private void StatsEdit()
-        {
-            B_Skip.Enabled = false;
-            B_Enter.Enabled = false;
-            B_Next.Enabled = true;
-
-            TB_Answer.Enabled = false;
-
-            PBar.Increment(1);
-        }
-
+        
         private void B_Skip_Click(object sender, EventArgs e)
         {           
             if (GS_Text.Category == 0)
@@ -193,9 +70,9 @@ namespace Geo_Quiz
                 answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Category]; 
             }
 
-            IfWrong(answer);
+            IfWrong(answer, 30);
 
-            StatsEdit();
+            ControlsEdit();
         }
 
         private void B_Next_Click(object sender, EventArgs e)
@@ -230,6 +107,129 @@ namespace Geo_Quiz
             }
 
             NextQSetup();
+        }
+
+        private void SelCheckAnswer()
+        {
+            switch (GS_Text.Category)
+            {
+                case 0:
+                    CheckAnswer_0();
+                    break;
+                case 1:
+                    CheckAnswer_1();
+                    break;
+                case 2:
+                case 3:
+                    CheckAnswer_2();
+                    break;
+            }
+        }
+
+        private void CheckAnswer_0()
+        {
+            answer = qFlags[qnumber].Tag.ToString().Split('.')[0];
+
+            if (TB_Answer.Text.ToLower() == answer.ToLower())
+            {
+                IfCorrect();
+            }
+            else
+            {
+                IfWrong(answer, 50);
+            }
+
+            ControlsEdit();                        
+        }
+
+        private void CheckAnswer_1()
+        {
+            answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Category];
+            string ansInput = TB_Answer.Text;
+
+            if (ansInput.ToLower() == answer.ToLower())
+            {
+                IfCorrect();
+            }
+            else
+            {
+                IfWrong(answer, 50);
+            }
+
+            ControlsEdit();
+        }
+
+        private void CheckAnswer_2()
+        {
+            answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Category];
+            double dCorrect = Convert.ToDouble(answer);
+
+            bool success = double.TryParse(TB_Answer.Text, out double dInput);
+
+            if (success)
+            {
+                if ((dCorrect / 1.15) < dInput && dInput < (dCorrect * 1.15))
+                {
+                    IfCorrect();
+                }
+                else
+                {
+                    IfWrong(answer, 50);
+                }
+            }
+            else
+            {
+                IfWrong(answer, 60);
+            }
+
+            ControlsEdit();
+        }
+
+        private void IfCorrect()
+        {
+            L_Result.Text = "Correct!";
+            L_Result.ForeColor = Color.Green;
+            L_Result.Visible = true;
+
+            if (GS_Text.Category > 1)
+            {            
+                L_CorrectResult.Text = "The exact number is: ";
+                L_CorrectResult.Text += answer;
+                L_CorrectResult.Visible = true;
+            }
+
+            if (timerticked > 100)
+            {
+                score += 0;
+            }
+            else
+            {
+                score += 100 - timerticked;
+            }
+            L_Score.Text = "Score: " + score;
+        }
+
+        private void IfWrong(string answer, int minusPoints)
+        {
+            L_Result.Text = "Wrong...";
+            L_Result.Visible = true;
+
+            L_CorrectResult.Text += answer;
+            L_CorrectResult.Visible = true;
+
+            score -= minusPoints;
+            L_Score.Text = "Score: " + score;
+        }
+
+        private void ControlsEdit()
+        {
+            B_Skip.Enabled = false;
+            B_Enter.Enabled = false;
+            B_Next.Enabled = true;
+
+            TB_Answer.Enabled = false;
+
+            PBar.Increment(1);
         }
 
         private void NextQSetup()

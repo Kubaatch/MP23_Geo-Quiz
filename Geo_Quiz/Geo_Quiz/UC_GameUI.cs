@@ -54,8 +54,8 @@ namespace Geo_Quiz
 
         private void LoadStats()
         {
-            SelectedCategory = LB_Category.SelectedIndex;
-            SelectedContinents = LB_Continents.SelectedItems.Cast<string>().ToArray();
+            SelectedCategory = LB_Category.SelectedIndex;            
+            SelectedContinents = LB_Continents.SelectedItems.Cast<string>().ToArray();            
             QuestionCount = Convert.ToInt32(numericUpDown1.Value);
 
             if (SelectedContinents == null || SelectedContinents.Length == 0)

@@ -61,6 +61,62 @@ namespace Geo_Quiz.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A Coruña
+        ///Aachen
+        ///Aarhus
+        ///Abbeville
+        ///Aberdeen (UK)
+        ///Aberdeen (South Dakota)
+        ///Aberdeen (Washington)
+        ///Abidjan
+        ///Abilene
+        ///Abu Dhabi
+        ///Abuja
+        ///Acapulco
+        ///Accra
+        ///Adamstown
+        ///Addis Ababa
+        ///Adelaide
+        ///Adelboden
+        ///Agadir
+        ///Agde
+        ///Agen
+        ///Agios Nikolaos
+        ///Agra
+        ///Agrigento
+        ///Agropoli
+        ///Ahmedabad
+        ///Aigues-Mortes
+        ///Aix-en-Provence
+        ///Aix-les-Bains
+        ///Ajaccio
+        ///Ajman
+        ///Akron
+        ///Al Ain
+        ///Alanya
+        ///Alaró
+        ///Albacete
+        ///Albany
+        ///Albenga
+        ///Albi
+        ///Albufeira
+        ///Albuquerque
+        ///Alcudia
+        ///Aleppo
+        ///Alessandria
+        ///Ålesund
+        ///Alexandria (U.S.)
+        ///Alexandria (Egypt)
+        ///Algeciras
+        ///A [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Cities {
+            get {
+                return ResourceManager.GetString("Cities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap world_map {

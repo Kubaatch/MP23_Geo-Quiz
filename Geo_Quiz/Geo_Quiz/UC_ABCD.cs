@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Geo_Quiz.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,8 @@ namespace Geo_Quiz
         readonly GameSpecs GS_ABCD = new GameSpecs();
         readonly Random random = new Random();
 
-        readonly string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
+        readonly private string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
+        readonly private string[] imageFileNames = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data"), "*.png", SearchOption.AllDirectories);
 
         private string categoryPrint = "";
         private string labelQuestion;
@@ -32,16 +34,17 @@ namespace Geo_Quiz
         {            
             GS_ABCD.Category = category;
             GS_ABCD.Continents = continents;
-            GS_ABCD.QCount = QCount;                       
+            GS_ABCD.QCount = QCount;
 
             InitializeComponent();
             SetStartButton();
+
         }
 
         private void B_Start_Click(object sender, EventArgs e)
         {
-            B_Start.Visible = false;
-            
+            B_Start.Visible = false;            
+
             switch (GS_ABCD.Category)
             {
                 case 0:
@@ -80,91 +83,169 @@ namespace Geo_Quiz
 
             SetButtonAnswers();
 
-            B_A.Visible = true;
-            B_B.Visible = true;
-            B_C.Visible = true;
-            B_D.Visible = true;
+            Button_A.Visible = true;
+            Button_B.Visible = true;
+            Button_C.Visible = true;
+            Button_D.Visible = true;
         }
 
         private void SetButtonAnswers()
         {
-            int correctAnswer = random.Next(3);            
+            int correctAnswer = random.Next(3);
             switch (correctAnswer)
             {
                 case 0:
-                    B_A.Tag = "Correct";
-                    SetOtherAnswers();
-                    B_A.Text = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+                    Button_A.Tag = "Correct";
                     break;
                 case 1:
-                    B_B.Tag = "Correct";
-                    SetOtherAnswers();
-                    B_B.Text = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+                    Button_B.Tag = "Correct";        
                     break;
                 case 2:
-                    B_C.Tag = "Correct";
-                    SetOtherAnswers();
-                    B_C.Text = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+                    Button_C.Tag = "Correct";
                     break;
                 case 3:
-                    B_D.Tag = "Correct";
-                    SetOtherAnswers();
-                    B_D.Text = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+                    Button_D.Tag = "Correct";
                     break;
             }
 
-            //loop through buttons, this is TRASH
-            /*
-            Button[] buttons = new Button[] { B_A, B_B, B_C, B_D };
+            Button[] buttons = new Button[] { Button_A, Button_B, Button_C, Button_D };
+
+            switch (GS_ABCD.Category)
+            {
+                case 0:
+                    AnswerFlag(buttons);
+                    break;
+                case 1:
+                    AnswerCapitalCity(buttons);
+                    break;
+                case 2:
+                case 3:
+                    AnswerPopulationArea(buttons);
+                    break;
+            }
+        }
+
+        private void AnswerFlag(Button[] buttons)
+        {
+            string answer = qFlags[questionNumber].Tag.ToString().Split('.')[0];
+
+            List<string> Countries = new List<string>();
+            int randNum;
+            string imageFileName;
+
+            foreach (string s in imageFileNames)
+            {
+                imageFileName = Path.GetFileNameWithoutExtension(s);
+                Countries.Add(imageFileName.Split('.')[0]);
+            }
+
             foreach (Button b in buttons)
             {
-                if (b.Tag.ToString() == "Correct")
+                if (b.Tag != null && b.Tag.ToString() == "Correct")
+                {
+                    b.Text = answer;
+                }
+                else
+                {
+                    randNum = random.Next(Countries.Count);
+                    b.Text = Countries[randNum];
+
+                    while (Countries[randNum] == answer)
+                    {
+                        randNum = random.Next(Countries.Count);
+                        b.Text = Countries[randNum];
+                    }
+                }
+            }
+        }
+
+        private void AnswerCapitalCity(Button[] buttons)
+        {
+            string answer = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+            string[] fakecities = Resources.Cities.Split('\n');
+            int randNum;
+
+            foreach (Button b in buttons)
+            {
+                if (b.Tag != null && b.Tag.ToString() == "Correct")
+                {
+                    b.Text = answer;
+                }
+                else
+                {
+                    randNum = random.Next(fakecities.Length);
+                    b.Text = fakecities[randNum];
+
+                    while (fakecities[randNum] == answer)
+                    {
+                        randNum = random.Next(fakecities.Length);
+                        b.Text = fakecities[randNum];
+                    }
+                }
+            }
+        }
+
+        private void AnswerPopulationArea(Button[] buttons)
+        {
+            string answer = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+            double.TryParse(answer, out double intAnswer);
+
+            double fakeAnswer;
+
+            foreach (Button b in buttons)
+            {
+
+                if (b.Tag != null && b.Tag.ToString() == "Correct")
                 {
                     b.Text = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
                 }
                 else
                 {
-                    b.Text = GS_ABCD.Questions[random.Next(193)].Split('\t')[GS_ABCD.Category];
+                    fakeAnswer = random.Next((int)(intAnswer / 1.5), (int)(intAnswer * 1.5));
+                    b.Text = fakeAnswer.ToString();
+
+                    while (fakeAnswer == intAnswer)
+                    {
+                        fakeAnswer = random.Next((int)(intAnswer / 1.5), (int)(intAnswer * 1.5));
+                        b.Text = fakeAnswer.ToString();
+                    }
                 }
             }
-            */
-        }
-
-        private void SetOtherAnswers()
-        {
-            B_A.Text = GS_ABCD.Questions[random.Next(GS_ABCD.Questions.Length)].Split('\t')[GS_ABCD.Category];
-            B_B.Text = GS_ABCD.Questions[random.Next(GS_ABCD.Questions.Length)].Split('\t')[GS_ABCD.Category];
-            B_C.Text = GS_ABCD.Questions[random.Next(GS_ABCD.Questions.Length)].Split('\t')[GS_ABCD.Category];
-            B_D.Text = GS_ABCD.Questions[random.Next(GS_ABCD.Questions.Length)].Split('\t')[GS_ABCD.Category];
         }
 
         private void AnswerClick(object sender, EventArgs e)
         {
+            Button clickedButton = sender as Button;
+            L_Result.Visible = true;
+
+            if (clickedButton.Text == GetAnswer())
+            {
+                L_Result.Text = "Correct!";
+            }
+            else
+            {
+                L_Result.Text = "Wrong...";
+            }
+
             //this happens everytime -> delay to next question
             questionNumber++;
             progressBar1.Increment(1);
         }
 
-        private void B_A_Click(object sender, EventArgs e)
+        private string GetAnswer()
         {
-            //if this is correct, then +
+            switch (GS_ABCD.Category)
+            {
+                case 0:
+                    return qFlags[questionNumber].Tag.ToString().Split('.')[0];
+                case 1:
+                case 2:                    
+                case 3:
+                    return GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+            }
+
+            throw new NotImplementedException();
         }
-
-        private void B_B_Click(object sender, EventArgs e)
-        {
-            //if wrong, then something else
-        }
-
-        private void B_C_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void B_D_Click(object sender, EventArgs e)
-        {
-
-        }
-        
         private string[] GetQuestions()
         {
             List<string> tempQsList = new List<string>();
@@ -232,17 +313,6 @@ namespace Geo_Quiz
             }
         }
 
-        private void B_Exit_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Are you sure you want to exit the game?\n" +
-            "You will lose all your progress and your stats will be lost...", "¯\\_(ツ)_/¯", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
-            {
-                Dispose();
-            }
-        }
-
         private void SetStartButton()
         {            
             B_Start.Text = "Start";
@@ -258,7 +328,7 @@ namespace Geo_Quiz
             tableLayoutPanel1.Controls.Add(B_Start, 1, 4);
         }
 
-        private void B_Exit_Click_1(object sender, EventArgs e)
+        private void B_Exit_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to exit the game?\n" +
             "You will lose all your progress and your stats will be lost...", "¯\\_(ツ)_/¯", MessageBoxButtons.YesNo);

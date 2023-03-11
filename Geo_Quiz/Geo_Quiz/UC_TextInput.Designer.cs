@@ -31,6 +31,7 @@ namespace Geo_Quiz
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_TextInput));
             this.B_Exit = new System.Windows.Forms.Button();
             this.TB_Answer = new System.Windows.Forms.TextBox();
             this.L_Question = new System.Windows.Forms.Label();
@@ -221,7 +222,8 @@ namespace Geo_Quiz
             // PB_Flag
             // 
             this.PB_Flag.BackColor = System.Drawing.Color.Transparent;
-            this.PB_Flag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PB_Flag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PB_Flag.Image = ((System.Drawing.Image)(resources.GetObject("PB_Flag.Image")));
             this.PB_Flag.Location = new System.Drawing.Point(341, 158);
             this.PB_Flag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PB_Flag.Name = "PB_Flag";
@@ -256,8 +258,8 @@ namespace Geo_Quiz
             this.BackgroundImage = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.B_Enter);
             this.Controls.Add(this.B_Start);
+            this.Controls.Add(this.B_Enter);
             this.Controls.Add(this.L_Score);
             this.Controls.Add(this.L_QCount);
             this.Controls.Add(this.B_Next);
