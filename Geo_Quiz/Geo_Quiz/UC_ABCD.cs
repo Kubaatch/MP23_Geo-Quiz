@@ -38,18 +38,16 @@ namespace Geo_Quiz
 
             InitializeComponent();
             SetStartButton();
-
         }
 
         private void B_Start_Click(object sender, EventArgs e)
         {
-            B_Start.Visible = false;            
+            B_Start.Visible = false;
+            L_Question.Visible = true;
 
             switch (GS_ABCD.Category)
             {
                 case 0:
-                    L_Question.Visible = false;
-
                     LoadFlags();
 
                     PB_Flag.Image = qFlags.First();
@@ -79,7 +77,6 @@ namespace Geo_Quiz
 
             progressBar1.Maximum = GS_ABCD.QCount;
 
-            L_Question.Visible = true;
 
             SetButtonAnswers();
 
@@ -91,7 +88,9 @@ namespace Geo_Quiz
 
         private void SetButtonAnswers()
         {
-            int correctAnswer = random.Next(3);
+            int correctAnswer;
+            correctAnswer = random.Next(4);
+
             switch (correctAnswer)
             {
                 case 0:
@@ -127,7 +126,7 @@ namespace Geo_Quiz
 
         private void AnswerFlag(Button[] buttons)
         {
-            string answer = qFlags[questionNumber].Tag.ToString().Split('.')[0];
+            string answer = GetAnswer();
 
             List<string> Countries = new List<string>();
             int randNum;
@@ -147,21 +146,18 @@ namespace Geo_Quiz
                 }
                 else
                 {
-                    randNum = random.Next(Countries.Count);
-                    b.Text = Countries[randNum];
-
-                    while (Countries[randNum] == answer)
+                    do
                     {
                         randNum = random.Next(Countries.Count);
                         b.Text = Countries[randNum];
-                    }
+                    } while (Countries[randNum] == answer);
                 }
             }
         }
 
         private void AnswerCapitalCity(Button[] buttons)
         {
-            string answer = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+            string answer = GetAnswer();
             string[] fakecities = Resources.Cities.Split('\n');
             int randNum;
 
@@ -187,7 +183,7 @@ namespace Geo_Quiz
 
         private void AnswerPopulationArea(Button[] buttons)
         {
-            string answer = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+            string answer = GetAnswer();
             double.TryParse(answer, out double intAnswer);
 
             double fakeAnswer;
@@ -213,23 +209,60 @@ namespace Geo_Quiz
             }
         }
 
-        private void AnswerClick(object sender, EventArgs e)
+        private void Button_Click_Answer(object sender, EventArgs e)
         {
+            string answer = GetAnswer();
+
+                //copied from https://stackoverflow.com/questions/13853028/how-to-detect-which-button-was-clicked-in-code-behind
             Button clickedButton = sender as Button;
+                //end
+            Button[] buttons = new Button[] { Button_A, Button_B, Button_C, Button_D };
+
             L_Result.Visible = true;
 
-            if (clickedButton.Text == GetAnswer())
+            if (clickedButton.Text == answer)
             {
                 L_Result.Text = "Correct!";
+                clickedButton.BackColor = Color.ForestGreen;
             }
             else
             {
                 L_Result.Text = "Wrong...";
+                clickedButton.BackColor = Color.Red;
+                foreach (Button b in buttons)
+                {
+                    if (b.Text == answer)
+                    {
+                        b.BackColor = Color.ForestGreen;                        
+                    }
+                }
             }
 
-            //this happens everytime -> delay to next question
-            questionNumber++;
+            foreach (Button b in buttons)
+            {
+                b.Enabled = false;
+                b.Tag = null;
+            }
+            B_Next.Visible = true;
+        }
+        
+        private void B_Next_Click(object sender, EventArgs e)
+        {
+            B_Next.Visible = false;
+            L_Result.Visible = false;
             progressBar1.Increment(1);
+
+            Button[] buttons = new Button[] { Button_A, Button_B, Button_C, Button_D };
+
+            foreach (Button b in buttons)
+            {
+                b.BackColor = Color.White;
+                b.Enabled = true;
+            }            
+            
+            questionNumber++;
+            SetButtonAnswers();
+            PB_Flag.Image = qFlags[questionNumber];
         }
 
         private string GetAnswer()
@@ -246,6 +279,7 @@ namespace Geo_Quiz
 
             throw new NotImplementedException();
         }
+
         private string[] GetQuestions()
         {
             List<string> tempQsList = new List<string>();
@@ -325,7 +359,7 @@ namespace Geo_Quiz
 
             tableLayoutPanel1.SetColumnSpan(B_Start, 2);
             tableLayoutPanel1.SetRowSpan(B_Start, 2);
-            tableLayoutPanel1.Controls.Add(B_Start, 1, 4);
+            tableLayoutPanel1.Controls.Add(B_Start, 1, 3);
         }
 
         private void B_Exit_Click(object sender, EventArgs e)
@@ -338,7 +372,6 @@ namespace Geo_Quiz
                 Dispose();
             }
         }
-
     }
 }
 
