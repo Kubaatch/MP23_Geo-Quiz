@@ -30,7 +30,6 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Button_B = new System.Windows.Forms.Button();
-            this.PB_Flag = new System.Windows.Forms.PictureBox();
             this.Button_A = new System.Windows.Forms.Button();
             this.Button_D = new System.Windows.Forms.Button();
             this.B_Exit = new System.Windows.Forms.Button();
@@ -39,6 +38,7 @@
             this.L_Question = new System.Windows.Forms.Label();
             this.L_Result = new System.Windows.Forms.Label();
             this.B_Next = new System.Windows.Forms.Button();
+            this.PB_Flag = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Flag)).BeginInit();
             this.SuspendLayout();
@@ -89,21 +89,6 @@
             this.Button_B.UseVisualStyleBackColor = true;
             this.Button_B.Visible = false;
             this.Button_B.Click += new System.EventHandler(this.Button_Click_Answer);
-            // 
-            // PB_Flag
-            // 
-            this.PB_Flag.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.PB_Flag.BackColor = System.Drawing.Color.Transparent;
-            this.PB_Flag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tableLayoutPanel1.SetColumnSpan(this.PB_Flag, 2);
-            this.PB_Flag.Location = new System.Drawing.Point(331, 98);
-            this.PB_Flag.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.PB_Flag.Name = "PB_Flag";
-            this.PB_Flag.Size = new System.Drawing.Size(338, 237);
-            this.PB_Flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB_Flag.TabIndex = 17;
-            this.PB_Flag.TabStop = false;
-            this.PB_Flag.Visible = false;
             // 
             // Button_A
             // 
@@ -212,6 +197,21 @@
             this.B_Next.UseVisualStyleBackColor = true;
             this.B_Next.Visible = false;
             this.B_Next.Click += new System.EventHandler(this.B_Next_Click);
+            // 
+            // PB_Flag
+            // 
+            this.PB_Flag.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.PB_Flag.BackColor = System.Drawing.Color.Transparent;
+            this.PB_Flag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tableLayoutPanel1.SetColumnSpan(this.PB_Flag, 2);
+            this.PB_Flag.Location = new System.Drawing.Point(331, 98);
+            this.PB_Flag.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            this.PB_Flag.Name = "PB_Flag";
+            this.PB_Flag.Size = new System.Drawing.Size(338, 237);
+            this.PB_Flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB_Flag.TabIndex = 17;
+            this.PB_Flag.TabStop = false;
+            this.PB_Flag.Visible = false;
             // 
             // UC_ABCD
             // 

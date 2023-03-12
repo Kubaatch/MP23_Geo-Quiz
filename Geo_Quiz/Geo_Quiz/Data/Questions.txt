@@ -22,7 +22,7 @@ Italy	Rome	60461826	294140
 Kosovo	Pristina	4270571	17820
 Latvia	Riga	1886198	62200
 Liechtenstein	Vaduz	38128	160
-Lithuania	Vilnius2722289	62674
+Lithuania	Vilnius	2722289	62674
 Luxembourg	Luxembourg	625978	2590
 Malta	Valletta	441543	320
 Moldova	Chisinau	4033963	32850

@@ -42,17 +42,15 @@ namespace Geo_Quiz
 
         public void B_TextBox_Click(object sender, EventArgs e)
         {
-            LoadStats();            
-            StartTextInput();
+            LoadStats(sender);
         }
 
         private void B_ABCD_Click(object sender, EventArgs e)
         {
-            LoadStats();
-            StartABCD();
+            LoadStats(sender);
         }
 
-        private void LoadStats()
+        private void LoadStats(object sender)
         {
             SelectedCategory = LB_Category.SelectedIndex;            
             SelectedContinents = LB_Continents.SelectedItems.Cast<string>().ToArray();            
@@ -65,6 +63,7 @@ namespace Geo_Quiz
 
                 if (result == DialogResult.Yes)
                 {
+                    SelectedContinents = Continents.ToArray();                    
                     goto Success;
                 }
                 else
@@ -74,6 +73,17 @@ namespace Geo_Quiz
             }
 
             Success:;
+
+            Button clickedButton = sender as Button;
+
+            if (clickedButton == B_ABCD)
+            {
+                StartABCD();
+            }
+            else
+            {
+                StartTextInput();
+            }
         }
 
         private void StartTextInput()

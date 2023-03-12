@@ -11,7 +11,7 @@ namespace Geo_Quiz
     {
         private int category;
         private string[] continents;
-        private int qCount;
+        private int questionCount;
         private string[] questions;        
 
         public GameSpecs() { }
@@ -28,10 +28,10 @@ namespace Geo_Quiz
             set { continents = value; }
         }
 
-        public int QCount
+        public int QuestionCount
         {
-            get { return qCount; }
-            set { qCount = value; }
+            get { return questionCount; }
+            set { questionCount = value; }
         }
 
         public string[] Questions
