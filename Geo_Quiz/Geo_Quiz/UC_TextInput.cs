@@ -14,12 +14,14 @@ namespace Geo_Quiz
     public partial class UC_TextInput : UserControl
     {
         readonly GameSpecs GS_Text = new GameSpecs();
+        readonly Button B_Start = new Button();
 
         readonly string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
         readonly List<Image> flags = new List<Image>();
         public static Image[] qFlags = new Image[0];
 
-        private string categoryPrint = "";
+        private string categoryPrint = "";        
+        private string labelQuestion;
 
         public string answer;
         public int qnumber = 0;
@@ -35,15 +37,10 @@ namespace Geo_Quiz
             GS_Text.QuestionCount = QCount;
 
             Array.Resize(ref qFlags, QCount);
-
-            TimerSetup();                        
-            
+                        
             InitializeComponent();
-
-            L_QCount.Text = "1 / " + GS_Text.QuestionCount;
-            L_QCount.Visible = true;
-
-            PBar.Maximum = GS_Text.QuestionCount;
+            SetStartButton();
+            ControlsSetup();
         }
 
         private void TB_Answer_KeyUpEnter(object sender, KeyEventArgs f)
@@ -101,8 +98,8 @@ namespace Geo_Quiz
                     PB_Flag.Image = qFlags[qnumber];
                 }
                 else
-                {                
-                    L_Country.Text = GS_Text.Questions[qnumber].Split('\t')[0];
+                {
+                    L_Question.Text = labelQuestion + GS_Text.Questions[qnumber].Split('\t')[0];
                 }
             }
 
@@ -254,12 +251,13 @@ namespace Geo_Quiz
         private void B_Start_Click(object sender, EventArgs e)
         {
             B_Start.Visible = false;
+            L_Question.Visible = true;
+            TB_Answer.Visible = true;
 
             switch (GS_Text.Category)
             {
                 case 0:
                     L_Question.Visible = false;
-                    L_Country.Visible = false;
                     
                     LoadFlags();
 
@@ -279,9 +277,9 @@ namespace Geo_Quiz
 
             if (GS_Text.Category != 0)
             {
-                L_Question.Text = "What is the " + categoryPrint + " of: ";
+                labelQuestion = "What is the " + categoryPrint + " of:\n";
                 GS_Text.Questions = GetQuestions();
-                L_Country.Text = GS_Text.Questions[0].Split('\t')[0];
+                L_Question.Text = labelQuestion + GS_Text.Questions[0].Split('\t')[0];
             }
 
             TB_Answer.Enabled = true;
@@ -358,12 +356,17 @@ namespace Geo_Quiz
             }
         }
 
-        private void TimerSetup()
+        private void ControlsSetup()
         {
             timer = new System.Timers.Timer();
             timer.Interval = 500;
             timer.Elapsed += Timer_Elapsed;
             timer.AutoReset = true;
+
+            L_QCount.Text = "1 / " + GS_Text.QuestionCount;
+            L_QCount.Visible = true;
+
+            PBar.Maximum = GS_Text.QuestionCount;
         }
 
         private void Timer_Elapsed(object sender, EventArgs e)
@@ -380,6 +383,21 @@ namespace Geo_Quiz
             {
                 Dispose();
             }
+        }
+
+        private void SetStartButton()
+        {
+            B_Start.Text = "Start";
+            B_Start.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            B_Start.BackColor = SystemColors.ButtonHighlight;
+            B_Start.Size = new Size(130, 150);
+            B_Start.UseVisualStyleBackColor = false;
+            B_Start.Click += new EventHandler(this.B_Start_Click);
+            B_Start.Anchor = AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top;
+
+            tableLayoutPanel1.SetColumnSpan(B_Start, 3);
+            tableLayoutPanel1.SetRowSpan(B_Start, 2);
+            tableLayoutPanel1.Controls.Add(B_Start, 1, 3);
         }
 
         private void TB_Answer_KeyDownEnter(object sender, KeyEventArgs e)

@@ -70,8 +70,8 @@
             this.LB_Category.Name = "LB_Category";
             this.LB_Category.Size = new System.Drawing.Size(147, 124);
             this.LB_Category.TabIndex = 6;
-            this.TT_PopUp.SetToolTip(this.LB_Category, "Choose category of questions you want in your test.\nIf you choose none, flags wil" +
-        "l be automatically selected.");
+            this.TT_PopUp.SetToolTip(this.LB_Category, "Choose category of questions you want in your test.\nYou have to choose one category" +
+        "to be able to play.");
             // 
             // LB_Continents
             // 
@@ -84,7 +84,8 @@
             this.LB_Continents.Size = new System.Drawing.Size(313, 184);
             this.LB_Continents.TabIndex = 7;
             this.TT_PopUp.SetToolTip(this.LB_Continents, "Choose continent/s you want to include in your quiz questions.\nYou can choose one" +
-        " or more continents.\nIf you choose none, you will play as if all were selected.");
+        " or more continents.\nIf you choose none, you will play as if all were selected.\nSelected continents also limit the number of questions " +
+        "you can be asked.");
             // 
             // B_TextBox
             // 
@@ -97,7 +98,7 @@
             this.B_TextBox.Text = "Written answer";
             this.TT_PopUp.SetToolTip(this.B_TextBox, "In this mode you will write the answer into a text box.");
             this.B_TextBox.UseVisualStyleBackColor = true;
-            this.B_TextBox.Click += new System.EventHandler(this.B_TextBox_Click);
+            this.B_TextBox.Click += new System.EventHandler(this.B_Play_Click);
             // 
             // B_ABCD
             // 
@@ -111,7 +112,7 @@
             this.TT_PopUp.SetToolTip(this.B_ABCD, "In this mode you will be choosing the correct answer from\nfour options, where onl" +
         "y one is correct");
             this.B_ABCD.UseVisualStyleBackColor = true;
-            this.B_ABCD.Click += new System.EventHandler(this.B_ABCD_Click);
+            this.B_ABCD.Click += new System.EventHandler(this.B_Play_Click);
             // 
             // TT_PopUp
             // 

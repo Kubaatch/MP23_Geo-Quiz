@@ -40,13 +40,14 @@ namespace Geo_Quiz
             numericUpDown1.Value = QuestionCount;
         }
 
-        public void B_TextBox_Click(object sender, EventArgs e)
+        private void B_Play_Click(object sender, EventArgs e)
         {
-            LoadStats(sender);
-        }
+            if (LB_Category.SelectedIndices.Count == 0)
+            {
+                MessageBox.Show("You have to choose a category to start playing!", "¯\\_(ツ)_ /¯");
+                return;
+            }
 
-        private void B_ABCD_Click(object sender, EventArgs e)
-        {
             LoadStats(sender);
         }
 

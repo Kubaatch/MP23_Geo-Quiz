@@ -9,4 +9,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Style", "IDE0017:Simplify object initialization", Justification = "<Pending>", Scope = "member", Target = "~M:Geo_Quiz.UC_GameUI.B_TextBox_Click(System.Object,System.EventArgs)")]
 [assembly: SuppressMessage("Style", "IDE0017:Simplify object initialization", Justification = "<Pending>", Scope = "member", Target = "~M:Geo_Quiz.UC_TextInput.#ctor(System.Int32,System.String[],System.Int32)")]
 [assembly: SuppressMessage("Style", "IDE0017:Simplify object initialization", Justification = "<Pending>", Scope = "member", Target = "~M:Geo_Quiz.UC_TextInput.B_Next_Click(System.Object,System.EventArgs)")]
-[assembly: SuppressMessage("Style", "IDE0017:Simplify object initialization", Justification = "<Pending>", Scope = "member", Target = "~M:Geo_Quiz.UC_TextInput.TimerSetup")]
+[assembly: SuppressMessage("Style", "IDE0017:Simplify object initialization", Justification = "<Pending>", Scope = "member", Target = "~M:Geo_Quiz.UC_TextInput.ControlsSetup")]

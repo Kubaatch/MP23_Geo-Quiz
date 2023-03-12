@@ -310,8 +310,15 @@ namespace Geo_Quiz
 
             if (GS_ABCD.QuestionCount > tempQsList.Count)
             {
+                DialogResult result = MessageBox.Show("Number of questions you requested was limited\nto match number of countries in selection." +
+                    "\nDo you want to continue with " + tempQsList.Count + " questions instead of " + GS_ABCD.QuestionCount +"?",
+                    "¯\\_(ツ)_/¯", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                {
+                    Dispose();
+                }
+
                 GS_ABCD.QuestionCount = tempQsList.Count;
-                MessageBox.Show("Number of questions you requested was limited to match number of countries in selection.", "¯\\_(ツ)_/¯");
             }
 
             Random rand = new Random();
