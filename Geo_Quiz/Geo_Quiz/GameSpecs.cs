@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Geo_Quiz
 {
-    internal class GameSpecs
+    public class GameSpecs
     {
         private int category;
         private string[] continents;

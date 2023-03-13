@@ -46,7 +46,7 @@ namespace Geo_Quiz
             {
                 MessageBox.Show("You have to choose a category to start playing!", "¯\\_(ツ)_ /¯");
                 return;
-            }
+            }            
 
             LoadStats(sender);
         }

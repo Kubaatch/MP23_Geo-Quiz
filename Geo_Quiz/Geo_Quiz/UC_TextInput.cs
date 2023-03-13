@@ -29,6 +29,7 @@ namespace Geo_Quiz
         public int score = 0;
         public static System.Timers.Timer timer;
         public int timerticked = 0;
+        public double totaltime;
 
         public UC_TextInput(int category, string[] continents, int QCount)
         {            
@@ -84,12 +85,7 @@ namespace Geo_Quiz
 
             if (qnumber == GS_Text.QuestionCount)
             {
-                PBar.Visible = false;
-
-                UC_Statistics uc = new UC_Statistics();
-                uc.Dock = DockStyle.Fill;
-                Controls.Add(uc);
-                uc.BringToFront();
+                OpenStatistics();
             }
             else
             {
@@ -257,8 +253,6 @@ namespace Geo_Quiz
             switch (GS_Text.Category)
             {
                 case 0:
-                    L_Question.Visible = false;
-                    
                     LoadFlags();
 
                     PB_Flag.Image = qFlags.First();
@@ -281,12 +275,17 @@ namespace Geo_Quiz
                 GS_Text.Questions = GetQuestions();
                 L_Question.Text = labelQuestion + GS_Text.Questions[0].Split('\t')[0];
             }
+            else
+            {
+                L_Question.Text = "What country does this flag belong to?";
+            }
 
             TB_Answer.Enabled = true;
             B_Skip.Enabled = true;
             B_Enter.Enabled = true;
 
             timer.Start();
+            timer1.Start();
         }
 
         private string[] GetQuestions()
@@ -356,6 +355,16 @@ namespace Geo_Quiz
             }
         }
 
+        public void OpenStatistics()
+        {
+            PBar.Visible = false;
+
+            UC_Statistics uc = new UC_Statistics(score, totaltime, GS_Text);
+            uc.Dock = DockStyle.Fill;
+            Controls.Add(uc);
+            uc.BringToFront();
+        }
+
         private void ControlsSetup()
         {
             timer = new System.Timers.Timer();
@@ -412,6 +421,11 @@ namespace Geo_Quiz
         private void TB_Answer_GotFocus(object sender, EventArgs e)
         {
             TB_Answer.Text = string.Empty;
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            totaltime += 1;
         }
     }
 }

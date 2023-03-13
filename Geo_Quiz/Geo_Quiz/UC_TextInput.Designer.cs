@@ -31,6 +31,7 @@ namespace Geo_Quiz
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.B_Exit = new System.Windows.Forms.Button();
             this.TB_Answer = new System.Windows.Forms.TextBox();
             this.L_Question = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@ namespace Geo_Quiz
             this.PB_Flag = new System.Windows.Forms.PictureBox();
             this.B_Enter = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PB_Flag)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +59,7 @@ namespace Geo_Quiz
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_Exit.Location = new System.Drawing.Point(915, 580);
+            this.B_Exit.Location = new System.Drawing.Point(914, 580);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(75, 35);
@@ -72,7 +74,7 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.SetColumnSpan(this.TB_Answer, 3);
             this.TB_Answer.Enabled = false;
             this.TB_Answer.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Answer.Location = new System.Drawing.Point(318, 373);
+            this.TB_Answer.Location = new System.Drawing.Point(317, 373);
             this.TB_Answer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TB_Answer.Name = "TB_Answer";
             this.TB_Answer.Size = new System.Drawing.Size(364, 33);
@@ -90,7 +92,7 @@ namespace Geo_Quiz
             this.L_Question.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tableLayoutPanel1.SetColumnSpan(this.L_Question, 3);
             this.L_Question.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Question.Location = new System.Drawing.Point(459, 321);
+            this.L_Question.Location = new System.Drawing.Point(458, 321);
             this.L_Question.Name = "L_Question";
             this.L_Question.Size = new System.Drawing.Size(81, 27);
             this.L_Question.TabIndex = 8;
@@ -106,7 +108,7 @@ namespace Geo_Quiz
             this.PBar.Location = new System.Drawing.Point(3, 2);
             this.PBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PBar.Name = "PBar";
-            this.PBar.Size = new System.Drawing.Size(994, 36);
+            this.PBar.Size = new System.Drawing.Size(993, 36);
             this.PBar.Step = 1;
             this.PBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.PBar.TabIndex = 9;
@@ -117,7 +119,7 @@ namespace Geo_Quiz
             this.B_Skip.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.B_Skip.Enabled = false;
             this.B_Skip.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_Skip.Location = new System.Drawing.Point(345, 417);
+            this.B_Skip.Location = new System.Drawing.Point(344, 417);
             this.B_Skip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Skip.Name = "B_Skip";
             this.B_Skip.Size = new System.Drawing.Size(97, 31);
@@ -134,7 +136,7 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.SetColumnSpan(this.L_Result, 3);
             this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_Result.ForeColor = System.Drawing.Color.Red;
-            this.L_Result.Location = new System.Drawing.Point(475, 468);
+            this.L_Result.Location = new System.Drawing.Point(474, 468);
             this.L_Result.Name = "L_Result";
             this.L_Result.Size = new System.Drawing.Size(50, 64);
             this.L_Result.TabIndex = 11;
@@ -147,7 +149,7 @@ namespace Geo_Quiz
             this.L_CorrectResult.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.L_CorrectResult, 3);
             this.L_CorrectResult.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_CorrectResult.Location = new System.Drawing.Point(399, 543);
+            this.L_CorrectResult.Location = new System.Drawing.Point(398, 543);
             this.L_CorrectResult.Name = "L_CorrectResult";
             this.L_CorrectResult.Size = new System.Drawing.Size(202, 24);
             this.L_CorrectResult.TabIndex = 14;
@@ -159,7 +161,7 @@ namespace Geo_Quiz
             this.B_Next.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.B_Next.Enabled = false;
             this.B_Next.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_Next.Location = new System.Drawing.Point(558, 417);
+            this.B_Next.Location = new System.Drawing.Point(557, 417);
             this.B_Next.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Next.Name = "B_Next";
             this.B_Next.Size = new System.Drawing.Size(97, 31);
@@ -176,7 +178,7 @@ namespace Geo_Quiz
             this.L_QCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.L_QCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_QCount.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_QCount.Location = new System.Drawing.Point(925, 45);
+            this.L_QCount.Location = new System.Drawing.Point(924, 45);
             this.L_QCount.Margin = new System.Windows.Forms.Padding(5);
             this.L_QCount.Name = "L_QCount";
             this.L_QCount.Size = new System.Drawing.Size(70, 26);
@@ -203,10 +205,10 @@ namespace Geo_Quiz
             this.PB_Flag.BackColor = System.Drawing.Color.Transparent;
             this.PB_Flag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tableLayoutPanel1.SetColumnSpan(this.PB_Flag, 3);
-            this.PB_Flag.Location = new System.Drawing.Point(324, 82);
+            this.PB_Flag.Location = new System.Drawing.Point(323, 90);
             this.PB_Flag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PB_Flag.Name = "PB_Flag";
-            this.PB_Flag.Size = new System.Drawing.Size(352, 221);
+            this.PB_Flag.Size = new System.Drawing.Size(352, 204);
             this.PB_Flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB_Flag.TabIndex = 18;
             this.PB_Flag.TabStop = false;
@@ -219,7 +221,7 @@ namespace Geo_Quiz
             this.B_Enter.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.B_Enter.Enabled = false;
             this.B_Enter.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_Enter.Location = new System.Drawing.Point(451, 417);
+            this.B_Enter.Location = new System.Drawing.Point(450, 417);
             this.B_Enter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Enter.Name = "B_Enter";
             this.B_Enter.Size = new System.Drawing.Size(97, 31);
@@ -263,8 +265,13 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 625);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(999, 625);
             this.tableLayoutPanel1.TabIndex = 20;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // UC_TextInput
             // 
@@ -278,7 +285,7 @@ namespace Geo_Quiz
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_TextInput";
-            this.Size = new System.Drawing.Size(1000, 625);
+            this.Size = new System.Drawing.Size(999, 625);
             ((System.ComponentModel.ISupportInitialize)(this.PB_Flag)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -300,5 +307,6 @@ namespace Geo_Quiz
         private System.Windows.Forms.PictureBox PB_Flag;
         private System.Windows.Forms.Button B_Enter;
         private TableLayoutPanel tableLayoutPanel1;
+        private Timer timer1;
     }
 }
