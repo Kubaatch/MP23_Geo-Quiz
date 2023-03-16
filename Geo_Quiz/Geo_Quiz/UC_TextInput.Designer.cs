@@ -31,7 +31,6 @@ namespace Geo_Quiz
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.B_Exit = new System.Windows.Forms.Button();
             this.TB_Answer = new System.Windows.Forms.TextBox();
             this.L_Question = new System.Windows.Forms.Label();
@@ -45,7 +44,6 @@ namespace Geo_Quiz
             this.PB_Flag = new System.Windows.Forms.PictureBox();
             this.B_Enter = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PB_Flag)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -268,11 +266,6 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.Size = new System.Drawing.Size(999, 625);
             this.tableLayoutPanel1.TabIndex = 20;
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
             // UC_TextInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -307,6 +300,5 @@ namespace Geo_Quiz
         private System.Windows.Forms.PictureBox PB_Flag;
         private System.Windows.Forms.Button B_Enter;
         private TableLayoutPanel tableLayoutPanel1;
-        private Timer timer1;
     }
 }

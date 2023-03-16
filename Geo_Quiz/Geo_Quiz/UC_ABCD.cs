@@ -3,11 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
@@ -19,13 +22,16 @@ namespace Geo_Quiz
         readonly GameSpecs GS_ABCD = new GameSpecs();
         readonly Random random = new Random();
 
+        readonly Stopwatch stopwatch = new Stopwatch();
+        
         readonly private string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
         readonly private string[] imageFileNames = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data"), "*.png", SearchOption.AllDirectories);
 
         private string categoryPrint = "";
         private string labelQuestion;
 
-        private int questionNumber = 0;
+        private int questionNumber = 0;        
+        private int score;
 
         readonly List<Image> flags = new List<Image>();
         public Image[] qFlags = new Image[0];
@@ -42,9 +48,6 @@ namespace Geo_Quiz
 
         private void B_Start_Click(object sender, EventArgs e)
         {
-            B_Start.Visible = false;
-            L_Question.Visible = true;
-
             switch (GS_ABCD.Category)
             {
                 case 0:
@@ -75,15 +78,8 @@ namespace Geo_Quiz
                 L_Question.Text = "What country does this flag belong to?";
             }
 
-            progressBar1.Maximum = GS_ABCD.QuestionCount;
-
-
             SetButtonAnswers();
-
-            Button_A.Visible = true;
-            Button_B.Visible = true;
-            Button_C.Visible = true;
-            Button_D.Visible = true;
+            ControlsSetup();
         }
 
         private void SetButtonAnswers()
@@ -122,6 +118,21 @@ namespace Geo_Quiz
                     AnswerPopulationArea(buttons);
                     break;
             }
+        }
+
+        private string GetAnswer()
+        {
+            switch (GS_ABCD.Category)
+            {
+                case 0:
+                    return qFlags[questionNumber].Tag.ToString().Split('.')[0];
+                case 1:
+                case 2:
+                case 3:
+                    return GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+            }
+
+            throw new NotImplementedException();
         }
 
         private void AnswerFlag(Button[] buttons)
@@ -224,6 +235,12 @@ namespace Geo_Quiz
             {
                 L_Result.Text = "Correct!";
                 clickedButton.BackColor = Color.ForestGreen;
+
+                int timeSpent = (int)(stopwatch.ElapsedMilliseconds) / 100;
+                score = 1000 - timeSpent;
+
+                if (score > 0) { score = 0; }
+
             }
             else
             {
@@ -236,6 +253,8 @@ namespace Geo_Quiz
                         b.BackColor = Color.ForestGreen;                        
                     }
                 }
+
+                score -= 50;
             }
 
             foreach (Button b in buttons)
@@ -248,44 +267,37 @@ namespace Geo_Quiz
         
         private void B_Next_Click(object sender, EventArgs e)
         {
-            B_Next.Visible = false;
-            L_Result.Visible = false;
-            progressBar1.Increment(1);
-
-            Button[] buttons = new Button[] { Button_A, Button_B, Button_C, Button_D };
-
-            foreach (Button b in buttons)
-            {
-                b.BackColor = Color.White;
-                b.Enabled = true;
-            }            
-            
             questionNumber++;
-            SetButtonAnswers();
 
-            if (GS_ABCD.Category == 0)
+            if (questionNumber == GS_ABCD.QuestionCount)
             {
-                PB_Flag.Image = qFlags[questionNumber];
+                OpenStatistics();
             }
             else
             {
-                L_Question.Text = labelQuestion + GS_ABCD.Questions[questionNumber].Split('\t')[0];
-            }
-        }
+                B_Next.Visible = false;
+                L_Result.Visible = false;
+                PBar.Increment(1);
 
-        private string GetAnswer()
-        {
-            switch (GS_ABCD.Category)
-            {
-                case 0:
-                    return qFlags[questionNumber].Tag.ToString().Split('.')[0];
-                case 1:
-                case 2:                    
-                case 3:
-                    return GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
-            }
+                Button[] buttons = new Button[] { Button_A, Button_B, Button_C, Button_D };
 
-            throw new NotImplementedException();
+                foreach (Button b in buttons)
+                {
+                    b.BackColor = Color.White;
+                    b.Enabled = true;
+                }
+
+                SetButtonAnswers();
+
+                if (GS_ABCD.Category == 0)
+                {
+                    PB_Flag.Image = qFlags[questionNumber];
+                }
+                else
+                {
+                    L_Question.Text = labelQuestion + GS_ABCD.Questions[questionNumber].Split('\t')[0];
+                }
+            }
         }
 
         private string[] GetQuestions()
@@ -333,7 +345,7 @@ namespace Geo_Quiz
             return questions;
         }
 
-        public void LoadFlags()
+        private void LoadFlags()
         {
             string path = Path.Combine(filepath, "");
 
@@ -356,7 +368,7 @@ namespace Geo_Quiz
             //end
         }
 
-        public void GetContinentFlags(string path)
+        private void GetContinentFlags(string path)
         {
             string[] files = Directory.GetFiles(path, "*.png");
 
@@ -366,6 +378,36 @@ namespace Geo_Quiz
                 flags.Add(image);
                 flags.Last().Tag = Path.GetFileName(files[i]);
             }
+        }
+
+        private void ControlsSetup()
+        {
+            B_Start.Visible = false;
+            L_Question.Visible = true;
+
+            L_QCount.Text = "1 / " + GS_ABCD.QuestionCount;
+            L_QCount.Visible = true;
+                        
+            PBar.Maximum = GS_ABCD.QuestionCount;
+
+            Button_A.Visible = true;
+            Button_B.Visible = true;
+            Button_C.Visible = true;
+            Button_D.Visible = true;
+
+            stopwatch.Start();
+        }
+
+        private void OpenStatistics()
+        {
+            PBar.Visible = false;
+
+            TimeSpan ts = stopwatch.Elapsed;
+
+            UC_Statistics uc = new UC_Statistics(score, ts, GS_ABCD);
+            uc.Dock = DockStyle.Fill;
+            Controls.Add(uc);
+            uc.BringToFront();
         }
 
         private void SetStartButton()

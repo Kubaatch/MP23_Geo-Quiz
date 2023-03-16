@@ -34,18 +34,22 @@
             this.B_Guest = new System.Windows.Forms.Button();
             this.B_Exit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.L_Logo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // B_SignUp
             // 
+            this.B_SignUp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.B_SignUp.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.B_SignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_SignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_SignUp.Location = new System.Drawing.Point(273, 378);
+            this.B_SignUp.Location = new System.Drawing.Point(512, 311);
             this.B_SignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_SignUp.Name = "B_SignUp";
-            this.B_SignUp.Size = new System.Drawing.Size(200, 106);
+            this.B_SignUp.Size = new System.Drawing.Size(200, 84);
             this.B_SignUp.TabIndex = 3;
             this.B_SignUp.Text = "Sign up";
             this.B_SignUp.UseVisualStyleBackColor = false;
@@ -53,13 +57,14 @@
             // 
             // B_SignIn
             // 
+            this.B_SignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.B_SignIn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.B_SignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_SignIn.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_SignIn.Location = new System.Drawing.Point(508, 378);
+            this.B_SignIn.Location = new System.Drawing.Point(268, 311);
             this.B_SignIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_SignIn.Name = "B_SignIn";
-            this.B_SignIn.Size = new System.Drawing.Size(199, 106);
+            this.B_SignIn.Size = new System.Drawing.Size(199, 84);
             this.B_SignIn.TabIndex = 4;
             this.B_SignIn.Text = "Sign in";
             this.B_SignIn.UseVisualStyleBackColor = false;
@@ -67,10 +72,12 @@
             // 
             // B_Guest
             // 
+            this.B_Guest.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.B_Guest.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tableLayoutPanel1.SetColumnSpan(this.B_Guest, 2);
             this.B_Guest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_Guest.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_Guest.Location = new System.Drawing.Point(324, 490);
+            this.B_Guest.Location = new System.Drawing.Point(322, 416);
             this.B_Guest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Guest.Name = "B_Guest";
             this.B_Guest.Size = new System.Drawing.Size(335, 50);
@@ -87,9 +94,10 @@
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_Exit.Location = new System.Drawing.Point(869, 529);
+            this.B_Exit.Location = new System.Drawing.Point(866, 529);
+            this.B_Exit.Margin = new System.Windows.Forms.Padding(1, 1, 10, 10);
             this.B_Exit.Name = "B_Exit";
-            this.B_Exit.Size = new System.Drawing.Size(100, 37);
+            this.B_Exit.Size = new System.Drawing.Size(105, 39);
             this.B_Exit.TabIndex = 6;
             this.B_Exit.Text = "Exit App";
             this.B_Exit.UseVisualStyleBackColor = false;
@@ -97,7 +105,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Geo_Quiz.Properties.Resources.world_map;
+            this.pictureBox1.Image = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
             this.pictureBox1.Location = new System.Drawing.Point(107, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(765, 361);
@@ -105,17 +113,57 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackgroundImage = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
+            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.B_SignUp, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.B_SignIn, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.B_Guest, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.L_Logo, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.B_Exit, 3, 5);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.07693F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.38461F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.38461F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.38461F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.38461F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.38461F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(981, 578);
+            this.tableLayoutPanel1.TabIndex = 8;
+            // 
+            // L_Logo
+            // 
+            this.L_Logo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.L_Logo.AutoSize = true;
+            this.L_Logo.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.tableLayoutPanel1.SetColumnSpan(this.L_Logo, 2);
+            this.L_Logo.Font = new System.Drawing.Font("Wide Latin", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Logo.Location = new System.Drawing.Point(289, 55);
+            this.L_Logo.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.L_Logo.Name = "L_Logo";
+            this.tableLayoutPanel1.SetRowSpan(this.L_Logo, 2);
+            this.L_Logo.Size = new System.Drawing.Size(402, 100);
+            this.L_Logo.TabIndex = 0;
+            this.L_Logo.Text = "Geography Quiz";
+            this.L_Logo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // F_SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(981, 578);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.B_Exit);
-            this.Controls.Add(this.B_Guest);
-            this.Controls.Add(this.B_SignIn);
-            this.Controls.Add(this.B_SignUp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -123,6 +171,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignIn";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -133,5 +183,7 @@
         private System.Windows.Forms.Button B_Guest;
         private System.Windows.Forms.Button B_Exit;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label L_Logo;
     }
 }

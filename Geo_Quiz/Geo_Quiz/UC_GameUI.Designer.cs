@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_GameUI));
             this.B_Exit = new System.Windows.Forms.Button();
             this.LB_Category = new System.Windows.Forms.ListBox();
             this.LB_Continents = new System.Windows.Forms.ListBox();
@@ -70,8 +71,8 @@
             this.LB_Category.Name = "LB_Category";
             this.LB_Category.Size = new System.Drawing.Size(147, 124);
             this.LB_Category.TabIndex = 6;
-            this.TT_PopUp.SetToolTip(this.LB_Category, "Choose category of questions you want in your test.\nYou have to choose one category" +
-        "to be able to play.");
+            this.TT_PopUp.SetToolTip(this.LB_Category, "Choose category of questions you want in your test.\nYou have to choose one catego" +
+        "ryto be able to play.");
             // 
             // LB_Continents
             // 
@@ -83,9 +84,7 @@
             this.LB_Continents.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.LB_Continents.Size = new System.Drawing.Size(313, 184);
             this.LB_Continents.TabIndex = 7;
-            this.TT_PopUp.SetToolTip(this.LB_Continents, "Choose continent/s you want to include in your quiz questions.\nYou can choose one" +
-        " or more continents.\nIf you choose none, you will play as if all were selected.\nSelected continents also limit the number of questions " +
-        "you can be asked.");
+            this.TT_PopUp.SetToolTip(this.LB_Continents, resources.GetString("LB_Continents.ToolTip"));
             // 
             // B_TextBox
             // 
@@ -144,6 +143,7 @@
             0,
             0,
             0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // label2
             // 

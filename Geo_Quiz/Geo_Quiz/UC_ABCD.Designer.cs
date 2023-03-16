@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.L_Score = new System.Windows.Forms.Label();
+            this.L_QCount = new System.Windows.Forms.Label();
             this.Button_B = new System.Windows.Forms.Button();
             this.Button_A = new System.Windows.Forms.Button();
             this.Button_D = new System.Windows.Forms.Button();
             this.B_Exit = new System.Windows.Forms.Button();
             this.Button_C = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.PBar = new System.Windows.Forms.ProgressBar();
             this.L_Question = new System.Windows.Forms.Label();
             this.L_Result = new System.Windows.Forms.Label();
             this.B_Next = new System.Windows.Forms.Button();
@@ -52,12 +54,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32F));
+            this.tableLayoutPanel1.Controls.Add(this.L_Score, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.L_QCount, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.Button_B, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.Button_A, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.Button_D, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.B_Exit, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.Button_C, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.progressBar1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.PBar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.L_Question, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.L_Result, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.B_Next, 3, 3);
@@ -75,6 +79,34 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 625);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // L_Score
+            // 
+            this.L_Score.AutoSize = true;
+            this.L_Score.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.L_Score.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.L_Score.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Score.Location = new System.Drawing.Point(5, 60);
+            this.L_Score.Margin = new System.Windows.Forms.Padding(5);
+            this.L_Score.Name = "L_Score";
+            this.L_Score.Size = new System.Drawing.Size(76, 26);
+            this.L_Score.TabIndex = 23;
+            this.L_Score.Text = "Score: _";
+            // 
+            // L_QCount
+            // 
+            this.L_QCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.L_QCount.AutoSize = true;
+            this.L_QCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.L_QCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.L_QCount.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_QCount.Location = new System.Drawing.Point(925, 60);
+            this.L_QCount.Margin = new System.Windows.Forms.Padding(5);
+            this.L_QCount.Name = "L_QCount";
+            this.L_QCount.Size = new System.Drawing.Size(70, 26);
+            this.L_QCount.TabIndex = 22;
+            this.L_QCount.Text = "temp...";
+            this.L_QCount.Visible = false;
             // 
             // Button_B
             // 
@@ -146,15 +178,15 @@
             this.Button_C.Visible = false;
             this.Button_C.Click += new System.EventHandler(this.Button_Click_Answer);
             // 
-            // progressBar1
+            // PBar
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.progressBar1, 4);
-            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.progressBar1.Location = new System.Drawing.Point(3, 3);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(994, 46);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 19;
+            this.tableLayoutPanel1.SetColumnSpan(this.PBar, 4);
+            this.PBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PBar.Location = new System.Drawing.Point(3, 3);
+            this.PBar.Name = "PBar";
+            this.PBar.Size = new System.Drawing.Size(994, 46);
+            this.PBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.PBar.TabIndex = 19;
             // 
             // L_Question
             // 
@@ -238,8 +270,10 @@
         private System.Windows.Forms.Label L_Question;
         private System.Windows.Forms.PictureBox PB_Flag;
         private System.Windows.Forms.Button B_Exit;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar PBar;
         private System.Windows.Forms.Label L_Result;
         private System.Windows.Forms.Button B_Next;
+        private System.Windows.Forms.Label L_QCount;
+        private System.Windows.Forms.Label L_Score;
     }
 }

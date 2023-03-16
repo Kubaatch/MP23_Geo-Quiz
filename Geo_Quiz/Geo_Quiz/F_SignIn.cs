@@ -5,6 +5,9 @@ namespace Geo_Quiz
 {
     public partial class F_SignIn : Form
     {
+        public static string header;
+        public static string type;
+
         public F_SignIn()
         {
             InitializeComponent();            
@@ -18,19 +21,33 @@ namespace Geo_Quiz
             uc.BringToFront();
         }
 
-        private void B_Exit_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
         private void B_SignUp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This part of the program is not set up yet, sorry...", "¯\\_(ツ)_/¯");
+            header = "Sign up a new account:";
+            type = "SignUp";
+
+            OpenLogin();
         }
 
         private void B_SignIn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This part of the program is not set up yet, sorry...", "¯\\_(ツ)_/¯");
+            header = "Sign in an existing account:";
+            type = "SignIn";
+
+            OpenLogin();            
+        }
+
+        private void OpenLogin()
+        {
+            UC_Login uc = new UC_Login();
+            Controls.Add(uc);
+            uc.Location = new System.Drawing.Point(80, 130);
+            uc.BringToFront();
+        }
+
+        private void B_Exit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

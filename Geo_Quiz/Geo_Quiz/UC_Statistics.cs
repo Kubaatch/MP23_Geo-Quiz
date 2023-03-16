@@ -7,46 +7,32 @@ namespace Geo_Quiz
     {
         readonly GameSpecs gameInfo = new GameSpecs();
 
+        readonly TimeSpan totalTime = new TimeSpan();
+
         public int finalScore;
         public int avgScore;
         public int gameScore;
 
-        public double totalTime;
-        public int seconds;
-        public int minutes;
-
-        public UC_Statistics(int score, double totaltime, GameSpecs gamespecs)
+        public UC_Statistics(int score, TimeSpan ts, GameSpecs gamespecs)
         {
             gameInfo = gamespecs;
-
+            totalTime = ts;
             finalScore = score;
-            totalTime = totaltime;
 
             InitializeComponent();
 
             L_Score.Text += finalScore + " pts.";
 
             ComputePerQuestionScore();
-            L_AvgScore.Text += avgScore + " pts.";
-
-            ComputeTimeSpent();            
-            L_TimeSpent.Text += totalTime + " seconds and " + minutes + " minutes";
+            
+            L_TimeSpent.Text += totalTime.Minutes + "mins, " + totalTime.Seconds + "s, " + totalTime.Milliseconds + "ms.";
         }
 
         private void ComputePerQuestionScore()
         {
             avgScore = finalScore / gameInfo.QuestionCount;
-        }
 
-        private void ComputeTimeSpent()
-        {
-            totalTime /= 100;
-            
-            while (totalTime > 60)
-            {
-                minutes += 1;
-                totalTime -= 60;
-            }
+            L_AvgScore.Text += avgScore + " pts.";
         }
 
         private void B_Exit_Click(object sender, EventArgs e)

@@ -8,28 +8,26 @@ using System.Windows.Forms;
 using Image = System.Drawing.Image;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Diagnostics;
 
 namespace Geo_Quiz
 {
     public partial class UC_TextInput : UserControl
     {
-        readonly GameSpecs GS_Text = new GameSpecs();
-        readonly Button B_Start = new Button();
+        GameSpecs GS_Text = new GameSpecs();
+        Button B_Start = new Button();
+        Stopwatch stopwatch = new Stopwatch();
 
-        readonly string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
-        readonly List<Image> flags = new List<Image>();
-        public static Image[] qFlags = new Image[0];
+        string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
+        List<Image> flags = new List<Image>();
+        Image[] qFlags = new Image[0];
 
-        private string categoryPrint = "";        
-        private string labelQuestion;
+        string categoryPrint = "";
+        string labelQuestion;
 
-        public string answer;
-        public int qnumber = 0;
-
-        public int score = 0;
-        public static System.Timers.Timer timer;
-        public int timerticked = 0;
-        public double totaltime;
+        string answer;
+        int qnumber = 0;
+        int score = 0;
 
         public UC_TextInput(int category, string[] continents, int QCount)
         {            
@@ -40,8 +38,7 @@ namespace Geo_Quiz
             Array.Resize(ref qFlags, QCount);
                         
             InitializeComponent();
-            SetStartButton();
-            ControlsSetup();
+            StartSetup();
         }
 
         private void TB_Answer_KeyUpEnter(object sender, KeyEventArgs f)
@@ -190,15 +187,12 @@ namespace Geo_Quiz
                 L_CorrectResult.Text += answer;
                 L_CorrectResult.Visible = true;
             }
+            
+            int timeSpent = (int)(stopwatch.ElapsedMilliseconds / 100);
+            score += 1000 - timeSpent;
 
-            if (timerticked > 100)
-            {
-                score += 0;
-            }
-            else
-            {
-                score += 100 - timerticked;
-            }
+            if (score < 0) { score = 0; }
+            
             L_Score.Text = "Score: " + score;
         }
 
@@ -227,8 +221,6 @@ namespace Geo_Quiz
 
         private void NextQSetup()
         {
-            timerticked = 0;
-
             B_Skip.Enabled = true;
             B_Enter.Enabled = true;
             B_Next.Enabled = false;
@@ -246,10 +238,6 @@ namespace Geo_Quiz
 
         private void B_Start_Click(object sender, EventArgs e)
         {
-            B_Start.Visible = false;
-            L_Question.Visible = true;
-            TB_Answer.Visible = true;
-
             switch (GS_Text.Category)
             {
                 case 0:
@@ -280,12 +268,7 @@ namespace Geo_Quiz
                 L_Question.Text = "What country does this flag belong to?";
             }
 
-            TB_Answer.Enabled = true;
-            B_Skip.Enabled = true;
-            B_Enter.Enabled = true;
-
-            timer.Start();
-            timer1.Start();
+            ControlsSetup();
         }
 
         private string[] GetQuestions()
@@ -320,7 +303,7 @@ namespace Geo_Quiz
             return questions;
         }
 
-        public void LoadFlags()
+        private void LoadFlags()
         {            
             string path = Path.Combine(filepath, "");
 
@@ -343,7 +326,7 @@ namespace Geo_Quiz
             //end
         }
 
-        public void GetContinentFlags(string path)
+        private void GetContinentFlags(string path)
         {
             string[] files = Directory.GetFiles(path, "*.png");
 
@@ -355,46 +338,19 @@ namespace Geo_Quiz
             }
         }
 
-        public void OpenStatistics()
+        private void OpenStatistics()
         {
             PBar.Visible = false;
 
-            UC_Statistics uc = new UC_Statistics(score, totaltime, GS_Text);
+            TimeSpan ts = stopwatch.Elapsed;
+
+            UC_Statistics uc = new UC_Statistics(score, ts, GS_Text);
             uc.Dock = DockStyle.Fill;
             Controls.Add(uc);
             uc.BringToFront();
         }
 
-        private void ControlsSetup()
-        {
-            timer = new System.Timers.Timer();
-            timer.Interval = 500;
-            timer.Elapsed += Timer_Elapsed;
-            timer.AutoReset = true;
-
-            L_QCount.Text = "1 / " + GS_Text.QuestionCount;
-            L_QCount.Visible = true;
-
-            PBar.Maximum = GS_Text.QuestionCount;
-        }
-
-        private void Timer_Elapsed(object sender, EventArgs e)
-        {
-            timerticked += 1;
-        }
-
-        private void B_Exit_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Are you sure you want to exit the game?\n" +
-            "You will lose all your progress and your stats will be lost...", "¯\\_(ツ)_/¯", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
-            {
-                Dispose();
-            }
-        }
-
-        private void SetStartButton()
+        private void StartSetup()
         {
             B_Start.Text = "Start";
             B_Start.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -407,6 +363,35 @@ namespace Geo_Quiz
             tableLayoutPanel1.SetColumnSpan(B_Start, 3);
             tableLayoutPanel1.SetRowSpan(B_Start, 2);
             tableLayoutPanel1.Controls.Add(B_Start, 1, 3);
+
+            L_QCount.Text = "1 / " + GS_Text.QuestionCount;
+            L_QCount.Visible = true;
+
+            PBar.Maximum = GS_Text.QuestionCount;
+        }
+
+        private void ControlsSetup()
+        {
+            B_Start.Visible = false;
+            L_Question.Visible = true;
+            TB_Answer.Visible = true;
+
+            TB_Answer.Enabled = true;
+            B_Skip.Enabled = true;
+            B_Enter.Enabled = true;
+
+            stopwatch.Start();
+        }
+
+        private void B_Exit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to exit the game?\n" +
+            "You will lose all your progress and your stats will be lost...", "¯\\_(ツ)_/¯", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                Dispose();
+            }
         }
 
         private void TB_Answer_KeyDownEnter(object sender, KeyEventArgs e)
@@ -421,11 +406,6 @@ namespace Geo_Quiz
         private void TB_Answer_GotFocus(object sender, EventArgs e)
         {
             TB_Answer.Text = string.Empty;
-        }
-
-        private void Timer1_Tick(object sender, EventArgs e)
-        {
-            totaltime += 1;
         }
     }
 }

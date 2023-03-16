@@ -107,5 +107,10 @@ namespace Geo_Quiz
         {
             Dispose();
         }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

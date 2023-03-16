@@ -98,6 +98,12 @@
     <Compile Include="UC_Learn.Designer.cs">
       <DependentUpon>UC_Learn.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Login.Designer.cs">
+      <DependentUpon>UC_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_MainMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     <EmbeddedResource Include="UC_Learn.resx">
       <DependentUpon>UC_Learn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_Login.resx">
+      <DependentUpon>UC_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_MainMenu.resx">
       <DependentUpon>UC_MainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,13 +165,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\world_map.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\WorldMap_tp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Flags\Questions.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

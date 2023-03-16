@@ -65,9 +65,7 @@ namespace Geo_Quiz.Properties {
         ///Aachen
         ///Aarhus
         ///Abbeville
-        ///Aberdeen (UK)
-        ///Aberdeen (South Dakota)
-        ///Aberdeen (Washington)
+        ///Aberdeen
         ///Abidjan
         ///Abilene
         ///Abu Dhabi
@@ -105,24 +103,21 @@ namespace Geo_Quiz.Properties {
         ///Aleppo
         ///Alessandria
         ///Ålesund
-        ///Alexandria (U.S.)
-        ///Alexandria (Egypt)
+        ///Alexandria
         ///Algeciras
-        ///A [rest of string was truncated]&quot;;.
+        ///Alghero
+        ///Algiers
+        ///Alicante
+        ///Alkmaar
+        ///Allentown
+        ///Almaty
+        ///Alofi
+        ///Alpe d&apos;Huez
+        ///Alta  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Cities {
             get {
                 return ResourceManager.GetString("Cities", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap world_map {
-            get {
-                object obj = ResourceManager.GetObject("world_map", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
