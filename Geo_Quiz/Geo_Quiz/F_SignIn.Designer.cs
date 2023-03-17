@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.L_Logo = new System.Windows.Forms.Label();
+            this.L_CurrentAcc = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -76,13 +77,13 @@
             this.B_Guest.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tableLayoutPanel1.SetColumnSpan(this.B_Guest, 2);
             this.B_Guest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_Guest.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Guest.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Guest.Location = new System.Drawing.Point(322, 416);
             this.B_Guest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Guest.Name = "B_Guest";
             this.B_Guest.Size = new System.Drawing.Size(335, 50);
             this.B_Guest.TabIndex = 5;
-            this.B_Guest.Text = "Play as Guest";
+            this.B_Guest.Text = "Enter main menu";
             this.B_Guest.UseVisualStyleBackColor = false;
             this.B_Guest.Click += new System.EventHandler(this.B_Guest_Click);
             // 
@@ -127,6 +128,7 @@
             this.tableLayoutPanel1.Controls.Add(this.B_Guest, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.L_Logo, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.B_Exit, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.L_CurrentAcc, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -155,6 +157,21 @@
             this.L_Logo.TabIndex = 0;
             this.L_Logo.Text = "Geography Quiz";
             this.L_Logo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // L_CurrentAcc
+            // 
+            this.L_CurrentAcc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.L_CurrentAcc.AutoSize = true;
+            this.L_CurrentAcc.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.tableLayoutPanel1.SetColumnSpan(this.L_CurrentAcc, 2);
+            this.L_CurrentAcc.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_CurrentAcc.Location = new System.Drawing.Point(416, 276);
+            this.L_CurrentAcc.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.L_CurrentAcc.Name = "L_CurrentAcc";
+            this.L_CurrentAcc.Size = new System.Drawing.Size(147, 23);
+            this.L_CurrentAcc.TabIndex = 7;
+            this.L_CurrentAcc.Text = "Current account: ";
+            this.L_CurrentAcc.Visible = false;
             // 
             // F_SignIn
             // 
@@ -185,5 +202,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label L_Logo;
+        private System.Windows.Forms.Label L_CurrentAcc;
     }
 }

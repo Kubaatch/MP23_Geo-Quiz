@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.L_ExistingUsername = new System.Windows.Forms.Label();
             this.L_Header = new System.Windows.Forms.Label();
-            this.TB_Password = new System.Windows.Forms.TextBox();
             this.TB_Username = new System.Windows.Forms.TextBox();
             this.L_Username = new System.Windows.Forms.Label();
             this.L_Password = new System.Windows.Forms.Label();
-            this.B_Enter = new System.Windows.Forms.Button();
             this.B_Exit = new System.Windows.Forms.Button();
+            this.B_Enter = new System.Windows.Forms.Button();
+            this.TB_Password = new System.Windows.Forms.TextBox();
             this.L_WrongPass = new System.Windows.Forms.Label();
-            this.L_ExistingUsername = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(775, 366);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // L_ExistingUsername
+            // 
+            this.L_ExistingUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.L_ExistingUsername.AutoSize = true;
+            this.L_ExistingUsername.ForeColor = System.Drawing.Color.Red;
+            this.L_ExistingUsername.Location = new System.Drawing.Point(303, 166);
+            this.L_ExistingUsername.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.L_ExistingUsername.Name = "L_ExistingUsername";
+            this.L_ExistingUsername.Size = new System.Drawing.Size(169, 16);
+            this.L_ExistingUsername.TabIndex = 8;
+            this.L_ExistingUsername.Text = "Invalid username, try again!";
+            this.L_ExistingUsername.Visible = false;
+            // 
             // L_Header
             // 
             this.L_Header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -86,20 +99,10 @@
             this.L_Header.Text = "Temp";
             this.L_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // TB_Password
-            // 
-            this.TB_Password.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TB_Password.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Password.Location = new System.Drawing.Point(295, 226);
-            this.TB_Password.Name = "TB_Password";
-            this.TB_Password.PasswordChar = '*';
-            this.TB_Password.Size = new System.Drawing.Size(185, 27);
-            this.TB_Password.TabIndex = 1;
-            // 
             // TB_Username
             // 
             this.TB_Username.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TB_Username.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_Username.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_Username.Location = new System.Drawing.Point(295, 130);
             this.TB_Username.Name = "TB_Username";
             this.TB_Username.Size = new System.Drawing.Size(185, 27);
@@ -129,20 +132,6 @@
             this.L_Password.TabIndex = 6;
             this.L_Password.Text = "Password:";
             // 
-            // B_Enter
-            // 
-            this.B_Enter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.B_Enter.AutoSize = true;
-            this.B_Enter.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.B_Enter.Location = new System.Drawing.Point(334, 294);
-            this.B_Enter.Margin = new System.Windows.Forms.Padding(1, 15, 1, 1);
-            this.B_Enter.Name = "B_Enter";
-            this.B_Enter.Size = new System.Drawing.Size(107, 50);
-            this.B_Enter.TabIndex = 2;
-            this.B_Enter.Text = "Enter";
-            this.B_Enter.UseVisualStyleBackColor = false;
-            this.B_Enter.Click += new System.EventHandler(this.B_Enter_Click);
-            // 
             // B_Exit
             // 
             this.B_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -161,6 +150,30 @@
             this.B_Exit.UseVisualStyleBackColor = false;
             this.B_Exit.Click += new System.EventHandler(this.B_Exit_Click);
             // 
+            // B_Enter
+            // 
+            this.B_Enter.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.B_Enter.AutoSize = true;
+            this.B_Enter.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.B_Enter.Location = new System.Drawing.Point(334, 294);
+            this.B_Enter.Margin = new System.Windows.Forms.Padding(1, 15, 1, 1);
+            this.B_Enter.Name = "B_Enter";
+            this.B_Enter.Size = new System.Drawing.Size(107, 50);
+            this.B_Enter.TabIndex = 2;
+            this.B_Enter.Text = "Enter";
+            this.B_Enter.UseVisualStyleBackColor = false;
+            this.B_Enter.Click += new System.EventHandler(this.B_Enter_Click);
+            // 
+            // TB_Password
+            // 
+            this.TB_Password.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TB_Password.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_Password.Location = new System.Drawing.Point(295, 226);
+            this.TB_Password.Name = "TB_Password";
+            this.TB_Password.PasswordChar = '*';
+            this.TB_Password.Size = new System.Drawing.Size(185, 27);
+            this.TB_Password.TabIndex = 1;
+            // 
             // L_WrongPass
             // 
             this.L_WrongPass.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -173,19 +186,6 @@
             this.L_WrongPass.TabIndex = 7;
             this.L_WrongPass.Text = "Incorrect password, try again!";
             this.L_WrongPass.Visible = false;
-            // 
-            // L_ExistingUsername
-            // 
-            this.L_ExistingUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.L_ExistingUsername.AutoSize = true;
-            this.L_ExistingUsername.ForeColor = System.Drawing.Color.Red;
-            this.L_ExistingUsername.Location = new System.Drawing.Point(279, 166);
-            this.L_ExistingUsername.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.L_ExistingUsername.Name = "L_ExistingUsername";
-            this.L_ExistingUsername.Size = new System.Drawing.Size(216, 16);
-            this.L_ExistingUsername.TabIndex = 8;
-            this.L_ExistingUsername.Text = "Username already exists, try again!";
-            this.L_ExistingUsername.Visible = false;
             // 
             // UC_Login
             // 

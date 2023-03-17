@@ -33,6 +33,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.B_Exit = new System.Windows.Forms.Button();
             this.B_Training = new System.Windows.Forms.Button();
+            this.L_CurrentAcc = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +80,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.L_CurrentAcc, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.B_Exit, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.B_Account, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.B_Testing, 1, 1);
@@ -127,6 +129,19 @@
             this.B_Training.UseVisualStyleBackColor = false;
             this.B_Training.Click += new System.EventHandler(this.B_Training_Click);
             // 
+            // L_CurrentAcc
+            // 
+            this.L_CurrentAcc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.L_CurrentAcc.AutoSize = true;
+            this.L_CurrentAcc.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.L_CurrentAcc.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_CurrentAcc.Location = new System.Drawing.Point(426, 123);
+            this.L_CurrentAcc.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.L_CurrentAcc.Name = "L_CurrentAcc";
+            this.L_CurrentAcc.Size = new System.Drawing.Size(147, 23);
+            this.L_CurrentAcc.TabIndex = 8;
+            this.L_CurrentAcc.Text = "Current account: ";
+            // 
             // UC_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -138,6 +153,7 @@
             this.Name = "UC_MainMenu";
             this.Size = new System.Drawing.Size(1000, 625);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -149,5 +165,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button B_Exit;
         private System.Windows.Forms.Button B_Training;
+        private System.Windows.Forms.Label L_CurrentAcc;
     }
 }
