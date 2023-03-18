@@ -123,12 +123,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.B_SignUp, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.B_SignIn, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.B_Guest, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.L_Logo, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.B_Exit, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.L_CurrentAcc, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.B_SignUp, 2, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -165,13 +165,12 @@
             this.L_CurrentAcc.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.tableLayoutPanel1.SetColumnSpan(this.L_CurrentAcc, 2);
             this.L_CurrentAcc.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_CurrentAcc.Location = new System.Drawing.Point(416, 276);
+            this.L_CurrentAcc.Location = new System.Drawing.Point(419, 276);
             this.L_CurrentAcc.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.L_CurrentAcc.Name = "L_CurrentAcc";
-            this.L_CurrentAcc.Size = new System.Drawing.Size(147, 23);
+            this.L_CurrentAcc.Size = new System.Drawing.Size(141, 23);
             this.L_CurrentAcc.TabIndex = 7;
-            this.L_CurrentAcc.Text = "Current account: ";
-            this.L_CurrentAcc.Visible = false;
+            this.L_CurrentAcc.Text = "Playing as guest";
             // 
             // F_SignIn
             // 

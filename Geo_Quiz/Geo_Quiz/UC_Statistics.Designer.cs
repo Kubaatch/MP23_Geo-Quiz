@@ -28,33 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.B_Exit = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.B_SaveReturn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.B_DiscardReturn = new System.Windows.Forms.Button();
             this.L_Statistics = new System.Windows.Forms.Label();
             this.L_QuizEnd = new System.Windows.Forms.Label();
             this.L_TimeSpent = new System.Windows.Forms.Label();
             this.L_Score = new System.Windows.Forms.Label();
             this.L_AvgScore = new System.Windows.Forms.Label();
+            this.TT_PopUp = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // B_Exit
+            // B_SaveReturn
             // 
-            this.B_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.B_Exit.AutoSize = true;
-            this.B_Exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.B_Exit.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_Exit.Location = new System.Drawing.Point(842, 580);
-            this.B_Exit.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.B_Exit.Name = "B_Exit";
-            this.B_Exit.Size = new System.Drawing.Size(148, 35);
-            this.B_Exit.TabIndex = 6;
-            this.B_Exit.Text = "Return to menu";
-            this.B_Exit.UseVisualStyleBackColor = false;
-            this.B_Exit.Click += new System.EventHandler(this.B_Exit_Click);
+            this.B_SaveReturn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.B_SaveReturn.AutoSize = true;
+            this.B_SaveReturn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.B_SaveReturn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.B_SaveReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.B_SaveReturn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_SaveReturn.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.B_SaveReturn.Location = new System.Drawing.Point(510, 447);
+            this.B_SaveReturn.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.B_SaveReturn.Name = "B_SaveReturn";
+            this.B_SaveReturn.Size = new System.Drawing.Size(153, 35);
+            this.B_SaveReturn.TabIndex = 6;
+            this.B_SaveReturn.Text = "Save and Return";
+            this.TT_PopUp.SetToolTip(this.B_SaveReturn, "Clicking this button saves all your stats connected to your current account.\nOh a" +
+        "nd it returns you back to the main menu.");
+            this.B_SaveReturn.UseVisualStyleBackColor = false;
+            this.B_SaveReturn.Click += new System.EventHandler(this.B_SaveReturn_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -62,8 +67,9 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.B_DiscardReturn, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.L_Statistics, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.B_Exit, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.B_SaveReturn, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.L_QuizEnd, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.L_TimeSpent, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.L_Score, 0, 4);
@@ -84,6 +90,26 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 625);
             this.tableLayoutPanel1.TabIndex = 7;
+            // 
+            // B_DiscardReturn
+            // 
+            this.B_DiscardReturn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.B_DiscardReturn.AutoSize = true;
+            this.B_DiscardReturn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.B_DiscardReturn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.B_DiscardReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.B_DiscardReturn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_DiscardReturn.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.B_DiscardReturn.Location = new System.Drawing.Point(314, 447);
+            this.B_DiscardReturn.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.B_DiscardReturn.Name = "B_DiscardReturn";
+            this.B_DiscardReturn.Size = new System.Drawing.Size(176, 35);
+            this.B_DiscardReturn.TabIndex = 10;
+            this.B_DiscardReturn.Text = "Discard and Return";
+            this.TT_PopUp.SetToolTip(this.B_DiscardReturn, "Clicking this button deletes all stats without saving them. Choose wisely!\nOh and" +
+        " it returns you back to the main menu.");
+            this.B_DiscardReturn.UseVisualStyleBackColor = false;
+            this.B_DiscardReturn.Click += new System.EventHandler(this.B_DiscardReturn_Click);
             // 
             // L_Statistics
             // 
@@ -167,12 +193,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button B_Exit;
+        private System.Windows.Forms.Button B_SaveReturn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label L_Statistics;
         private System.Windows.Forms.Label L_QuizEnd;
         private System.Windows.Forms.Label L_AvgScore;
         private System.Windows.Forms.Label L_Score;
         private System.Windows.Forms.Label L_TimeSpent;
+        private System.Windows.Forms.Button B_DiscardReturn;
+        private System.Windows.Forms.ToolTip TT_PopUp;
     }
 }

@@ -42,29 +42,62 @@ namespace Geo_Quiz
 
         private void B_SignUp_Click(object sender, EventArgs e)
         {
-            header = "Sign up a new account:";
-            type = "SignUp";
+            if (loggedIn == true)
+            {
+                DialogResult result = MessageBox.Show("You are already logged in, do you want to change account by signing up a new one?",
+                    "¯\\_(ツ)_/¯", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    header = "Sign up a new account:";
+                    type = "SignUp";
 
-            OpenLogin();            
+                    OpenLogin();
+                }
+            }
+            else
+            {
+                header = "Sign up a new account:";
+                type = "SignUp";
+
+                OpenLogin();
+            }
         }
 
         private void B_SignIn_Click(object sender, EventArgs e)
         {
-            header = "Sign in an existing account:";
-            type = "SignIn";
+            if (loggedIn == true)
+            {
+                DialogResult result = MessageBox.Show("You are already logged in, do you want to change account by signing in to another one?",
+                   "¯\\_(ツ)_/¯", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    header = "Sign in an existing account:";
+                    type = "SignIn";
 
-            OpenLogin();            
+                    OpenLogin();
+                }
+            }
+            else
+            {
+                header = "Sign in an existing account:";
+                type = "SignIn";
+
+                OpenLogin();
+            }
         }
 
         public void SetCurrentAccLabel(string setUsername)
         {
-            L_CurrentAcc.Visible = true;
-            
             loggedInAccount = setUsername;
-            L_CurrentAcc.Text += loggedInAccount;
+            L_CurrentAcc.Text = "Current account: " + loggedInAccount;
+        }
 
-            B_SignIn.Enabled = false;
-            B_SignUp.Enabled = false;
+        public void SetGuestLabel()
+        {
+            loggedIn = false;
+            loggedInAccount = string.Empty;
+            
+            L_CurrentAcc.Text = "Not yet logged in...";
         }
 
         private void OpenLogin()

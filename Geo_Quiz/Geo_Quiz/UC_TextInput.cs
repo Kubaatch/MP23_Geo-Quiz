@@ -77,7 +77,7 @@ namespace Geo_Quiz
 
             if (qnumber == GS_Text.QuestionCount - 1)
             {
-                B_Next.Text = "End Quiz";
+                B_Next.Text = "End quiz";
             }
 
             if (qnumber == GS_Text.QuestionCount)
@@ -344,7 +344,7 @@ namespace Geo_Quiz
 
             TimeSpan ts = stopwatch.Elapsed;
 
-            UC_Statistics uc = new UC_Statistics(score, ts, GS_Text);
+            UC_Statistics uc = new UC_Statistics(score, ts, GS_Text, "Text");
             uc.Dock = DockStyle.Fill;
             Controls.Add(uc);
             uc.BringToFront();

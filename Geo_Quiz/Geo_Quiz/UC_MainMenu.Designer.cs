@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.B_Testing = new System.Windows.Forms.Button();
-            this.B_Account = new System.Windows.Forms.Button();
+            this.B_LogOut = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.L_CurrentAcc = new System.Windows.Forms.Label();
             this.B_Exit = new System.Windows.Forms.Button();
             this.B_Training = new System.Windows.Forms.Button();
-            this.L_CurrentAcc = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,22 +54,22 @@
             this.B_Testing.UseVisualStyleBackColor = false;
             this.B_Testing.Click += new System.EventHandler(this.B_Testing_Click);
             // 
-            // B_Account
+            // B_LogOut
             // 
-            this.B_Account.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.B_Account.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.B_Account.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.B_Account.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_Account.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_Account.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_Account.Location = new System.Drawing.Point(10, 561);
-            this.B_Account.Margin = new System.Windows.Forms.Padding(10);
-            this.B_Account.Name = "B_Account";
-            this.B_Account.Size = new System.Drawing.Size(135, 54);
-            this.B_Account.TabIndex = 5;
-            this.B_Account.Text = "Account";
-            this.B_Account.UseVisualStyleBackColor = false;
-            this.B_Account.Click += new System.EventHandler(this.B_Account_Click);
+            this.B_LogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.B_LogOut.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.B_LogOut.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.B_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.B_LogOut.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_LogOut.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.B_LogOut.Location = new System.Drawing.Point(10, 561);
+            this.B_LogOut.Margin = new System.Windows.Forms.Padding(10);
+            this.B_LogOut.Name = "B_LogOut";
+            this.B_LogOut.Size = new System.Drawing.Size(135, 54);
+            this.B_LogOut.TabIndex = 5;
+            this.B_LogOut.Text = "Log Out";
+            this.B_LogOut.UseVisualStyleBackColor = false;
+            this.B_LogOut.Click += new System.EventHandler(this.B_LogOut_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -82,7 +82,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.L_CurrentAcc, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.B_Exit, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.B_Account, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.B_LogOut, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.B_Testing, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.B_Training, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -96,6 +96,19 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 625);
             this.tableLayoutPanel1.TabIndex = 6;
+            // 
+            // L_CurrentAcc
+            // 
+            this.L_CurrentAcc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.L_CurrentAcc.AutoSize = true;
+            this.L_CurrentAcc.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.L_CurrentAcc.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_CurrentAcc.Location = new System.Drawing.Point(426, 123);
+            this.L_CurrentAcc.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.L_CurrentAcc.Name = "L_CurrentAcc";
+            this.L_CurrentAcc.Size = new System.Drawing.Size(147, 23);
+            this.L_CurrentAcc.TabIndex = 8;
+            this.L_CurrentAcc.Text = "Current account: ";
             // 
             // B_Exit
             // 
@@ -129,19 +142,6 @@
             this.B_Training.UseVisualStyleBackColor = false;
             this.B_Training.Click += new System.EventHandler(this.B_Training_Click);
             // 
-            // L_CurrentAcc
-            // 
-            this.L_CurrentAcc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.L_CurrentAcc.AutoSize = true;
-            this.L_CurrentAcc.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.L_CurrentAcc.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_CurrentAcc.Location = new System.Drawing.Point(426, 123);
-            this.L_CurrentAcc.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.L_CurrentAcc.Name = "L_CurrentAcc";
-            this.L_CurrentAcc.Size = new System.Drawing.Size(147, 23);
-            this.L_CurrentAcc.TabIndex = 8;
-            this.L_CurrentAcc.Text = "Current account: ";
-            // 
             // UC_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -161,7 +161,7 @@
         #endregion
 
         private System.Windows.Forms.Button B_Testing;
-        private System.Windows.Forms.Button B_Account;
+        private System.Windows.Forms.Button B_LogOut;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button B_Exit;
         private System.Windows.Forms.Button B_Training;

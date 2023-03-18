@@ -38,9 +38,9 @@
             this.Button_C = new System.Windows.Forms.Button();
             this.PBar = new System.Windows.Forms.ProgressBar();
             this.L_Question = new System.Windows.Forms.Label();
-            this.L_Result = new System.Windows.Forms.Label();
             this.B_Next = new System.Windows.Forms.Button();
             this.PB_Flag = new System.Windows.Forms.PictureBox();
+            this.L_Result = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Flag)).BeginInit();
             this.SuspendLayout();
@@ -204,19 +204,6 @@
             this.L_Question.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.L_Question.Visible = false;
             // 
-            // L_Result
-            // 
-            this.L_Result.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.L_Result.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.L_Result, 2);
-            this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Result.Location = new System.Drawing.Point(463, 582);
-            this.L_Result.Name = "L_Result";
-            this.L_Result.Size = new System.Drawing.Size(73, 27);
-            this.L_Result.TabIndex = 20;
-            this.L_Result.Text = "label1";
-            this.L_Result.Visible = false;
-            // 
             // B_Next
             // 
             this.B_Next.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -245,6 +232,19 @@
             this.PB_Flag.TabStop = false;
             this.PB_Flag.Visible = false;
             // 
+            // L_Result
+            // 
+            this.L_Result.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.L_Result.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.L_Result, 2);
+            this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Result.Location = new System.Drawing.Point(463, 582);
+            this.L_Result.Name = "L_Result";
+            this.L_Result.Size = new System.Drawing.Size(73, 27);
+            this.L_Result.TabIndex = 20;
+            this.L_Result.Text = "label1";
+            this.L_Result.Visible = false;
+            // 
             // UC_ABCD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -271,9 +271,9 @@
         private System.Windows.Forms.PictureBox PB_Flag;
         private System.Windows.Forms.Button B_Exit;
         private System.Windows.Forms.ProgressBar PBar;
-        private System.Windows.Forms.Label L_Result;
         private System.Windows.Forms.Button B_Next;
         private System.Windows.Forms.Label L_QCount;
         private System.Windows.Forms.Label L_Score;
+        private System.Windows.Forms.Label L_Result;
     }
 }

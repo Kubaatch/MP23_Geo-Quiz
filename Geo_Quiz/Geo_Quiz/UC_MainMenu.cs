@@ -5,18 +5,13 @@ namespace Geo_Quiz
 {
     public partial class UC_MainMenu : UserControl
     {
-        public bool loggedIn;
-        public string loggedInAccount;
-
         public UC_MainMenu()
         {
             InitializeComponent();
 
             SetCurrentAccount();
-
-            loggedIn = F_SignIn.loggedIn;
-            loggedInAccount = F_SignIn.loggedInAccount;
         }
+
         private void B_Testing_Click(object sender, EventArgs e)
         {            
             UC_GameUI uc = new UC_GameUI();
@@ -33,23 +28,24 @@ namespace Geo_Quiz
             uc.BringToFront();
         }
 
-        private void B_Account_Click(object sender, EventArgs e)
+        private void B_LogOut_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Accounts aren't supported yet.");
+            F_SignIn form = ParentForm as F_SignIn;
+            form.SetGuestLabel();
+
+            Dispose();
         }
 
         private void SetCurrentAccount()
         {
-            loggedIn = F_SignIn.loggedIn;
-            loggedInAccount = F_SignIn.loggedInAccount;
-
-            if (loggedIn == true)
+            if (F_SignIn.loggedIn == true)
             {
-                L_CurrentAcc.Text += loggedInAccount;
+                L_CurrentAcc.Text += F_SignIn.loggedInAccount;
             }
             else
             {
                 L_CurrentAcc.Text = "Playing as guest";
+                B_LogOut.Text = "Log in";
             }
         }
 

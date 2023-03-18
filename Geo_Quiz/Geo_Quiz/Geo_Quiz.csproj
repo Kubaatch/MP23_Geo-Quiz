@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AccSettings.Designer.cs">
+      <DependentUpon>AccSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameSpecs.cs" />
     <Compile Include="F_SignIn.cs">
       <SubType>Form</SubType>
@@ -122,6 +128,9 @@
     <Compile Include="UC_TextInput.Designer.cs">
       <DependentUpon>UC_TextInput.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccSettings.resx">
+      <DependentUpon>AccSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_SignIn.resx">
       <DependentUpon>F_SignIn.cs</DependentUpon>
     </EmbeddedResource>

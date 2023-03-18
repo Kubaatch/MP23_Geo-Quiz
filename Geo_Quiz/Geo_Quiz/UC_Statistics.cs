@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Geo_Quiz
@@ -6,6 +7,7 @@ namespace Geo_Quiz
     public partial class UC_Statistics : UserControl
     {
         readonly GameSpecs gameInfo = new GameSpecs();
+        readonly string gameMode;
 
         readonly TimeSpan totalTime = new TimeSpan();
 
@@ -13,29 +15,45 @@ namespace Geo_Quiz
         public int avgScore;
         public int gameScore;
 
-        public UC_Statistics(int score, TimeSpan ts, GameSpecs gamespecs)
+        public string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
+
+        public UC_Statistics(int score, TimeSpan ts, GameSpecs gamespecs, string mode)
         {
             gameInfo = gamespecs;
             totalTime = ts;
             finalScore = score;
+            gameMode = mode;
 
             InitializeComponent();
 
             L_Score.Text += finalScore + " pts.";
 
-            ComputePerQuestionScore();
+            avgScore = finalScore / gameInfo.QuestionCount;
+            L_AvgScore.Text += avgScore + " pts.";            
             
             L_TimeSpent.Text += totalTime.Minutes + "mins, " + totalTime.Seconds + "s, " + totalTime.Milliseconds + "ms.";
         }
 
-        private void ComputePerQuestionScore()
+        private void B_SaveReturn_Click(object sender, EventArgs e)
         {
-            avgScore = finalScore / gameInfo.QuestionCount;
+            string scoreText;
+            scoreText = string.Join("\t", F_SignIn.loggedInAccount, finalScore, avgScore, totalTime, gameInfo.QuestionCount, gameInfo.Category, "\n");
 
-            L_AvgScore.Text += avgScore + " pts.";
+            if (gameMode == "ABCD")
+            {
+                string abcdPath = Path.Combine(filepath, "Stats4Variants.txt");
+                File.AppendAllText(abcdPath, scoreText);
+            }
+            else
+            {
+                string textPath = Path.Combine(filepath, "StatsTextInput.txt");
+                File.AppendAllText(textPath, scoreText);
+            }
+
+            CloseAllUserControls(this.Parent.Parent.Parent);
         }
 
-        private void B_Exit_Click(object sender, EventArgs e)
+        private void B_DiscardReturn_Click(object sender, EventArgs e)
         {
             CloseAllUserControls(this.Parent.Parent.Parent);
         }

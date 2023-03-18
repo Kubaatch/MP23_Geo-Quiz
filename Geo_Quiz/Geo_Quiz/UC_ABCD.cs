@@ -31,7 +31,7 @@ namespace Geo_Quiz
         private string labelQuestion;
 
         private int questionNumber = 0;        
-        private int score;
+        private int score = 0;
 
         readonly List<Image> flags = new List<Image>();
         public Image[] qFlags = new Image[0];
@@ -229,22 +229,22 @@ namespace Geo_Quiz
                 //end
             Button[] buttons = new Button[] { Button_A, Button_B, Button_C, Button_D };
 
-            L_Result.Visible = true;
+            int tempscore;
 
             if (clickedButton.Text == answer)
             {
                 L_Result.Text = "Correct!";
+                L_Result.ForeColor = Color.ForestGreen;
                 clickedButton.BackColor = Color.ForestGreen;
 
-                int timeSpent = (int)(stopwatch.ElapsedMilliseconds) / 100;
-                score = 1000 - timeSpent;
-
-                if (score > 0) { score = 0; }
-
+                int timeSpent = (int)(stopwatch.ElapsedMilliseconds) / 25;
+                tempscore = 1000 - timeSpent;
+                if (tempscore < 0) { tempscore = 0; }
             }
             else
             {
                 L_Result.Text = "Wrong...";
+                L_Result.ForeColor = Color.Red;
                 clickedButton.BackColor = Color.Red;
                 foreach (Button b in buttons)
                 {
@@ -254,20 +254,30 @@ namespace Geo_Quiz
                     }
                 }
 
-                score -= 50;
+                tempscore = -50;
             }
+
+            score += tempscore;
+            L_Score.Text = "Score: " + score.ToString();
 
             foreach (Button b in buttons)
             {
                 b.Enabled = false;
                 b.Tag = null;
             }
+
+            L_Result.Visible = true;
             B_Next.Visible = true;
         }
         
         private void B_Next_Click(object sender, EventArgs e)
         {
             questionNumber++;
+
+            if (questionNumber + 1 == GS_ABCD.QuestionCount)
+            {
+                B_Next.Text = "End quiz";
+            }
 
             if (questionNumber == GS_ABCD.QuestionCount)
             {
@@ -297,6 +307,8 @@ namespace Geo_Quiz
                 {
                     L_Question.Text = labelQuestion + GS_ABCD.Questions[questionNumber].Split('\t')[0];
                 }
+
+                L_QCount.Text = questionNumber + 1 + " / " + GS_ABCD.QuestionCount;
             }
         }
 
@@ -404,7 +416,7 @@ namespace Geo_Quiz
 
             TimeSpan ts = stopwatch.Elapsed;
 
-            UC_Statistics uc = new UC_Statistics(score, ts, GS_ABCD);
+            UC_Statistics uc = new UC_Statistics(score, ts, GS_ABCD, "ABCD");
             uc.Dock = DockStyle.Fill;
             Controls.Add(uc);
             uc.BringToFront();
