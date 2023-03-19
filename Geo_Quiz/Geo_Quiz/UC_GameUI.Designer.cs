@@ -72,7 +72,8 @@
             this.LB_Category.Size = new System.Drawing.Size(147, 124);
             this.LB_Category.TabIndex = 6;
             this.TT_PopUp.SetToolTip(this.LB_Category, "Choose category of questions you want in your test.\nYou have to choose one catego" +
-        "ryto be able to play.");
+        "ryto be able to play. For written answer population/area, you can be off by up t" +
+        "o 20%.");
             // 
             // LB_Continents
             // 
@@ -124,7 +125,7 @@
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.Location = new System.Drawing.Point(440, 426);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            196,
+            197,
             0,
             0,
             0});

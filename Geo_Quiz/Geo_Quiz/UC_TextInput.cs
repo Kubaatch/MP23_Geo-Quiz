@@ -14,12 +14,12 @@ namespace Geo_Quiz
 {
     public partial class UC_TextInput : UserControl
     {
-        GameSpecs GS_Text = new GameSpecs();
-        Button B_Start = new Button();
-        Stopwatch stopwatch = new Stopwatch();
+        readonly GameSpecs GS_Text = new GameSpecs();
+        readonly Button B_Start = new Button();
+        readonly Stopwatch stopwatch = new Stopwatch();
 
-        string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
-        List<Image> flags = new List<Image>();
+        readonly string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
+        readonly List<Image> flags = new List<Image>();
         Image[] qFlags = new Image[0];
 
         string categoryPrint = "";
@@ -28,15 +28,15 @@ namespace Geo_Quiz
         string answer;
         int qnumber = 0;
         int score = 0;
-
+        readonly int minuspoints = 100;
         public UC_TextInput(int category, string[] continents, int QCount)
         {            
             GS_Text.Category = category;                        
             GS_Text.Continents = continents;
             GS_Text.QuestionCount = QCount;
 
-            Array.Resize(ref qFlags, QCount);
-                        
+            Array.Resize(ref qFlags, QCount);                        
+
             InitializeComponent();
             StartSetup();
         }
@@ -126,7 +126,7 @@ namespace Geo_Quiz
             }
             else
             {
-                IfWrong(answer, 50);
+                IfWrong(answer, minuspoints);
             }
 
             ControlsEdit();                        
@@ -143,7 +143,7 @@ namespace Geo_Quiz
             }
             else
             {
-                IfWrong(answer, 50);
+                IfWrong(answer, minuspoints);
             }
 
             ControlsEdit();
@@ -155,21 +155,22 @@ namespace Geo_Quiz
             double dCorrect = Convert.ToDouble(answer);
 
             bool success = double.TryParse(TB_Answer.Text, out double dInput);
+            double deviation = 1.2;
 
             if (success)
             {
-                if ((dCorrect / 1.15) < dInput && dInput < (dCorrect * 1.15))
+                if ((dCorrect / deviation) < dInput && dInput < (dCorrect * deviation))
                 {
                     IfCorrect();
                 }
                 else
                 {
-                    IfWrong(answer, 50);
+                    IfWrong(answer, minuspoints);
                 }
             }
             else
             {
-                IfWrong(answer, 60);
+                IfWrong(answer, 150);
             }
 
             ControlsEdit();

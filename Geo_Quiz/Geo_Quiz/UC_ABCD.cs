@@ -254,7 +254,7 @@ namespace Geo_Quiz
                     }
                 }
 
-                tempscore = -50;
+                tempscore = -100;
             }
 
             score += tempscore;
