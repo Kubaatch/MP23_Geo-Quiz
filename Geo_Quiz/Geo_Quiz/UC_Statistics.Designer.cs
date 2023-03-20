@@ -38,7 +38,15 @@
             this.L_Score = new System.Windows.Forms.Label();
             this.L_AvgScore = new System.Windows.Forms.Label();
             this.TT_PopUp = new System.Windows.Forms.ToolTip(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Avg_Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time_Spent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // B_SaveReturn
@@ -50,7 +58,7 @@
             this.B_SaveReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_SaveReturn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_SaveReturn.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_SaveReturn.Location = new System.Drawing.Point(510, 447);
+            this.B_SaveReturn.Location = new System.Drawing.Point(510, 572);
             this.B_SaveReturn.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.B_SaveReturn.Name = "B_SaveReturn";
             this.B_SaveReturn.Size = new System.Drawing.Size(153, 35);
@@ -74,6 +82,7 @@
             this.tableLayoutPanel1.Controls.Add(this.L_TimeSpent, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.L_Score, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.L_AvgScore, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -85,9 +94,9 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 625);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
@@ -100,7 +109,7 @@
             this.B_DiscardReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_DiscardReturn.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_DiscardReturn.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_DiscardReturn.Location = new System.Drawing.Point(314, 447);
+            this.B_DiscardReturn.Location = new System.Drawing.Point(314, 572);
             this.B_DiscardReturn.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.B_DiscardReturn.Name = "B_DiscardReturn";
             this.B_DiscardReturn.Size = new System.Drawing.Size(176, 35);
@@ -157,11 +166,11 @@
             this.L_Score.BackColor = System.Drawing.SystemColors.Menu;
             this.tableLayoutPanel1.SetColumnSpan(this.L_Score, 2);
             this.L_Score.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Score.Location = new System.Drawing.Point(403, 250);
+            this.L_Score.Location = new System.Drawing.Point(425, 250);
             this.L_Score.Name = "L_Score";
-            this.L_Score.Size = new System.Drawing.Size(194, 30);
+            this.L_Score.Size = new System.Drawing.Size(149, 30);
             this.L_Score.TabIndex = 8;
-            this.L_Score.Text = "In total you got ";
+            this.L_Score.Text = "Total score: ";
             // 
             // L_AvgScore
             // 
@@ -170,11 +179,78 @@
             this.L_AvgScore.BackColor = System.Drawing.SystemColors.Menu;
             this.tableLayoutPanel1.SetColumnSpan(this.L_AvgScore, 2);
             this.L_AvgScore.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_AvgScore.Location = new System.Drawing.Point(394, 300);
+            this.L_AvgScore.Location = new System.Drawing.Point(382, 300);
             this.L_AvgScore.Name = "L_AvgScore";
-            this.L_AvgScore.Size = new System.Drawing.Size(212, 30);
+            this.L_AvgScore.Size = new System.Drawing.Size(236, 30);
             this.L_AvgScore.TabIndex = 7;
-            this.L_AvgScore.Text = "Per question it is: ";
+            this.L_AvgScore.Text = "Score per question: ";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Username,
+            this.Score,
+            this.Avg_Score,
+            this.Time_Spent,
+            this.QCount,
+            this.Category});
+            this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(98, 402);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(803, 150);
+            this.dataGridView1.TabIndex = 11;
+            // 
+            // Username
+            // 
+            this.Username.HeaderText = "Username";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            this.Username.Width = 125;
+            // 
+            // Score
+            // 
+            this.Score.HeaderText = "Score";
+            this.Score.MinimumWidth = 6;
+            this.Score.Name = "Score";
+            this.Score.ReadOnly = true;
+            this.Score.Width = 125;
+            // 
+            // Avg_Score
+            // 
+            this.Avg_Score.HeaderText = "Avg. score";
+            this.Avg_Score.MinimumWidth = 6;
+            this.Avg_Score.Name = "Avg_Score";
+            this.Avg_Score.ReadOnly = true;
+            this.Avg_Score.Width = 125;
+            // 
+            // Time_Spent
+            // 
+            this.Time_Spent.HeaderText = "Total time";
+            this.Time_Spent.MinimumWidth = 6;
+            this.Time_Spent.Name = "Time_Spent";
+            this.Time_Spent.ReadOnly = true;
+            this.Time_Spent.Width = 125;
+            // 
+            // QCount
+            // 
+            this.QCount.HeaderText = "Question Count";
+            this.QCount.MinimumWidth = 6;
+            this.QCount.Name = "QCount";
+            this.QCount.ReadOnly = true;
+            this.QCount.Width = 125;
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "Category";
+            this.Category.MinimumWidth = 6;
+            this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
+            this.Category.Width = 125;
             // 
             // UC_Statistics
             // 
@@ -187,6 +263,7 @@
             this.Size = new System.Drawing.Size(1000, 625);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -202,5 +279,12 @@
         private System.Windows.Forms.Label L_TimeSpent;
         private System.Windows.Forms.Button B_DiscardReturn;
         private System.Windows.Forms.ToolTip TT_PopUp;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Score;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Avg_Score;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Time_Spent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
     }
 }

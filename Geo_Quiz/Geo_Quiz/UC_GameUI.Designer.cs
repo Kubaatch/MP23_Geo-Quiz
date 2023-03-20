@@ -36,12 +36,11 @@
             this.B_TextBox = new System.Windows.Forms.Button();
             this.B_ABCD = new System.Windows.Forms.Button();
             this.TT_PopUp = new System.Windows.Forms.ToolTip(this.components);
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.SetQCount = new System.Windows.Forms.DomainUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // B_Exit
@@ -71,9 +70,7 @@
             this.LB_Category.Name = "LB_Category";
             this.LB_Category.Size = new System.Drawing.Size(147, 124);
             this.LB_Category.TabIndex = 6;
-            this.TT_PopUp.SetToolTip(this.LB_Category, "Choose category of questions you want in your test.\nYou have to choose one catego" +
-        "ryto be able to play. For written answer population/area, you can be off by up t" +
-        "o 20%.");
+            this.TT_PopUp.SetToolTip(this.LB_Category, resources.GetString("LB_Category.ToolTip"));
             // 
             // LB_Continents
             // 
@@ -96,7 +93,7 @@
             this.B_TextBox.Size = new System.Drawing.Size(138, 50);
             this.B_TextBox.TabIndex = 8;
             this.B_TextBox.Text = "Written answer";
-            this.TT_PopUp.SetToolTip(this.B_TextBox, "In this mode you will write the answer into a text box.");
+            this.TT_PopUp.SetToolTip(this.B_TextBox, resources.GetString("B_TextBox.ToolTip"));
             this.B_TextBox.UseVisualStyleBackColor = true;
             this.B_TextBox.Click += new System.EventHandler(this.B_Play_Click);
             // 
@@ -109,8 +106,7 @@
             this.B_ABCD.Size = new System.Drawing.Size(138, 50);
             this.B_ABCD.TabIndex = 9;
             this.B_ABCD.Text = "4 options";
-            this.TT_PopUp.SetToolTip(this.B_ABCD, "In this mode you will be choosing the correct answer from\nfour options, where onl" +
-        "y one is correct");
+            this.TT_PopUp.SetToolTip(this.B_ABCD, resources.GetString("B_ABCD.ToolTip"));
             this.B_ABCD.UseVisualStyleBackColor = true;
             this.B_ABCD.Click += new System.EventHandler(this.B_Play_Click);
             // 
@@ -120,31 +116,23 @@
             this.TT_PopUp.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.TT_PopUp.ToolTipTitle = "Tip: ";
             // 
-            // numericUpDown1
+            // SetQCount
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(440, 426);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            197,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(65, 33);
-            this.numericUpDown1.TabIndex = 10;
-            this.TT_PopUp.SetToolTip(this.numericUpDown1, "Enter the number of questions you want to answer.\nYou can use up and down arrows " +
-        "or enter a specific number by typing.\nMinimum is 5 and maximum 196");
-            this.numericUpDown1.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.SetQCount.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SetQCount.Items.Add("Max");
+            this.SetQCount.Items.Add("100");
+            this.SetQCount.Items.Add("50");
+            this.SetQCount.Items.Add("25");
+            this.SetQCount.Items.Add("20");
+            this.SetQCount.Items.Add("10");
+            this.SetQCount.Items.Add("5");
+            this.SetQCount.Location = new System.Drawing.Point(417, 426);
+            this.SetQCount.Name = "SetQCount";
+            this.SetQCount.ReadOnly = true;
+            this.SetQCount.Size = new System.Drawing.Size(110, 29);
+            this.SetQCount.TabIndex = 17;
+            this.SetQCount.Text = "Select!";
+            this.TT_PopUp.SetToolTip(this.SetQCount, resources.GetString("SetQCount.ToolTip"));
             // 
             // label2
             // 
@@ -198,11 +186,11 @@
             this.BackgroundImage = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.SetQCount);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.B_ABCD);
             this.Controls.Add(this.B_TextBox);
             this.Controls.Add(this.LB_Continents);
@@ -212,7 +200,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_GameUI";
             this.Size = new System.Drawing.Size(1000, 625);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,8 +215,8 @@
         private System.Windows.Forms.Button B_TextBox;
         private System.Windows.Forms.Button B_ABCD;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button B_Exit;
         private System.Windows.Forms.ToolTip TT_PopUp;
+        private System.Windows.Forms.DomainUpDown SetQCount;
     }
 }

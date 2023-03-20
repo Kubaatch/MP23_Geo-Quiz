@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Messaging;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,10 +22,8 @@ namespace Geo_Quiz
         readonly Button B_Start = new Button();
         readonly GameSpecs GS_ABCD = new GameSpecs();
         readonly Random random = new Random();
-
         readonly Stopwatch stopwatch = new Stopwatch();
         
-        readonly private string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
         readonly private string[] imageFileNames = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data"), "*.png", SearchOption.AllDirectories);
 
         private string categoryPrint = "";
@@ -33,17 +32,45 @@ namespace Geo_Quiz
         private int questionNumber = 0;        
         private int score = 0;
 
-        readonly List<Image> flags = new List<Image>();
-        public Image[] qFlags = new Image[0];
+        readonly Image[] qFlags = new Image[0];
 
-        public UC_ABCD(int category, string[] continents, int QCount)
+        readonly string[] questions;
+        readonly string[] answers;
+
+        public UC_ABCD(int category, string[] continents, int QCount, object[] setQuestions)
         {            
             GS_ABCD.Category = category;
             GS_ABCD.Continents = continents;
             GS_ABCD.QuestionCount = QCount;
 
+
+            if (category == 0)
+            {
+                qFlags = setQuestions as Image[];
+            }
+            else
+            {   
+                Array.Resize(ref questions, QCount);
+                Array.Resize(ref answers, QCount);
+
+                SetQuestions(setQuestions);
+            }
+
             InitializeComponent();
+
             SetStartButton();
+        }
+
+        private void SetQuestions(object[] sentQuestions)
+        {
+            string[] strQuestions = sentQuestions as string[];
+            int category = GS_ABCD.Category;
+
+            for (int i = 0; i < strQuestions.Length; i++)
+            {
+                questions[i] = strQuestions[i].Split('\t')[0];
+                answers[i] = strQuestions[i].Split('\t')[category];
+            }
         }
 
         private void B_Start_Click(object sender, EventArgs e)
@@ -51,8 +78,6 @@ namespace Geo_Quiz
             switch (GS_ABCD.Category)
             {
                 case 0:
-                    LoadFlags();
-
                     PB_Flag.Image = qFlags.First();
                     PB_Flag.Visible = true;
                     break;
@@ -67,15 +92,14 @@ namespace Geo_Quiz
                     break;
             }            
 
-            if (GS_ABCD.Category != 0)
+            if (GS_ABCD.Category == 0)
             {
-                labelQuestion = "What is the " + categoryPrint + " of:\n";
-                GS_ABCD.Questions = GetQuestions();
-                L_Question.Text = labelQuestion + GS_ABCD.Questions[0].Split('\t')[0];                
+                L_Question.Text = "What country does this flag belong to?";
             }
             else
             {
-                L_Question.Text = "What country does this flag belong to?";
+                labelQuestion = "What is the " + categoryPrint + " of:\n";
+                L_Question.Text = labelQuestion + questions[0];                
             }
 
             SetButtonAnswers();
@@ -129,7 +153,7 @@ namespace Geo_Quiz
                 case 1:
                 case 2:
                 case 3:
-                    return GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+                    return answers[questionNumber];
             }
 
             throw new NotImplementedException();
@@ -195,16 +219,16 @@ namespace Geo_Quiz
         private void AnswerPopulationArea(Button[] buttons)
         {
             string answer = GetAnswer();
-            double.TryParse(answer, out double intAnswer);
+            int.TryParse(answer, out int intAnswer);
 
-            double fakeAnswer;
+            int fakeAnswer;
 
             foreach (Button b in buttons)
             {
 
                 if (b.Tag != null && b.Tag.ToString() == "Correct")
                 {
-                    b.Text = GS_ABCD.Questions[questionNumber].Split('\t')[GS_ABCD.Category];
+                    b.Text = answers[questionNumber];
                 }
                 else
                 {
@@ -305,90 +329,10 @@ namespace Geo_Quiz
                 }
                 else
                 {
-                    L_Question.Text = labelQuestion + GS_ABCD.Questions[questionNumber].Split('\t')[0];
+                    L_Question.Text = labelQuestion + questions[questionNumber];
                 }
 
                 L_QCount.Text = questionNumber + 1 + " / " + GS_ABCD.QuestionCount;
-            }
-        }
-
-        private string[] GetQuestions()
-        {
-            List<string> tempQsList = new List<string>();
-
-            string path = Path.Combine(filepath, "Questions.txt");
-
-            string[] qArr1 = File.ReadAllLines(path);
-
-            for (int i = 0; i < GS_ABCD.Continents.Length; i++)
-            {
-                int startIndex = Array.IndexOf(qArr1, GS_ABCD.Continents[i]) + 1;
-                for (int j = startIndex; j < qArr1.Length; j++)
-                {
-                    if (string.IsNullOrWhiteSpace(qArr1[j]))
-                    { break; }
-
-                    tempQsList.Add(qArr1[j]);
-                }
-            }
-
-            if (GS_ABCD.QuestionCount > tempQsList.Count)
-            {
-                DialogResult result = MessageBox.Show("Number of questions you requested was limited\nto match number of countries in selection." +
-                    "\nDo you want to continue with " + tempQsList.Count + " questions instead of " + GS_ABCD.QuestionCount +"?",
-                    "¯\\_(ツ)_/¯", MessageBoxButtons.YesNo);
-                if (result == DialogResult.No)
-                {
-                    Dispose();
-                }
-
-                GS_ABCD.QuestionCount = tempQsList.Count;
-            }
-
-            Random rand = new Random();
-            string[] tempQs = tempQsList.ToArray();
-            string[] questions = new string[GS_ABCD.QuestionCount];
-
-            //generated by an AI (ChatGPT)
-            IEnumerable<int> tempList = Enumerable.Range(0, tempQs.Length).OrderBy(x => rand.Next()).Distinct().Take(GS_ABCD.QuestionCount);
-            questions = tempList.Select(j => tempQs[j]).ToArray();
-            //end
-
-            return questions;
-        }
-
-        private void LoadFlags()
-        {
-            string path = Path.Combine(filepath, "");
-
-            for (int i = 0; i < GS_ABCD.Continents.Length; i++)
-            {
-                string continentPath = Path.Combine(path, GS_ABCD.Continents[i]);
-                GetContinentFlags(continentPath);
-            }
-
-            Random rand = new Random();
-
-            //generated by an AI (ChatGPT)
-            IEnumerable<int> tempList = Enumerable.Range(0, flags.Count).OrderBy(x => rand.Next()).Distinct().Take(GS_ABCD.QuestionCount);
-            qFlags = tempList.Select(j =>
-            {
-                Image image = flags[j];
-                image.Tag = Path.GetFileName(image.Tag.ToString());
-                return image;
-            }).ToArray();
-            //end
-        }
-
-        private void GetContinentFlags(string path)
-        {
-            string[] files = Directory.GetFiles(path, "*.png");
-
-            for (int i = 0; i < files.Length; i++)
-            {
-                Image image = Image.FromFile(files[i]);
-                flags.Add(image);
-                flags.Last().Tag = Path.GetFileName(files[i]);
             }
         }
 

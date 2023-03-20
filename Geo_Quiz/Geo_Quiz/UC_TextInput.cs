@@ -18,27 +18,54 @@ namespace Geo_Quiz
         readonly Button B_Start = new Button();
         readonly Stopwatch stopwatch = new Stopwatch();
 
-        readonly string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
-        readonly List<Image> flags = new List<Image>();
-        Image[] qFlags = new Image[0];
 
         string categoryPrint = "";
         string labelQuestion;
 
         string answer;
-        int qnumber = 0;
+        int questionNumber = 0;
         int score = 0;
         readonly int minuspoints = 100;
-        public UC_TextInput(int category, string[] continents, int QCount)
+
+        readonly Image[] qFlags = new Image[0];
+        
+        readonly string[] questions;
+        readonly string[] answers;
+
+        public UC_TextInput(int category, string[] continents, int QCount, object[] setQuestions)
         {            
             GS_Text.Category = category;                        
             GS_Text.Continents = continents;
             GS_Text.QuestionCount = QCount;
 
-            Array.Resize(ref qFlags, QCount);                        
+            Array.Resize(ref qFlags, QCount);
+
+            if (category == 0)
+            {
+                qFlags = setQuestions as Image[];
+            }
+            else
+            {
+                Array.Resize(ref questions, QCount);
+                Array.Resize(ref answers, QCount);
+
+                SetQuestions(setQuestions);
+            }
 
             InitializeComponent();
             StartSetup();
+        }
+
+        private void SetQuestions(object[] sentQuestions)
+        {
+            string[] strQuestions = sentQuestions as string[];
+            int category = GS_Text.Category;
+
+            for (int i = 0; i < strQuestions.Length; i++)
+            {
+                questions[i] = strQuestions[i].Split('\t')[0];
+                answers[i] = strQuestions[i].Split('\t')[category];
+            }
         }
 
         private void TB_Answer_KeyUpEnter(object sender, KeyEventArgs f)
@@ -58,11 +85,11 @@ namespace Geo_Quiz
         {           
             if (GS_Text.Category == 0)
             {
-                answer = qFlags[qnumber].Tag.ToString().Split('.')[0];
+                answer = qFlags[questionNumber].Tag.ToString().Split('.')[0];
             }
             else
             {            
-                answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Category]; 
+                answer = answers[questionNumber]; 
             }
 
             IfWrong(answer, 30);
@@ -72,15 +99,15 @@ namespace Geo_Quiz
 
         private void B_Next_Click(object sender, EventArgs e)
         {
-            qnumber++;
-            L_QCount.Text = qnumber + 1 + " / " + GS_Text.QuestionCount;
+            questionNumber++;
+            L_QCount.Text = questionNumber + 1 + " / " + GS_Text.QuestionCount;
 
-            if (qnumber == GS_Text.QuestionCount - 1)
+            if (questionNumber == GS_Text.QuestionCount - 1)
             {
                 B_Next.Text = "End quiz";
             }
 
-            if (qnumber == GS_Text.QuestionCount)
+            if (questionNumber == GS_Text.QuestionCount)
             {
                 OpenStatistics();
             }
@@ -88,11 +115,11 @@ namespace Geo_Quiz
             {
                 if (GS_Text.Category == 0)
                 {
-                    PB_Flag.Image = qFlags[qnumber];
+                    PB_Flag.Image = qFlags[questionNumber];
                 }
                 else
                 {
-                    L_Question.Text = labelQuestion + GS_Text.Questions[qnumber].Split('\t')[0];
+                    L_Question.Text = labelQuestion + questions[questionNumber];
                 }
             }
 
@@ -118,7 +145,7 @@ namespace Geo_Quiz
 
         private void CheckAnswer_0()
         {
-            answer = qFlags[qnumber].Tag.ToString().Split('.')[0];
+            answer = qFlags[questionNumber].Tag.ToString().Split('.')[0];
 
             if (TB_Answer.Text.ToLower() == answer.ToLower())
             {
@@ -134,7 +161,7 @@ namespace Geo_Quiz
 
         private void CheckAnswer_1()
         {
-            answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Category];
+            answer = answers[questionNumber];
             string ansInput = TB_Answer.Text;
 
             if (ansInput.ToLower() == answer.ToLower())
@@ -151,7 +178,7 @@ namespace Geo_Quiz
 
         private void CheckAnswer_2()
         {
-            answer = GS_Text.Questions[qnumber].Split('\t')[GS_Text.Category];
+            answer = answers[questionNumber];
             double dCorrect = Convert.ToDouble(answer);
 
             bool success = double.TryParse(TB_Answer.Text, out double dInput);
@@ -242,8 +269,6 @@ namespace Geo_Quiz
             switch (GS_Text.Category)
             {
                 case 0:
-                    LoadFlags();
-
                     PB_Flag.Image = qFlags.First();
                     PB_Flag.Visible = true;
                     break;
@@ -261,8 +286,7 @@ namespace Geo_Quiz
             if (GS_Text.Category != 0)
             {
                 labelQuestion = "What is the " + categoryPrint + " of:\n";
-                GS_Text.Questions = GetQuestions();
-                L_Question.Text = labelQuestion + GS_Text.Questions[0].Split('\t')[0];
+                L_Question.Text = labelQuestion + questions[questionNumber];
             }
             else
             {
@@ -270,73 +294,6 @@ namespace Geo_Quiz
             }
 
             ControlsSetup();
-        }
-
-        private string[] GetQuestions()
-        {            
-            List<string> tempQsList = new List<string>();
-
-            string path = Path.Combine(filepath, "Questions.txt");
-
-            string[] qArr1 = File.ReadAllLines(path); 
-                
-            for (int i = 0; i < GS_Text.Continents.Length; i++)
-            {
-                int startIndex = Array.IndexOf(qArr1, GS_Text.Continents[i]) + 1;
-                for (int j = startIndex; j < qArr1.Length; j++)
-                {
-                    if (string.IsNullOrWhiteSpace(qArr1[j]))
-                    { break; }
-
-                    tempQsList.Add(qArr1[j]);
-                }
-            }                       
-                        
-            Random rand = new Random();
-            string[] tempQs = tempQsList.ToArray();
-            string[] questions = new string[GS_Text.QuestionCount];
-
-                //generated by an AI (ChatGPT)
-            IEnumerable<int> tempList = Enumerable.Range(0, tempQs.Length).OrderBy(x => rand.Next()).Distinct().Take(GS_Text.QuestionCount);
-            questions = tempList.Select(j => tempQs[j]).ToArray();
-                //end
-            
-            return questions;
-        }
-
-        private void LoadFlags()
-        {            
-            string path = Path.Combine(filepath, "");
-
-            for (int i = 0; i < GS_Text.Continents.Length; i++)
-            {
-                string continentPath = Path.Combine(path, GS_Text.Continents[i]);
-                GetContinentFlags(continentPath);
-            }
-
-            Random rand = new Random();
-
-            //generated by an AI (ChatGPT)
-            IEnumerable<int> tempList = Enumerable.Range(0, flags.Count).OrderBy(x => rand.Next()).Distinct().Take(GS_Text.QuestionCount);
-            qFlags = tempList.Select(j =>
-            {
-                Image image = flags[j];
-                image.Tag = Path.GetFileName(image.Tag.ToString());
-                return image;
-            }).ToArray();
-            //end
-        }
-
-        private void GetContinentFlags(string path)
-        {
-            string[] files = Directory.GetFiles(path, "*.png");
-
-            for (int i = 0; i < files.Length; i++)
-            {
-                Image image = Image.FromFile(files[i]);
-                flags.Add(image);
-                flags.Last().Tag = Path.GetFileName(files[i]);
-            }
         }
 
         private void OpenStatistics()
