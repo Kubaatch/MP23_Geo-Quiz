@@ -11,14 +11,14 @@ namespace Geo_Quiz
 {
     public partial class UC_GameUI : UserControl
     {
-        private readonly string[] categories = {
+        public static readonly string[] categories = {
             "Flags",
             "Capitals",
             "Population",
             "Area"
         };
 
-        private readonly string[] continents = {
+        public static readonly string[] continents = {
             "Europe",
             "Asia",
             "Africa",

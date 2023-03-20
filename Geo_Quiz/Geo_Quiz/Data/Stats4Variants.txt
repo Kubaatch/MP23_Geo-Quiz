@@ -1,1 +1,8 @@
-username score avgScore time? questions category
+kuba	4115	823	00 hrs. 00 min. 08 s. 	5	Flags	Oceania
+Guest	4195	839	00hrs., 00min., 07s.	5	Flags	Oceania
+Guest	524	104	00hrs., 00min., 02s.	5	Area	Oceania
+Guest	1540	308	00hrs., 00min., 03s.	5	Area	Oceania
+Guest	3468	247	00hrs., 00min., 06s.	14	Flags	Oceania
+Guest	532	106	00hrs., 00min., 03s.	5	Area	Europe
+Guest	-500	-100	00hrs., 00min., 02s.	5	Capitals	Europe
+Guest	1598	319	00hrs., 00min., 03s.	5	Population	3
