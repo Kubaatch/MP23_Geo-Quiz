@@ -119,20 +119,23 @@
             // SetQCount
             // 
             this.SetQCount.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SetQCount.Items.Add("Max");
-            this.SetQCount.Items.Add("100");
-            this.SetQCount.Items.Add("50");
-            this.SetQCount.Items.Add("25");
-            this.SetQCount.Items.Add("20");
-            this.SetQCount.Items.Add("10");
             this.SetQCount.Items.Add("5");
+            this.SetQCount.Items.Add("10");
+            this.SetQCount.Items.Add("20");
+            this.SetQCount.Items.Add("25");
+            this.SetQCount.Items.Add("50");
+            this.SetQCount.Items.Add("75");
+            this.SetQCount.Items.Add("100");
+            this.SetQCount.Items.Add("Max");
             this.SetQCount.Location = new System.Drawing.Point(417, 426);
             this.SetQCount.Name = "SetQCount";
             this.SetQCount.ReadOnly = true;
             this.SetQCount.Size = new System.Drawing.Size(110, 29);
             this.SetQCount.TabIndex = 17;
             this.SetQCount.Text = "Select!";
-            this.TT_PopUp.SetToolTip(this.SetQCount, resources.GetString("SetQCount.ToolTip"));
+            this.TT_PopUp.SetToolTip(this.SetQCount, "Select your desired question count from the scroll bar (up/down).\r\nSelecting \'Max" +
+        "\' will give you all questions from your continent selection.\r\nThe default value " +
+        "is the maximum amount of questions.");
             // 
             // label2
             // 

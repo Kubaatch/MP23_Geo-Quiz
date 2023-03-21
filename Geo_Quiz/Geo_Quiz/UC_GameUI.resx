@@ -168,11 +168,6 @@ Population &amp; Area: select correct (=exact) number</value>
   <metadata name="SetQCount.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="SetQCount.ToolTip" xml:space="preserve">
-    <value>Select your desired question count from the scroll bar (up/down).
-Selecting 'Max' will give you all questions from your continent selection.
-If you don't select a number, 'Max' will be set as your decision.</value>
-  </data>
   <metadata name="label2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

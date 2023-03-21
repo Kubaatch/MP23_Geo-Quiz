@@ -182,5 +182,8 @@
   <ItemGroup>
     <None Include="Resources\Cities.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infoButton.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
