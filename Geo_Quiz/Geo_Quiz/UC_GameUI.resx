@@ -137,11 +137,18 @@ The answer does not have to be exact in written answer, you can be off by up to 
   <metadata name="LB_Continents.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="LB_Continents.ToolTip" xml:space="preserve">
-    <value>Choose continent/s you want to include in your quiz questions.
-You can choose one or more continents.
-If you choose none, all will be selected.
-Selected continents also limit the number of questions you can be asked.</value>
+  <metadata name="tableLayoutPanel1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="B_ABCD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="B_ABCD.ToolTip" xml:space="preserve">
+    <value>Here you select the correct answer from four options.
+You are given a prompt based on your selected category.
+Flags: select country corresponding to prompted flag.
+Capitals: select capital city corresponding to prompted country.
+Population &amp; Area: select correct (=exact) number</value>
   </data>
   <metadata name="B_TextBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -155,17 +162,10 @@ Capitals: country as prompt, answer is the corresponding capital city.
 Population &amp; Area: country as prompt, answer is a number
   The deviation is set to 20%, you don't have to hit the exact number.</value>
   </data>
-  <metadata name="B_ABCD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="label3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="B_ABCD.ToolTip" xml:space="preserve">
-    <value>Here you select the correct answer from four options.
-You are given a prompt based on your selected category.
-Flags: select country corresponding to prompted flag.
-Capitals: select capital city corresponding to prompted country.
-Population &amp; Area: select correct (=exact) number</value>
-  </data>
-  <metadata name="SetQCount.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="label4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="label2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -174,12 +174,15 @@ Population &amp; Area: select correct (=exact) number</value>
   <metadata name="label1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="label3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="SetQCount.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="label4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="LB_Continents.ToolTip" xml:space="preserve">
+    <value>Choose continent/s you want to include in your quiz questions.
+You can choose one or more continents.
+If you choose none, all will be selected.
+Selected continents also limit the number of questions you can be asked.</value>
+  </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

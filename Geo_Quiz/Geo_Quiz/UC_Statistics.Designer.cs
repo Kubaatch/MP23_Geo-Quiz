@@ -207,7 +207,7 @@ namespace Geo_Quiz
             this.StatsGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.StatsGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.StatsGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.StatsGridView.Location = new System.Drawing.Point(172, 292);
+            this.StatsGridView.Location = new System.Drawing.Point(172, 279);
             this.StatsGridView.Name = "StatsGridView";
             this.StatsGridView.RowHeadersVisible = false;
             this.StatsGridView.RowHeadersWidth = 51;
@@ -215,7 +215,7 @@ namespace Geo_Quiz
             this.StatsGridView.RowTemplate.Height = 24;
             this.StatsGridView.RowTemplate.ReadOnly = true;
             this.StatsGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.StatsGridView.Size = new System.Drawing.Size(656, 250);
+            this.StatsGridView.Size = new System.Drawing.Size(656, 277);
             this.StatsGridView.TabIndex = 11;
             // 
             // B_ReturnToMenu

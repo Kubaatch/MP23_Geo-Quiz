@@ -60,16 +60,8 @@ namespace Geo_Quiz
         {
             SelectedCategory = LB_Category.SelectedIndex;            
             SelectedContinents = LB_Continents.SelectedItems.Cast<string>().ToArray();
-            
-            bool success = int.TryParse(SetQCount.Text, out int result);
-            if (success == true)
-            {
-                QuestionCount = result;
-            }
-            else
-            {
-                QuestionCount = 200;
-            }
+
+            SetQuestionCount();
 
             if (SelectedContinents == null || SelectedContinents.Length == 0)
             {
@@ -89,6 +81,26 @@ namespace Geo_Quiz
 
             Success:;
 
+            LoadQuestions();
+
+            StartGame(sender);
+        }
+
+        private void SetQuestionCount()
+        {
+            bool success = int.TryParse(SetQCount.Text, out int result);
+            if (success == true)
+            {
+                QuestionCount = result;
+            }
+            else
+            {
+                QuestionCount = 200;
+            }
+        }
+
+        private void LoadQuestions()
+        {
             if (SelectedCategory == 0)
             {
                 questions = LoadFlags();
@@ -102,8 +114,6 @@ namespace Geo_Quiz
             {
                 QuestionCount = questions.Length;
             }
-
-            StartGame(sender);
         }
 
         private string[] GetQuestions()
@@ -196,6 +206,11 @@ namespace Geo_Quiz
         private void B_Exit_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void LB_Category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
