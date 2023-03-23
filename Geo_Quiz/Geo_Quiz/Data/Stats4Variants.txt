@@ -23,3 +23,5 @@ Guest	3332	666	00hrs., 00min., 07s.	5	Flags	Oceania
 Guest	570	114	00hrs., 00min., 03s.	5	Flags	Oceania
 Guest	565	113	00hrs., 00min., 02s.	5	Flags	Oceania
 Guest	563	112	00hrs., 00min., 03s.	5	Capitals	Oceania
+Guest	510	102	00hrs., 00min., 12s.	5	Population	Africa
+Guest	2885	288	00hrs., 00min., 05s.	10	Population	Africa

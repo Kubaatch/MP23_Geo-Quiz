@@ -34,6 +34,7 @@
             this.L_CurrentAcc = new System.Windows.Forms.Label();
             this.B_Exit = new System.Windows.Forms.Button();
             this.B_Training = new System.Windows.Forms.Button();
+            this.B_ShowStats = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +67,7 @@
             this.B_LogOut.Margin = new System.Windows.Forms.Padding(10);
             this.B_LogOut.Name = "B_LogOut";
             this.B_LogOut.Size = new System.Drawing.Size(135, 54);
-            this.B_LogOut.TabIndex = 5;
+            this.B_LogOut.TabIndex = 4;
             this.B_LogOut.Text = "Log Out";
             this.B_LogOut.UseVisualStyleBackColor = false;
             this.B_LogOut.Click += new System.EventHandler(this.B_LogOut_Click);
@@ -85,6 +86,7 @@
             this.tableLayoutPanel1.Controls.Add(this.B_LogOut, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.B_Testing, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.B_Training, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.B_ShowStats, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -122,7 +124,7 @@
             this.B_Exit.Margin = new System.Windows.Forms.Padding(10);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(136, 54);
-            this.B_Exit.TabIndex = 4;
+            this.B_Exit.TabIndex = 5;
             this.B_Exit.Text = "Exit App";
             this.B_Exit.UseVisualStyleBackColor = false;
             this.B_Exit.Click += new System.EventHandler(this.B_Exit_Click);
@@ -141,6 +143,20 @@
             this.B_Training.Text = "Learning Mode";
             this.B_Training.UseVisualStyleBackColor = false;
             this.B_Training.Click += new System.EventHandler(this.B_Training_Click);
+            // 
+            // B_ShowStats
+            // 
+            this.B_ShowStats.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.B_ShowStats.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.B_ShowStats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.B_ShowStats.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_ShowStats.Location = new System.Drawing.Point(380, 471);
+            this.B_ShowStats.Name = "B_ShowStats";
+            this.B_ShowStats.Size = new System.Drawing.Size(239, 57);
+            this.B_ShowStats.TabIndex = 3;
+            this.B_ShowStats.Text = "Open Statistics";
+            this.B_ShowStats.UseVisualStyleBackColor = false;
+            this.B_ShowStats.Click += new System.EventHandler(this.B_ShowStats_Click);
             // 
             // UC_MainMenu
             // 
@@ -166,5 +182,6 @@
         private System.Windows.Forms.Button B_Exit;
         private System.Windows.Forms.Button B_Training;
         private System.Windows.Forms.Label L_CurrentAcc;
+        private System.Windows.Forms.Button B_ShowStats;
     }
 }

@@ -81,51 +81,6 @@ namespace Geo_Quiz
             SelCheckAnswer();
         }
         
-        private void B_Skip_Click(object sender, EventArgs e)
-        {           
-            if (GS_Text.Category == 0)
-            {
-                answer = qFlags[questionNumber].Tag.ToString().Split('.')[0];
-            }
-            else
-            {            
-                answer = answers[questionNumber]; 
-            }
-
-            IfWrong(answer, 30);
-
-            ControlsEdit();
-        }
-
-        private void B_Next_Click(object sender, EventArgs e)
-        {
-            questionNumber++;
-            L_QCount.Text = questionNumber + 1 + " / " + GS_Text.QuestionCount;
-
-            if (questionNumber == GS_Text.QuestionCount - 1)
-            {
-                B_Next.Text = "End quiz";
-            }
-
-            if (questionNumber == GS_Text.QuestionCount)
-            {
-                OpenStatistics();
-            }
-            else
-            {
-                if (GS_Text.Category == 0)
-                {
-                    PB_Flag.Image = qFlags[questionNumber];
-                }
-                else
-                {
-                    L_Question.Text = labelQuestion + questions[questionNumber];
-                }
-            }
-
-            NextQSetup();
-        }
-
         private void SelCheckAnswer()
         {
             switch (GS_Text.Category)
@@ -215,12 +170,13 @@ namespace Geo_Quiz
                 L_CorrectResult.Text += answer;
                 L_CorrectResult.Visible = true;
             }
-            
-            int timeSpent = (int)(stopwatch.ElapsedMilliseconds / 100);
-            score += 1000 - timeSpent;
 
-            if (score < 0) { score = 0; }
-            
+            int timeSpent = (int)stopwatch.ElapsedMilliseconds / 25;
+            int tempscore = 1000 - timeSpent;
+            if (tempscore < 0) { tempscore = 0; }
+
+            score += tempscore;
+
             L_Score.Text = "Score: " + score;
         }
 
@@ -235,10 +191,38 @@ namespace Geo_Quiz
             score -= minusPoints;
             L_Score.Text = "Score: " + score;
         }
+        
+        private void B_Next_Click(object sender, EventArgs e)
+        {
+            questionNumber++;
+            L_QCount.Text = questionNumber + 1 + " / " + GS_Text.QuestionCount;
+
+            if (questionNumber == GS_Text.QuestionCount - 1)
+            {
+                B_Next.Text = "End quiz";
+            }
+
+            if (questionNumber == GS_Text.QuestionCount)
+            {
+                OpenStatistics();
+            }
+            else
+            {
+                if (GS_Text.Category == 0)
+                {
+                    PB_Flag.Image = qFlags[questionNumber];
+                }
+                else
+                {
+                    L_Question.Text = labelQuestion + questions[questionNumber];
+                }
+            }
+
+            NextQSetup();
+        }
 
         private void ControlsEdit()
         {
-            B_Skip.Enabled = false;
             B_Enter.Enabled = false;
             B_Next.Enabled = true;
 
@@ -249,7 +233,6 @@ namespace Geo_Quiz
 
         private void NextQSetup()
         {
-            B_Skip.Enabled = true;
             B_Enter.Enabled = true;
             B_Next.Enabled = false;
 
@@ -302,7 +285,7 @@ namespace Geo_Quiz
 
             TimeSpan ts = stopwatch.Elapsed;
 
-            UC_Statistics uc = new UC_Statistics(score, ts, GS_Text, "Text");
+            UC_QuizResult uc = new UC_QuizResult(score, ts, GS_Text, "Text");
             uc.Dock = DockStyle.Fill;
             Controls.Add(uc);
             uc.BringToFront();
@@ -335,7 +318,6 @@ namespace Geo_Quiz
             TB_Answer.Visible = true;
 
             TB_Answer.Enabled = true;
-            B_Skip.Enabled = true;
             B_Enter.Enabled = true;
 
             stopwatch.Start();

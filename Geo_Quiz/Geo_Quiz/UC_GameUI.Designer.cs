@@ -37,10 +37,10 @@
             this.B_ABCD = new System.Windows.Forms.Button();
             this.TT_PopUp = new System.Windows.Forms.ToolTip(this.components);
             this.SetQCount = new System.Windows.Forms.DomainUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.L_Continents = new System.Windows.Forms.Label();
+            this.L_QCount = new System.Windows.Forms.Label();
+            this.L_Category = new System.Windows.Forms.Label();
+            this.L_StartGame = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +74,6 @@
             this.LB_Category.Size = new System.Drawing.Size(147, 124);
             this.LB_Category.TabIndex = 6;
             this.TT_PopUp.SetToolTip(this.LB_Category, resources.GetString("LB_Category.ToolTip"));
-            this.LB_Category.SelectedIndexChanged += new System.EventHandler(this.LB_Category_SelectedIndexChanged);
             // 
             // LB_Continents
             // 
@@ -146,62 +145,64 @@
         "\' will give you all questions from your continent selection.\r\nThe default value " +
         "is the maximum amount of questions.");
             // 
-            // label2
+            // L_Continents
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.LightGray;
-            this.tableLayoutPanel1.SetColumnSpan(this.label2, 2);
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(400, 206);
-            this.label2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(198, 19);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Select one or more continents:";
+            this.L_Continents.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.L_Continents.AutoSize = true;
+            this.L_Continents.BackColor = System.Drawing.Color.LightGray;
+            this.tableLayoutPanel1.SetColumnSpan(this.L_Continents, 2);
+            this.L_Continents.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Continents.Location = new System.Drawing.Point(400, 206);
+            this.L_Continents.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.L_Continents.Name = "L_Continents";
+            this.L_Continents.Size = new System.Drawing.Size(198, 19);
+            this.L_Continents.TabIndex = 12;
+            this.L_Continents.Text = "Select one or more continents:";
             // 
-            // label1
+            // L_QCount
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.LightGray;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(761, 206);
-            this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 19);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Number of questions:";
+            this.L_QCount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.L_QCount.AutoSize = true;
+            this.L_QCount.BackColor = System.Drawing.Color.LightGray;
+            this.L_QCount.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_QCount.Location = new System.Drawing.Point(761, 206);
+            this.L_QCount.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.L_QCount.Name = "L_QCount";
+            this.L_QCount.Size = new System.Drawing.Size(143, 19);
+            this.L_QCount.TabIndex = 13;
+            this.L_QCount.Text = "Number of questions:";
             // 
-            // label3
+            // L_Category
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.LightGray;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(108, 206);
-            this.label3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 19);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Choose category:";
+            this.L_Category.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.L_Category.AutoSize = true;
+            this.L_Category.BackColor = System.Drawing.Color.LightGray;
+            this.L_Category.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Category.Location = new System.Drawing.Point(108, 206);
+            this.L_Category.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.L_Category.Name = "L_Category";
+            this.L_Category.Size = new System.Drawing.Size(116, 19);
+            this.L_Category.TabIndex = 14;
+            this.L_Category.Text = "Choose category:";
             // 
-            // label4
+            // L_StartGame
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.LightGray;
-            this.tableLayoutPanel1.SetColumnSpan(this.label4, 2);
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(452, 475);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 20);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Start game:";
+            this.L_StartGame.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.L_StartGame.AutoSize = true;
+            this.L_StartGame.BackColor = System.Drawing.Color.LightGray;
+            this.tableLayoutPanel1.SetColumnSpan(this.L_StartGame, 2);
+            this.L_StartGame.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_StartGame.Location = new System.Drawing.Point(452, 475);
+            this.L_StartGame.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.L_StartGame.Name = "L_StartGame";
+            this.L_StartGame.Size = new System.Drawing.Size(93, 20);
+            this.L_StartGame.TabIndex = 15;
+            this.L_StartGame.Text = "Start game:";
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackgroundImage = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
+            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -210,10 +211,10 @@
             this.tableLayoutPanel1.Controls.Add(this.LB_Category, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.B_ABCD, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.B_TextBox, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.L_Category, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.L_StartGame, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.L_Continents, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.L_QCount, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.B_Exit, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.LB_Continents, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.SetQCount, 3, 2);
@@ -252,14 +253,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label L_Category;
         private System.Windows.Forms.ListBox LB_Category;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label L_Continents;
         private System.Windows.Forms.ListBox LB_Continents;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label L_StartGame;
         private System.Windows.Forms.Button B_TextBox;
         private System.Windows.Forms.Button B_ABCD;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label L_QCount;
         private System.Windows.Forms.Button B_Exit;
         private System.Windows.Forms.ToolTip TT_PopUp;
         private System.Windows.Forms.DomainUpDown SetQCount;

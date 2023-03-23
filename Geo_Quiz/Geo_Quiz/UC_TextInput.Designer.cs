@@ -35,7 +35,6 @@ namespace Geo_Quiz
             this.TB_Answer = new System.Windows.Forms.TextBox();
             this.L_Question = new System.Windows.Forms.Label();
             this.PBar = new System.Windows.Forms.ProgressBar();
-            this.B_Skip = new System.Windows.Forms.Button();
             this.L_Result = new System.Windows.Forms.Label();
             this.L_CorrectResult = new System.Windows.Forms.Label();
             this.B_Next = new System.Windows.Forms.Button();
@@ -110,21 +109,6 @@ namespace Geo_Quiz
             this.PBar.Step = 1;
             this.PBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.PBar.TabIndex = 9;
-            // 
-            // B_Skip
-            // 
-            this.B_Skip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.B_Skip.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.B_Skip.Enabled = false;
-            this.B_Skip.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_Skip.Location = new System.Drawing.Point(344, 417);
-            this.B_Skip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.B_Skip.Name = "B_Skip";
-            this.B_Skip.Size = new System.Drawing.Size(97, 31);
-            this.B_Skip.TabIndex = 10;
-            this.B_Skip.Text = "Skip";
-            this.B_Skip.UseVisualStyleBackColor = false;
-            this.B_Skip.Click += new System.EventHandler(this.B_Skip_Click);
             // 
             // L_Result
             // 
@@ -240,7 +224,6 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.B_Enter, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.TB_Answer, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.B_Skip, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.PBar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.L_Score, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.PB_Flag, 1, 2);
@@ -291,7 +274,6 @@ namespace Geo_Quiz
         private System.Windows.Forms.TextBox TB_Answer;
         private System.Windows.Forms.Label L_Question;
         private System.Windows.Forms.ProgressBar PBar;
-        private System.Windows.Forms.Button B_Skip;
         private System.Windows.Forms.Label L_Result;
         private System.Windows.Forms.Label L_CorrectResult;
         private System.Windows.Forms.Button B_Next;

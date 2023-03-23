@@ -110,6 +110,12 @@
     <Compile Include="UC_MainMenu.Designer.cs">
       <DependentUpon>UC_MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_QuizResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QuizResult.Designer.cs">
+      <DependentUpon>UC_QuizResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Statistics.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_MainMenu.resx">
       <DependentUpon>UC_MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QuizResult.resx">
+      <DependentUpon>UC_QuizResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Statistics.resx">
       <DependentUpon>UC_Statistics.cs</DependentUpon>

@@ -207,10 +207,5 @@ namespace Geo_Quiz
         {
             Dispose();
         }
-
-        private void LB_Category_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

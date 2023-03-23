@@ -29,6 +29,7 @@ namespace Geo_Quiz
         private string categoryPrint = "";
         private string labelQuestion;
 
+        private int deviation = 2;
         private int questionNumber = 0;        
         private int score = 0;
 
@@ -232,12 +233,12 @@ namespace Geo_Quiz
                 }
                 else
                 {
-                    fakeAnswer = random.Next((int)(intAnswer / 1.5), (int)(intAnswer * 1.5));
+                    fakeAnswer = random.Next((intAnswer / deviation), (intAnswer * deviation));
                     b.Text = fakeAnswer.ToString();
 
                     while (fakeAnswer == intAnswer)
                     {
-                        fakeAnswer = random.Next((int)(intAnswer / 1.5), (int)(intAnswer * 1.5));
+                        fakeAnswer = random.Next((intAnswer / deviation), (intAnswer * deviation));
                         b.Text = fakeAnswer.ToString();
                     }
                 }
@@ -261,7 +262,7 @@ namespace Geo_Quiz
                 L_Result.ForeColor = Color.ForestGreen;
                 clickedButton.BackColor = Color.ForestGreen;
 
-                int timeSpent = (int)(stopwatch.ElapsedMilliseconds) / 25;
+                int timeSpent = (int)stopwatch.ElapsedMilliseconds / 25;
                 tempscore = 1000 - timeSpent;
                 if (tempscore < 0) { tempscore = 0; }
             }

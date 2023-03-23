@@ -53,5 +53,10 @@ namespace Geo_Quiz
         {
             Environment.Exit(0);
         }
+
+        private void B_ShowStats_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
