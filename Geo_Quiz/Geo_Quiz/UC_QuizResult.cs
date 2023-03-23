@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Geo_Quiz
 {
-    public partial class UC_Statistics : UserControl
+    public partial class UC_QuizResult : UserControl
     {
         readonly GameSpecs gameInfo = new GameSpecs();
         readonly string gameMode;
@@ -17,11 +17,11 @@ namespace Geo_Quiz
         public int finalScore;
         public int averageScore;
 
-        public string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
+        readonly private string filepath = UC_Login.filepath;
 
         public bool savedStats = false;
 
-        public UC_Statistics(int score, TimeSpan ts, GameSpecs gamespecs, string mode)
+        public UC_QuizResult(int score, TimeSpan ts, GameSpecs gamespecs, string mode)
         {
             gameInfo = gamespecs;
             totalTime = ts;
@@ -62,15 +62,16 @@ namespace Geo_Quiz
 
             statsLines = FilterCategories(statsLines);
 
-            string[] tempRowArray = new string[StatsGridView.ColumnCount];
+            List<string[]> temp = new List<string[]>();
 
-            for (int i = 0; i < statsLines.Length; i++)
+            foreach (string s in statsLines)
             {
-                for (int j = 0; j < tempRowArray.Length; j++)
-                {
-                    tempRowArray[j] = statsLines[i].Split('\t')[j];
-                }
-                StatsGridView.Rows.Add(tempRowArray);
+                temp.Add(s.Split('\t'));
+            }
+
+            foreach (string[] statsLine in temp)
+            {
+                StatsGridView.Rows.Add(statsLine);
             }
 
             AddCurrentGame();

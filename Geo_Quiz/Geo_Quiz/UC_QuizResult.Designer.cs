@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Geo_Quiz
 {
-    partial class UC_Statistics
+    partial class UC_QuizResult
     {
         /// <summary> 
         /// Required designer variable.

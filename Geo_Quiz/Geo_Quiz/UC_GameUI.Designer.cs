@@ -96,7 +96,7 @@
             this.B_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_TextBox.Location = new System.Drawing.Point(336, 508);
             this.B_TextBox.Name = "B_TextBox";
-            this.B_TextBox.Size = new System.Drawing.Size(160, 50);
+            this.B_TextBox.Size = new System.Drawing.Size(160, 64);
             this.B_TextBox.TabIndex = 8;
             this.B_TextBox.Text = "Written answer";
             this.TT_PopUp.SetToolTip(this.B_TextBox, resources.GetString("B_TextBox.ToolTip"));
@@ -110,7 +110,7 @@
             this.B_ABCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_ABCD.Location = new System.Drawing.Point(502, 508);
             this.B_ABCD.Name = "B_ABCD";
-            this.B_ABCD.Size = new System.Drawing.Size(160, 50);
+            this.B_ABCD.Size = new System.Drawing.Size(160, 64);
             this.B_ABCD.TabIndex = 9;
             this.B_ABCD.Text = "4 options";
             this.TT_PopUp.SetToolTip(this.B_ABCD, resources.GetString("B_ABCD.ToolTip"));
@@ -127,14 +127,6 @@
             // 
             this.SetQCount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SetQCount.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SetQCount.Items.Add("5");
-            this.SetQCount.Items.Add("10");
-            this.SetQCount.Items.Add("20");
-            this.SetQCount.Items.Add("25");
-            this.SetQCount.Items.Add("50");
-            this.SetQCount.Items.Add("75");
-            this.SetQCount.Items.Add("100");
-            this.SetQCount.Items.Add("Max");
             this.SetQCount.Location = new System.Drawing.Point(776, 238);
             this.SetQCount.Name = "SetQCount";
             this.SetQCount.ReadOnly = true;
@@ -191,11 +183,11 @@
             this.L_StartGame.AutoSize = true;
             this.L_StartGame.BackColor = System.Drawing.Color.LightGray;
             this.tableLayoutPanel1.SetColumnSpan(this.L_StartGame, 2);
-            this.L_StartGame.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_StartGame.Location = new System.Drawing.Point(452, 475);
+            this.L_StartGame.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_StartGame.Location = new System.Drawing.Point(448, 472);
             this.L_StartGame.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.L_StartGame.Name = "L_StartGame";
-            this.L_StartGame.Size = new System.Drawing.Size(93, 20);
+            this.L_StartGame.Size = new System.Drawing.Size(102, 23);
             this.L_StartGame.TabIndex = 15;
             this.L_StartGame.Text = "Start game:";
             // 

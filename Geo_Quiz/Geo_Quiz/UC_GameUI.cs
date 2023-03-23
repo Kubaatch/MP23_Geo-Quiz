@@ -27,6 +27,17 @@ namespace Geo_Quiz
             "Oceania"
         };
 
+        public static readonly string[] questionCounts = {
+            "5",
+            "10",
+            "20",
+            "25",
+            "50",
+            "75",
+            "100",
+            "Max"
+        };
+
         readonly string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
         readonly List<Image> flags = new List<Image>();
         Image[] qFlags = new Image[0];
@@ -42,7 +53,10 @@ namespace Geo_Quiz
             InitializeComponent();
 
             LB_Category.Items.AddRange(categories);
+
             LB_Continents.Items.AddRange(continents);
+
+            SetQCount.Items.AddRange(questionCounts);
         }
 
         private void B_Play_Click(object sender, EventArgs e)

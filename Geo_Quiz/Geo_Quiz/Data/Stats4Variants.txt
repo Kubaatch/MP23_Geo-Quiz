@@ -1,27 +1,5 @@
 kuba	4115	823	00hrs., 00min., 08s. 	5	Flags	Oceania
-Guest	4195	839	00hrs., 00min., 07s.	5	Flags	Oceania
+kuba	4195	839	00hrs., 00min., 07s.	5	Flags	Oceania
 Guest	524	104	00hrs., 00min., 02s.	5	Area	Oceania
-Guest	1540	308	00hrs., 00min., 03s.	5	Area	Oceania
-Guest	3468	247	00hrs., 00min., 06s.	14	Flags	Oceania
-Guest	532	106	00hrs., 00min., 03s.	5	Area	Europe
-Guest	-500	-100	00hrs., 00min., 02s.	5	Capitals	Europe
-Guest	1598	319	00hrs., 00min., 03s.	5	Population	3
-Guest	4042	808	00hrs., 00min., 08s.	5	Capitals	Oceania
-Guest	1617	323	00hrs., 00min., 03s.	5	Population	Oceania
-Guest	522	104	00hrs., 00min., 02s.	5	Capitals	America (South)
-Guest	565	113	00hrs., 00min., 02s.	5	Population	America (North & Central)
-Guest	498	99	00hrs., 00min., 03s.	5	Population	America (North & Central)
-Guest	1545	309	00hrs., 00min., 02s.	5	Area	Oceania
-Guest	-500	-100	00hrs., 00min., 02s.	5	Population	America (South)
-Guest	1539	307	00hrs., 00min., 06s.	5	Capitals	2
-Guest	-500	-100	00hrs., 00min., 02s.	5	Population	America (North & Central)
-Guest	534	106	00hrs., 00min., 02s.	5	Flags	Oceania
-Guest	569	113	00hrs., 00min., 02s.	5	Flags	Oceania
-Guest	3330	666	00hrs., 00min., 07s.	5	Flags	Oceania
-Guest	4350	870	00hrs., 00min., 06s.	5	Flags	Oceania
-Guest	3332	666	00hrs., 00min., 07s.	5	Flags	Oceania
-Guest	570	114	00hrs., 00min., 03s.	5	Flags	Oceania
-Guest	565	113	00hrs., 00min., 02s.	5	Flags	Oceania
-Guest	563	112	00hrs., 00min., 03s.	5	Capitals	Oceania
-Guest	510	102	00hrs., 00min., 12s.	5	Population	Africa
-Guest	2885	288	00hrs., 00min., 05s.	10	Population	Africa
+kubac	1540	308	00hrs., 00min., 03s.	5	Area	Oceania
+kubac	3468	247	00hrs., 00min., 06s.	14	Flags	Oceania

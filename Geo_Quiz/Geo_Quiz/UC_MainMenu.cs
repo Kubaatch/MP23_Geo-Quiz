@@ -28,6 +28,14 @@ namespace Geo_Quiz
             uc.BringToFront();
         }
 
+        private void B_ShowStats_Click(object sender, EventArgs e)
+        {
+            UC_Statistics uc = new UC_Statistics();
+            uc.Dock = DockStyle.Fill;
+            Controls.Add(uc);
+            uc.BringToFront();
+        }
+
         private void B_LogOut_Click(object sender, EventArgs e)
         {
             F_SignIn form = ParentForm as F_SignIn;
@@ -52,11 +60,6 @@ namespace Geo_Quiz
         private void B_Exit_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
-        }
-
-        private void B_ShowStats_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

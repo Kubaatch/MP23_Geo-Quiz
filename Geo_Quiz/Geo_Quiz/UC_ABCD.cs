@@ -361,7 +361,7 @@ namespace Geo_Quiz
 
             TimeSpan ts = stopwatch.Elapsed;
 
-            UC_Statistics uc = new UC_Statistics(score, ts, GS_ABCD, "ABCD");
+            UC_QuizResult uc = new UC_QuizResult(score, ts, GS_ABCD, "ABCD");
             uc.Dock = DockStyle.Fill;
             Controls.Add(uc);
             uc.BringToFront();

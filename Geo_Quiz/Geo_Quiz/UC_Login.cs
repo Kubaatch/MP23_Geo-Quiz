@@ -15,23 +15,25 @@ namespace Geo_Quiz
 {
     public partial class UC_Login : UserControl
     {
-        string[] fileAccounts;
-        string newAccount;
+        private readonly string[] fileAccounts;
+        private string newAccount;
 
-        string enteredUsername;
-        string enteredPassword;
-        string[] usernames = new string[0];
-        string[] passwords = new string[0];
+        private string enteredUsername;
+        private string enteredPassword;
+        private readonly string[] usernames = new string[0];
+        private readonly string[] passwords = new string[0];
 
-        public static string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data", "Accounts.txt");
+        public static string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
+        private readonly string fullpath;
 
         public UC_Login()
-        {
+        {   
             InitializeComponent();
 
             L_Header.Text = F_SignIn.header;
 
-            fileAccounts = File.ReadAllLines(filepath);
+            fullpath = Path.Combine(filepath, "Accounts.txt");
+            fileAccounts = File.ReadAllLines(fullpath);
 
             Array.Resize(ref usernames, fileAccounts.Length);
             Array.Resize(ref passwords, fileAccounts.Length);
@@ -82,8 +84,8 @@ namespace Geo_Quiz
             
             if (success == true)
             {
-                newAccount = enteredUsername + '\n' + HashPasswords(enteredPassword) + '\n';
-                File.AppendAllText(filepath, newAccount);
+                newAccount = enteredUsername + '\t' + HashPasswords(enteredPassword) + '\n';
+                File.AppendAllText(fullpath, newAccount);
 
                 SuccessfulLogIn(enteredUsername);
             }
