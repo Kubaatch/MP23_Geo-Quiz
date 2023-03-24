@@ -1,4 +1,4 @@
-kuba	4115	823	00hrs., 00min., 08s. 	5	Flags	Oceania
+kuba	4115	823	00hrs., 00min., 08s. 	5	Flags	North America
 kuba	4195	839	00hrs., 00min., 07s.	5	Flags	Oceania
 Guest	524	104	00hrs., 00min., 02s.	5	Area	Oceania
 kubac	1540	308	00hrs., 00min., 03s.	5	Area	Oceania

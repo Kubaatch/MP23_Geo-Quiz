@@ -22,8 +22,8 @@ namespace Geo_Quiz
             "Europe",
             "Asia",
             "Africa",
-            "America (North & Central)",
-            "America (South)",
+            "North America",
+            "South America",
             "Oceania"
         };
 

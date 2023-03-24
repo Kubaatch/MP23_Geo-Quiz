@@ -63,7 +63,7 @@
             this.tableLayoutPanel1.BackgroundImage = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
             this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.050286F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.050285F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.77168F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.77168F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.77168F));
@@ -71,25 +71,25 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.863F));
             this.tableLayoutPanel1.Controls.Add(this.F_Category, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.F_Continents, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.B_SaveFilters, 5, 2);
             this.tableLayoutPanel1.Controls.Add(this.B_Exit, 5, 4);
             this.tableLayoutPanel1.Controls.Add(this.L_Filters, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.F_Username, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.B_GameMode, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.L_Header, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.StatsTable, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.B_ResetFilters, 5, 3);
+            this.tableLayoutPanel1.Controls.Add(this.StatsTable, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.L_Username, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.L_Category, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.L_Continents, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.F_QCount, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.L_QCount, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.B_GameMode, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.B_ResetFilters, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.B_SaveFilters, 5, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
@@ -125,11 +125,11 @@
             // B_SaveFilters
             // 
             this.B_SaveFilters.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.B_SaveFilters.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_SaveFilters.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_SaveFilters.ForeColor = System.Drawing.Color.Black;
-            this.B_SaveFilters.Location = new System.Drawing.Point(885, 103);
+            this.B_SaveFilters.Location = new System.Drawing.Point(881, 103);
             this.B_SaveFilters.Name = "B_SaveFilters";
-            this.B_SaveFilters.Size = new System.Drawing.Size(107, 42);
+            this.B_SaveFilters.Size = new System.Drawing.Size(116, 44);
             this.B_SaveFilters.TabIndex = 15;
             this.B_SaveFilters.Text = "Save filters";
             this.B_SaveFilters.UseVisualStyleBackColor = true;
@@ -184,7 +184,7 @@
             this.B_GameMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.B_GameMode.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_GameMode.Location = new System.Drawing.Point(487, 23);
-            this.B_GameMode.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
+            this.B_GameMode.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.B_GameMode.Name = "B_GameMode";
             this.B_GameMode.Size = new System.Drawing.Size(186, 37);
             this.B_GameMode.TabIndex = 20;
@@ -200,7 +200,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.L_Header, 3);
             this.L_Header.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_Header.Location = new System.Drawing.Point(112, 23);
-            this.L_Header.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
+            this.L_Header.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.L_Header.Name = "L_Header";
             this.L_Header.Size = new System.Drawing.Size(369, 37);
             this.L_Header.TabIndex = 9;
@@ -230,7 +230,7 @@
             this.QCount,
             this.Category,
             this.Continents});
-            this.tableLayoutPanel1.SetColumnSpan(this.StatsTable, 4);
+            this.tableLayoutPanel1.SetColumnSpan(this.StatsTable, 6);
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,7 +239,9 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.StatsTable.DefaultCellStyle = dataGridViewCellStyle2;
-            this.StatsTable.Location = new System.Drawing.Point(93, 153);
+            this.StatsTable.Enabled = false;
+            this.StatsTable.Location = new System.Drawing.Point(55, 153);
+            this.StatsTable.Margin = new System.Windows.Forms.Padding(3, 3, 3, 23);
             this.StatsTable.Name = "StatsTable";
             this.StatsTable.RowHeadersVisible = false;
             this.StatsTable.RowHeadersWidth = 51;
@@ -249,17 +251,17 @@
             this.StatsTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.StatsTable.ShowCellToolTips = false;
             this.StatsTable.ShowEditingIcon = false;
-            this.StatsTable.Size = new System.Drawing.Size(782, 419);
+            this.StatsTable.Size = new System.Drawing.Size(889, 399);
             this.StatsTable.TabIndex = 7;
             // 
             // B_ResetFilters
             // 
-            this.B_ResetFilters.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.B_ResetFilters.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.B_ResetFilters.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_ResetFilters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.B_ResetFilters.Location = new System.Drawing.Point(881, 153);
+            this.B_ResetFilters.Location = new System.Drawing.Point(885, 65);
             this.B_ResetFilters.Name = "B_ResetFilters";
-            this.B_ResetFilters.Size = new System.Drawing.Size(115, 48);
+            this.B_ResetFilters.Size = new System.Drawing.Size(108, 29);
             this.B_ResetFilters.TabIndex = 14;
             this.B_ResetFilters.Text = "Reset filters";
             this.B_ResetFilters.UseVisualStyleBackColor = true;
@@ -368,7 +370,7 @@
             this.QCount.MinimumWidth = 6;
             this.QCount.Name = "QCount";
             this.QCount.ReadOnly = true;
-            this.QCount.Width = 60;
+            this.QCount.Width = 75;
             // 
             // Category
             // 
@@ -376,7 +378,7 @@
             this.Category.MinimumWidth = 6;
             this.Category.Name = "Category";
             this.Category.ReadOnly = true;
-            this.Category.Width = 80;
+            this.Category.Width = 72;
             // 
             // Continents
             // 
@@ -384,7 +386,7 @@
             this.Continents.MinimumWidth = 6;
             this.Continents.Name = "Continents";
             this.Continents.ReadOnly = true;
-            this.Continents.Width = 110;
+            this.Continents.Width = 150;
             // 
             // UC_Statistics
             // 

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,8 @@ namespace Geo_Quiz
     public partial class UC_Statistics : UserControl
     {
         readonly private string filepath = UC_Login.filepath;
-        
+        List<string> statsLines;
+
         private string selectedGamemode;
         readonly private string stats1file = "Stats4Variants.txt";
         readonly private string stats2file = "StatsTextInput.txt";
@@ -41,7 +43,9 @@ namespace Geo_Quiz
 
             SetFilters();
 
-            LoadAllStats();
+            string fullpath = Path.Combine(filepath, selectedGamemode);
+            statsLines = File.ReadAllLines(fullpath).ToList();
+            LoadAllStats(statsLines);
         }
 
         private void B_GameMode_Click(object sender, EventArgs e)
@@ -57,7 +61,9 @@ namespace Geo_Quiz
                 selectedGamemode = stats1file;
             }
 
-            LoadAllStats();
+            string fullpath = Path.Combine(filepath, selectedGamemode);
+            statsLines = File.ReadAllLines(fullpath).ToList();
+            LoadAllStats(statsLines);
         }
 
         private void SetFilters()
@@ -87,16 +93,13 @@ namespace Geo_Quiz
             return usernames;
         }
 
-        private void LoadAllStats()
+        private void LoadAllStats(List<string> statsToLoad)
         {
             StatsTable.Rows.Clear();
 
-            string fullpath = Path.Combine(filepath, selectedGamemode);
-            string[] statsLines = File.ReadAllLines(fullpath);
-
             List<string[]> temp = new List<string[]>();
 
-            foreach (string s in statsLines)
+            foreach (string s in statsToLoad)
             {
                 temp.Add(s.Split('\t'));
             }
@@ -107,20 +110,23 @@ namespace Geo_Quiz
             }
         }
 
-        private void FilterStats()
+        private List<string> FilterStats()
         {
             StatsTable.Rows.Clear();
-            
-            string fullpath = Path.Combine(filepath, selectedGamemode);
-            string[] statsLines = File.ReadAllLines(fullpath);
 
-            List<string> filteredStats = statsLines.ToList();
+            string fullpath = Path.Combine(filepath, selectedGamemode);
+            List<string> filteredStats = File.ReadAllLines(fullpath).ToList();
+            
+            string[] oneLineValues;
 
             if (usernameValueChanged == true)
             {
+                fUsername = F_Username.SelectedItem.ToString();
+
                 for (int i = 0; i < filteredStats.Count; i++)
                 {
-                    if (filteredStats[i].Contains(fUsername) != true)
+                    oneLineValues = filteredStats[i].Split('\t');
+                    if (oneLineValues.Contains(fUsername) != true)
                     {
                         filteredStats.RemoveAt(i);
                     }
@@ -129,9 +135,12 @@ namespace Geo_Quiz
 
             if (categoryValueChanged == true)
             {
+                fCategory = F_Category.SelectedItem.ToString();
+
                 for (int i = 0; i < filteredStats.Count; i++)
                 {
-                    if (filteredStats[i].Contains(fCategory) != true)
+                    oneLineValues = filteredStats[i].Split('\t');
+                    if (oneLineValues.Contains(fCategory) != true)
                     {
                         filteredStats.RemoveAt(i);
                     }
@@ -140,9 +149,12 @@ namespace Geo_Quiz
 
             if (continentsValueChanged == true)
             {
+                fContinents = F_Continents.SelectedItem.ToString();
+
                 for (int i = 0; i < filteredStats.Count; i++)
                 {
-                    if (filteredStats[i].Contains(fContinents) != true)
+                    oneLineValues = filteredStats[i].Split('\t');
+                    if (oneLineValues.Contains(fContinents) != true)
                     {
                         filteredStats.RemoveAt(i);
                     }
@@ -151,26 +163,28 @@ namespace Geo_Quiz
 
             if (qCountValueChanged == true)
             {
+                fQCount = F_QCount.SelectedItem.ToString();
+
                 for (int i = 0; i < filteredStats.Count; i++)
                 {
-                    if (filteredStats[i].Contains(fQCount) != true)
+                    oneLineValues = filteredStats[i].Split('\t');
+                    if (oneLineValues.Contains(fQCount) != true)
                     {
                         filteredStats.RemoveAt(i);
                     }
                 }
             }
 
-            ValuesChangedToFalse();
+            return filteredStats;
         }
 
         private void B_SaveFilters_Click(object sender, EventArgs e)
         {
-            fUsername = F_Username.SelectedItem as string;
-            fCategory = F_Category.SelectedItem as string;
-            fContinents = F_Continents.SelectedItem as string;
-            fQCount = F_QCount.SelectedItem as string;
-            
-            FilterStats();
+            List<string> filteredStats = FilterStats();
+
+            LoadAllStats(filteredStats);
+
+            ValuesChangedToFalse();
         }
 
         private void B_ResetFilters_Click(object sender, EventArgs e)
@@ -182,7 +196,9 @@ namespace Geo_Quiz
                 f.SelectedIndex = -1;
             }
 
-            LoadAllStats();
+            string fullpath = Path.Combine(filepath, selectedGamemode);
+            statsLines = File.ReadAllLines(fullpath).ToList();
+            LoadAllStats(statsLines);
 
             ValuesChangedToFalse();
         }
