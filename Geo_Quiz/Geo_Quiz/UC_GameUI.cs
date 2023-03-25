@@ -24,7 +24,8 @@ namespace Geo_Quiz
             "Africa",
             "North America",
             "South America",
-            "Oceania"
+            "Oceania",
+            "Others"
         };
 
         public static readonly string[] questionCounts = {

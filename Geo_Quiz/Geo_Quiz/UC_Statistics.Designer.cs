@@ -33,19 +33,19 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.F_Category = new System.Windows.Forms.ComboBox();
             this.F_Continents = new System.Windows.Forms.ComboBox();
-            this.B_SaveFilters = new System.Windows.Forms.Button();
             this.B_Exit = new System.Windows.Forms.Button();
             this.L_Filters = new System.Windows.Forms.Label();
             this.F_Username = new System.Windows.Forms.ComboBox();
-            this.B_GameMode = new System.Windows.Forms.Button();
             this.L_Header = new System.Windows.Forms.Label();
             this.StatsTable = new System.Windows.Forms.DataGridView();
-            this.B_ResetFilters = new System.Windows.Forms.Button();
             this.L_Username = new System.Windows.Forms.Label();
             this.L_Category = new System.Windows.Forms.Label();
             this.L_Continents = new System.Windows.Forms.Label();
             this.F_QCount = new System.Windows.Forms.ComboBox();
             this.L_QCount = new System.Windows.Forms.Label();
+            this.B_GameMode = new System.Windows.Forms.Button();
+            this.B_ResetFilters = new System.Windows.Forms.Button();
+            this.B_SaveFilters = new System.Windows.Forms.Button();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Avg_Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -122,19 +122,6 @@
             this.F_Continents.TabIndex = 17;
             this.F_Continents.SelectedValueChanged += new System.EventHandler(this.F_Continents_SelectedValueChanged);
             // 
-            // B_SaveFilters
-            // 
-            this.B_SaveFilters.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.B_SaveFilters.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_SaveFilters.ForeColor = System.Drawing.Color.Black;
-            this.B_SaveFilters.Location = new System.Drawing.Point(881, 103);
-            this.B_SaveFilters.Name = "B_SaveFilters";
-            this.B_SaveFilters.Size = new System.Drawing.Size(116, 44);
-            this.B_SaveFilters.TabIndex = 15;
-            this.B_SaveFilters.Text = "Save filters";
-            this.B_SaveFilters.UseVisualStyleBackColor = true;
-            this.B_SaveFilters.Click += new System.EventHandler(this.B_SaveFilters_Click);
-            // 
             // B_Exit
             // 
             this.B_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -179,19 +166,6 @@
             this.F_Username.TabIndex = 16;
             this.F_Username.SelectedValueChanged += new System.EventHandler(this.F_Username_SelectedValueChanged);
             // 
-            // B_GameMode
-            // 
-            this.B_GameMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.B_GameMode.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_GameMode.Location = new System.Drawing.Point(487, 23);
-            this.B_GameMode.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.B_GameMode.Name = "B_GameMode";
-            this.B_GameMode.Size = new System.Drawing.Size(186, 37);
-            this.B_GameMode.TabIndex = 20;
-            this.B_GameMode.Text = "temp";
-            this.B_GameMode.UseVisualStyleBackColor = true;
-            this.B_GameMode.Click += new System.EventHandler(this.B_GameMode_Click);
-            // 
             // L_Header
             // 
             this.L_Header.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -213,6 +187,7 @@
             this.StatsTable.AllowUserToResizeColumns = false;
             this.StatsTable.AllowUserToResizeRows = false;
             this.StatsTable.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.StatsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,7 +214,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.StatsTable.DefaultCellStyle = dataGridViewCellStyle2;
-            this.StatsTable.Enabled = false;
+            this.StatsTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.StatsTable.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.StatsTable.Location = new System.Drawing.Point(55, 153);
             this.StatsTable.Margin = new System.Windows.Forms.Padding(3, 3, 3, 23);
             this.StatsTable.Name = "StatsTable";
@@ -253,19 +229,6 @@
             this.StatsTable.ShowEditingIcon = false;
             this.StatsTable.Size = new System.Drawing.Size(889, 399);
             this.StatsTable.TabIndex = 7;
-            // 
-            // B_ResetFilters
-            // 
-            this.B_ResetFilters.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B_ResetFilters.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_ResetFilters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.B_ResetFilters.Location = new System.Drawing.Point(885, 65);
-            this.B_ResetFilters.Name = "B_ResetFilters";
-            this.B_ResetFilters.Size = new System.Drawing.Size(108, 29);
-            this.B_ResetFilters.TabIndex = 14;
-            this.B_ResetFilters.Text = "Reset filters";
-            this.B_ResetFilters.UseVisualStyleBackColor = true;
-            this.B_ResetFilters.Click += new System.EventHandler(this.B_ResetFilters_Click);
             // 
             // L_Username
             // 
@@ -332,6 +295,45 @@
             this.L_QCount.TabIndex = 24;
             this.L_QCount.Text = "By question count:";
             // 
+            // B_GameMode
+            // 
+            this.B_GameMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.B_GameMode.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_GameMode.Location = new System.Drawing.Point(487, 23);
+            this.B_GameMode.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.B_GameMode.Name = "B_GameMode";
+            this.B_GameMode.Size = new System.Drawing.Size(186, 37);
+            this.B_GameMode.TabIndex = 20;
+            this.B_GameMode.Text = "temp";
+            this.B_GameMode.UseVisualStyleBackColor = true;
+            this.B_GameMode.Click += new System.EventHandler(this.B_GameMode_Click);
+            // 
+            // B_ResetFilters
+            // 
+            this.B_ResetFilters.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B_ResetFilters.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_ResetFilters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.B_ResetFilters.Location = new System.Drawing.Point(885, 65);
+            this.B_ResetFilters.Name = "B_ResetFilters";
+            this.B_ResetFilters.Size = new System.Drawing.Size(108, 29);
+            this.B_ResetFilters.TabIndex = 14;
+            this.B_ResetFilters.Text = "Reset filters";
+            this.B_ResetFilters.UseVisualStyleBackColor = true;
+            this.B_ResetFilters.Click += new System.EventHandler(this.B_ResetFilters_Click);
+            // 
+            // B_SaveFilters
+            // 
+            this.B_SaveFilters.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.B_SaveFilters.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_SaveFilters.ForeColor = System.Drawing.Color.Black;
+            this.B_SaveFilters.Location = new System.Drawing.Point(881, 103);
+            this.B_SaveFilters.Name = "B_SaveFilters";
+            this.B_SaveFilters.Size = new System.Drawing.Size(116, 44);
+            this.B_SaveFilters.TabIndex = 15;
+            this.B_SaveFilters.Text = "Save filters";
+            this.B_SaveFilters.UseVisualStyleBackColor = true;
+            this.B_SaveFilters.Click += new System.EventHandler(this.B_SaveFilters_Click);
+            // 
             // Username
             // 
             this.Username.HeaderText = "Username";
@@ -354,7 +356,7 @@
             this.Avg_Score.MinimumWidth = 6;
             this.Avg_Score.Name = "Avg_Score";
             this.Avg_Score.ReadOnly = true;
-            this.Avg_Score.Width = 65;
+            this.Avg_Score.Width = 70;
             // 
             // TotalTime
             // 
@@ -362,7 +364,7 @@
             this.TotalTime.MinimumWidth = 6;
             this.TotalTime.Name = "TotalTime";
             this.TotalTime.ReadOnly = true;
-            this.TotalTime.Width = 130;
+            this.TotalTime.Width = 135;
             // 
             // QCount
             // 

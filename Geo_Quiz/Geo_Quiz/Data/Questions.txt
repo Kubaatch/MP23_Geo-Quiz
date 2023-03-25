@@ -206,3 +206,37 @@ Solomon Islands	Honiara	686884	27990
 Tonga	Nuku'alofa	105695	720
 Tuvalu	Funafuti	11792	30
 Vanuatu	Port Vila	307145	12190
+
+Others
+American Samoa	Pago Pago	45443	200
+Anguilla	The Valley	15753	91
+Aruba	Oranjestad	116576	180
+Bermuda	Hamilton	63913	53
+British Virgin Islands	Road Town	30030	153
+Cayman Islands	George Town	78554	264
+Christmas Island	Flying Fish Cove	1692	135
+Cook Islands	Avarua	15040	236
+Curaçao	Willemstad	155000	444
+Falkland Islands	Stanley	3662	12173
+Faroe Islands	Tórshavn	24000	1399
+French Polynesia	Papeete	278786	4167
+Gibraltar	Gibraltar	34003	7
+Greenland	Nuuk	56583	2166086
+Guam	Hagatna	168801	540
+Guernsey	St. Peter Port	62792	78
+Hong Kong	Hong Kong	7333200	2755
+Isle of Man	84069	572
+Jersey	St Helier	103267	120
+Macao	Macao	682300	115
+Montserrat	Plymouth	4649	102
+Niue	Alofi	1937	261
+Norfolk Island	Kingston	2188	35
+Pitcairn Islands	Adamstown	47	47
+Puerto Rico	San Juan	3285874	9104
+Saint Pierre and Miquelon	Saint Pierre	6008	242
+South Georgia	King Edward Point	0	3903
+Soviet Union	Moscow	286730819	22402200
+Tibet	Lhasa	3648100	1228400
+Turks and Caicos Islands	Cockburn Town	44542	948
+US Virgin Islands	Charlotte Amalie	87146	346
+Wallis and Futuna	Mata Utu	11558	142

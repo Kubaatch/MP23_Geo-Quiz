@@ -24,10 +24,10 @@ namespace Geo_Quiz
         readonly private string gameMode1 = "4 Options";
         readonly private string gameMode2 = "Written answer";
 
-        private static string fUsername;
-        private static string fCategory;
-        private static string fContinents;
-        private static string fQCount;
+        private static string filterUsername;
+        private static string filterCategory;
+        private static string filterContinents;
+        private static string filterQCount;
 
         private bool usernameValueChanged = false;
         private bool categoryValueChanged = false;
@@ -48,6 +48,19 @@ namespace Geo_Quiz
             LoadAllStats(statsLines);
         }
 
+        private void SetFilters()
+        {
+            F_Username.Items.AddRange(GetUsernames());
+
+            F_Category.Items.AddRange(UC_GameUI.categories);
+
+            F_Continents.Items.AddRange(UC_GameUI.continents);
+            string[] multipleConts = new string[] { "2", "3", "4", "5", "6", "7" };
+            F_Continents.Items.AddRange(multipleConts);
+
+            F_QCount.Items.AddRange(UC_GameUI.questionCounts);
+        }
+
         private void B_GameMode_Click(object sender, EventArgs e)
         {
             if (B_GameMode.Text == gameMode1)
@@ -64,19 +77,6 @@ namespace Geo_Quiz
             string fullpath = Path.Combine(filepath, selectedGamemode);
             statsLines = File.ReadAllLines(fullpath).ToList();
             LoadAllStats(statsLines);
-        }
-
-        private void SetFilters()
-        {
-            F_Username.Items.AddRange(GetUsernames());
-
-            F_Category.Items.AddRange(UC_GameUI.categories);
-
-            F_Continents.Items.AddRange(UC_GameUI.continents);
-            string[] multipleConts = new string[] { "2", "3", "4", "5", "6" };
-            F_Continents.Items.AddRange(multipleConts);
-
-            F_QCount.Items.AddRange(UC_GameUI.questionCounts);
         }
 
         private string[] GetUsernames()
@@ -108,83 +108,76 @@ namespace Geo_Quiz
             {
                 StatsTable.Rows.Add(statsLine);
             }
-        }
 
-        private List<string> FilterStats()
-        {
-            StatsTable.Rows.Clear();
-
-            string fullpath = Path.Combine(filepath, selectedGamemode);
-            List<string> filteredStats = File.ReadAllLines(fullpath).ToList();
-            
-            string[] oneLineValues;
-
-            if (usernameValueChanged == true)
+            foreach (DataGridViewRow row in StatsTable.Rows)
             {
-                fUsername = F_Username.SelectedItem.ToString();
-
-                for (int i = 0; i < filteredStats.Count; i++)
+                if ((string)row.Cells[0].Value == F_SignIn.loggedInAccount)
                 {
-                    oneLineValues = filteredStats[i].Split('\t');
-                    if (oneLineValues.Contains(fUsername) != true)
-                    {
-                        filteredStats.RemoveAt(i);
-                    }
+                    row.DefaultCellStyle.BackColor = Color.Gold;
+                    row.DefaultCellStyle.SelectionBackColor = Color.Gold;
                 }
             }
-
-            if (categoryValueChanged == true)
-            {
-                fCategory = F_Category.SelectedItem.ToString();
-
-                for (int i = 0; i < filteredStats.Count; i++)
-                {
-                    oneLineValues = filteredStats[i].Split('\t');
-                    if (oneLineValues.Contains(fCategory) != true)
-                    {
-                        filteredStats.RemoveAt(i);
-                    }
-                }
-            }
-
-            if (continentsValueChanged == true)
-            {
-                fContinents = F_Continents.SelectedItem.ToString();
-
-                for (int i = 0; i < filteredStats.Count; i++)
-                {
-                    oneLineValues = filteredStats[i].Split('\t');
-                    if (oneLineValues.Contains(fContinents) != true)
-                    {
-                        filteredStats.RemoveAt(i);
-                    }
-                }
-            }
-
-            if (qCountValueChanged == true)
-            {
-                fQCount = F_QCount.SelectedItem.ToString();
-
-                for (int i = 0; i < filteredStats.Count; i++)
-                {
-                    oneLineValues = filteredStats[i].Split('\t');
-                    if (oneLineValues.Contains(fQCount) != true)
-                    {
-                        filteredStats.RemoveAt(i);
-                    }
-                }
-            }
-
-            return filteredStats;
         }
 
         private void B_SaveFilters_Click(object sender, EventArgs e)
         {
-            List<string> filteredStats = FilterStats();
+            StatsTable.Rows.Clear();
+
+            string fullpath = Path.Combine(filepath, selectedGamemode);
+            List<string> allStats = File.ReadAllLines(fullpath).ToList();
+            List<string> filteredStats = allStats;
+
+            if (usernameValueChanged == true)
+            {
+                filterUsername = F_Username.SelectedItem.ToString();
+
+                filteredStats = RemoveFilteredLines(filterUsername, filteredStats);
+            }
+
+            if (categoryValueChanged == true)
+            {
+                filterCategory = F_Category.SelectedItem.ToString();
+
+                filteredStats = RemoveFilteredLines(filterCategory, filteredStats);
+            }
+
+            if (continentsValueChanged == true)
+            {
+                filterContinents = F_Continents.SelectedItem.ToString();
+
+                filteredStats = RemoveFilteredLines(filterContinents, filteredStats);
+            }
+
+            if (qCountValueChanged == true)
+            {
+                filterQCount = F_QCount.SelectedItem.ToString();
+
+                filteredStats = RemoveFilteredLines(filterQCount, filteredStats);
+            }
 
             LoadAllStats(filteredStats);
 
             ValuesChangedToFalse();
+        }
+
+        private List<string> RemoveFilteredLines(string filter, List<string> statsToFilter)
+        {
+            List<string> filtered = new List<string>();
+            string[] oneLineValues;
+
+            for (int i = 0; i < statsToFilter.Count; i++)
+            {
+                oneLineValues = statsToFilter[i].Split('\t');
+                foreach (string s in oneLineValues)
+                {
+                    if (s == filter)
+                    {
+                        filtered.Add(statsToFilter[i]);
+                    }
+                }
+            }
+
+            return filtered;
         }
 
         private void B_ResetFilters_Click(object sender, EventArgs e)

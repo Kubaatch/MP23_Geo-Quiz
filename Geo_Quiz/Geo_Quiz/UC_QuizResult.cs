@@ -62,14 +62,14 @@ namespace Geo_Quiz
 
             statsLines = FilterCategories(statsLines);
 
-            List<string[]> temp = new List<string[]>();
+            List<object[]> temp = new List<object[]>();
 
             foreach (string s in statsLines)
             {
                 temp.Add(s.Split('\t'));
             }
 
-            foreach (string[] statsLine in temp)
+            foreach (object[] statsLine in temp)
             {
                 StatsGridView.Rows.Add(statsLine);
             }
@@ -163,7 +163,7 @@ namespace Geo_Quiz
         {
             object[] stats = new object[7];
 
-            stats[0] = SetAccount();
+            stats[0] = SetUsername();
             stats[1] = finalScore;
             stats[2] = averageScore;
             //copied from https://stackoverflow.com/questions/2058637/custom-format-timespan-with-string-format
@@ -176,18 +176,6 @@ namespace Geo_Quiz
             return stats;
         }
 
-        private string SetAccount()
-        {   
-            if (F_SignIn.loggedIn == true)
-            {
-                return F_SignIn.loggedInAccount;
-            }
-            else
-            {
-                return "Guest";
-            }
-        }
-
         private string SetContinents()
         {
             if (gameInfo.Continents.Length > 1)
@@ -197,6 +185,18 @@ namespace Geo_Quiz
             else
             {
                 return gameInfo.Continents[0];
+            }
+        }
+
+        private string SetUsername()
+        {
+            if (F_SignIn.loggedIn == true)
+            {
+                return F_SignIn.loggedInAccount;
+            }
+            else
+            {
+                return "Guest";
             }
         }
         

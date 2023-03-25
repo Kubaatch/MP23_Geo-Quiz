@@ -86,16 +86,15 @@ namespace Geo_Quiz
             }
         }
 
-        public void SetCurrentAccLabel(string setUsername)
+        public void SetCurrentAccLabel()
         {
-            loggedInAccount = setUsername;
             L_CurrentAcc.Text = "Current account: " + loggedInAccount;
         }
 
         public void SetGuestLabel()
         {
             loggedIn = false;
-            loggedInAccount = string.Empty;
+            loggedInAccount = "Guest";
             
             L_CurrentAcc.Text = "Not yet logged in...";
         }

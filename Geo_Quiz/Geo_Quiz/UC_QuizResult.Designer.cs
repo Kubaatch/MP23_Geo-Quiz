@@ -32,8 +32,8 @@ namespace Geo_Quiz
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.B_SaveStats = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.L_Statistics = new System.Windows.Forms.Label();
@@ -42,14 +42,14 @@ namespace Geo_Quiz
             this.L_Score = new System.Windows.Forms.Label();
             this.L_AvgScore = new System.Windows.Forms.Label();
             this.StatsGridView = new System.Windows.Forms.DataGridView();
-            this.B_ReturnToMenu = new System.Windows.Forms.Button();
-            this.GameInfoButton = new System.Windows.Forms.PictureBox();
-            this.TT_PopUp = new System.Windows.Forms.ToolTip(this.components);
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Avg_Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time_Spent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.B_ReturnToMenu = new System.Windows.Forms.Button();
+            this.GameInfoButton = new System.Windows.Forms.PictureBox();
+            this.TT_PopUp = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StatsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GameInfoButton)).BeginInit();
@@ -183,14 +183,14 @@ namespace Geo_Quiz
             this.StatsGridView.AllowUserToResizeRows = false;
             this.StatsGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.StatsGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.StatsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.StatsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.StatsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StatsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Username,
@@ -199,14 +199,14 @@ namespace Geo_Quiz
             this.Time_Spent,
             this.QCount});
             this.tableLayoutPanel1.SetColumnSpan(this.StatsGridView, 2);
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.StatsGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.StatsGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.StatsGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.StatsGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.StatsGridView.Location = new System.Drawing.Point(172, 279);
@@ -217,41 +217,10 @@ namespace Geo_Quiz
             this.StatsGridView.RowTemplate.Height = 24;
             this.StatsGridView.RowTemplate.ReadOnly = true;
             this.StatsGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.StatsGridView.ShowCellToolTips = false;
+            this.StatsGridView.ShowEditingIcon = false;
             this.StatsGridView.Size = new System.Drawing.Size(656, 277);
             this.StatsGridView.TabIndex = 11;
-            // 
-            // B_ReturnToMenu
-            // 
-            this.B_ReturnToMenu.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.B_ReturnToMenu.AutoSize = true;
-            this.B_ReturnToMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.B_ReturnToMenu.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.B_ReturnToMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_ReturnToMenu.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_ReturnToMenu.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_ReturnToMenu.Location = new System.Drawing.Point(510, 572);
-            this.B_ReturnToMenu.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.B_ReturnToMenu.Name = "B_ReturnToMenu";
-            this.B_ReturnToMenu.Size = new System.Drawing.Size(148, 35);
-            this.B_ReturnToMenu.TabIndex = 10;
-            this.B_ReturnToMenu.Text = "Return to menu";
-            this.B_ReturnToMenu.UseVisualStyleBackColor = false;
-            this.B_ReturnToMenu.Click += new System.EventHandler(this.B_ReturnToMenu_Click);
-            // 
-            // GameInfoButton
-            // 
-            this.GameInfoButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.GameInfoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.GameInfoButton.Image = global::Geo_Quiz.Properties.Resources.infoButton;
-            this.GameInfoButton.Location = new System.Drawing.Point(947, 3);
-            this.GameInfoButton.Name = "GameInfoButton";
-            this.GameInfoButton.Size = new System.Drawing.Size(50, 44);
-            this.GameInfoButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.GameInfoButton.TabIndex = 12;
-            this.GameInfoButton.TabStop = false;
-            this.TT_PopUp.SetToolTip(this.GameInfoButton, "Clicking on this image opens a message box\r\nshowing more in-depth stats of the qu" +
-        "iz you just finished.");
-            this.GameInfoButton.Click += new System.EventHandler(this.GameInfoButton_Click);
             // 
             // Username
             // 
@@ -303,14 +272,47 @@ namespace Geo_Quiz
             this.QCount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.QCount.Width = 110;
             // 
-            // UC_Statistics
+            // B_ReturnToMenu
+            // 
+            this.B_ReturnToMenu.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.B_ReturnToMenu.AutoSize = true;
+            this.B_ReturnToMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.B_ReturnToMenu.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.B_ReturnToMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.B_ReturnToMenu.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_ReturnToMenu.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.B_ReturnToMenu.Location = new System.Drawing.Point(510, 572);
+            this.B_ReturnToMenu.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.B_ReturnToMenu.Name = "B_ReturnToMenu";
+            this.B_ReturnToMenu.Size = new System.Drawing.Size(148, 35);
+            this.B_ReturnToMenu.TabIndex = 10;
+            this.B_ReturnToMenu.Text = "Return to menu";
+            this.B_ReturnToMenu.UseVisualStyleBackColor = false;
+            this.B_ReturnToMenu.Click += new System.EventHandler(this.B_ReturnToMenu_Click);
+            // 
+            // GameInfoButton
+            // 
+            this.GameInfoButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.GameInfoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.GameInfoButton.Image = global::Geo_Quiz.Properties.Resources.infoButton;
+            this.GameInfoButton.Location = new System.Drawing.Point(947, 3);
+            this.GameInfoButton.Name = "GameInfoButton";
+            this.GameInfoButton.Size = new System.Drawing.Size(50, 44);
+            this.GameInfoButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.GameInfoButton.TabIndex = 12;
+            this.GameInfoButton.TabStop = false;
+            this.TT_PopUp.SetToolTip(this.GameInfoButton, "Clicking on this image opens a message box\r\nshowing more in-depth stats of the qu" +
+        "iz you just finished.");
+            this.GameInfoButton.Click += new System.EventHandler(this.GameInfoButton_Click);
+            // 
+            // UC_QuizResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "UC_Statistics";
+            this.Name = "UC_QuizResult";
             this.Size = new System.Drawing.Size(1000, 625);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

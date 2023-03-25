@@ -131,9 +131,9 @@ namespace Geo_Quiz
             this.L_CorrectResult.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.L_CorrectResult, 3);
             this.L_CorrectResult.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_CorrectResult.Location = new System.Drawing.Point(501, 673);
+            this.L_CorrectResult.Location = new System.Drawing.Point(401, 538);
             this.L_CorrectResult.Name = "L_CorrectResult";
-            this.L_CorrectResult.Size = new System.Drawing.Size(244, 30);
+            this.L_CorrectResult.Size = new System.Drawing.Size(195, 24);
             this.L_CorrectResult.TabIndex = 14;
             this.L_CorrectResult.Text = "The correct answer is:\r\n";
             this.L_CorrectResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
