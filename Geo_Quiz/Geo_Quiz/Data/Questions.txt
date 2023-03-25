@@ -152,7 +152,7 @@ Uganda	Kampala	45741007	199810
 Zambia	Lusaka	18383955	743390
 Zimbabwe	Harare	14862924	386850
 
-America (North & Central)
+North America
 Antigua and Barbuda	Saint John's	97929	440
 Bahamas	Nassau	393244	10010
 Barbados	Bridgetown	287375	430
@@ -177,7 +177,7 @@ Saint Vincent and the Grenadines	Kingstown	110940	390
 Trinidad and Tobago	Port of Spain	1399488	5130
 United States of America	Washington, D.C.	331002651	9147420
 
-America (South)
+South America
 Argentina	Buenos Aires	45195774	2736690
 Bolivia	Sucre	11673021	1083300
 Brazil	Brasilia	212559417	8358140

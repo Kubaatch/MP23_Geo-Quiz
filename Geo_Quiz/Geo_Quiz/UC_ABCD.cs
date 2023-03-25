@@ -23,13 +23,14 @@ namespace Geo_Quiz
         readonly GameSpecs GS_ABCD = new GameSpecs();
         readonly Random random = new Random();
         readonly Stopwatch stopwatch = new Stopwatch();
-        
+        readonly Stopwatch stopwatchTotal = new Stopwatch();
+
         readonly private string[] imageFileNames = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data"), "*.png", SearchOption.AllDirectories);
 
         private string categoryPrint = "";
         private string labelQuestion;
 
-        private int deviation = 2;
+        readonly private int deviation = 2;
         private int questionNumber = 0;        
         private int score = 0;
 
@@ -155,9 +156,9 @@ namespace Geo_Quiz
                 case 2:
                 case 3:
                     return answers[questionNumber];
+                default:
+                    throw new NotImplementedException();
             }
-
-            throw new NotImplementedException();
         }
 
         private void AnswerFlag(Button[] buttons)
@@ -229,17 +230,36 @@ namespace Geo_Quiz
 
                 if (b.Tag != null && b.Tag.ToString() == "Correct")
                 {
-                    b.Text = answers[questionNumber];
+                    b.Text = answer;
                 }
                 else
                 {
-                    fakeAnswer = random.Next((intAnswer / deviation), (intAnswer * deviation));
-                    b.Text = fakeAnswer.ToString();
+                    int minValue = intAnswer / deviation;
+                    int maxValue = intAnswer * deviation;
+
+                    if (questions[questionNumber] == "China" || questions[questionNumber] == "India")
+                    {
+                        fakeAnswer = random.Next(minValue, 2147483647);
+                        b.Text = fakeAnswer.ToString();
+                    }
+                    else
+                    {
+                        fakeAnswer = random.Next(minValue, maxValue);
+                        b.Text = fakeAnswer.ToString();
+                    }
 
                     while (fakeAnswer == intAnswer)
                     {
-                        fakeAnswer = random.Next((intAnswer / deviation), (intAnswer * deviation));
-                        b.Text = fakeAnswer.ToString();
+                        if (questions[questionNumber] == "China" || questions[questionNumber] == "India")
+                        {
+                            fakeAnswer = random.Next(minValue, 2147483647);
+                            b.Text = fakeAnswer.ToString();
+                        }
+                        else
+                        {
+                            fakeAnswer = random.Next(minValue, maxValue);
+                            b.Text = fakeAnswer.ToString();
+                        }
                     }
                 }
             }
@@ -247,6 +267,8 @@ namespace Geo_Quiz
 
         private void Button_Click_Answer(object sender, EventArgs e)
         {
+            stopwatch.Stop();
+            
             string answer = GetAnswer();
 
                 //copied from https://stackoverflow.com/questions/13853028/how-to-detect-which-button-was-clicked-in-code-behind
@@ -262,7 +284,7 @@ namespace Geo_Quiz
                 L_Result.ForeColor = Color.ForestGreen;
                 clickedButton.BackColor = Color.ForestGreen;
 
-                int timeSpent = (int)stopwatch.ElapsedMilliseconds / 25;
+                int timeSpent = (int)stopwatch.ElapsedMilliseconds / 20;
                 tempscore = 1000 - timeSpent;
                 if (tempscore < 0) { tempscore = 0; }
             }
@@ -299,10 +321,6 @@ namespace Geo_Quiz
         {
             questionNumber++;
 
-            if (questionNumber + 1 == GS_ABCD.QuestionCount)
-            {
-                B_Next.Text = "End quiz";
-            }
 
             if (questionNumber == GS_ABCD.QuestionCount)
             {
@@ -310,6 +328,11 @@ namespace Geo_Quiz
             }
             else
             {
+                if (questionNumber + 1 == GS_ABCD.QuestionCount)
+                {
+                    B_Next.Text = "End quiz";
+                }
+
                 B_Next.Visible = false;
                 L_Result.Visible = false;
                 PBar.Increment(1);
@@ -335,6 +358,8 @@ namespace Geo_Quiz
 
                 L_QCount.Text = questionNumber + 1 + " / " + GS_ABCD.QuestionCount;
             }
+
+            stopwatch.Restart();
         }
 
         private void ControlsSetup()
@@ -353,13 +378,14 @@ namespace Geo_Quiz
             Button_D.Visible = true;
 
             stopwatch.Start();
+            stopwatchTotal.Start();
         }
 
         private void OpenStatistics()
         {
             PBar.Visible = false;
 
-            TimeSpan ts = stopwatch.Elapsed;
+            TimeSpan ts = stopwatchTotal.Elapsed;
 
             UC_QuizResult uc = new UC_QuizResult(score, ts, GS_ABCD, "ABCD");
             uc.Dock = DockStyle.Fill;

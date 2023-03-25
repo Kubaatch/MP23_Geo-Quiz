@@ -17,6 +17,7 @@ namespace Geo_Quiz
         readonly GameSpecs GS_Text = new GameSpecs();
         readonly Button B_Start = new Button();
         readonly Stopwatch stopwatch = new Stopwatch();
+        readonly Stopwatch stopwatchTotal = new Stopwatch();
 
 
         string categoryPrint = "";
@@ -83,6 +84,8 @@ namespace Geo_Quiz
         
         private void SelCheckAnswer()
         {
+            stopwatch.Stop();
+
             switch (GS_Text.Category)
             {
                 case 0:
@@ -204,6 +207,7 @@ namespace Geo_Quiz
 
             if (questionNumber == GS_Text.QuestionCount)
             {
+                stopwatchTotal.Stop();
                 OpenStatistics();
             }
             else
@@ -239,12 +243,13 @@ namespace Geo_Quiz
             L_Result.Visible = false;
             L_Result.ForeColor = Color.Red;
             L_CorrectResult.Visible = false;
-            L_CorrectResult.Text = "Correct answer is: ";
+            L_CorrectResult.Text = "The correct answer is:\n";
 
             TB_Answer.Text = "Enter answer here";
             TB_Answer.Enabled = true;
 
             TB_Answer.Focus();
+            stopwatch.Restart();
         }
 
         private void B_Start_Click(object sender, EventArgs e)
@@ -283,7 +288,7 @@ namespace Geo_Quiz
         {
             PBar.Visible = false;
 
-            TimeSpan ts = stopwatch.Elapsed;
+            TimeSpan ts = stopwatchTotal.Elapsed;
 
             UC_QuizResult uc = new UC_QuizResult(score, ts, GS_Text, "Text");
             uc.Dock = DockStyle.Fill;
@@ -321,6 +326,7 @@ namespace Geo_Quiz
             B_Enter.Enabled = true;
 
             stopwatch.Start();
+            stopwatchTotal.Start();
         }
 
         private void B_Exit_Click(object sender, EventArgs e)

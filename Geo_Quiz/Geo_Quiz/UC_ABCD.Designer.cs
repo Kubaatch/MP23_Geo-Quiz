@@ -38,9 +38,9 @@
             this.Button_C = new System.Windows.Forms.Button();
             this.PBar = new System.Windows.Forms.ProgressBar();
             this.L_Question = new System.Windows.Forms.Label();
+            this.L_Result = new System.Windows.Forms.Label();
             this.B_Next = new System.Windows.Forms.Button();
             this.PB_Flag = new System.Windows.Forms.PictureBox();
-            this.L_Result = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Flag)).BeginInit();
             this.SuspendLayout();
@@ -50,10 +50,10 @@
             this.tableLayoutPanel1.BackgroundImage = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
             this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.Controls.Add(this.L_Score, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.L_QCount, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.Button_B, 2, 3);
@@ -63,20 +63,19 @@
             this.tableLayoutPanel1.Controls.Add(this.Button_C, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.PBar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.L_Question, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.L_Result, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.B_Next, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.PB_Flag, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.L_Result, 1, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.34531F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.33236F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.97702F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.34531F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 625);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -86,7 +85,7 @@
             this.L_Score.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.L_Score.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_Score.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Score.Location = new System.Drawing.Point(5, 60);
+            this.L_Score.Location = new System.Drawing.Point(5, 55);
             this.L_Score.Margin = new System.Windows.Forms.Padding(5);
             this.L_Score.Name = "L_Score";
             this.L_Score.Size = new System.Drawing.Size(76, 26);
@@ -100,7 +99,7 @@
             this.L_QCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.L_QCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_QCount.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_QCount.Location = new System.Drawing.Point(925, 60);
+            this.L_QCount.Location = new System.Drawing.Point(925, 55);
             this.L_QCount.Margin = new System.Windows.Forms.Padding(5);
             this.L_QCount.Name = "L_QCount";
             this.L_QCount.Size = new System.Drawing.Size(70, 26);
@@ -113,9 +112,9 @@
             this.Button_B.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Button_B.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Button_B.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_B.Location = new System.Drawing.Point(503, 408);
+            this.Button_B.Location = new System.Drawing.Point(503, 373);
             this.Button_B.Name = "Button_B";
-            this.Button_B.Size = new System.Drawing.Size(160, 74);
+            this.Button_B.Size = new System.Drawing.Size(194, 94);
             this.Button_B.TabIndex = 1;
             this.Button_B.Text = "Button_B";
             this.Button_B.UseVisualStyleBackColor = true;
@@ -126,9 +125,9 @@
             // 
             this.Button_A.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Button_A.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_A.Location = new System.Drawing.Point(337, 408);
+            this.Button_A.Location = new System.Drawing.Point(303, 373);
             this.Button_A.Name = "Button_A";
-            this.Button_A.Size = new System.Drawing.Size(160, 74);
+            this.Button_A.Size = new System.Drawing.Size(194, 94);
             this.Button_A.TabIndex = 0;
             this.Button_A.Text = "Button_A";
             this.Button_A.UseVisualStyleBackColor = true;
@@ -138,9 +137,9 @@
             // Button_D
             // 
             this.Button_D.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_D.Location = new System.Drawing.Point(503, 488);
+            this.Button_D.Location = new System.Drawing.Point(503, 473);
             this.Button_D.Name = "Button_D";
-            this.Button_D.Size = new System.Drawing.Size(160, 76);
+            this.Button_D.Size = new System.Drawing.Size(194, 94);
             this.Button_D.TabIndex = 3;
             this.Button_D.Text = "Button_D";
             this.Button_D.UseVisualStyleBackColor = true;
@@ -169,9 +168,9 @@
             // 
             this.Button_C.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Button_C.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_C.Location = new System.Drawing.Point(337, 488);
+            this.Button_C.Location = new System.Drawing.Point(303, 473);
             this.Button_C.Name = "Button_C";
-            this.Button_C.Size = new System.Drawing.Size(160, 76);
+            this.Button_C.Size = new System.Drawing.Size(194, 94);
             this.Button_C.TabIndex = 2;
             this.Button_C.Text = "Button_C";
             this.Button_C.UseVisualStyleBackColor = true;
@@ -184,7 +183,7 @@
             this.PBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.PBar.Location = new System.Drawing.Point(3, 3);
             this.PBar.Name = "PBar";
-            this.PBar.Size = new System.Drawing.Size(994, 46);
+            this.PBar.Size = new System.Drawing.Size(994, 44);
             this.PBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.PBar.TabIndex = 19;
             // 
@@ -195,7 +194,7 @@
             this.L_Question.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tableLayoutPanel1.SetColumnSpan(this.L_Question, 2);
             this.L_Question.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Question.Location = new System.Drawing.Point(452, 355);
+            this.L_Question.Location = new System.Drawing.Point(452, 320);
             this.L_Question.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.L_Question.Name = "L_Question";
             this.L_Question.Size = new System.Drawing.Size(95, 24);
@@ -204,10 +203,25 @@
             this.L_Question.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.L_Question.Visible = false;
             // 
+            // L_Result
+            // 
+            this.L_Result.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.L_Result.AutoSize = true;
+            this.L_Result.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.SetColumnSpan(this.L_Result, 2);
+            this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Result.Location = new System.Drawing.Point(463, 580);
+            this.L_Result.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.L_Result.Name = "L_Result";
+            this.L_Result.Size = new System.Drawing.Size(73, 27);
+            this.L_Result.TabIndex = 20;
+            this.L_Result.Text = "label1";
+            this.L_Result.Visible = false;
+            // 
             // B_Next
             // 
             this.B_Next.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.B_Next.Location = new System.Drawing.Point(683, 466);
+            this.B_Next.Location = new System.Drawing.Point(703, 450);
             this.B_Next.Name = "B_Next";
             this.tableLayoutPanel1.SetRowSpan(this.B_Next, 2);
             this.B_Next.Size = new System.Drawing.Size(110, 40);
@@ -223,7 +237,7 @@
             this.PB_Flag.BackColor = System.Drawing.Color.Transparent;
             this.PB_Flag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tableLayoutPanel1.SetColumnSpan(this.PB_Flag, 2);
-            this.PB_Flag.Location = new System.Drawing.Point(331, 98);
+            this.PB_Flag.Location = new System.Drawing.Point(331, 63);
             this.PB_Flag.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.PB_Flag.Name = "PB_Flag";
             this.PB_Flag.Size = new System.Drawing.Size(338, 237);
@@ -231,19 +245,6 @@
             this.PB_Flag.TabIndex = 17;
             this.PB_Flag.TabStop = false;
             this.PB_Flag.Visible = false;
-            // 
-            // L_Result
-            // 
-            this.L_Result.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.L_Result.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.L_Result, 2);
-            this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Result.Location = new System.Drawing.Point(463, 582);
-            this.L_Result.Name = "L_Result";
-            this.L_Result.Size = new System.Drawing.Size(73, 27);
-            this.L_Result.TabIndex = 20;
-            this.L_Result.Text = "label1";
-            this.L_Result.Visible = false;
             // 
             // UC_ABCD
             // 

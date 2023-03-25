@@ -116,11 +116,11 @@ namespace Geo_Quiz
             this.L_Result.AutoSize = true;
             this.L_Result.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel1.SetColumnSpan(this.L_Result, 3);
-            this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_Result.ForeColor = System.Drawing.Color.Red;
-            this.L_Result.Location = new System.Drawing.Point(474, 468);
+            this.L_Result.Location = new System.Drawing.Point(478, 468);
             this.L_Result.Name = "L_Result";
-            this.L_Result.Size = new System.Drawing.Size(50, 64);
+            this.L_Result.Size = new System.Drawing.Size(42, 54);
             this.L_Result.TabIndex = 11;
             this.L_Result.Text = "_";
             this.L_Result.Visible = false;
@@ -131,11 +131,12 @@ namespace Geo_Quiz
             this.L_CorrectResult.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.L_CorrectResult, 3);
             this.L_CorrectResult.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_CorrectResult.Location = new System.Drawing.Point(398, 543);
+            this.L_CorrectResult.Location = new System.Drawing.Point(501, 673);
             this.L_CorrectResult.Name = "L_CorrectResult";
-            this.L_CorrectResult.Size = new System.Drawing.Size(202, 24);
+            this.L_CorrectResult.Size = new System.Drawing.Size(244, 30);
             this.L_CorrectResult.TabIndex = 14;
-            this.L_CorrectResult.Text = "The Correct answer is: ";
+            this.L_CorrectResult.Text = "The correct answer is:\r\n";
+            this.L_CorrectResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.L_CorrectResult.Visible = false;
             // 
             // B_Next
@@ -218,9 +219,9 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.B_Enter, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.TB_Answer, 1, 4);
@@ -243,8 +244,8 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(999, 625);
             this.tableLayoutPanel1.TabIndex = 20;

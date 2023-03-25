@@ -38,7 +38,7 @@ namespace Geo_Quiz
             "Max"
         };
 
-        readonly string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
+        readonly string filepath = UC_Login.filepath;
         readonly List<Image> flags = new List<Image>();
         Image[] qFlags = new Image[0];
 
