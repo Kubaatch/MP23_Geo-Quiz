@@ -162,13 +162,14 @@
             // 
             this.L_CurrentAcc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.L_CurrentAcc.AutoSize = true;
-            this.L_CurrentAcc.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.L_CurrentAcc.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.L_CurrentAcc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel1.SetColumnSpan(this.L_CurrentAcc, 2);
             this.L_CurrentAcc.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_CurrentAcc.Location = new System.Drawing.Point(419, 276);
+            this.L_CurrentAcc.Location = new System.Drawing.Point(418, 274);
             this.L_CurrentAcc.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.L_CurrentAcc.Name = "L_CurrentAcc";
-            this.L_CurrentAcc.Size = new System.Drawing.Size(141, 23);
+            this.L_CurrentAcc.Size = new System.Drawing.Size(143, 25);
             this.L_CurrentAcc.TabIndex = 7;
             this.L_CurrentAcc.Text = "Playing as guest";
             // 

@@ -81,7 +81,7 @@ Oman	Muscat	5106626	309500
 Pakistan	Islamabad	220892240	770880
 Palestine	Jerusalem	5101414	6020
 Philippines	Manila	109581078	298170
-Qatar	Doha	2881053	11610	
+Qatar	Doha	2881053	11610
 Saudi Arabia	Riyadh	34813871	2149690
 Singapore	Singapore	5850342	700
 South Korea	Seoul	51269185	97230
@@ -225,7 +225,7 @@ Greenland	Nuuk	56583	2166086
 Guam	Hagatna	168801	540
 Guernsey	St. Peter Port	62792	78
 Hong Kong	Hong Kong	7333200	2755
-Isle of Man	84069	572
+Isle of Man	Douglas	84069	572
 Jersey	St Helier	103267	120
 Macao	Macao	682300	115
 Montserrat	Plymouth	4649	102

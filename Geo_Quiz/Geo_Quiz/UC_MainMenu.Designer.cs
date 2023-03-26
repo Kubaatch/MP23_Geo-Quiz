@@ -140,7 +140,7 @@
             this.B_Training.Name = "B_Training";
             this.B_Training.Size = new System.Drawing.Size(319, 90);
             this.B_Training.TabIndex = 2;
-            this.B_Training.Text = "Learning Mode";
+            this.B_Training.Text = "Learn & Study";
             this.B_Training.UseVisualStyleBackColor = false;
             this.B_Training.Click += new System.EventHandler(this.B_Training_Click);
             // 

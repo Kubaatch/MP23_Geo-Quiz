@@ -110,7 +110,7 @@ namespace Geo_Quiz
             }
             else
             {
-                QuestionCount = 200;
+                QuestionCount = 500;
             }
         }
 

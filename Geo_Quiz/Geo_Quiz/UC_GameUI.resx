@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="B_Exit.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="LB_Category.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="TT_PopUp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -134,15 +128,6 @@ Capital city gives a country as prompt and it's capital is the answer.
 Population and area also give country as the prompt.
 The answer does not have to be exact in written answer, you can be off by up to 20%.</value>
   </data>
-  <metadata name="LB_Continents.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="tableLayoutPanel1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="B_ABCD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="B_ABCD.ToolTip" xml:space="preserve">
     <value>Here you select the correct answer from four options.
 You are given a prompt based on your selected category.
@@ -151,9 +136,6 @@ Capitals: select capital city corresponding to prompted country.
 Population &amp; Area: select correct (=exact) number
 And don't worry, you don't have to save your score ;)</value>
   </data>
-  <metadata name="B_TextBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="B_TextBox.ToolTip" xml:space="preserve">
     <value>Here you are given a prompt in the form of either a country or a flag.
 The answer shall be written into a text box below such prompt.
@@ -164,28 +146,10 @@ Population &amp; Area: country as prompt, answer is a number
   The deviation is set to 20%, you don't have to hit the exact number.
 And don't worry, you don't have to save your score ;)</value>
   </data>
-  <metadata name="L_Category.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="L_StartGame.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="L_Continents.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="L_QCount.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="SetQCount.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="LB_Continents.ToolTip" xml:space="preserve">
     <value>Choose continent/s you want to include in your quiz questions.
 You can choose one or more continents.
 If you choose none, all will be selected.
 Selected continents also limit the number of questions you can be asked.</value>
   </data>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

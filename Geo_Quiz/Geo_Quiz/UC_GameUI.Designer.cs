@@ -236,7 +236,7 @@
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_GameUI";
-            this.Size = new System.Drawing.Size(1000, 625);
+            this.Size = new System.Drawing.Size(800, 500);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
