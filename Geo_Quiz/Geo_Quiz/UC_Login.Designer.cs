@@ -81,7 +81,7 @@
             this.L_WrongUsername.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.L_WrongUsername.Name = "L_WrongUsername";
             this.L_WrongUsername.Size = new System.Drawing.Size(169, 16);
-            this.L_WrongUsername.TabIndex = 8;
+            this.L_WrongUsername.TabStop = false;
             this.L_WrongUsername.Text = "Invalid username, try again!";
             this.L_WrongUsername.Visible = false;
             // 
@@ -95,7 +95,7 @@
             this.L_Header.Margin = new System.Windows.Forms.Padding(1, 1, 1, 20);
             this.L_Header.Name = "L_Header";
             this.L_Header.Size = new System.Drawing.Size(463, 30);
-            this.L_Header.TabIndex = 4;
+            this.L_Header.TabStop = false;
             this.L_Header.Text = "Temp";
             this.L_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -106,7 +106,7 @@
             this.TB_Username.Location = new System.Drawing.Point(295, 130);
             this.TB_Username.Name = "TB_Username";
             this.TB_Username.Size = new System.Drawing.Size(185, 27);
-            this.TB_Username.TabIndex = 0;
+            this.TB_Username.TabIndex = 1;
             // 
             // L_Username
             // 
@@ -117,7 +117,7 @@
             this.L_Username.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.L_Username.Name = "L_Username";
             this.L_Username.Size = new System.Drawing.Size(96, 23);
-            this.L_Username.TabIndex = 5;
+            this.L_Username.TabStop = false;
             this.L_Username.Text = "Username:";
             // 
             // L_Password
@@ -129,7 +129,7 @@
             this.L_Password.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.L_Password.Name = "L_Password";
             this.L_Password.Size = new System.Drawing.Size(90, 23);
-            this.L_Password.TabIndex = 6;
+            this.L_Password.TabStop = false;
             this.L_Password.Text = "Password:";
             // 
             // B_Exit
@@ -145,7 +145,7 @@
             this.B_Exit.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(75, 35);
-            this.B_Exit.TabIndex = 3;
+            this.B_Exit.TabIndex = 4;
             this.B_Exit.Text = "Return";
             this.B_Exit.UseVisualStyleBackColor = false;
             this.B_Exit.Click += new System.EventHandler(this.B_Exit_Click);
@@ -159,7 +159,7 @@
             this.B_Enter.Margin = new System.Windows.Forms.Padding(1, 15, 1, 1);
             this.B_Enter.Name = "B_Enter";
             this.B_Enter.Size = new System.Drawing.Size(107, 50);
-            this.B_Enter.TabIndex = 2;
+            this.B_Enter.TabIndex = 3;
             this.B_Enter.Text = "Enter";
             this.B_Enter.UseVisualStyleBackColor = false;
             this.B_Enter.Click += new System.EventHandler(this.B_Enter_Click);
@@ -172,7 +172,7 @@
             this.TB_Password.Name = "TB_Password";
             this.TB_Password.PasswordChar = '*';
             this.TB_Password.Size = new System.Drawing.Size(185, 27);
-            this.TB_Password.TabIndex = 1;
+            this.TB_Password.TabIndex = 2;
             // 
             // L_WrongPass
             // 
@@ -183,7 +183,7 @@
             this.L_WrongPass.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.L_WrongPass.Name = "L_WrongPass";
             this.L_WrongPass.Size = new System.Drawing.Size(180, 16);
-            this.L_WrongPass.TabIndex = 7;
+            this.L_WrongPass.TabStop = false;
             this.L_WrongPass.Text = "Incorrect password, try again!";
             this.L_WrongPass.Visible = false;
             // 

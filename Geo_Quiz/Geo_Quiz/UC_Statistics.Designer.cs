@@ -38,6 +38,13 @@
             this.F_Username = new System.Windows.Forms.ComboBox();
             this.L_Header = new System.Windows.Forms.Label();
             this.StatsTable = new System.Windows.Forms.DataGridView();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Avg_Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Continents = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.L_Username = new System.Windows.Forms.Label();
             this.L_Category = new System.Windows.Forms.Label();
             this.L_Continents = new System.Windows.Forms.Label();
@@ -46,13 +53,6 @@
             this.B_GameMode = new System.Windows.Forms.Button();
             this.B_ResetFilters = new System.Windows.Forms.Button();
             this.B_SaveFilters = new System.Windows.Forms.Button();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Avg_Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Continents = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StatsTable)).BeginInit();
             this.SuspendLayout();
@@ -94,7 +94,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 625);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.TabStop = false;
             // 
             // F_Category
             // 
@@ -106,7 +106,7 @@
             this.F_Category.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.F_Category.Name = "F_Category";
             this.F_Category.Size = new System.Drawing.Size(191, 27);
-            this.F_Category.TabIndex = 18;
+            this.F_Category.TabIndex = 3;
             this.F_Category.SelectedValueChanged += new System.EventHandler(this.F_Category_SelectedValueChanged);
             // 
             // F_Continents
@@ -119,7 +119,7 @@
             this.F_Continents.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.F_Continents.Name = "F_Continents";
             this.F_Continents.Size = new System.Drawing.Size(191, 27);
-            this.F_Continents.TabIndex = 17;
+            this.F_Continents.TabIndex = 4;
             this.F_Continents.SelectedValueChanged += new System.EventHandler(this.F_Continents_SelectedValueChanged);
             // 
             // B_Exit
@@ -135,7 +135,7 @@
             this.B_Exit.Margin = new System.Windows.Forms.Padding(2, 2, 10, 10);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(75, 35);
-            this.B_Exit.TabIndex = 6;
+            this.B_Exit.TabIndex = 8;
             this.B_Exit.Text = "Return";
             this.B_Exit.UseVisualStyleBackColor = false;
             this.B_Exit.Click += new System.EventHandler(this.B_Exit_Click);
@@ -150,7 +150,7 @@
             this.L_Filters.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.L_Filters.Name = "L_Filters";
             this.L_Filters.Size = new System.Drawing.Size(71, 24);
-            this.L_Filters.TabIndex = 8;
+            this.L_Filters.TabStop = false;
             this.L_Filters.Text = "Filters: ";
             // 
             // F_Username
@@ -163,7 +163,7 @@
             this.F_Username.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.F_Username.Name = "F_Username";
             this.F_Username.Size = new System.Drawing.Size(191, 27);
-            this.F_Username.TabIndex = 16;
+            this.F_Username.TabIndex = 2;
             this.F_Username.SelectedValueChanged += new System.EventHandler(this.F_Username_SelectedValueChanged);
             // 
             // L_Header
@@ -177,7 +177,7 @@
             this.L_Header.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.L_Header.Name = "L_Header";
             this.L_Header.Size = new System.Drawing.Size(369, 37);
-            this.L_Header.TabIndex = 9;
+            this.L_Header.TabStop = false;
             this.L_Header.Text = "Statistics for gamemode:";
             // 
             // StatsTable
@@ -228,111 +228,7 @@
             this.StatsTable.ShowCellToolTips = false;
             this.StatsTable.ShowEditingIcon = false;
             this.StatsTable.Size = new System.Drawing.Size(889, 399);
-            this.StatsTable.TabIndex = 7;
-            // 
-            // L_Username
-            // 
-            this.L_Username.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.L_Username.AutoSize = true;
-            this.L_Username.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.L_Username.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Username.Location = new System.Drawing.Point(143, 81);
-            this.L_Username.Margin = new System.Windows.Forms.Padding(0);
-            this.L_Username.Name = "L_Username";
-            this.L_Username.Size = new System.Drawing.Size(91, 19);
-            this.L_Username.TabIndex = 21;
-            this.L_Username.Text = "By username:";
-            // 
-            // L_Category
-            // 
-            this.L_Category.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.L_Category.AutoSize = true;
-            this.L_Category.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.L_Category.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Category.Location = new System.Drawing.Point(343, 81);
-            this.L_Category.Margin = new System.Windows.Forms.Padding(0);
-            this.L_Category.Name = "L_Category";
-            this.L_Category.Size = new System.Drawing.Size(85, 19);
-            this.L_Category.TabIndex = 22;
-            this.L_Category.Text = "By category:";
-            // 
-            // L_Continents
-            // 
-            this.L_Continents.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.L_Continents.AutoSize = true;
-            this.L_Continents.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.L_Continents.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Continents.Location = new System.Drawing.Point(533, 81);
-            this.L_Continents.Margin = new System.Windows.Forms.Padding(0);
-            this.L_Continents.Name = "L_Continents";
-            this.L_Continents.Size = new System.Drawing.Size(99, 19);
-            this.L_Continents.TabIndex = 23;
-            this.L_Continents.Text = "By continent/s";
-            // 
-            // F_QCount
-            // 
-            this.F_QCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.F_QCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.F_QCount.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.F_QCount.FormattingEnabled = true;
-            this.F_QCount.Location = new System.Drawing.Point(684, 103);
-            this.F_QCount.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.F_QCount.Name = "F_QCount";
-            this.F_QCount.Size = new System.Drawing.Size(191, 27);
-            this.F_QCount.TabIndex = 19;
-            this.F_QCount.SelectedValueChanged += new System.EventHandler(this.F_QCount_SelectedValueChanged);
-            // 
-            // L_QCount
-            // 
-            this.L_QCount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.L_QCount.AutoSize = true;
-            this.L_QCount.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.L_QCount.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_QCount.Location = new System.Drawing.Point(717, 81);
-            this.L_QCount.Margin = new System.Windows.Forms.Padding(0);
-            this.L_QCount.Name = "L_QCount";
-            this.L_QCount.Size = new System.Drawing.Size(124, 19);
-            this.L_QCount.TabIndex = 24;
-            this.L_QCount.Text = "By question count:";
-            // 
-            // B_GameMode
-            // 
-            this.B_GameMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.B_GameMode.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_GameMode.Location = new System.Drawing.Point(487, 23);
-            this.B_GameMode.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.B_GameMode.Name = "B_GameMode";
-            this.B_GameMode.Size = new System.Drawing.Size(186, 37);
-            this.B_GameMode.TabIndex = 20;
-            this.B_GameMode.Text = "temp";
-            this.B_GameMode.UseVisualStyleBackColor = true;
-            this.B_GameMode.Click += new System.EventHandler(this.B_GameMode_Click);
-            // 
-            // B_ResetFilters
-            // 
-            this.B_ResetFilters.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B_ResetFilters.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_ResetFilters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.B_ResetFilters.Location = new System.Drawing.Point(885, 65);
-            this.B_ResetFilters.Name = "B_ResetFilters";
-            this.B_ResetFilters.Size = new System.Drawing.Size(108, 29);
-            this.B_ResetFilters.TabIndex = 14;
-            this.B_ResetFilters.Text = "Reset filters";
-            this.B_ResetFilters.UseVisualStyleBackColor = true;
-            this.B_ResetFilters.Click += new System.EventHandler(this.B_ResetFilters_Click);
-            // 
-            // B_SaveFilters
-            // 
-            this.B_SaveFilters.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.B_SaveFilters.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_SaveFilters.ForeColor = System.Drawing.Color.Black;
-            this.B_SaveFilters.Location = new System.Drawing.Point(881, 103);
-            this.B_SaveFilters.Name = "B_SaveFilters";
-            this.B_SaveFilters.Size = new System.Drawing.Size(116, 44);
-            this.B_SaveFilters.TabIndex = 15;
-            this.B_SaveFilters.Text = "Save filters";
-            this.B_SaveFilters.UseVisualStyleBackColor = true;
-            this.B_SaveFilters.Click += new System.EventHandler(this.B_SaveFilters_Click);
+            this.StatsTable.TabStop = false;
             // 
             // Username
             // 
@@ -389,6 +285,110 @@
             this.Continents.Name = "Continents";
             this.Continents.ReadOnly = true;
             this.Continents.Width = 150;
+            // 
+            // L_Username
+            // 
+            this.L_Username.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.L_Username.AutoSize = true;
+            this.L_Username.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.L_Username.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Username.Location = new System.Drawing.Point(143, 81);
+            this.L_Username.Margin = new System.Windows.Forms.Padding(0);
+            this.L_Username.Name = "L_Username";
+            this.L_Username.Size = new System.Drawing.Size(91, 19);
+            this.L_Username.TabStop = false;
+            this.L_Username.Text = "By username:";
+            // 
+            // L_Category
+            // 
+            this.L_Category.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.L_Category.AutoSize = true;
+            this.L_Category.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.L_Category.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Category.Location = new System.Drawing.Point(343, 81);
+            this.L_Category.Margin = new System.Windows.Forms.Padding(0);
+            this.L_Category.Name = "L_Category";
+            this.L_Category.Size = new System.Drawing.Size(85, 19);
+            this.L_Category.TabStop = false;
+            this.L_Category.Text = "By category:";
+            // 
+            // L_Continents
+            // 
+            this.L_Continents.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.L_Continents.AutoSize = true;
+            this.L_Continents.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.L_Continents.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Continents.Location = new System.Drawing.Point(533, 81);
+            this.L_Continents.Margin = new System.Windows.Forms.Padding(0);
+            this.L_Continents.Name = "L_Continents";
+            this.L_Continents.Size = new System.Drawing.Size(99, 19);
+            this.L_Continents.TabStop = false;
+            this.L_Continents.Text = "By continent/s";
+            // 
+            // F_QCount
+            // 
+            this.F_QCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.F_QCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.F_QCount.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.F_QCount.FormattingEnabled = true;
+            this.F_QCount.Location = new System.Drawing.Point(684, 103);
+            this.F_QCount.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.F_QCount.Name = "F_QCount";
+            this.F_QCount.Size = new System.Drawing.Size(191, 27);
+            this.F_QCount.TabIndex = 5;
+            this.F_QCount.SelectedValueChanged += new System.EventHandler(this.F_QCount_SelectedValueChanged);
+            // 
+            // L_QCount
+            // 
+            this.L_QCount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.L_QCount.AutoSize = true;
+            this.L_QCount.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.L_QCount.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_QCount.Location = new System.Drawing.Point(717, 81);
+            this.L_QCount.Margin = new System.Windows.Forms.Padding(0);
+            this.L_QCount.Name = "L_QCount";
+            this.L_QCount.Size = new System.Drawing.Size(124, 19);
+            this.L_QCount.TabStop = false;
+            this.L_QCount.Text = "By question count:";
+            // 
+            // B_GameMode
+            // 
+            this.B_GameMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.B_GameMode.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_GameMode.Location = new System.Drawing.Point(487, 23);
+            this.B_GameMode.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.B_GameMode.Name = "B_GameMode";
+            this.B_GameMode.Size = new System.Drawing.Size(186, 37);
+            this.B_GameMode.TabIndex = 1;
+            this.B_GameMode.Text = "temp";
+            this.B_GameMode.UseVisualStyleBackColor = true;
+            this.B_GameMode.Click += new System.EventHandler(this.B_GameMode_Click);
+            // 
+            // B_ResetFilters
+            // 
+            this.B_ResetFilters.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B_ResetFilters.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_ResetFilters.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.B_ResetFilters.Location = new System.Drawing.Point(885, 65);
+            this.B_ResetFilters.Name = "B_ResetFilters";
+            this.B_ResetFilters.Size = new System.Drawing.Size(108, 29);
+            this.B_ResetFilters.TabIndex = 7;
+            this.B_ResetFilters.Text = "Reset filters";
+            this.B_ResetFilters.UseVisualStyleBackColor = true;
+            this.B_ResetFilters.Click += new System.EventHandler(this.B_ResetFilters_Click);
+            // 
+            // B_SaveFilters
+            // 
+            this.B_SaveFilters.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.B_SaveFilters.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_SaveFilters.ForeColor = System.Drawing.Color.Black;
+            this.B_SaveFilters.Location = new System.Drawing.Point(881, 103);
+            this.B_SaveFilters.Name = "B_SaveFilters";
+            this.B_SaveFilters.Size = new System.Drawing.Size(116, 44);
+            this.B_SaveFilters.TabIndex = 6;
+            this.B_SaveFilters.Text = "Save filters";
+            this.B_SaveFilters.UseVisualStyleBackColor = true;
+            this.B_SaveFilters.Click += new System.EventHandler(this.B_SaveFilters_Click);
             // 
             // UC_Statistics
             // 

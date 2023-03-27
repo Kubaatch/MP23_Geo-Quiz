@@ -19,25 +19,25 @@ namespace Geo_Quiz
 {
     public partial class UC_ABCD : UserControl
     {
-        readonly Button B_Start = new Button();
-        readonly GameSpecs GS_ABCD = new GameSpecs();
-        readonly Random random = new Random();
-        readonly Stopwatch stopwatch = new Stopwatch();
-        readonly Stopwatch stopwatchTotal = new Stopwatch();
+        private readonly Button B_Start = new Button();
+        private readonly GameSpecs GS_ABCD = new GameSpecs();
+        private readonly Random random = new Random();
+        private readonly Stopwatch stopwatch = new Stopwatch();
+        private readonly Stopwatch stopwatchTotal = new Stopwatch();
 
-        readonly private string[] imageFileNames = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data"), "*.png", SearchOption.AllDirectories);
+        private readonly string[] imageFileNames = Directory.GetFiles(UC_Login.filepath, "*.png", SearchOption.AllDirectories);
 
         private string categoryPrint = "";
         private string labelQuestion;
 
-        readonly private int deviation = 2;
+        const int deviation = 2;
         private int questionNumber = 0;        
         private int score = 0;
 
-        readonly Image[] qFlags = new Image[0];
+        private readonly Image[] qFlags = new Image[0];
 
-        readonly string[] questions;
-        readonly string[] answers;
+        private readonly string[] questions;
+        private readonly string[] answers;
 
         public UC_ABCD(int category, string[] continents, int QCount, object[] setQuestions)
         {            

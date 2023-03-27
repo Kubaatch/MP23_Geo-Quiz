@@ -20,8 +20,8 @@ namespace Geo_Quiz
 
         private string enteredUsername;
         private string enteredPassword;
-        private readonly string[] usernames = new string[0];
-        private readonly string[] passwords = new string[0];
+        private string[] usernames = new string[0];
+        private string[] passwords = new string[0];
 
         public static string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
         private readonly string fullpath;
@@ -35,6 +35,11 @@ namespace Geo_Quiz
             fullpath = Path.Combine(filepath, "Accounts.txt");
             fileAccounts = File.ReadAllLines(fullpath);
 
+            SetUsernamesAndPasswords();
+        }
+
+        private void SetUsernamesAndPasswords()
+        {
             Array.Resize(ref usernames, fileAccounts.Length);
             Array.Resize(ref passwords, fileAccounts.Length);
 

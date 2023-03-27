@@ -11,7 +11,7 @@ namespace Geo_Quiz
 {
     public partial class UC_GameUI : UserControl
     {
-        public static readonly string[] categories = {
+        public static string[] categories = {
             "Flags",
             "Capitals",
             "Population",
@@ -39,9 +39,10 @@ namespace Geo_Quiz
             "Max"
         };
 
-        readonly string filepath = UC_Login.filepath;
-        readonly List<Image> flags = new List<Image>();
-        Image[] qFlags = new Image[0];
+        private readonly string filepath = UC_Login.filepath;
+
+        private readonly List<Image> flags = new List<Image>();
+        private Image[] qFlags = new Image[0];
 
         private int SelectedCategory;
         private string[] SelectedContinents;

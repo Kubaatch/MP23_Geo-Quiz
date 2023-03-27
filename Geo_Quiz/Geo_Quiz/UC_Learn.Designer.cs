@@ -56,7 +56,7 @@ namespace Geo_Quiz
             this.B_Exit.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(75, 35);
-            this.B_Exit.TabIndex = 25;
+            this.B_Exit.TabIndex = 5;
             this.B_Exit.Text = "Return";
             this.B_Exit.UseVisualStyleBackColor = false;
             this.B_Exit.Click += new System.EventHandler(this.B_Exit_Click);
@@ -86,7 +86,7 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(999, 624);
-            this.tableLayoutPanel1.TabIndex = 26;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // B_Previous
             // 
@@ -95,7 +95,7 @@ namespace Geo_Quiz
             this.B_Previous.Location = new System.Drawing.Point(428, 508);
             this.B_Previous.Name = "B_Previous";
             this.B_Previous.Size = new System.Drawing.Size(118, 46);
-            this.B_Previous.TabIndex = 31;
+            this.B_Previous.TabIndex = 3;
             this.B_Previous.Text = "<---";
             this.B_Previous.UseVisualStyleBackColor = false;
             this.B_Previous.Click += new System.EventHandler(this.B_Previous_Click);
@@ -107,7 +107,7 @@ namespace Geo_Quiz
             this.B_Next.Location = new System.Drawing.Point(552, 508);
             this.B_Next.Name = "B_Next";
             this.B_Next.Size = new System.Drawing.Size(118, 46);
-            this.B_Next.TabIndex = 27;
+            this.B_Next.TabIndex = 4;
             this.B_Next.Text = "---->";
             this.B_Next.UseVisualStyleBackColor = false;
             this.B_Next.Click += new System.EventHandler(this.B_Next_Click);
@@ -122,7 +122,7 @@ namespace Geo_Quiz
             this.TB_Capital.Location = new System.Drawing.Point(47, 293);
             this.TB_Capital.Name = "TB_Capital";
             this.TB_Capital.Size = new System.Drawing.Size(455, 38);
-            this.TB_Capital.TabIndex = 28;
+            this.TB_Capital.TabIndex = 2;
             this.TB_Capital.Text = "Capital";
             this.TB_Capital.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_Capital.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TB_Capital_KeyPressed);
@@ -137,7 +137,7 @@ namespace Geo_Quiz
             this.TB_Country.Location = new System.Drawing.Point(3, 166);
             this.TB_Country.Name = "TB_Country";
             this.TB_Country.Size = new System.Drawing.Size(543, 43);
-            this.TB_Country.TabIndex = 27;
+            this.TB_Country.TabIndex = 1;
             this.TB_Country.Text = "Country";
             this.TB_Country.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_Country.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TB_Country_KeyPressed);
@@ -151,7 +151,7 @@ namespace Geo_Quiz
             this.L_Area.Location = new System.Drawing.Point(235, 421);
             this.L_Area.Name = "L_Area";
             this.L_Area.Size = new System.Drawing.Size(79, 32);
-            this.L_Area.TabIndex = 29;
+            this.L_Area.TabIndex = 5;
             this.L_Area.Text = "Area: ";
             // 
             // L_Population
@@ -163,7 +163,7 @@ namespace Geo_Quiz
             this.L_Population.Location = new System.Drawing.Point(699, 421);
             this.L_Population.Name = "L_Population";
             this.L_Population.Size = new System.Drawing.Size(149, 32);
-            this.L_Population.TabIndex = 30;
+            this.L_Population.TabIndex = 6;
             this.L_Population.Text = "Population: ";
             // 
             // PB_Image
@@ -178,7 +178,7 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.SetRowSpan(this.PB_Image, 2);
             this.PB_Image.Size = new System.Drawing.Size(379, 235);
             this.PB_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PB_Image.TabIndex = 26;
+            this.PB_Image.TabIndex = 7;
             this.PB_Image.TabStop = false;
             // 
             // UC_Learn

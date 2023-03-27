@@ -10,16 +10,16 @@ namespace Geo_Quiz
 {
     public partial class UC_QuizResult : UserControl
     {
-        readonly GameSpecs gameInfo = new GameSpecs();
-        readonly string gameMode;
-        readonly TimeSpan totalTime = new TimeSpan();
+        private readonly GameSpecs gameInfo = new GameSpecs();
+        private readonly TimeSpan totalTime = new TimeSpan();
 
-        public int finalScore;
-        public int averageScore;
+        private readonly int finalScore;
+        private int averageScore;
+        private readonly string gameMode;
 
         readonly private string filepath = UC_Login.filepath;
 
-        public bool savedStats = false;
+        private bool savedStats = false;
 
         public UC_QuizResult(int score, TimeSpan ts, GameSpecs gamespecs, string mode)
         {

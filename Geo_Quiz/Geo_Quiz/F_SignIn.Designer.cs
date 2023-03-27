@@ -33,11 +33,9 @@
             this.B_SignIn = new System.Windows.Forms.Button();
             this.B_Guest = new System.Windows.Forms.Button();
             this.B_Exit = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.L_Logo = new System.Windows.Forms.Label();
             this.L_CurrentAcc = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +49,7 @@
             this.B_SignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_SignUp.Name = "B_SignUp";
             this.B_SignUp.Size = new System.Drawing.Size(200, 84);
-            this.B_SignUp.TabIndex = 3;
+            this.B_SignUp.TabIndex = 2;
             this.B_SignUp.Text = "Sign up";
             this.B_SignUp.UseVisualStyleBackColor = false;
             this.B_SignUp.Click += new System.EventHandler(this.B_SignUp_Click);
@@ -66,7 +64,7 @@
             this.B_SignIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_SignIn.Name = "B_SignIn";
             this.B_SignIn.Size = new System.Drawing.Size(199, 84);
-            this.B_SignIn.TabIndex = 4;
+            this.B_SignIn.TabIndex = 1;
             this.B_SignIn.Text = "Sign in";
             this.B_SignIn.UseVisualStyleBackColor = false;
             this.B_SignIn.Click += new System.EventHandler(this.B_SignIn_Click);
@@ -82,7 +80,7 @@
             this.B_Guest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Guest.Name = "B_Guest";
             this.B_Guest.Size = new System.Drawing.Size(335, 50);
-            this.B_Guest.TabIndex = 5;
+            this.B_Guest.TabIndex = 3;
             this.B_Guest.Text = "Enter main menu";
             this.B_Guest.UseVisualStyleBackColor = false;
             this.B_Guest.Click += new System.EventHandler(this.B_Guest_Click);
@@ -99,20 +97,10 @@
             this.B_Exit.Margin = new System.Windows.Forms.Padding(1, 1, 10, 10);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(105, 39);
-            this.B_Exit.TabIndex = 6;
+            this.B_Exit.TabIndex = 4;
             this.B_Exit.Text = "Exit App";
             this.B_Exit.UseVisualStyleBackColor = false;
             this.B_Exit.Click += new System.EventHandler(this.B_Exit_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Geo_Quiz.Properties.Resources.WorldMap_tp;
-            this.pictureBox1.Location = new System.Drawing.Point(107, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(765, 361);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -140,7 +128,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.38461F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.38461F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(981, 578);
-            this.tableLayoutPanel1.TabIndex = 8;
+            this.tableLayoutPanel1.TabStop = false;
             // 
             // L_Logo
             // 
@@ -154,7 +142,7 @@
             this.L_Logo.Name = "L_Logo";
             this.tableLayoutPanel1.SetRowSpan(this.L_Logo, 2);
             this.L_Logo.Size = new System.Drawing.Size(402, 100);
-            this.L_Logo.TabIndex = 0;
+            this.L_Logo.TabStop = false;
             this.L_Logo.Text = "Geography Quiz";
             this.L_Logo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -170,7 +158,7 @@
             this.L_CurrentAcc.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.L_CurrentAcc.Name = "L_CurrentAcc";
             this.L_CurrentAcc.Size = new System.Drawing.Size(143, 25);
-            this.L_CurrentAcc.TabIndex = 7;
+            this.L_CurrentAcc.TabStop = false;
             this.L_CurrentAcc.Text = "Playing as guest";
             // 
             // F_SignIn
@@ -180,14 +168,12 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(981, 578);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "F_SignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignIn";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -199,7 +185,6 @@
         private System.Windows.Forms.Button B_SignIn;
         private System.Windows.Forms.Button B_Guest;
         private System.Windows.Forms.Button B_Exit;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label L_Logo;
         private System.Windows.Forms.Label L_CurrentAcc;

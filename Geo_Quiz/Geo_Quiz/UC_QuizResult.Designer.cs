@@ -68,7 +68,7 @@ namespace Geo_Quiz
             this.B_SaveStats.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.B_SaveStats.Name = "B_SaveStats";
             this.B_SaveStats.Size = new System.Drawing.Size(109, 35);
-            this.B_SaveStats.TabIndex = 6;
+            this.B_SaveStats.TabIndex = 1;
             this.B_SaveStats.Text = "Save score";
             this.TT_PopUp.SetToolTip(this.B_SaveStats, "Save your score permanently by clicking this button.\r\nIf you don\'t save your stat" +
         "s will be lost forever!\r\nIf you aren\'t logged in and save, stats will be saved u" +
@@ -108,7 +108,7 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 625);
-            this.tableLayoutPanel1.TabIndex = 7;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // L_Statistics
             // 
@@ -120,7 +120,7 @@ namespace Geo_Quiz
             this.L_Statistics.Location = new System.Drawing.Point(412, 110);
             this.L_Statistics.Name = "L_Statistics";
             this.L_Statistics.Size = new System.Drawing.Size(175, 27);
-            this.L_Statistics.TabIndex = 1;
+            this.L_Statistics.TabStop = false;
             this.L_Statistics.Text = "Here\'s your stats:";
             // 
             // L_QuizEnd
@@ -133,7 +133,7 @@ namespace Geo_Quiz
             this.L_QuizEnd.Location = new System.Drawing.Point(368, 54);
             this.L_QuizEnd.Name = "L_QuizEnd";
             this.L_QuizEnd.Size = new System.Drawing.Size(264, 52);
-            this.L_QuizEnd.TabIndex = 0;
+            this.L_QuizEnd.TabStop = false;
             this.L_QuizEnd.Text = "End of quiz!";
             // 
             // L_TimeSpent
@@ -146,7 +146,7 @@ namespace Geo_Quiz
             this.L_TimeSpent.Location = new System.Drawing.Point(419, 235);
             this.L_TimeSpent.Name = "L_TimeSpent";
             this.L_TimeSpent.Size = new System.Drawing.Size(161, 30);
-            this.L_TimeSpent.TabIndex = 9;
+            this.L_TimeSpent.TabStop = false;
             this.L_TimeSpent.Text = "Time played: ";
             // 
             // L_Score
@@ -159,7 +159,7 @@ namespace Geo_Quiz
             this.L_Score.Location = new System.Drawing.Point(425, 155);
             this.L_Score.Name = "L_Score";
             this.L_Score.Size = new System.Drawing.Size(149, 30);
-            this.L_Score.TabIndex = 8;
+            this.L_Score.TabStop = false;
             this.L_Score.Text = "Total score: ";
             // 
             // L_AvgScore
@@ -172,7 +172,7 @@ namespace Geo_Quiz
             this.L_AvgScore.Location = new System.Drawing.Point(408, 195);
             this.L_AvgScore.Name = "L_AvgScore";
             this.L_AvgScore.Size = new System.Drawing.Size(184, 30);
-            this.L_AvgScore.TabIndex = 7;
+            this.L_AvgScore.TabStop = false;
             this.L_AvgScore.Text = "Average score: ";
             // 
             // StatsGridView
@@ -220,7 +220,7 @@ namespace Geo_Quiz
             this.StatsGridView.ShowCellToolTips = false;
             this.StatsGridView.ShowEditingIcon = false;
             this.StatsGridView.Size = new System.Drawing.Size(656, 277);
-            this.StatsGridView.TabIndex = 11;
+            this.StatsGridView.TabStop = false;
             // 
             // Username
             // 
@@ -285,7 +285,7 @@ namespace Geo_Quiz
             this.B_ReturnToMenu.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.B_ReturnToMenu.Name = "B_ReturnToMenu";
             this.B_ReturnToMenu.Size = new System.Drawing.Size(148, 35);
-            this.B_ReturnToMenu.TabIndex = 10;
+            this.B_ReturnToMenu.TabIndex = 2;
             this.B_ReturnToMenu.Text = "Return to menu";
             this.B_ReturnToMenu.UseVisualStyleBackColor = false;
             this.B_ReturnToMenu.Click += new System.EventHandler(this.B_ReturnToMenu_Click);
@@ -299,10 +299,9 @@ namespace Geo_Quiz
             this.GameInfoButton.Name = "GameInfoButton";
             this.GameInfoButton.Size = new System.Drawing.Size(50, 44);
             this.GameInfoButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.GameInfoButton.TabIndex = 12;
             this.GameInfoButton.TabStop = false;
-            this.TT_PopUp.SetToolTip(this.GameInfoButton, "Clicking on this image opens a message box\r\nshowing more in-depth stats of the qu" +
-        "iz you just finished.");
+            this.TT_PopUp.SetToolTip(this.GameInfoButton, "Clicking on this info button opens a message box\r\nshowing" +
+                "more in-depth stats of the quiz you just finished.");
             this.GameInfoButton.Click += new System.EventHandler(this.GameInfoButton_Click);
             // 
             // UC_QuizResult

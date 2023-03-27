@@ -38,9 +38,9 @@
             this.Button_C = new System.Windows.Forms.Button();
             this.PBar = new System.Windows.Forms.ProgressBar();
             this.L_Question = new System.Windows.Forms.Label();
-            this.L_Result = new System.Windows.Forms.Label();
             this.B_Next = new System.Windows.Forms.Button();
             this.PB_Flag = new System.Windows.Forms.PictureBox();
+            this.L_Result = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Flag)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +77,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 625);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.TabStop = false;
             // 
             // L_Score
             // 
@@ -89,7 +89,7 @@
             this.L_Score.Margin = new System.Windows.Forms.Padding(5);
             this.L_Score.Name = "L_Score";
             this.L_Score.Size = new System.Drawing.Size(76, 26);
-            this.L_Score.TabIndex = 23;
+            this.L_Score.TabStop = false;
             this.L_Score.Text = "Score: _";
             // 
             // L_QCount
@@ -103,7 +103,7 @@
             this.L_QCount.Margin = new System.Windows.Forms.Padding(5);
             this.L_QCount.Name = "L_QCount";
             this.L_QCount.Size = new System.Drawing.Size(70, 26);
-            this.L_QCount.TabIndex = 22;
+            this.L_QCount.TabStop = false;
             this.L_QCount.Text = "temp...";
             this.L_QCount.Visible = false;
             // 
@@ -115,7 +115,7 @@
             this.Button_B.Location = new System.Drawing.Point(503, 373);
             this.Button_B.Name = "Button_B";
             this.Button_B.Size = new System.Drawing.Size(194, 94);
-            this.Button_B.TabIndex = 1;
+            this.Button_B.TabIndex = 2;
             this.Button_B.Text = "Button_B";
             this.Button_B.UseVisualStyleBackColor = true;
             this.Button_B.Visible = false;
@@ -128,7 +128,7 @@
             this.Button_A.Location = new System.Drawing.Point(303, 373);
             this.Button_A.Name = "Button_A";
             this.Button_A.Size = new System.Drawing.Size(194, 94);
-            this.Button_A.TabIndex = 0;
+            this.Button_A.TabIndex = 1;
             this.Button_A.Text = "Button_A";
             this.Button_A.UseVisualStyleBackColor = true;
             this.Button_A.Visible = false;
@@ -140,7 +140,7 @@
             this.Button_D.Location = new System.Drawing.Point(503, 473);
             this.Button_D.Name = "Button_D";
             this.Button_D.Size = new System.Drawing.Size(194, 94);
-            this.Button_D.TabIndex = 3;
+            this.Button_D.TabIndex = 4;
             this.Button_D.Text = "Button_D";
             this.Button_D.UseVisualStyleBackColor = true;
             this.Button_D.Visible = false;
@@ -159,7 +159,7 @@
             this.B_Exit.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(75, 35);
-            this.B_Exit.TabIndex = 5;
+            this.B_Exit.TabIndex = 6;
             this.B_Exit.Text = "Return";
             this.B_Exit.UseVisualStyleBackColor = false;
             this.B_Exit.Click += new System.EventHandler(this.B_Exit_Click);
@@ -171,7 +171,7 @@
             this.Button_C.Location = new System.Drawing.Point(303, 473);
             this.Button_C.Name = "Button_C";
             this.Button_C.Size = new System.Drawing.Size(194, 94);
-            this.Button_C.TabIndex = 2;
+            this.Button_C.TabIndex = 3;
             this.Button_C.Text = "Button_C";
             this.Button_C.UseVisualStyleBackColor = true;
             this.Button_C.Visible = false;
@@ -185,7 +185,7 @@
             this.PBar.Name = "PBar";
             this.PBar.Size = new System.Drawing.Size(994, 44);
             this.PBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.PBar.TabIndex = 19;
+            this.PBar.TabStop = false;
             // 
             // L_Question
             // 
@@ -198,25 +198,10 @@
             this.L_Question.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.L_Question.Name = "L_Question";
             this.L_Question.Size = new System.Drawing.Size(95, 24);
-            this.L_Question.TabIndex = 16;
+            this.L_Question.TabStop = false;
             this.L_Question.Text = "What is...?";
             this.L_Question.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.L_Question.Visible = false;
-            // 
-            // L_Result
-            // 
-            this.L_Result.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.L_Result.AutoSize = true;
-            this.L_Result.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.SetColumnSpan(this.L_Result, 2);
-            this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Result.Location = new System.Drawing.Point(463, 580);
-            this.L_Result.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.L_Result.Name = "L_Result";
-            this.L_Result.Size = new System.Drawing.Size(73, 27);
-            this.L_Result.TabIndex = 20;
-            this.L_Result.Text = "label1";
-            this.L_Result.Visible = false;
             // 
             // B_Next
             // 
@@ -225,7 +210,7 @@
             this.B_Next.Name = "B_Next";
             this.tableLayoutPanel1.SetRowSpan(this.B_Next, 2);
             this.B_Next.Size = new System.Drawing.Size(110, 40);
-            this.B_Next.TabIndex = 4;
+            this.B_Next.TabIndex = 5;
             this.B_Next.Text = "Next Question";
             this.B_Next.UseVisualStyleBackColor = true;
             this.B_Next.Visible = false;
@@ -242,9 +227,24 @@
             this.PB_Flag.Name = "PB_Flag";
             this.PB_Flag.Size = new System.Drawing.Size(338, 237);
             this.PB_Flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB_Flag.TabIndex = 17;
+            this.PB_Flag.TabStop = false;
             this.PB_Flag.TabStop = false;
             this.PB_Flag.Visible = false;
+            // 
+            // L_Result
+            // 
+            this.L_Result.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.L_Result.AutoSize = true;
+            this.L_Result.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.SetColumnSpan(this.L_Result, 2);
+            this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Result.Location = new System.Drawing.Point(463, 580);
+            this.L_Result.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.L_Result.Name = "L_Result";
+            this.L_Result.Size = new System.Drawing.Size(73, 27);
+            this.L_Result.TabStop = false;
+            this.L_Result.Text = "label1";
+            this.L_Result.Visible = false;
             // 
             // UC_ABCD
             // 

@@ -54,11 +54,11 @@
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.B_Exit.Location = new System.Drawing.Point(915, 580);
+            this.B_Exit.Location = new System.Drawing.Point(715, 455);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(2, 2, 10, 10);
             this.B_Exit.Name = "B_Exit";
             this.B_Exit.Size = new System.Drawing.Size(75, 35);
-            this.B_Exit.TabIndex = 5;
+            this.B_Exit.TabIndex = 6;
             this.B_Exit.Text = "Return";
             this.B_Exit.UseVisualStyleBackColor = false;
             this.B_Exit.Click += new System.EventHandler(this.B_Exit_Click);
@@ -69,10 +69,10 @@
             this.LB_Category.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Category.FormattingEnabled = true;
             this.LB_Category.ItemHeight = 30;
-            this.LB_Category.Location = new System.Drawing.Point(93, 238);
+            this.LB_Category.Location = new System.Drawing.Point(59, 113);
             this.LB_Category.Name = "LB_Category";
             this.LB_Category.Size = new System.Drawing.Size(147, 124);
-            this.LB_Category.TabIndex = 6;
+            this.LB_Category.TabIndex = 1;
             this.TT_PopUp.SetToolTip(this.LB_Category, resources.GetString("LB_Category.ToolTip"));
             // 
             // LB_Continents
@@ -82,11 +82,11 @@
             this.LB_Continents.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LB_Continents.FormattingEnabled = true;
             this.LB_Continents.ItemHeight = 30;
-            this.LB_Continents.Location = new System.Drawing.Point(343, 238);
+            this.LB_Continents.Location = new System.Drawing.Point(269, 113);
             this.LB_Continents.Name = "LB_Continents";
             this.LB_Continents.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.LB_Continents.Size = new System.Drawing.Size(312, 184);
-            this.LB_Continents.TabIndex = 7;
+            this.LB_Continents.Size = new System.Drawing.Size(260, 184);
+            this.LB_Continents.TabIndex = 2;
             this.TT_PopUp.SetToolTip(this.LB_Continents, resources.GetString("LB_Continents.ToolTip"));
             // 
             // B_TextBox
@@ -94,10 +94,10 @@
             this.B_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.B_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_TextBox.Location = new System.Drawing.Point(336, 508);
+            this.B_TextBox.Location = new System.Drawing.Point(269, 383);
             this.B_TextBox.Name = "B_TextBox";
-            this.B_TextBox.Size = new System.Drawing.Size(160, 64);
-            this.B_TextBox.TabIndex = 8;
+            this.B_TextBox.Size = new System.Drawing.Size(127, 64);
+            this.B_TextBox.TabIndex = 4;
             this.B_TextBox.Text = "Written answer";
             this.TT_PopUp.SetToolTip(this.B_TextBox, resources.GetString("B_TextBox.ToolTip"));
             this.B_TextBox.UseVisualStyleBackColor = true;
@@ -108,10 +108,10 @@
             this.B_ABCD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.B_ABCD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_ABCD.Location = new System.Drawing.Point(502, 508);
+            this.B_ABCD.Location = new System.Drawing.Point(402, 383);
             this.B_ABCD.Name = "B_ABCD";
-            this.B_ABCD.Size = new System.Drawing.Size(160, 64);
-            this.B_ABCD.TabIndex = 9;
+            this.B_ABCD.Size = new System.Drawing.Size(127, 64);
+            this.B_ABCD.TabIndex = 5;
             this.B_ABCD.Text = "4 options";
             this.TT_PopUp.SetToolTip(this.B_ABCD, resources.GetString("B_ABCD.ToolTip"));
             this.B_ABCD.UseVisualStyleBackColor = true;
@@ -127,11 +127,11 @@
             // 
             this.SetQCount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SetQCount.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SetQCount.Location = new System.Drawing.Point(776, 238);
+            this.SetQCount.Location = new System.Drawing.Point(609, 113);
             this.SetQCount.Name = "SetQCount";
             this.SetQCount.ReadOnly = true;
             this.SetQCount.Size = new System.Drawing.Size(113, 29);
-            this.SetQCount.TabIndex = 17;
+            this.SetQCount.TabIndex = 3;
             this.SetQCount.Text = "Select!";
             this.TT_PopUp.SetToolTip(this.SetQCount, "Select your desired question count from the scroll bar (up/down).\r\nSelecting \'Max" +
         "\' will give you all questions from your continent selection.\r\nThe default value " +
@@ -144,11 +144,11 @@
             this.L_Continents.BackColor = System.Drawing.Color.LightGray;
             this.tableLayoutPanel1.SetColumnSpan(this.L_Continents, 2);
             this.L_Continents.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Continents.Location = new System.Drawing.Point(400, 206);
+            this.L_Continents.Location = new System.Drawing.Point(300, 81);
             this.L_Continents.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.L_Continents.Name = "L_Continents";
             this.L_Continents.Size = new System.Drawing.Size(198, 19);
-            this.L_Continents.TabIndex = 12;
+            this.L_Continents.TabStop = false; ;
             this.L_Continents.Text = "Select one or more continents:";
             // 
             // L_QCount
@@ -157,11 +157,11 @@
             this.L_QCount.AutoSize = true;
             this.L_QCount.BackColor = System.Drawing.Color.LightGray;
             this.L_QCount.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_QCount.Location = new System.Drawing.Point(761, 206);
+            this.L_QCount.Location = new System.Drawing.Point(594, 81);
             this.L_QCount.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.L_QCount.Name = "L_QCount";
             this.L_QCount.Size = new System.Drawing.Size(143, 19);
-            this.L_QCount.TabIndex = 13;
+            this.L_QCount.TabStop = false;
             this.L_QCount.Text = "Number of questions:";
             // 
             // L_Category
@@ -170,11 +170,11 @@
             this.L_Category.AutoSize = true;
             this.L_Category.BackColor = System.Drawing.Color.LightGray;
             this.L_Category.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Category.Location = new System.Drawing.Point(108, 206);
+            this.L_Category.Location = new System.Drawing.Point(75, 81);
             this.L_Category.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.L_Category.Name = "L_Category";
             this.L_Category.Size = new System.Drawing.Size(116, 19);
-            this.L_Category.TabIndex = 14;
+            this.L_Category.TabStop = false;
             this.L_Category.Text = "Choose category:";
             // 
             // L_StartGame
@@ -184,11 +184,11 @@
             this.L_StartGame.BackColor = System.Drawing.Color.LightGray;
             this.tableLayoutPanel1.SetColumnSpan(this.L_StartGame, 2);
             this.L_StartGame.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_StartGame.Location = new System.Drawing.Point(448, 472);
+            this.L_StartGame.Location = new System.Drawing.Point(348, 347);
             this.L_StartGame.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.L_StartGame.Name = "L_StartGame";
             this.L_StartGame.Size = new System.Drawing.Size(102, 23);
-            this.L_StartGame.TabIndex = 15;
+            this.L_StartGame.TabStop = false;
             this.L_StartGame.Text = "Start game:";
             // 
             // tableLayoutPanel1
@@ -220,8 +220,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 625);
-            this.tableLayoutPanel1.TabIndex = 18;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 500);
+            this.tableLayoutPanel1.TabStop = false;
             // 
             // UC_GameUI
             // 

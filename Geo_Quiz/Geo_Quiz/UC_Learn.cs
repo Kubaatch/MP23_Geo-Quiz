@@ -10,17 +10,17 @@ namespace Geo_Quiz
 {
     public partial class UC_Learn : UserControl
     {
-        readonly string filepath = UC_Login.filepath;
-        readonly string[] continents = UC_GameUI.continents;
+        private readonly string filepath = UC_Login.filepath;
+        private readonly string[] continents = UC_GameUI.continents;
 
         private string[] countries;
         private string[] capitals;
         private string[] population;
         private string[] area;
-        readonly List<Image> flags = new List<Image>();
+        private readonly List<Image> flags = new List<Image>();
 
-        readonly private string labelAreaText = "Area: ";
-        readonly private string labelPopulationText = "Population: ";
+        const string labelAreaText = "Area: ";
+        const string labelPopulationText = "Population: ";
 
         private int countryIndex = 0;
 

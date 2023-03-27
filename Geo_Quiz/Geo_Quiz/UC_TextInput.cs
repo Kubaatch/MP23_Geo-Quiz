@@ -14,24 +14,23 @@ namespace Geo_Quiz
 {
     public partial class UC_TextInput : UserControl
     {
-        readonly GameSpecs GS_Text = new GameSpecs();
-        readonly Button B_Start = new Button();
-        readonly Stopwatch stopwatch = new Stopwatch();
-        readonly Stopwatch stopwatchTotal = new Stopwatch();
+        private readonly GameSpecs GS_Text = new GameSpecs();
+        private readonly Button B_Start = new Button();
+        private readonly Stopwatch stopwatch = new Stopwatch();
+        private readonly Stopwatch stopwatchTotal = new Stopwatch();
 
+        private string categoryPrint;
+        private string labelQuestion;
 
-        string categoryPrint = "";
-        string labelQuestion;
+        private string answer;
+        private int questionNumber = 0;
+        private int score = 0;
+        const int minuspoints = 100;
 
-        string answer;
-        int questionNumber = 0;
-        int score = 0;
-        readonly int minuspoints = 100;
-
-        readonly Image[] qFlags = new Image[0];
+        private readonly Image[] qFlags = new Image[0];
         
-        readonly string[] questions;
-        readonly string[] answers;
+        private readonly string[] questions;
+        private readonly string[] answers;
 
         public UC_TextInput(int category, string[] continents, int QCount, object[] setQuestions)
         {            
@@ -268,7 +267,9 @@ namespace Geo_Quiz
                     break;
                 case 3:
                     categoryPrint = "area";
-                    break;                
+                    break;
+                default:
+                    throw new NotImplementedException();
             }
 
             if (GS_Text.Category != 0)

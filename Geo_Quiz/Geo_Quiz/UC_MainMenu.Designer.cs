@@ -97,7 +97,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 625);
-            this.tableLayoutPanel1.TabIndex = 6;
+            this.tableLayoutPanel1.TabStop = false;
             // 
             // L_CurrentAcc
             // 
@@ -109,7 +109,7 @@
             this.L_CurrentAcc.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.L_CurrentAcc.Name = "L_CurrentAcc";
             this.L_CurrentAcc.Size = new System.Drawing.Size(147, 23);
-            this.L_CurrentAcc.TabIndex = 8;
+            this.L_CurrentAcc.TabStop = false;
             this.L_CurrentAcc.Text = "Current account: ";
             // 
             // B_Exit
@@ -140,7 +140,7 @@
             this.B_Training.Name = "B_Training";
             this.B_Training.Size = new System.Drawing.Size(319, 90);
             this.B_Training.TabIndex = 2;
-            this.B_Training.Text = "Learn & Study";
+            this.B_Training.Text = "Learn / Study";
             this.B_Training.UseVisualStyleBackColor = false;
             this.B_Training.Click += new System.EventHandler(this.B_Training_Click);
             // 

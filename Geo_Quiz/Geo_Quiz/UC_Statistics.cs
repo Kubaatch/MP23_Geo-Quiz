@@ -14,20 +14,19 @@ namespace Geo_Quiz
 {
     public partial class UC_Statistics : UserControl
     {
-        readonly private string filepath = UC_Login.filepath;
+        private readonly string filepath = UC_Login.filepath;
         List<string> statsLines;
 
         private string selectedGamemode;
-        readonly private string stats1file = "Stats4Variants.txt";
-        readonly private string stats2file = "StatsTextInput.txt";
+        const string stats1file = "Stats4Variants.txt";
+        const string stats2file = "StatsTextInput.txt";
+        const string gameMode1 = "4 Options";
+        const string gameMode2 = "Written answer";
 
-        readonly private string gameMode1 = "4 Options";
-        readonly private string gameMode2 = "Written answer";
-
-        private static string filterUsername;
-        private static string filterCategory;
-        private static string filterContinents;
-        private static string filterQCount;
+        private string filterUsername;
+        private string filterCategory;
+        private string filterContinents;
+        private string filterQCount;
 
         private bool usernameValueChanged = false;
         private bool categoryValueChanged = false;
