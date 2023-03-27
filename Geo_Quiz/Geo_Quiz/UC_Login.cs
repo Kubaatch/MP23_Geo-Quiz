@@ -54,7 +54,7 @@ namespace Geo_Quiz
             enteredPassword = TB_Password.Text;
 
             L_WrongPass.Visible = false;
-            L_ExistingUsername.Visible = false;
+            L_WrongUsername.Visible = false;
 
             switch (F_SignIn.type)
             {
@@ -71,11 +71,23 @@ namespace Geo_Quiz
         {
             bool success = true;
 
+            if (enteredUsername == null || enteredUsername == "" || enteredUsername.Length > 32)
+            {
+                success = false;
+                L_WrongUsername.Visible = true; 
+            }
+
+            if (enteredPassword == null || enteredPassword == "" || enteredPassword.Length > 32)
+            {
+                success = false;
+                L_WrongPass.Visible = true;
+            }
+
             foreach (string s in usernames)
             {
                 if (enteredUsername == s)
                 {                    
-                    L_ExistingUsername.Visible = true;
+                    L_WrongUsername.Visible = true;
                     TB_Username.Text = "";
                     TB_Password.Text = "";
                     success = false;
@@ -114,7 +126,7 @@ namespace Geo_Quiz
 
             if (success == false)
             {
-                L_ExistingUsername.Visible = true;
+                L_WrongUsername.Visible = true;
             }
         }
 

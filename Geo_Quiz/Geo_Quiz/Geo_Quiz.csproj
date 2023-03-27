@@ -194,5 +194,8 @@
   <ItemGroup>
     <None Include="Resources\infoButton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dall-E flag.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

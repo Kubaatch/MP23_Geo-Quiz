@@ -209,7 +209,7 @@ namespace Geo_Quiz
                     randNum = random.Next(fakecities.Length);
                     b.Text = fakecities[randNum];
 
-                    while (fakecities[randNum] == Button_A.Text || fakecities[randNum] == Button_B.Text || fakecities[randNum] == Button_C.Text || fakecities[randNum] == Button_D.Text)
+                    while (fakecities[randNum] == answer)
                     {
                         randNum = random.Next(fakecities.Length);
                         b.Text = fakecities[randNum];

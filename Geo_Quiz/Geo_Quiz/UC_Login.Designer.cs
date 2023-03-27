@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.L_ExistingUsername = new System.Windows.Forms.Label();
+            this.L_WrongUsername = new System.Windows.Forms.Label();
             this.L_Header = new System.Windows.Forms.Label();
             this.TB_Username = new System.Windows.Forms.TextBox();
             this.L_Username = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.L_ExistingUsername, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.L_WrongUsername, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.L_Header, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.TB_Username, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.L_Username, 1, 1);
@@ -72,18 +72,18 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(775, 366);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // L_ExistingUsername
+            // L_WrongUsername
             // 
-            this.L_ExistingUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.L_ExistingUsername.AutoSize = true;
-            this.L_ExistingUsername.ForeColor = System.Drawing.Color.Red;
-            this.L_ExistingUsername.Location = new System.Drawing.Point(303, 166);
-            this.L_ExistingUsername.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.L_ExistingUsername.Name = "L_ExistingUsername";
-            this.L_ExistingUsername.Size = new System.Drawing.Size(169, 16);
-            this.L_ExistingUsername.TabIndex = 8;
-            this.L_ExistingUsername.Text = "Invalid username, try again!";
-            this.L_ExistingUsername.Visible = false;
+            this.L_WrongUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.L_WrongUsername.AutoSize = true;
+            this.L_WrongUsername.ForeColor = System.Drawing.Color.Red;
+            this.L_WrongUsername.Location = new System.Drawing.Point(303, 166);
+            this.L_WrongUsername.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.L_WrongUsername.Name = "L_WrongUsername";
+            this.L_WrongUsername.Size = new System.Drawing.Size(169, 16);
+            this.L_WrongUsername.TabIndex = 8;
+            this.L_WrongUsername.Text = "Invalid username, try again!";
+            this.L_WrongUsername.Visible = false;
             // 
             // L_Header
             // 
@@ -213,6 +213,6 @@
         private System.Windows.Forms.Button B_Enter;
         private System.Windows.Forms.Button B_Exit;
         private System.Windows.Forms.Label L_WrongPass;
-        private System.Windows.Forms.Label L_ExistingUsername;
+        private System.Windows.Forms.Label L_WrongUsername;
     }
 }
