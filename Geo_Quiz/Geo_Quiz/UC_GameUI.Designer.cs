@@ -52,7 +52,7 @@
             this.B_Exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.B_Exit.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
             this.B_Exit.Location = new System.Drawing.Point(715, 455);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(2, 2, 10, 10);
@@ -126,7 +126,7 @@
             // SetQCount
             // 
             this.SetQCount.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.SetQCount.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SetQCount.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SetQCount.Location = new System.Drawing.Point(609, 113);
             this.SetQCount.Name = "SetQCount";
             this.SetQCount.ReadOnly = true;
@@ -148,7 +148,7 @@
             this.L_Continents.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.L_Continents.Name = "L_Continents";
             this.L_Continents.Size = new System.Drawing.Size(198, 19);
-            this.L_Continents.TabStop = false; ;
+            this.L_Continents.TabStop = false;
             this.L_Continents.Text = "Select one or more continents:";
             // 
             // L_QCount

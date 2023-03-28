@@ -3,8 +3,6 @@ using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Security.Permissions;
 
 namespace Geo_Quiz
 {
@@ -91,7 +89,7 @@ namespace Geo_Quiz
         {
             countryIndex--;
 
-            if (countryIndex <= 0)
+            if (countryIndex < 0)
             {
                 countryIndex = countries.Length - 1;
             }
@@ -136,27 +134,6 @@ namespace Geo_Quiz
             L_Population.Text = labelPopulationText + population[countryIndex];
         }
 
-        private string[] OrderDatabaseAlphabetically(string[] unsortedData)
-        {
-            int length = unsortedData.Length;
-            string temp;
-
-            for (int i = 0; i < length; i++)
-            {
-                for (int j = 0; j < length; j++)
-                {
-                    if (unsortedData[j].CompareTo(unsortedData[i]) > 0)
-                    {
-                        temp = unsortedData[i];
-                        unsortedData[i] = unsortedData[j];
-                        unsortedData[j] = temp;
-                    }
-                }
-            }
-
-            return unsortedData;
-        }
-
         private void LoadDatabase()
         {
             List<string> tempQuestionsList = new List<string>();
@@ -198,6 +175,27 @@ namespace Geo_Quiz
                 
                 k++;
             }
+        }
+
+        private string[] OrderDatabaseAlphabetically(string[] unsortedData)
+        {
+            int length = unsortedData.Length;
+            string temp;
+
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < length; j++)
+                {
+                    if (unsortedData[j].CompareTo(unsortedData[i]) > 0)
+                    {
+                        temp = unsortedData[i];
+                        unsortedData[i] = unsortedData[j];
+                        unsortedData[j] = temp;
+                    }
+                }
+            }
+
+            return unsortedData;
         }
 
         private void LoadFlags()

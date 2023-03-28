@@ -61,7 +61,7 @@
             this.B_LogOut.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.B_LogOut.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.B_LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_LogOut.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_LogOut.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_LogOut.ForeColor = System.Drawing.SystemColors.GrayText;
             this.B_LogOut.Location = new System.Drawing.Point(10, 561);
             this.B_LogOut.Margin = new System.Windows.Forms.Padding(10);
@@ -104,7 +104,7 @@
             this.L_CurrentAcc.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.L_CurrentAcc.AutoSize = true;
             this.L_CurrentAcc.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.L_CurrentAcc.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_CurrentAcc.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_CurrentAcc.Location = new System.Drawing.Point(426, 123);
             this.L_CurrentAcc.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.L_CurrentAcc.Name = "L_CurrentAcc";
@@ -118,7 +118,7 @@
             this.B_Exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.B_Exit.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
             this.B_Exit.Location = new System.Drawing.Point(854, 561);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(10);

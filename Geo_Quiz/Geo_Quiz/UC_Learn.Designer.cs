@@ -50,7 +50,7 @@ namespace Geo_Quiz
             this.B_Exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.B_Exit.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
             this.B_Exit.Location = new System.Drawing.Point(914, 579);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);

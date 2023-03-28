@@ -75,7 +75,7 @@
             this.B_Guest.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tableLayoutPanel1.SetColumnSpan(this.B_Guest, 2);
             this.B_Guest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_Guest.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Guest.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Guest.Location = new System.Drawing.Point(322, 416);
             this.B_Guest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.B_Guest.Name = "B_Guest";
@@ -91,7 +91,7 @@
             this.B_Exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.B_Exit.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
             this.B_Exit.Location = new System.Drawing.Point(866, 529);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(1, 1, 10, 10);
@@ -128,7 +128,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.38461F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.38461F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(981, 578);
-            this.tableLayoutPanel1.TabStop = false;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // L_Logo
             // 
@@ -142,7 +142,7 @@
             this.L_Logo.Name = "L_Logo";
             this.tableLayoutPanel1.SetRowSpan(this.L_Logo, 2);
             this.L_Logo.Size = new System.Drawing.Size(402, 100);
-            this.L_Logo.TabStop = false;
+            this.L_Logo.TabIndex = 4;
             this.L_Logo.Text = "Geography Quiz";
             this.L_Logo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -153,12 +153,12 @@
             this.L_CurrentAcc.BackColor = System.Drawing.SystemColors.HighlightText;
             this.L_CurrentAcc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel1.SetColumnSpan(this.L_CurrentAcc, 2);
-            this.L_CurrentAcc.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_CurrentAcc.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_CurrentAcc.Location = new System.Drawing.Point(418, 274);
             this.L_CurrentAcc.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.L_CurrentAcc.Name = "L_CurrentAcc";
             this.L_CurrentAcc.Size = new System.Drawing.Size(143, 25);
-            this.L_CurrentAcc.TabStop = false;
+            this.L_CurrentAcc.TabIndex = 5;
             this.L_CurrentAcc.Text = "Playing as guest";
             // 
             // F_SignIn
@@ -173,7 +173,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "F_SignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SignIn";
+            this.Text = "Geography Quiz";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

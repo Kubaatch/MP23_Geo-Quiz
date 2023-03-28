@@ -101,10 +101,21 @@ namespace Geo_Quiz
 
         private void OpenLogin()
         {
+            B_Guest.Enabled = false;
+            B_SignIn.Enabled = false;
+            B_SignUp.Enabled = false;
+            
             UC_Login uc = new UC_Login();
             Controls.Add(uc);
             uc.Location = new System.Drawing.Point(80, 130);
             uc.BringToFront();
+        }
+
+        public void EnableButtons()
+        {
+            B_Guest.Enabled = true;
+            B_SignIn.Enabled = true;
+            B_SignUp.Enabled= true;
         }
 
         private void B_Exit_Click(object sender, EventArgs e)

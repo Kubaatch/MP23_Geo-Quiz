@@ -102,7 +102,7 @@
             // TB_Username
             // 
             this.TB_Username.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TB_Username.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_Username.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_Username.Location = new System.Drawing.Point(295, 130);
             this.TB_Username.Name = "TB_Username";
             this.TB_Username.Size = new System.Drawing.Size(185, 27);
@@ -124,7 +124,7 @@
             // 
             this.L_Password.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.L_Password.AutoSize = true;
-            this.L_Password.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Password.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_Password.Location = new System.Drawing.Point(342, 192);
             this.L_Password.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.L_Password.Name = "L_Password";
@@ -139,7 +139,7 @@
             this.B_Exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.B_Exit.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
             this.B_Exit.Location = new System.Drawing.Point(690, 321);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);

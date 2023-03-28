@@ -54,7 +54,7 @@ namespace Geo_Quiz
             this.B_Exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.B_Exit.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
             this.B_Exit.Location = new System.Drawing.Point(914, 580);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
@@ -88,7 +88,7 @@ namespace Geo_Quiz
             this.L_Question.AutoSize = true;
             this.L_Question.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tableLayoutPanel1.SetColumnSpan(this.L_Question, 3);
-            this.L_Question.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Question.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_Question.Location = new System.Drawing.Point(458, 321);
             this.L_Question.Name = "L_Question";
             this.L_Question.Size = new System.Drawing.Size(81, 27);
@@ -116,7 +116,7 @@ namespace Geo_Quiz
             this.L_Result.AutoSize = true;
             this.L_Result.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel1.SetColumnSpan(this.L_Result, 3);
-            this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_Result.ForeColor = System.Drawing.Color.Red;
             this.L_Result.Location = new System.Drawing.Point(478, 468);
             this.L_Result.Name = "L_Result";
@@ -160,7 +160,7 @@ namespace Geo_Quiz
             this.L_QCount.AutoSize = true;
             this.L_QCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.L_QCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.L_QCount.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_QCount.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_QCount.Location = new System.Drawing.Point(924, 45);
             this.L_QCount.Margin = new System.Windows.Forms.Padding(5);
             this.L_QCount.Name = "L_QCount";
@@ -174,7 +174,7 @@ namespace Geo_Quiz
             this.L_Score.AutoSize = true;
             this.L_Score.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.L_Score.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.L_Score.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Score.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_Score.Location = new System.Drawing.Point(5, 45);
             this.L_Score.Margin = new System.Windows.Forms.Padding(5);
             this.L_Score.Name = "L_Score";

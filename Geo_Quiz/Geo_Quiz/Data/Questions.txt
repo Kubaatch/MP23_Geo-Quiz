@@ -235,8 +235,6 @@ Pitcairn Islands	Adamstown	47	47
 Puerto Rico	San Juan	3285874	9104
 Saint Pierre and Miquelon	Saint Pierre	6008	242
 South Georgia	King Edward Point	0	3903
-Soviet Union	Moscow	286730819	22402200
-Tibet	Lhasa	3648100	1228400
 Turks and Caicos Islands	Cockburn Town	44542	948
 US Virgin Islands	Charlotte Amalie	87146	346
 Wallis and Futuna	Mata Utu	11558	142

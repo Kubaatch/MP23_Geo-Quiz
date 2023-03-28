@@ -1,13 +1,8 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Image = System.Drawing.Image;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Diagnostics;
 
 namespace Geo_Quiz

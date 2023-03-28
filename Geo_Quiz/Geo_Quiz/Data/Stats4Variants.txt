@@ -4,3 +4,4 @@ Guest	524	104	00hrs., 00min., 02s.	5	Area	Oceania
 kubac	1540	308	00hrs., 00min., 03s.	5	Area	Oceania
 kubac	3468	247	00hrs., 00min., 06s.	14	Flags	Oceania
 Guest	4576	915	00hrs., 00min., 11s.	5	Flags	Europe
+Guest	3089	308	00hrs., 00min., 48s.	10	Capitals	Asia

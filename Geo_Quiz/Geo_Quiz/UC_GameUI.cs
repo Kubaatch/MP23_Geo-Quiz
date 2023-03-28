@@ -5,7 +5,6 @@ using Image = System.Drawing.Image;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using System.Runtime.Remoting.Channels;
 
 namespace Geo_Quiz
 {

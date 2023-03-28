@@ -84,7 +84,7 @@
             this.L_Score.AutoSize = true;
             this.L_Score.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.L_Score.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.L_Score.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Score.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_Score.Location = new System.Drawing.Point(5, 55);
             this.L_Score.Margin = new System.Windows.Forms.Padding(5);
             this.L_Score.Name = "L_Score";
@@ -98,7 +98,7 @@
             this.L_QCount.AutoSize = true;
             this.L_QCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.L_QCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.L_QCount.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_QCount.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_QCount.Location = new System.Drawing.Point(925, 55);
             this.L_QCount.Margin = new System.Windows.Forms.Padding(5);
             this.L_QCount.Name = "L_QCount";
@@ -111,7 +111,7 @@
             // 
             this.Button_B.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Button_B.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Button_B.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_B.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_B.Location = new System.Drawing.Point(503, 373);
             this.Button_B.Name = "Button_B";
             this.Button_B.Size = new System.Drawing.Size(194, 94);
@@ -124,7 +124,7 @@
             // Button_A
             // 
             this.Button_A.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Button_A.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_A.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_A.Location = new System.Drawing.Point(303, 373);
             this.Button_A.Name = "Button_A";
             this.Button_A.Size = new System.Drawing.Size(194, 94);
@@ -136,7 +136,7 @@
             // 
             // Button_D
             // 
-            this.Button_D.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_D.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_D.Location = new System.Drawing.Point(503, 473);
             this.Button_D.Name = "Button_D";
             this.Button_D.Size = new System.Drawing.Size(194, 94);
@@ -153,7 +153,7 @@
             this.B_Exit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.B_Exit.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.B_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_Exit.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Exit.ForeColor = System.Drawing.SystemColors.GrayText;
             this.B_Exit.Location = new System.Drawing.Point(915, 580);
             this.B_Exit.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
@@ -167,7 +167,7 @@
             // Button_C
             // 
             this.Button_C.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Button_C.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_C.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_C.Location = new System.Drawing.Point(303, 473);
             this.Button_C.Name = "Button_C";
             this.Button_C.Size = new System.Drawing.Size(194, 94);
@@ -193,7 +193,7 @@
             this.L_Question.AutoSize = true;
             this.L_Question.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tableLayoutPanel1.SetColumnSpan(this.L_Question, 2);
-            this.L_Question.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Question.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_Question.Location = new System.Drawing.Point(452, 320);
             this.L_Question.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.L_Question.Name = "L_Question";
@@ -237,7 +237,7 @@
             this.L_Result.AutoSize = true;
             this.L_Result.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.SetColumnSpan(this.L_Result, 2);
-            this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Result.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_Result.Location = new System.Drawing.Point(463, 580);
             this.L_Result.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.L_Result.Name = "L_Result";

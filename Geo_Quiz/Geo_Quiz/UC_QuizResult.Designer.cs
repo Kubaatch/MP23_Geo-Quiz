@@ -62,7 +62,7 @@ namespace Geo_Quiz
             this.B_SaveStats.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.B_SaveStats.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.B_SaveStats.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_SaveStats.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_SaveStats.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_SaveStats.ForeColor = System.Drawing.SystemColors.GrayText;
             this.B_SaveStats.Location = new System.Drawing.Point(381, 572);
             this.B_SaveStats.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
@@ -116,7 +116,7 @@ namespace Geo_Quiz
             this.L_Statistics.AutoSize = true;
             this.L_Statistics.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tableLayoutPanel1.SetColumnSpan(this.L_Statistics, 2);
-            this.L_Statistics.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Statistics.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_Statistics.Location = new System.Drawing.Point(412, 110);
             this.L_Statistics.Name = "L_Statistics";
             this.L_Statistics.Size = new System.Drawing.Size(175, 27);
@@ -129,7 +129,7 @@ namespace Geo_Quiz
             this.L_QuizEnd.AutoSize = true;
             this.L_QuizEnd.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tableLayoutPanel1.SetColumnSpan(this.L_QuizEnd, 2);
-            this.L_QuizEnd.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_QuizEnd.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.L_QuizEnd.Location = new System.Drawing.Point(368, 54);
             this.L_QuizEnd.Name = "L_QuizEnd";
             this.L_QuizEnd.Size = new System.Drawing.Size(264, 52);
@@ -185,7 +185,7 @@ namespace Geo_Quiz
             this.StatsGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
@@ -213,7 +213,7 @@ namespace Geo_Quiz
             this.StatsGridView.Name = "StatsGridView";
             this.StatsGridView.RowHeadersVisible = false;
             this.StatsGridView.RowHeadersWidth = 51;
-            this.StatsGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatsGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StatsGridView.RowTemplate.Height = 24;
             this.StatsGridView.RowTemplate.ReadOnly = true;
             this.StatsGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -279,7 +279,7 @@ namespace Geo_Quiz
             this.B_ReturnToMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.B_ReturnToMenu.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.B_ReturnToMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_ReturnToMenu.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_ReturnToMenu.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_ReturnToMenu.ForeColor = System.Drawing.SystemColors.GrayText;
             this.B_ReturnToMenu.Location = new System.Drawing.Point(510, 572);
             this.B_ReturnToMenu.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
