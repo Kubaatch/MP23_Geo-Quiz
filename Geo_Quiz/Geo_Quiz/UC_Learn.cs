@@ -3,6 +3,9 @@ using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml;
+using System.Text;
+using System.Globalization;
 
 namespace Geo_Quiz
 {
@@ -18,6 +21,7 @@ namespace Geo_Quiz
         private readonly List<Image> flags = new List<Image>();
 
         const string labelAreaText = "Area: ";
+        const string areaUnit = " km²";
         const string labelPopulationText = "Population: ";
 
         private int countryIndex = 0;
@@ -130,7 +134,7 @@ namespace Geo_Quiz
 
         private void SetAreaAndPopulation()
         {
-            L_Area.Text = labelAreaText + area[countryIndex];
+            L_Area.Text = labelAreaText + area[countryIndex] + areaUnit;
             L_Population.Text = labelPopulationText + population[countryIndex];
         }
 
@@ -139,7 +143,20 @@ namespace Geo_Quiz
             List<string> tempQuestionsList = new List<string>();
 
             string path = Path.Combine(filepath, "Questions.txt");
-            string[] qArr = File.ReadAllLines(path);
+            string[] qArr;
+
+            while (true)
+            {
+                try
+                {
+                    qArr = File.ReadAllLines(path);
+                    break;
+                }
+                catch (FileNotFoundException)
+                {
+                    MessageBox.Show("File Questions.txt was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                }
+            }
 
             for (int i = 0; i < continents.Length; i++)
             {
@@ -170,8 +187,8 @@ namespace Geo_Quiz
 
                 countries[k] = onelineValues[0];
                 capitals[k] = onelineValues[1];
-                population[k] = onelineValues[2];
-                area[k] = onelineValues[3];
+                population[k] = SplitThousands(onelineValues[2]);
+                area[k] = SplitThousands(onelineValues[3]);
                 
                 k++;
             }
@@ -225,6 +242,27 @@ namespace Geo_Quiz
             var acscCapitals = new AutoCompleteStringCollection();
             acscCapitals.AddRange(capitals);
             TB_Capital.AutoCompleteCustomSource = acscCapitals;
+        }
+
+        public static string SplitThousands(string input)
+        {
+            bool success = int.TryParse(input, out int result);
+            string formatted;
+
+            if (success == true)
+            { 
+                    //copied from https://stackoverflow.com/a/17527989
+                var nfi = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
+                nfi.NumberGroupSeparator = " ";
+                formatted = result.ToString("#,0", nfi);
+                    //end
+            }
+            else
+            {
+                formatted = input;
+            }
+
+            return formatted;
         }
 
         private void B_Exit_Click(object sender, EventArgs e)

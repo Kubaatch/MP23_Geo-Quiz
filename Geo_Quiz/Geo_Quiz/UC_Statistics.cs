@@ -10,13 +10,14 @@ namespace Geo_Quiz
     public partial class UC_Statistics : UserControl
     {
         private readonly string filepath = UC_Login.filepath;
-        List<string> statsLines;
+        private readonly List<string> stats4Variants;
+        private readonly List<string> statsTextInput;
 
         private string selectedGamemode;
-        const string stats1file = "Stats4Variants.txt";
-        const string stats2file = "StatsTextInput.txt";
-        const string gameMode1 = "4 Options";
-        const string gameMode2 = "Written answer";
+        const string file4Variants = "Stats4Variants.txt";
+        const string fileTextInput = "StatsTextInput.txt";
+        const string gMode4Variants = "4 Options";
+        const string gModeTextInput = "Written answer";
 
         private string filterUsername;
         private string filterCategory;
@@ -32,14 +33,59 @@ namespace Geo_Quiz
         {
             InitializeComponent();
             
-            B_GameMode.Text = gameMode1;
-            selectedGamemode = stats1file;
-
             SetFilters();
 
-            string fullpath = Path.Combine(filepath, selectedGamemode);
-            statsLines = File.ReadAllLines(fullpath).ToList();
-            LoadAllStats(statsLines);
+            string fullpath1 = Path.Combine(filepath, file4Variants);
+            while (true)
+            {
+                try
+                {
+                    stats4Variants = File.ReadAllLines(fullpath1).ToList();
+                    break;
+                }
+                catch (FileNotFoundException)
+                {
+                    MessageBox.Show($"File {file4Variants} was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                }
+            }
+
+            string fullpath2 = Path.Combine(filepath, fileTextInput);
+            while (true)
+            {
+                try
+                {
+                    statsTextInput = File.ReadAllLines(fullpath2).ToList();
+                    break;
+                }
+                catch (FileNotFoundException)
+                {
+                    MessageBox.Show($"File {fileTextInput} was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                }
+            }
+
+            LoadAllStats(stats4Variants);
+
+            B_GameMode.Text = gMode4Variants;
+            selectedGamemode = file4Variants;
+        }
+
+        private void B_GameMode_Click(object sender, EventArgs e)
+        {
+            if (B_GameMode.Text == gMode4Variants)
+            {
+                selectedGamemode = fileTextInput;
+                B_GameMode.Text = gModeTextInput;
+                LoadAllStats(statsTextInput);
+            }
+            else
+            {
+                selectedGamemode = file4Variants;
+                B_GameMode.Text = gMode4Variants;
+                LoadAllStats(stats4Variants);
+            }
+
+            RemoveFilterIndexes();
+            ValuesChangedToFalse();
         }
 
         private void SetFilters()
@@ -55,28 +101,24 @@ namespace Geo_Quiz
             F_QCount.Items.AddRange(UC_GameUI.questionCounts);
         }
 
-        private void B_GameMode_Click(object sender, EventArgs e)
-        {
-            if (B_GameMode.Text == gameMode1)
-            {
-                B_GameMode.Text = gameMode2;
-                selectedGamemode = stats2file;
-            }
-            else
-            {
-                B_GameMode.Text = gameMode1;
-                selectedGamemode = stats1file;
-            }
-
-            string fullpath = Path.Combine(filepath, selectedGamemode);
-            statsLines = File.ReadAllLines(fullpath).ToList();
-            LoadAllStats(statsLines);
-        }
-
         private string[] GetUsernames()
         {
+            string[] accounts;
+
             string fullpath = Path.Combine(filepath, "Accounts.txt");
-            string[] accounts = File.ReadAllLines(fullpath);
+            while (true)
+            {
+                try
+                {
+                    accounts = File.ReadAllLines(fullpath);
+                    break;
+                }
+                catch (FileNotFoundException)
+                {
+                    MessageBox.Show("File 'Accounts.txt' was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                }
+            }
+
             string[] usernames = new string[accounts.Length];
 
             for (int i = 0; i < accounts.Length; i++)
@@ -117,9 +159,21 @@ namespace Geo_Quiz
         {
             StatsTable.Rows.Clear();
 
+            List<string> filteredStats;
+            
             string fullpath = Path.Combine(filepath, selectedGamemode);
-            List<string> allStats = File.ReadAllLines(fullpath).ToList();
-            List<string> filteredStats = allStats;
+            while (true)
+            {
+                try
+                {
+                    filteredStats = File.ReadAllLines(fullpath).ToList();
+                    break;
+                }
+                catch (FileNotFoundException)
+                {
+                    MessageBox.Show($"File {selectedGamemode} was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                }
+            }
 
             if (usernameValueChanged == true)
             {
@@ -176,23 +230,36 @@ namespace Geo_Quiz
 
         private void B_ResetFilters_Click(object sender, EventArgs e)
         {
+            RemoveFilterIndexes();
+
+            if (B_GameMode.Text == gMode4Variants)
+            {
+                LoadAllStats(stats4Variants);
+            }
+            else
+            {
+                LoadAllStats(statsTextInput);
+            }
+
+            ValuesChangedToFalse();
+        }
+
+        private void RemoveFilterIndexes()
+        {
             ComboBox[] filters = { F_Username, F_Category, F_Continents, F_QCount };
 
             foreach (ComboBox f in filters)
             {
                 f.SelectedIndex = -1;
             }
-
-            string fullpath = Path.Combine(filepath, selectedGamemode);
-            statsLines = File.ReadAllLines(fullpath).ToList();
-            LoadAllStats(statsLines);
-
-            ValuesChangedToFalse();
         }
 
-        private void B_Exit_Click(object sender, EventArgs e)
+        private void ValuesChangedToFalse()
         {
-            Dispose();
+            usernameValueChanged = false;
+            categoryValueChanged = false;
+            continentsValueChanged = false;
+            qCountValueChanged = false;
         }
 
         private void F_Username_SelectedValueChanged(object sender, EventArgs e)
@@ -215,12 +282,9 @@ namespace Geo_Quiz
             qCountValueChanged = true;
         }
 
-        private void ValuesChangedToFalse()
+        private void B_Exit_Click(object sender, EventArgs e)
         {
-            usernameValueChanged = false;
-            categoryValueChanged = false;
-            continentsValueChanged = false;
-            qCountValueChanged = false;
+            Dispose();
         }
     }
 }

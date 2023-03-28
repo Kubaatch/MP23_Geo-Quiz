@@ -70,11 +70,11 @@ namespace Geo_Quiz
             this.TB_Answer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.SetColumnSpan(this.TB_Answer, 3);
             this.TB_Answer.Enabled = false;
-            this.TB_Answer.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_Answer.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_Answer.Location = new System.Drawing.Point(317, 373);
             this.TB_Answer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TB_Answer.Name = "TB_Answer";
-            this.TB_Answer.Size = new System.Drawing.Size(364, 33);
+            this.TB_Answer.Size = new System.Drawing.Size(364, 34);
             this.TB_Answer.TabIndex = 1;
             this.TB_Answer.Text = "Enter answer here";
             this.TB_Answer.Visible = false;
@@ -92,7 +92,7 @@ namespace Geo_Quiz
             this.L_Question.Location = new System.Drawing.Point(458, 321);
             this.L_Question.Name = "L_Question";
             this.L_Question.Size = new System.Drawing.Size(81, 27);
-            this.L_Question.TabStop = false;
+            this.L_Question.TabIndex = 8;
             this.L_Question.Text = "Temp...";
             this.L_Question.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.L_Question.Visible = false;
@@ -108,6 +108,7 @@ namespace Geo_Quiz
             this.PBar.Size = new System.Drawing.Size(993, 36);
             this.PBar.Step = 1;
             this.PBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.PBar.TabIndex = 3;
             this.PBar.TabStop = false;
             // 
             // L_Result
@@ -121,7 +122,7 @@ namespace Geo_Quiz
             this.L_Result.Location = new System.Drawing.Point(478, 468);
             this.L_Result.Name = "L_Result";
             this.L_Result.Size = new System.Drawing.Size(42, 54);
-            this.L_Result.TabStop = false;
+            this.L_Result.TabIndex = 9;
             this.L_Result.Text = "_";
             this.L_Result.Visible = false;
             // 
@@ -134,7 +135,7 @@ namespace Geo_Quiz
             this.L_CorrectResult.Location = new System.Drawing.Point(401, 538);
             this.L_CorrectResult.Name = "L_CorrectResult";
             this.L_CorrectResult.Size = new System.Drawing.Size(195, 24);
-            this.L_CorrectResult.TabStop = false;
+            this.L_CorrectResult.TabIndex = 7;
             this.L_CorrectResult.Text = "The correct answer is:\r\n";
             this.L_CorrectResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.L_CorrectResult.Visible = false;
@@ -165,7 +166,7 @@ namespace Geo_Quiz
             this.L_QCount.Margin = new System.Windows.Forms.Padding(5);
             this.L_QCount.Name = "L_QCount";
             this.L_QCount.Size = new System.Drawing.Size(70, 26);
-            this.L_QCount.TabStop = false;
+            this.L_QCount.TabIndex = 6;
             this.L_QCount.Text = "temp...";
             this.L_QCount.Visible = false;
             // 
@@ -179,7 +180,7 @@ namespace Geo_Quiz
             this.L_Score.Margin = new System.Windows.Forms.Padding(5);
             this.L_Score.Name = "L_Score";
             this.L_Score.Size = new System.Drawing.Size(76, 26);
-            this.L_Score.TabStop = false;
+            this.L_Score.TabIndex = 4;
             this.L_Score.Text = "Score: _";
             // 
             // PB_Flag
@@ -193,7 +194,7 @@ namespace Geo_Quiz
             this.PB_Flag.Name = "PB_Flag";
             this.PB_Flag.Size = new System.Drawing.Size(352, 204);
             this.PB_Flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB_Flag.TabStop = false;
+            this.PB_Flag.TabIndex = 5;
             this.PB_Flag.TabStop = false;
             this.PB_Flag.Visible = false;
             this.PB_Flag.WaitOnLoad = true;
@@ -248,7 +249,7 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(999, 625);
-            this.tableLayoutPanel1.TabStop = false;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // UC_TextInput
             // 

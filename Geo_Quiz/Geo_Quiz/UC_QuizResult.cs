@@ -15,7 +15,7 @@ namespace Geo_Quiz
         private int averageScore;
         private readonly string gameMode;
 
-        readonly private string filepath = UC_Login.filepath;
+        private readonly string filepath = UC_Login.filepath;
 
         private bool savedStats = false;
 
@@ -56,7 +56,20 @@ namespace Geo_Quiz
             }
 
             string path = Path.Combine(filepath, statsMode);
-            string[] statsLines = File.ReadAllLines(path);
+            string[] statsLines;
+            
+            while (true)
+            {
+                try
+                {
+                    statsLines = File.ReadAllLines(path);
+                    break;
+                }
+                catch (FileNotFoundException)
+                {
+                    MessageBox.Show($"File {statsMode} was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                }
+            }
 
             statsLines = FilterCategories(statsLines);
 
@@ -96,28 +109,21 @@ namespace Geo_Quiz
 
             return filteredStats.ToArray();
         }
-
+        
         private void SortDataGridView()
         {
-            string rowCellValue;
-
             for (int i = 0; i < StatsGridView.Rows.Count; i++)
             {
-                rowCellValue = StatsGridView.Rows[i].Cells[1].Value.ToString();
-                StatsGridView.Rows[i].Cells[1].Value = Convert.ToInt32(rowCellValue);
-
-                rowCellValue = StatsGridView.Rows[i].Cells[2].Value.ToString();
-                StatsGridView.Rows[i].Cells[2].Value = Convert.ToInt32(rowCellValue);
-
-                rowCellValue = StatsGridView.Rows[i].Cells[4].Value.ToString();
-                StatsGridView.Rows[i].Cells[4].Value = Convert.ToInt32(rowCellValue);
+                StatsGridView.Rows[i].Cells[1].Value = StatsGridView.Rows[i].Cells[1].Value.ToString();
+                StatsGridView.Rows[i].Cells[2].Value = StatsGridView.Rows[i].Cells[2].Value.ToString();
+                StatsGridView.Rows[i].Cells[4].Value = StatsGridView.Rows[i].Cells[4].Value.ToString();
             }
-
+            
             StatsGridView.Sort(StatsGridView.Columns[1], System.ComponentModel.ListSortDirection.Descending);
             StatsGridView.Sort(StatsGridView.Columns[2], System.ComponentModel.ListSortDirection.Descending);
             StatsGridView.Sort(StatsGridView.Columns[4], System.ComponentModel.ListSortDirection.Descending);
         }
-
+        
         private void AddCurrentGame()
         {
             object[] currentGame = SetCurrentGameStats();
@@ -167,7 +173,7 @@ namespace Geo_Quiz
             //copied from https://stackoverflow.com/questions/2058637/custom-format-timespan-with-string-format
             stats[3] = string.Format("{0:00}hrs., {1:00}min., {2:00}s.", Math.Truncate(totalTime.TotalHours), totalTime.Minutes, totalTime.Seconds);
             //end
-            stats[4] = gameInfo.QuestionCount;
+            stats[4] = UC_GameUI.selQuestionCount;
             stats[5] = UC_GameUI.categories[gameInfo.Category];
             stats[6] = SetContinents();
 

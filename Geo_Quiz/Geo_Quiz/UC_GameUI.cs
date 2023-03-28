@@ -46,6 +46,7 @@ namespace Geo_Quiz
         private int SelectedCategory;
         private string[] SelectedContinents;
         private int QuestionCount;
+        public static string selQuestionCount;
 
         private object[] questions;
 
@@ -75,6 +76,7 @@ namespace Geo_Quiz
         {
             SelectedCategory = LB_Category.SelectedIndex;            
             SelectedContinents = LB_Continents.SelectedItems.Cast<string>().ToArray();
+            selQuestionCount = (string)SetQCount.SelectedItem;
 
             SetQuestionCount();
 
@@ -85,16 +87,13 @@ namespace Geo_Quiz
 
                 if (result1 == DialogResult.Yes)
                 {
-                    SelectedContinents = continents.ToArray();                    
-                    goto Success;
+                    SelectedContinents = continents.ToArray();
                 }
                 else
                 {
                     return;
                 }
             }
-
-            Success:;
 
             LoadQuestions();
 
@@ -109,7 +108,7 @@ namespace Geo_Quiz
                 QuestionCount = result;
             }
             else
-            {
+            {   
                 QuestionCount = 500;
             }
         }
@@ -136,8 +135,20 @@ namespace Geo_Quiz
             List<string> tempQsList = new List<string>();
 
             string path = Path.Combine(filepath, "Questions.txt");
+            string[] qArr = new string[0];
 
-            string[] qArr = File.ReadAllLines(path);
+            while (true)
+            {
+                try
+                {
+                    qArr = File.ReadAllLines(path);
+                    break;
+                }
+                catch (FileNotFoundException)
+                {
+                    MessageBox.Show("File Questions.txt was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                }
+            }
 
             for (int i = 0; i < SelectedContinents.Length; i++)
             {
@@ -190,11 +201,35 @@ namespace Geo_Quiz
 
         private void GetContinentFlags(string path)
         {
-            string[] files = Directory.GetFiles(path, "*.png");
+            string[] files;
+            while (true)
+            {
+                try
+                {
+                    files = Directory.GetFiles(path, "*.png");
+                    break;
+                }
+                catch (DirectoryNotFoundException)
+                {
+                    MessageBox.Show($"The image folder '{Path.GetFileName(path)}' was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                }
+            }
+            Image image;
 
             for (int i = 0; i < files.Length; i++)
             {
-                Image image = Image.FromFile(files[i]);
+                while (true)
+                {
+                    try
+                    {
+                        image = Image.FromFile(files[i]);
+                        break;
+                    }
+                    catch (FileNotFoundException)
+                    {
+                        MessageBox.Show($"The image file {files[i]} was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                    }
+                }
                 flags.Add(image);
                 flags.Last().Tag = Path.GetFileName(files[i]);
             }

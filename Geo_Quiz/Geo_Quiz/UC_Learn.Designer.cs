@@ -86,7 +86,7 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(999, 624);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.TabStop = false;
             // 
             // B_Previous
             // 
@@ -151,7 +151,7 @@ namespace Geo_Quiz
             this.L_Area.Location = new System.Drawing.Point(235, 421);
             this.L_Area.Name = "L_Area";
             this.L_Area.Size = new System.Drawing.Size(79, 32);
-            this.L_Area.TabIndex = 5;
+            this.L_Area.TabStop = false;
             this.L_Area.Text = "Area: ";
             // 
             // L_Population
@@ -163,7 +163,7 @@ namespace Geo_Quiz
             this.L_Population.Location = new System.Drawing.Point(699, 421);
             this.L_Population.Name = "L_Population";
             this.L_Population.Size = new System.Drawing.Size(149, 32);
-            this.L_Population.TabIndex = 6;
+            this.L_Population.TabStop = false;
             this.L_Population.Text = "Population: ";
             // 
             // PB_Image
@@ -178,7 +178,6 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.SetRowSpan(this.PB_Image, 2);
             this.PB_Image.Size = new System.Drawing.Size(379, 235);
             this.PB_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PB_Image.TabIndex = 7;
             this.PB_Image.TabStop = false;
             // 
             // UC_Learn

@@ -17,7 +17,7 @@ namespace Geo_Quiz
         private readonly Stopwatch stopwatch = new Stopwatch();
         private readonly Stopwatch stopwatchTotal = new Stopwatch();
 
-        private readonly string[] imageFileNames = Directory.GetFiles(UC_Login.filepath, "*.png", SearchOption.AllDirectories);
+        private readonly string[] imageFileNames;
 
         private string categoryPrint = "";
         private string labelQuestion;
@@ -37,6 +37,18 @@ namespace Geo_Quiz
             GS_ABCD.Continents = continents;
             GS_ABCD.QuestionCount = QCount;
 
+            while (true)
+            {
+                try
+                {
+                    imageFileNames = Directory.GetFiles(UC_Login.filepath, "*.png", SearchOption.AllDirectories);
+                    break;
+                }
+                catch (DirectoryNotFoundException)
+                {
+                    MessageBox.Show("File Accounts.txt was not found.\nPlease add it to the folder Data or redownload the app.");
+                }
+            }
 
             if (category == 0)
             {
@@ -164,7 +176,7 @@ namespace Geo_Quiz
             foreach (string s in imageFileNames)
             {
                 imageFileName = Path.GetFileNameWithoutExtension(s);
-                Countries.Add(imageFileName.Split('.')[0]);
+                Countries.Add(imageFileName);
             }
 
             foreach (Button b in buttons)

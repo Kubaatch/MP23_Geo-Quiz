@@ -17,17 +17,28 @@ namespace Geo_Quiz
         private string[] usernames = new string[0];
         private string[] passwords = new string[0];
 
-        public static string filepath = Path.Combine(Directory.GetCurrentDirectory(), "..\\..\\", "Data");
+        public static string filepath = Path.Combine(Directory.GetCurrentDirectory(), "Data");
         private readonly string fullpath;
 
         public UC_Login()
         {   
-            InitializeComponent();
-
-            L_Header.Text = F_SignIn.header;
-
             fullpath = Path.Combine(filepath, "Accounts.txt");
-            fileAccounts = File.ReadAllLines(fullpath);
+
+            while (true)
+            {
+                try
+                {
+                    fileAccounts = File.ReadAllLines(fullpath);
+                    break;
+                }
+                catch (FileNotFoundException)
+                {
+                    MessageBox.Show("File Accounts.txt was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                }
+            }
+
+            InitializeComponent();
+            L_Header.Text = F_SignIn.header;
 
             SetUsernamesAndPasswords();
         }
@@ -99,9 +110,10 @@ namespace Geo_Quiz
             if (successUsername == true && successPass == true)
             {
                 newAccount = enteredUsername + '\t' + HashPasswords(enteredPassword) + '\n';
+
                 File.AppendAllText(fullpath, newAccount);
 
-                SuccessfulLogIn(enteredUsername);
+                CloseLogInUC();
             }
         }
 

@@ -81,7 +81,7 @@
             this.L_WrongUsername.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.L_WrongUsername.Name = "L_WrongUsername";
             this.L_WrongUsername.Size = new System.Drawing.Size(169, 16);
-            this.L_WrongUsername.TabStop = false;
+            this.L_WrongUsername.TabIndex = 0;
             this.L_WrongUsername.Text = "Invalid username, try again!";
             this.L_WrongUsername.Visible = false;
             // 
@@ -95,7 +95,7 @@
             this.L_Header.Margin = new System.Windows.Forms.Padding(1, 1, 1, 20);
             this.L_Header.Name = "L_Header";
             this.L_Header.Size = new System.Drawing.Size(463, 30);
-            this.L_Header.TabStop = false;
+            this.L_Header.TabIndex = 1;
             this.L_Header.Text = "Temp";
             this.L_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -117,7 +117,7 @@
             this.L_Username.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.L_Username.Name = "L_Username";
             this.L_Username.Size = new System.Drawing.Size(96, 23);
-            this.L_Username.TabStop = false;
+            this.L_Username.TabIndex = 2;
             this.L_Username.Text = "Username:";
             // 
             // L_Password
@@ -129,7 +129,7 @@
             this.L_Password.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.L_Password.Name = "L_Password";
             this.L_Password.Size = new System.Drawing.Size(90, 23);
-            this.L_Password.TabStop = false;
+            this.L_Password.TabIndex = 3;
             this.L_Password.Text = "Password:";
             // 
             // B_Exit
@@ -155,6 +155,7 @@
             this.B_Enter.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.B_Enter.AutoSize = true;
             this.B_Enter.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.B_Enter.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.B_Enter.Location = new System.Drawing.Point(334, 294);
             this.B_Enter.Margin = new System.Windows.Forms.Padding(1, 15, 1, 1);
             this.B_Enter.Name = "B_Enter";
@@ -183,7 +184,7 @@
             this.L_WrongPass.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.L_WrongPass.Name = "L_WrongPass";
             this.L_WrongPass.Size = new System.Drawing.Size(180, 16);
-            this.L_WrongPass.TabStop = false;
+            this.L_WrongPass.TabIndex = 5;
             this.L_WrongPass.Text = "Incorrect password, try again!";
             this.L_WrongPass.Visible = false;
             // 
