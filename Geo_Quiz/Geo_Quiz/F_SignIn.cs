@@ -94,7 +94,6 @@ namespace Geo_Quiz
         public void SetGuestLabel()
         {
             loggedIn = false;
-            loggedInAccount = "Guest";
             
             L_CurrentAcc.Text = "Not yet logged in...";
         }

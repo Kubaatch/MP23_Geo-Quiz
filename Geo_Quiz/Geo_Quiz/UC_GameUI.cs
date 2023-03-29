@@ -76,7 +76,15 @@ namespace Geo_Quiz
         {
             SelectedCategory = LB_Category.SelectedIndex;            
             SelectedContinents = LB_Continents.SelectedItems.Cast<string>().ToArray();
-            selQuestionCount = (string)SetQCount.SelectedItem;
+            
+            if (SetQCount.SelectedItem == null)
+            {
+                selQuestionCount = "Max";
+            }
+            else
+            {
+                selQuestionCount = (string)SetQCount.SelectedItem;
+            }
 
             SetQuestionCount();
 
@@ -144,9 +152,9 @@ namespace Geo_Quiz
                     qArr = File.ReadAllLines(path);
                     break;
                 }
-                catch (FileNotFoundException)
+                catch (Exception e)
                 {
-                    MessageBox.Show("File Questions.txt was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                    MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue.");
                 }
             }
 
@@ -209,9 +217,9 @@ namespace Geo_Quiz
                     files = Directory.GetFiles(path, "*.png");
                     break;
                 }
-                catch (DirectoryNotFoundException)
+                catch (Exception e)
                 {
-                    MessageBox.Show($"The image folder '{Path.GetFileName(path)}' was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                    MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue.");
                 }
             }
             Image image;
@@ -225,9 +233,9 @@ namespace Geo_Quiz
                         image = Image.FromFile(files[i]);
                         break;
                     }
-                    catch (FileNotFoundException)
+                    catch (Exception e)
                     {
-                        MessageBox.Show($"The image file {files[i]} was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                        MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue.");
                     }
                 }
                 flags.Add(image);

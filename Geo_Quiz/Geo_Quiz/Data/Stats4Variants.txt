@@ -1,11 +1,20 @@
-kuba	4115	823	00hrs., 00min., 08s. 	5	Flags	North America
-kuba	4195	839	00hrs., 00min., 07s.	5	Flags	Oceania
-Guest	524	104	00hrs., 00min., 02s.	5	Area	Oceania
-kubac	1540	308	00hrs., 00min., 03s.	5	Area	Oceania
-kubac	3468	247	00hrs., 00min., 06s.	14	Flags	Oceania
-Guest	4576	915	00hrs., 00min., 11s.	5	Flags	Europe
-Guest	3089	308	00hrs., 00min., 48s.	10	Capitals	Asia
-Guest	1759	125	00hrs., 00min., 10s.	Max	Capitals	Oceania
-Guest	580	116	00hrs., 00min., 02s.	5	Capitals	North America
-Guest	1662	332	00hrs., 00min., 02s.	5	Capitals	Oceania
-Guest	-500	-100	00hrs., 00min., 02s.	5	Capitals	Oceania
+Guest	2610	60%	00hrs., 00min., 11s.	5	Capitals	Oceania
+anicka	3483	80%	00hrs., 00min., 16s.	5	Capitals	Oceania
+Guest	13629	90%	00hrs., 02min., 29s.	20	Flags	Others
+FAKTHODNEDLOUHYUSERNAMEZKOUSKA	4354	100%	00hrs., 00min., 18s.	5	Flags	Oceania
+Guest	582	20%	00hrs., 00min., 06s.	5	Flags	Oceania
+Guest	582	20%	00hrs., 00min., 06s.	5	Flags	Oceania
+Guest	582	20%	00hrs., 00min., 06s.	5	Flags	Oceania
+Guest	582	20%	00hrs., 00min., 06s.	5	Flags	North America
+Guest	582	20%	00hrs., 00min., 06s.	5	Flags	North America
+Guest	582	20%	00hrs., 00min., 06s.	5	Flags	North America
+Guest	582	20%	00hrs., 00min., 06s.	5	Flags	North America
+Guest	582	20%	00hrs., 00min., 06s.	5	Flags	Oceania
+Guest	2711	60%	00hrs., 00min., 07s.	5	Flags	Oceania
+Guest	1572	40%	00hrs., 00min., 10s.	5	Capitals	Oceania
+Guest	591	20%	00hrs., 00min., 03s.	5	Capitals	South America
+Guest	-500	0%	00hrs., 00min., 02s.	5	Capitals	Oceania
+Guest	592	20%	00hrs., 00min., 02s.	5	Flags	Oceania
+anicka	2076	25%	00hrs., 00min., 06s.	Max	Flags	South America
+Guest	2078	25%	00hrs., 00min., 05s.	Max	Flags	South America
+anicka	985	16%	00hrs., 00min., 05s.	Max	Flags	South America

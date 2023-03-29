@@ -43,9 +43,9 @@ namespace Geo_Quiz
                     stats4Variants = File.ReadAllLines(fullpath1).ToList();
                     break;
                 }
-                catch (FileNotFoundException)
+                catch (Exception e)
                 {
-                    MessageBox.Show($"File {file4Variants} was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                    MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue.");
                 }
             }
 
@@ -57,9 +57,9 @@ namespace Geo_Quiz
                     statsTextInput = File.ReadAllLines(fullpath2).ToList();
                     break;
                 }
-                catch (FileNotFoundException)
+                catch (Exception e)
                 {
-                    MessageBox.Show($"File {fileTextInput} was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                    MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue.");
                 }
             }
 
@@ -260,6 +260,17 @@ namespace Geo_Quiz
             categoryValueChanged = false;
             continentsValueChanged = false;
             qCountValueChanged = false;
+        }
+
+        private void StatsTable_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+                //copied from https://stackoverflow.com/a/18923791
+            if (e.Column.Index == 1 || e.Column.Index == 2)
+            {
+                e.SortResult = int.Parse(e.CellValue1.ToString().Replace("%", string.Empty)).CompareTo(int.Parse(e.CellValue2.ToString().Replace("%", string.Empty)));
+                e.Handled = true;
+            }
+                //end
         }
 
         private void F_Username_SelectedValueChanged(object sender, EventArgs e)

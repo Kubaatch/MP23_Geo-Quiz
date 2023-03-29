@@ -152,9 +152,9 @@ namespace Geo_Quiz
                     qArr = File.ReadAllLines(path);
                     break;
                 }
-                catch (FileNotFoundException)
+                catch (Exception e)
                 {
-                    MessageBox.Show("File Questions.txt was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                    MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue.");
                 }
             }
 
@@ -218,11 +218,24 @@ namespace Geo_Quiz
         private void LoadFlags()
         {
             string path = Path.Combine(filepath, "");
+            string[] files;
             
             for (int i = 0; i < continents.Length; i++)
             {
                 string continentPath = Path.Combine(path, continents[i]);
-                string[] files = Directory.GetFiles(continentPath, "*.png");
+
+                while (true)
+                {
+                    try
+                    {
+                        files = Directory.GetFiles(continentPath, "*.png");
+                        break;
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue.");
+                    }
+                }
 
                 for (int j = 0; j < files.Length; j++)
                 {
@@ -263,6 +276,16 @@ namespace Geo_Quiz
             }
 
             return formatted;
+        }
+
+        private void TB_Country_LostFocus(object sender, EventArgs e)
+        {
+            TB_Country.Text = countries[countryIndex];
+        }
+
+        private void TB_Capital_LostFocus(object sender, EventArgs e)
+        {
+            TB_Capital.Text = capitals[countryIndex];
         }
 
         private void B_Exit_Click(object sender, EventArgs e)

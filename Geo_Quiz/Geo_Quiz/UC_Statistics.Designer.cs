@@ -1,4 +1,6 @@
-﻿namespace Geo_Quiz
+﻿using System.Windows.Forms;
+
+namespace Geo_Quiz
 {
     partial class UC_Statistics
     {
@@ -38,13 +40,6 @@
             this.F_Username = new System.Windows.Forms.ComboBox();
             this.L_Header = new System.Windows.Forms.Label();
             this.StatsTable = new System.Windows.Forms.DataGridView();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Avg_Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Continents = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.L_Username = new System.Windows.Forms.Label();
             this.L_Category = new System.Windows.Forms.Label();
             this.L_Continents = new System.Windows.Forms.Label();
@@ -53,6 +48,13 @@
             this.B_GameMode = new System.Windows.Forms.Button();
             this.B_ResetFilters = new System.Windows.Forms.Button();
             this.B_SaveFilters = new System.Windows.Forms.Button();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Avg_Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Continents = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StatsTable)).BeginInit();
             this.SuspendLayout();
@@ -94,7 +96,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 625);
-            this.tableLayoutPanel1.TabStop = false;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // F_Category
             // 
@@ -150,7 +152,7 @@
             this.L_Filters.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.L_Filters.Name = "L_Filters";
             this.L_Filters.Size = new System.Drawing.Size(71, 24);
-            this.L_Filters.TabStop = false;
+            this.L_Filters.TabIndex = 9;
             this.L_Filters.Text = "Filters: ";
             // 
             // F_Username
@@ -177,7 +179,7 @@
             this.L_Header.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.L_Header.Name = "L_Header";
             this.L_Header.Size = new System.Drawing.Size(369, 37);
-            this.L_Header.TabStop = false;
+            this.L_Header.TabIndex = 10;
             this.L_Header.Text = "Statistics for gamemode:";
             // 
             // StatsTable
@@ -187,6 +189,7 @@
             this.StatsTable.AllowUserToResizeColumns = false;
             this.StatsTable.AllowUserToResizeRows = false;
             this.StatsTable.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.StatsTable.BackgroundColor = System.Drawing.Color.LightGray;
             this.StatsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -225,66 +228,13 @@
             this.StatsTable.RowTemplate.Height = 24;
             this.StatsTable.RowTemplate.ReadOnly = true;
             this.StatsTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.StatsTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.StatsTable.ShowCellToolTips = false;
             this.StatsTable.ShowEditingIcon = false;
             this.StatsTable.Size = new System.Drawing.Size(889, 399);
+            this.StatsTable.TabIndex = 11;
             this.StatsTable.TabStop = false;
-            // 
-            // Username
-            // 
-            this.Username.HeaderText = "Username";
-            this.Username.MinimumWidth = 6;
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            this.Username.Width = 110;
-            // 
-            // Score
-            // 
-            this.Score.HeaderText = "Score";
-            this.Score.MinimumWidth = 6;
-            this.Score.Name = "Score";
-            this.Score.ReadOnly = true;
-            this.Score.Width = 60;
-            // 
-            // Avg_Score
-            // 
-            this.Avg_Score.HeaderText = "Average score";
-            this.Avg_Score.MinimumWidth = 6;
-            this.Avg_Score.Name = "Avg_Score";
-            this.Avg_Score.ReadOnly = true;
-            this.Avg_Score.Width = 70;
-            // 
-            // TotalTime
-            // 
-            this.TotalTime.HeaderText = "Total time";
-            this.TotalTime.MinimumWidth = 6;
-            this.TotalTime.Name = "TotalTime";
-            this.TotalTime.ReadOnly = true;
-            this.TotalTime.Width = 135;
-            // 
-            // QCount
-            // 
-            this.QCount.HeaderText = "Question count";
-            this.QCount.MinimumWidth = 6;
-            this.QCount.Name = "QCount";
-            this.QCount.ReadOnly = true;
-            this.QCount.Width = 75;
-            // 
-            // Category
-            // 
-            this.Category.HeaderText = "Category";
-            this.Category.MinimumWidth = 6;
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
-            this.Category.Width = 72;
-            // 
-            // Continents
-            // 
-            this.Continents.HeaderText = "Continent/s";
-            this.Continents.MinimumWidth = 6;
-            this.Continents.Name = "Continents";
-            this.Continents.ReadOnly = true;
-            this.Continents.Width = 150;
+            this.StatsTable.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.StatsTable_SortCompare);
             // 
             // L_Username
             // 
@@ -296,7 +246,7 @@
             this.L_Username.Margin = new System.Windows.Forms.Padding(0);
             this.L_Username.Name = "L_Username";
             this.L_Username.Size = new System.Drawing.Size(91, 19);
-            this.L_Username.TabStop = false;
+            this.L_Username.TabIndex = 12;
             this.L_Username.Text = "By username:";
             // 
             // L_Category
@@ -309,7 +259,7 @@
             this.L_Category.Margin = new System.Windows.Forms.Padding(0);
             this.L_Category.Name = "L_Category";
             this.L_Category.Size = new System.Drawing.Size(85, 19);
-            this.L_Category.TabStop = false;
+            this.L_Category.TabIndex = 13;
             this.L_Category.Text = "By category:";
             // 
             // L_Continents
@@ -322,7 +272,7 @@
             this.L_Continents.Margin = new System.Windows.Forms.Padding(0);
             this.L_Continents.Name = "L_Continents";
             this.L_Continents.Size = new System.Drawing.Size(99, 19);
-            this.L_Continents.TabStop = false;
+            this.L_Continents.TabIndex = 14;
             this.L_Continents.Text = "By continent/s";
             // 
             // F_QCount
@@ -348,7 +298,7 @@
             this.L_QCount.Margin = new System.Windows.Forms.Padding(0);
             this.L_QCount.Name = "L_QCount";
             this.L_QCount.Size = new System.Drawing.Size(124, 19);
-            this.L_QCount.TabStop = false;
+            this.L_QCount.TabIndex = 15;
             this.L_QCount.Text = "By question count:";
             // 
             // B_GameMode
@@ -390,6 +340,66 @@
             this.B_SaveFilters.UseVisualStyleBackColor = true;
             this.B_SaveFilters.Click += new System.EventHandler(this.B_SaveFilters_Click);
             // 
+            // Username
+            // 
+            this.Username.HeaderText = "Username";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            this.Username.Width = 150;
+            // 
+            // Score
+            // 
+            this.Score.HeaderText = "Score";
+            this.Score.MinimumWidth = 6;
+            this.Score.Name = "Score";
+            this.Score.ReadOnly = true;
+            this.Score.Width = 60;
+            // 
+            // Avg_Score
+            // 
+            this.Avg_Score.HeaderText = "Success %";
+            this.Avg_Score.MinimumWidth = 6;
+            this.Avg_Score.Name = "Avg_Score";
+            this.Avg_Score.ReadOnly = true;
+            this.Avg_Score.Width = 70;
+            // 
+            // TotalTime
+            // 
+            this.TotalTime.HeaderText = "Total time";
+            this.TotalTime.MinimumWidth = 6;
+            this.TotalTime.Name = "TotalTime";
+            this.TotalTime.ReadOnly = true;
+            this.TotalTime.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TotalTime.Width = 125;
+            // 
+            // QCount
+            // 
+            this.QCount.HeaderText = "Question count";
+            this.QCount.MinimumWidth = 6;
+            this.QCount.Name = "QCount";
+            this.QCount.ReadOnly = true;
+            this.QCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.QCount.Width = 75;
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "Category";
+            this.Category.MinimumWidth = 6;
+            this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
+            this.Category.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Category.Width = 72;
+            // 
+            // Continents
+            // 
+            this.Continents.HeaderText = "Continent/s";
+            this.Continents.MinimumWidth = 6;
+            this.Continents.Name = "Continents";
+            this.Continents.ReadOnly = true;
+            this.Continents.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Continents.Width = 120;
+            // 
             // UC_Statistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -422,12 +432,12 @@
         private System.Windows.Forms.Label L_Category;
         private System.Windows.Forms.Label L_Continents;
         private System.Windows.Forms.Label L_QCount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Score;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Avg_Score;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QCount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Continents;
+        private DataGridViewTextBoxColumn Username;
+        private DataGridViewTextBoxColumn Score;
+        private DataGridViewTextBoxColumn Avg_Score;
+        private DataGridViewTextBoxColumn TotalTime;
+        private DataGridViewTextBoxColumn QCount;
+        private DataGridViewTextBoxColumn Category;
+        private DataGridViewTextBoxColumn Continents;
     }
 }

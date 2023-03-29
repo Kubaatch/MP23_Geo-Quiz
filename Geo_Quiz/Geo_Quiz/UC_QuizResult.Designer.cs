@@ -41,17 +41,17 @@ namespace Geo_Quiz
             this.L_TimeSpent = new System.Windows.Forms.Label();
             this.L_Score = new System.Windows.Forms.Label();
             this.L_AvgScore = new System.Windows.Forms.Label();
-            this.StatsGridView = new System.Windows.Forms.DataGridView();
+            this.StatsTable = new System.Windows.Forms.DataGridView();
+            this.B_ReturnToMenu = new System.Windows.Forms.Button();
+            this.GameInfoButton = new System.Windows.Forms.PictureBox();
+            this.TT_PopUp = new System.Windows.Forms.ToolTip(this.components);
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Avg_Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time_Spent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.B_ReturnToMenu = new System.Windows.Forms.Button();
-            this.GameInfoButton = new System.Windows.Forms.PictureBox();
-            this.TT_PopUp = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StatsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StatsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GameInfoButton)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +89,7 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.Controls.Add(this.L_TimeSpent, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.L_Score, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.L_AvgScore, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.StatsGridView, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.StatsTable, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.B_SaveStats, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.B_ReturnToMenu, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.GameInfoButton, 1, 0);
@@ -120,7 +120,7 @@ namespace Geo_Quiz
             this.L_Statistics.Location = new System.Drawing.Point(412, 110);
             this.L_Statistics.Name = "L_Statistics";
             this.L_Statistics.Size = new System.Drawing.Size(175, 27);
-            this.L_Statistics.TabStop = false;
+            this.L_Statistics.TabIndex = 0;
             this.L_Statistics.Text = "Here\'s your stats:";
             // 
             // L_QuizEnd
@@ -133,7 +133,7 @@ namespace Geo_Quiz
             this.L_QuizEnd.Location = new System.Drawing.Point(368, 54);
             this.L_QuizEnd.Name = "L_QuizEnd";
             this.L_QuizEnd.Size = new System.Drawing.Size(264, 52);
-            this.L_QuizEnd.TabStop = false;
+            this.L_QuizEnd.TabIndex = 1;
             this.L_QuizEnd.Text = "End of quiz!";
             // 
             // L_TimeSpent
@@ -146,7 +146,7 @@ namespace Geo_Quiz
             this.L_TimeSpent.Location = new System.Drawing.Point(419, 235);
             this.L_TimeSpent.Name = "L_TimeSpent";
             this.L_TimeSpent.Size = new System.Drawing.Size(161, 30);
-            this.L_TimeSpent.TabStop = false;
+            this.L_TimeSpent.TabIndex = 2;
             this.L_TimeSpent.Text = "Time played: ";
             // 
             // L_Score
@@ -159,7 +159,7 @@ namespace Geo_Quiz
             this.L_Score.Location = new System.Drawing.Point(425, 155);
             this.L_Score.Name = "L_Score";
             this.L_Score.Size = new System.Drawing.Size(149, 30);
-            this.L_Score.TabStop = false;
+            this.L_Score.TabIndex = 3;
             this.L_Score.Text = "Total score: ";
             // 
             // L_AvgScore
@@ -172,17 +172,17 @@ namespace Geo_Quiz
             this.L_AvgScore.Location = new System.Drawing.Point(408, 195);
             this.L_AvgScore.Name = "L_AvgScore";
             this.L_AvgScore.Size = new System.Drawing.Size(184, 30);
-            this.L_AvgScore.TabStop = false;
+            this.L_AvgScore.TabIndex = 4;
             this.L_AvgScore.Text = "Average score: ";
             // 
-            // StatsGridView
+            // StatsTable
             // 
-            this.StatsGridView.AllowUserToAddRows = false;
-            this.StatsGridView.AllowUserToDeleteRows = false;
-            this.StatsGridView.AllowUserToResizeColumns = false;
-            this.StatsGridView.AllowUserToResizeRows = false;
-            this.StatsGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.StatsGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.StatsTable.AllowUserToAddRows = false;
+            this.StatsTable.AllowUserToDeleteRows = false;
+            this.StatsTable.AllowUserToResizeColumns = false;
+            this.StatsTable.AllowUserToResizeRows = false;
+            this.StatsTable.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.StatsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -190,15 +190,15 @@ namespace Geo_Quiz
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.StatsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.StatsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.StatsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.StatsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.StatsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StatsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Username,
             this.Score,
             this.Avg_Score,
             this.Time_Spent,
             this.QCount});
-            this.tableLayoutPanel1.SetColumnSpan(this.StatsGridView, 2);
+            this.tableLayoutPanel1.SetColumnSpan(this.StatsTable, 2);
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,71 +206,24 @@ namespace Geo_Quiz
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.StatsGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.StatsGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.StatsGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.StatsGridView.Location = new System.Drawing.Point(172, 279);
-            this.StatsGridView.Name = "StatsGridView";
-            this.StatsGridView.RowHeadersVisible = false;
-            this.StatsGridView.RowHeadersWidth = 51;
-            this.StatsGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatsGridView.RowTemplate.Height = 24;
-            this.StatsGridView.RowTemplate.ReadOnly = true;
-            this.StatsGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.StatsGridView.ShowCellToolTips = false;
-            this.StatsGridView.ShowEditingIcon = false;
-            this.StatsGridView.Size = new System.Drawing.Size(656, 277);
-            this.StatsGridView.TabStop = false;
-            // 
-            // Username
-            // 
-            this.Username.Frozen = true;
-            this.Username.HeaderText = "Username";
-            this.Username.MinimumWidth = 6;
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            this.Username.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Username.Width = 150;
-            // 
-            // Score
-            // 
-            this.Score.Frozen = true;
-            this.Score.HeaderText = "Score";
-            this.Score.MinimumWidth = 6;
-            this.Score.Name = "Score";
-            this.Score.ReadOnly = true;
-            this.Score.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Score.Width = 70;
-            // 
-            // Avg_Score
-            // 
-            this.Avg_Score.Frozen = true;
-            this.Avg_Score.HeaderText = "Average score";
-            this.Avg_Score.MinimumWidth = 6;
-            this.Avg_Score.Name = "Avg_Score";
-            this.Avg_Score.ReadOnly = true;
-            this.Avg_Score.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Avg_Score.Width = 75;
-            // 
-            // Time_Spent
-            // 
-            this.Time_Spent.Frozen = true;
-            this.Time_Spent.HeaderText = "Total time";
-            this.Time_Spent.MinimumWidth = 6;
-            this.Time_Spent.Name = "Time_Spent";
-            this.Time_Spent.ReadOnly = true;
-            this.Time_Spent.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Time_Spent.Width = 115;
-            // 
-            // QCount
-            // 
-            this.QCount.Frozen = true;
-            this.QCount.HeaderText = "Question Count";
-            this.QCount.MinimumWidth = 6;
-            this.QCount.Name = "QCount";
-            this.QCount.ReadOnly = true;
-            this.QCount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.QCount.Width = 110;
+            this.StatsTable.DefaultCellStyle = dataGridViewCellStyle2;
+            this.StatsTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.StatsTable.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.StatsTable.Location = new System.Drawing.Point(172, 279);
+            this.StatsTable.Name = "StatsTable";
+            this.StatsTable.RowHeadersVisible = false;
+            this.StatsTable.RowHeadersWidth = 51;
+            this.StatsTable.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatsTable.RowTemplate.Height = 24;
+            this.StatsTable.RowTemplate.ReadOnly = true;
+            this.StatsTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.StatsTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.StatsTable.ShowCellToolTips = false;
+            this.StatsTable.ShowEditingIcon = false;
+            this.StatsTable.Size = new System.Drawing.Size(656, 277);
+            this.StatsTable.TabIndex = 5;
+            this.StatsTable.TabStop = false;
+            this.StatsTable.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.StatsTable_SortCompare);
             // 
             // B_ReturnToMenu
             // 
@@ -299,10 +252,63 @@ namespace Geo_Quiz
             this.GameInfoButton.Name = "GameInfoButton";
             this.GameInfoButton.Size = new System.Drawing.Size(50, 44);
             this.GameInfoButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.GameInfoButton.TabIndex = 6;
             this.GameInfoButton.TabStop = false;
-            this.TT_PopUp.SetToolTip(this.GameInfoButton, "Clicking on this info button opens a message box\r\nshowing" +
-                "more in-depth stats of the quiz you just finished.");
+            this.TT_PopUp.SetToolTip(this.GameInfoButton, "Clicking on this info button opens a message box\r\nshowingmore in-depth stats of t" +
+        "he quiz you just finished.");
             this.GameInfoButton.Click += new System.EventHandler(this.GameInfoButton_Click);
+            // 
+            // Username
+            // 
+            this.Username.Frozen = true;
+            this.Username.HeaderText = "Username";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            this.Username.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Username.Width = 150;
+            // 
+            // Score
+            // 
+            this.Score.Frozen = true;
+            this.Score.HeaderText = "Score";
+            this.Score.MinimumWidth = 6;
+            this.Score.Name = "Score";
+            this.Score.ReadOnly = true;
+            this.Score.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Score.Width = 70;
+            // 
+            // Avg_Score
+            // 
+            this.Avg_Score.Frozen = true;
+            this.Avg_Score.HeaderText = "Success %";
+            this.Avg_Score.MinimumWidth = 6;
+            this.Avg_Score.Name = "Avg_Score";
+            this.Avg_Score.ReadOnly = true;
+            this.Avg_Score.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Avg_Score.Width = 75;
+            // 
+            // Time_Spent
+            // 
+            this.Time_Spent.Frozen = true;
+            this.Time_Spent.HeaderText = "Total time";
+            this.Time_Spent.MinimumWidth = 6;
+            this.Time_Spent.Name = "Time_Spent";
+            this.Time_Spent.ReadOnly = true;
+            this.Time_Spent.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Time_Spent.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Time_Spent.Width = 115;
+            // 
+            // QCount
+            // 
+            this.QCount.Frozen = true;
+            this.QCount.HeaderText = "Question Count";
+            this.QCount.MinimumWidth = 6;
+            this.QCount.Name = "QCount";
+            this.QCount.ReadOnly = true;
+            this.QCount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.QCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.QCount.Width = 110;
             // 
             // UC_QuizResult
             // 
@@ -315,7 +321,7 @@ namespace Geo_Quiz
             this.Size = new System.Drawing.Size(1000, 625);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StatsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StatsTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GameInfoButton)).EndInit();
             this.ResumeLayout(false);
 
@@ -332,7 +338,7 @@ namespace Geo_Quiz
         private System.Windows.Forms.Label L_TimeSpent;
         private System.Windows.Forms.Button B_ReturnToMenu;
         private System.Windows.Forms.ToolTip TT_PopUp;
-        private System.Windows.Forms.DataGridView StatsGridView;
+        private System.Windows.Forms.DataGridView StatsTable;
         private PictureBox GameInfoButton;
         private DataGridViewTextBoxColumn Username;
         private DataGridViewTextBoxColumn Score;

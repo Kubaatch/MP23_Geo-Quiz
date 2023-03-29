@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Net.Http.Headers;
 using System.Windows.Forms;
 
 namespace Geo_Quiz
@@ -12,19 +13,21 @@ namespace Geo_Quiz
         private readonly TimeSpan totalTime = new TimeSpan();
 
         private readonly int finalScore;
-        private int averageScore;
+        private readonly int correctAnswers;
+        private double successRate;
         private readonly string gameMode;
 
         private readonly string filepath = UC_Login.filepath;
 
         private bool savedStats = false;
 
-        public UC_QuizResult(int score, TimeSpan ts, GameSpecs gamespecs, string mode)
+        public UC_QuizResult(int score, TimeSpan ts, GameSpecs gamespecs, string mode, int correctAns)
         {
             gameInfo = gamespecs;
             totalTime = ts;
             finalScore = score;
             gameMode = mode;
+            correctAnswers = correctAns;
 
             InitializeComponent();
 
@@ -37,8 +40,8 @@ namespace Geo_Quiz
         {
             L_Score.Text += finalScore + " pts.";
 
-            averageScore = finalScore / gameInfo.QuestionCount;
-            L_AvgScore.Text += averageScore + " pts.";
+            successRate = (correctAnswers * 100) / gameInfo.QuestionCount;
+            L_AvgScore.Text += successRate + " pts.";
 
             L_TimeSpent.Text += totalTime.Minutes + "mins, " + totalTime.Seconds + "s, " + totalTime.Milliseconds + "ms.";
         }
@@ -65,9 +68,9 @@ namespace Geo_Quiz
                     statsLines = File.ReadAllLines(path);
                     break;
                 }
-                catch (FileNotFoundException)
+                catch (Exception e)
                 {
-                    MessageBox.Show($"File {statsMode} was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                    MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue.");
                 }
             }
 
@@ -82,14 +85,12 @@ namespace Geo_Quiz
 
             foreach (object[] statsLine in temp)
             {
-                StatsGridView.Rows.Add(statsLine);
+                StatsTable.Rows.Add(statsLine);
             }
 
             AddCurrentGame();
             
-            SortDataGridView();
-
-            StatsGridView.Refresh();
+            StatsTable.Refresh();
         }
 
         private string[] FilterCategories(string[] statsLines)
@@ -110,31 +111,17 @@ namespace Geo_Quiz
             return filteredStats.ToArray();
         }
         
-        private void SortDataGridView()
-        {
-            for (int i = 0; i < StatsGridView.Rows.Count; i++)
-            {
-                StatsGridView.Rows[i].Cells[1].Value = StatsGridView.Rows[i].Cells[1].Value.ToString();
-                StatsGridView.Rows[i].Cells[2].Value = StatsGridView.Rows[i].Cells[2].Value.ToString();
-                StatsGridView.Rows[i].Cells[4].Value = StatsGridView.Rows[i].Cells[4].Value.ToString();
-            }
-            
-            StatsGridView.Sort(StatsGridView.Columns[1], System.ComponentModel.ListSortDirection.Descending);
-            StatsGridView.Sort(StatsGridView.Columns[2], System.ComponentModel.ListSortDirection.Descending);
-            StatsGridView.Sort(StatsGridView.Columns[4], System.ComponentModel.ListSortDirection.Descending);
-        }
-        
         private void AddCurrentGame()
         {
             object[] currentGame = SetCurrentGameStats();
 
             DataGridViewRow row = new DataGridViewRow();
 
-            row.CreateCells(StatsGridView, currentGame);
+            row.CreateCells(StatsTable, currentGame);
             row.DefaultCellStyle.BackColor = Color.Gold;
             row.DefaultCellStyle.SelectionBackColor = Color.Gold;
 
-            StatsGridView.Rows.Add(row);
+            StatsTable.Rows.Add(row);
         }
 
         private void B_SaveStats_Click(object sender, EventArgs e)
@@ -169,7 +156,7 @@ namespace Geo_Quiz
 
             stats[0] = SetUsername();
             stats[1] = finalScore;
-            stats[2] = averageScore;
+            stats[2] = successRate + "%";
             //copied from https://stackoverflow.com/questions/2058637/custom-format-timespan-with-string-format
             stats[3] = string.Format("{0:00}hrs., {1:00}min., {2:00}s.", Math.Truncate(totalTime.TotalHours), totalTime.Minutes, totalTime.Seconds);
             //end
@@ -203,7 +190,18 @@ namespace Geo_Quiz
                 return "Guest";
             }
         }
-        
+
+        private void StatsTable_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+                //copied from https://stackoverflow.com/a/18923791
+            if (e.Column.Index == 1 || e.Column.Index == 2)
+            {
+                e.SortResult = int.Parse(e.CellValue1.ToString().Replace("%", string.Empty)).CompareTo(int.Parse(e.CellValue2.ToString().Replace("%", string.Empty)));
+                e.Handled = true;
+            }
+            //end
+        }
+
         private void GameInfoButton_Click(object sender, EventArgs e)
         {
             string info = string.Format("The quiz you just finished had these specs:\n" +

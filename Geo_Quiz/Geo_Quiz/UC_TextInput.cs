@@ -21,6 +21,7 @@ namespace Geo_Quiz
         private int questionNumber = 0;
         private int score = 0;
         const int minuspoints = 100;
+        private int correctAnswers = 0;
 
         private readonly Image[] qFlags = new Image[0];
         
@@ -173,6 +174,7 @@ namespace Geo_Quiz
             if (tempscore < 0) { tempscore = 0; }
 
             score += tempscore;
+            correctAnswers++;
 
             L_Score.Text = "Score: " + score;
         }
@@ -286,7 +288,7 @@ namespace Geo_Quiz
 
             TimeSpan ts = stopwatchTotal.Elapsed;
 
-            UC_QuizResult uc = new UC_QuizResult(score, ts, GS_Text, "Text");
+            UC_QuizResult uc = new UC_QuizResult(score, ts, GS_Text, "Text", correctAnswers);
             uc.Dock = DockStyle.Fill;
             Controls.Add(uc);
             uc.BringToFront();

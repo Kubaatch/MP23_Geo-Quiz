@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -17,14 +18,13 @@ namespace Geo_Quiz
         private readonly Stopwatch stopwatch = new Stopwatch();
         private readonly Stopwatch stopwatchTotal = new Stopwatch();
 
-        private readonly string[] imageFileNames;
-
         private string categoryPrint = "";
         private string labelQuestion;
 
         const int deviation = 2;
         private int questionNumber = 0;        
         private int score = 0;
+        private int correctAnswers = 0;
 
         private readonly Image[] qFlags = new Image[0];
 
@@ -36,19 +36,6 @@ namespace Geo_Quiz
             GS_ABCD.Category = category;
             GS_ABCD.Continents = continents;
             GS_ABCD.QuestionCount = QCount;
-
-            while (true)
-            {
-                try
-                {
-                    imageFileNames = Directory.GetFiles(UC_Login.filepath, "*.png", SearchOption.AllDirectories);
-                    break;
-                }
-                catch (DirectoryNotFoundException)
-                {
-                    MessageBox.Show("File Accounts.txt was not found.\nPlease add it to the folder Data or redownload the app.");
-                }
-            }
 
             if (category == 0)
             {
@@ -123,7 +110,7 @@ namespace Geo_Quiz
                     Button_A.Tag = "Correct";
                     break;
                 case 1:
-                    Button_B.Tag = "Correct";        
+                    Button_B.Tag = "Correct";
                     break;
                 case 2:
                     Button_C.Tag = "Correct";
@@ -167,57 +154,94 @@ namespace Geo_Quiz
 
         private void AnswerFlag(Button[] buttons)
         {
-            string answer = GetAnswer();
+            string correctAnswer = GetAnswer();
+            string[] fakeAnswers = new string[buttons.Length-1];
 
-            List<string> Countries = new List<string>();
             int randNum;
-            string imageFileName;
+            string temp;
 
-            foreach (string s in imageFileNames)
+            for (int i = 0; i < buttons.Length - 1; i++)
             {
-                imageFileName = Path.GetFileNameWithoutExtension(s);
-                Countries.Add(imageFileName);
+                AGAIN:;
+
+                do
+                {
+                    randNum = random.Next(qFlags.Length);
+                    temp = qFlags[randNum].Tag.ToString().Split('.')[0];
+                }
+                while (temp == correctAnswer);
+
+                foreach (string s in fakeAnswers)
+                {
+                    if (temp == s)
+                    {
+                        goto AGAIN;
+                    }
+                }
+
+                fakeAnswers[i] = temp;
             }
 
+            int j = 0;
             foreach (Button b in buttons)
             {
+
                 if (b.Tag != null && b.Tag.ToString() == "Correct")
                 {
-                    b.Text = answer;
+                    b.Text = correctAnswer;
                 }
-                else
+                else 
                 {
-                    do
-                    {
-                        randNum = random.Next(Countries.Count);
-                        b.Text = Countries[randNum];
-                    } while (Countries[randNum] == answer);
+                    b.Text = fakeAnswers[j];
+                    j++;
                 }
             }
         }
 
         private void AnswerCapitalCity(Button[] buttons)
         {
-            string answer = GetAnswer();
-            string[] fakecities = Resources.Cities.Split('\n');
-            int randNum;
+            string correctAnswer = GetAnswer();
 
+            string[] fakecities = Resources.Cities.Split('\n');
+            string[] fakeAnswers = new string[buttons.Length - 1];
+            
+            int randNum;
+            string temp;
+
+
+            for (int i = 0; i < buttons.Length - 1; i++)
+            {
+                AGAIN:;
+
+                do
+                {
+                    randNum = random.Next(fakecities.Length);
+                    temp = fakecities[randNum];
+                }
+                while (temp == correctAnswer);
+
+                foreach (string s in fakeAnswers)
+                {
+                    if (s == temp)
+                    {
+                        goto AGAIN;
+                    }
+                }
+
+                fakeAnswers[i] = temp;
+            }
+
+            int j = 0;
             foreach (Button b in buttons)
             {
                 if (b.Tag != null && b.Tag.ToString() == "Correct")
                 {
-                    b.Text = answer;
+                    b.Text = correctAnswer;
                 }
                 else
                 {
-                    randNum = random.Next(fakecities.Length);
-                    b.Text = fakecities[randNum];
-
-                    while (fakecities[randNum] == answer)
-                    {
-                        randNum = random.Next(fakecities.Length);
-                        b.Text = fakecities[randNum];
-                    }
+                    b.Text = fakeAnswers[j];
+                    j++;
                 }
             }
         }
@@ -288,6 +312,8 @@ namespace Geo_Quiz
                 L_Result.ForeColor = Color.ForestGreen;
                 clickedButton.BackColor = Color.ForestGreen;
 
+                correctAnswers += 1;
+
                 int timeSpent = (int)stopwatch.ElapsedMilliseconds / 20;
                 tempscore = 1000 - timeSpent;
                 if (tempscore < 0) { tempscore = 0; }
@@ -325,7 +351,6 @@ namespace Geo_Quiz
         {
             questionNumber++;
 
-
             if (questionNumber == GS_ABCD.QuestionCount)
             {
                 OpenStatistics();
@@ -333,7 +358,7 @@ namespace Geo_Quiz
             else
             {
                 if (questionNumber + 1 == GS_ABCD.QuestionCount)
-                {
+                {   
                     B_Next.Text = "End quiz";
                 }
 
@@ -391,7 +416,7 @@ namespace Geo_Quiz
 
             TimeSpan ts = stopwatchTotal.Elapsed;
 
-            UC_QuizResult uc = new UC_QuizResult(score, ts, GS_ABCD, "ABCD");
+            UC_QuizResult uc = new UC_QuizResult(score, ts, GS_ABCD, "ABCD", correctAnswers);
             uc.Dock = DockStyle.Fill;
             Controls.Add(uc);
             uc.BringToFront();

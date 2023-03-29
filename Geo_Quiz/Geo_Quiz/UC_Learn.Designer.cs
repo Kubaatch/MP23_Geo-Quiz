@@ -39,6 +39,7 @@ namespace Geo_Quiz
             this.L_Area = new System.Windows.Forms.Label();
             this.L_Population = new System.Windows.Forms.Label();
             this.PB_Image = new System.Windows.Forms.PictureBox();
+            this.L_Header = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Image)).BeginInit();
             this.SuspendLayout();
@@ -75,24 +76,25 @@ namespace Geo_Quiz
             this.tableLayoutPanel1.Controls.Add(this.L_Population, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.B_Exit, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.PB_Image, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.L_Header, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.99761F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00121F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00121F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49936F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50061F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(999, 624);
-            this.tableLayoutPanel1.TabStop = false;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // B_Previous
             // 
             this.B_Previous.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.B_Previous.BackColor = System.Drawing.Color.Transparent;
-            this.B_Previous.Location = new System.Drawing.Point(428, 508);
+            this.B_Previous.Location = new System.Drawing.Point(428, 504);
             this.B_Previous.Name = "B_Previous";
             this.B_Previous.Size = new System.Drawing.Size(118, 46);
             this.B_Previous.TabIndex = 3;
@@ -104,7 +106,7 @@ namespace Geo_Quiz
             // 
             this.B_Next.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.B_Next.BackColor = System.Drawing.Color.Transparent;
-            this.B_Next.Location = new System.Drawing.Point(552, 508);
+            this.B_Next.Location = new System.Drawing.Point(552, 504);
             this.B_Next.Name = "B_Next";
             this.B_Next.Size = new System.Drawing.Size(118, 46);
             this.B_Next.TabIndex = 4;
@@ -119,13 +121,14 @@ namespace Geo_Quiz
             this.TB_Capital.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TB_Capital.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.TB_Capital.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Capital.Location = new System.Drawing.Point(47, 293);
+            this.TB_Capital.Location = new System.Drawing.Point(47, 332);
             this.TB_Capital.Name = "TB_Capital";
             this.TB_Capital.Size = new System.Drawing.Size(455, 38);
             this.TB_Capital.TabIndex = 2;
             this.TB_Capital.Text = "Capital";
             this.TB_Capital.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_Capital.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TB_Capital_KeyPressed);
+            this.TB_Capital.LostFocus += new System.EventHandler(this.TB_Capital_LostFocus);
             // 
             // TB_Country
             // 
@@ -134,13 +137,14 @@ namespace Geo_Quiz
             this.TB_Country.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TB_Country.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.TB_Country.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_Country.Location = new System.Drawing.Point(3, 166);
+            this.TB_Country.Location = new System.Drawing.Point(3, 189);
             this.TB_Country.Name = "TB_Country";
             this.TB_Country.Size = new System.Drawing.Size(543, 43);
             this.TB_Country.TabIndex = 1;
             this.TB_Country.Text = "Country";
             this.TB_Country.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_Country.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TB_Country_KeyPressed);
+            this.TB_Country.LostFocus += new System.EventHandler(this.TB_Country_LostFocus);
             // 
             // L_Area
             // 
@@ -148,10 +152,10 @@ namespace Geo_Quiz
             this.L_Area.AutoSize = true;
             this.L_Area.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_Area.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Area.Location = new System.Drawing.Point(235, 421);
+            this.L_Area.Location = new System.Drawing.Point(235, 441);
             this.L_Area.Name = "L_Area";
             this.L_Area.Size = new System.Drawing.Size(79, 32);
-            this.L_Area.TabStop = false;
+            this.L_Area.TabIndex = 5;
             this.L_Area.Text = "Area: ";
             // 
             // L_Population
@@ -160,10 +164,10 @@ namespace Geo_Quiz
             this.L_Population.AutoSize = true;
             this.L_Population.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.L_Population.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_Population.Location = new System.Drawing.Point(699, 421);
+            this.L_Population.Location = new System.Drawing.Point(699, 441);
             this.L_Population.Name = "L_Population";
             this.L_Population.Size = new System.Drawing.Size(149, 32);
-            this.L_Population.TabStop = false;
+            this.L_Population.TabIndex = 6;
             this.L_Population.Text = "Population: ";
             // 
             // PB_Image
@@ -173,12 +177,26 @@ namespace Geo_Quiz
             this.PB_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.PB_Image.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PB_Image.Image = global::Geo_Quiz.Properties.Resources.Dall_E_flag;
-            this.PB_Image.Location = new System.Drawing.Point(584, 132);
+            this.PB_Image.Location = new System.Drawing.Point(584, 163);
             this.PB_Image.Name = "PB_Image";
             this.tableLayoutPanel1.SetRowSpan(this.PB_Image, 2);
             this.PB_Image.Size = new System.Drawing.Size(379, 235);
             this.PB_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PB_Image.TabIndex = 7;
             this.PB_Image.TabStop = false;
+            // 
+            // L_Header
+            // 
+            this.L_Header.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.L_Header.AutoSize = true;
+            this.L_Header.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tableLayoutPanel1.SetColumnSpan(this.L_Header, 2);
+            this.L_Header.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_Header.Location = new System.Drawing.Point(342, 103);
+            this.L_Header.Name = "L_Header";
+            this.L_Header.Size = new System.Drawing.Size(315, 37);
+            this.L_Header.TabIndex = 8;
+            this.L_Header.Text = "Stats for all countries";
             // 
             // UC_Learn
             // 
@@ -207,5 +225,6 @@ namespace Geo_Quiz
         private System.Windows.Forms.Label L_Population;
         private System.Windows.Forms.Button B_Previous;
         private System.Windows.Forms.Button B_Next;
+        private Label L_Header;
     }
 }

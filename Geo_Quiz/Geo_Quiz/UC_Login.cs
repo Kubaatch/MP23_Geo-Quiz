@@ -31,9 +31,9 @@ namespace Geo_Quiz
                     fileAccounts = File.ReadAllLines(fullpath);
                     break;
                 }
-                catch (FileNotFoundException)
+                catch (Exception e)
                 {
-                    MessageBox.Show("File Accounts.txt was not found.\nPlease add it to the folder 'Data' or redownload the app.");
+                    MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue.");
                 }
             }
 

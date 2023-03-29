@@ -77,7 +77,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 625);
-            this.tableLayoutPanel1.TabStop = false;
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // L_Score
             // 
@@ -89,7 +89,7 @@
             this.L_Score.Margin = new System.Windows.Forms.Padding(5);
             this.L_Score.Name = "L_Score";
             this.L_Score.Size = new System.Drawing.Size(76, 26);
-            this.L_Score.TabStop = false;
+            this.L_Score.TabIndex = 0;
             this.L_Score.Text = "Score: _";
             // 
             // L_QCount
@@ -103,7 +103,7 @@
             this.L_QCount.Margin = new System.Windows.Forms.Padding(5);
             this.L_QCount.Name = "L_QCount";
             this.L_QCount.Size = new System.Drawing.Size(70, 26);
-            this.L_QCount.TabStop = false;
+            this.L_QCount.TabIndex = 1;
             this.L_QCount.Text = "temp...";
             this.L_QCount.Visible = false;
             // 
@@ -185,6 +185,7 @@
             this.PBar.Name = "PBar";
             this.PBar.Size = new System.Drawing.Size(994, 44);
             this.PBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.PBar.TabIndex = 7;
             this.PBar.TabStop = false;
             // 
             // L_Question
@@ -198,7 +199,7 @@
             this.L_Question.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.L_Question.Name = "L_Question";
             this.L_Question.Size = new System.Drawing.Size(95, 24);
-            this.L_Question.TabStop = false;
+            this.L_Question.TabIndex = 8;
             this.L_Question.Text = "What is...?";
             this.L_Question.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.L_Question.Visible = false;
@@ -227,7 +228,7 @@
             this.PB_Flag.Name = "PB_Flag";
             this.PB_Flag.Size = new System.Drawing.Size(338, 237);
             this.PB_Flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB_Flag.TabStop = false;
+            this.PB_Flag.TabIndex = 9;
             this.PB_Flag.TabStop = false;
             this.PB_Flag.Visible = false;
             // 
@@ -242,7 +243,7 @@
             this.L_Result.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.L_Result.Name = "L_Result";
             this.L_Result.Size = new System.Drawing.Size(73, 27);
-            this.L_Result.TabStop = false;
+            this.L_Result.TabIndex = 10;
             this.L_Result.Text = "label1";
             this.L_Result.Visible = false;
             // 
