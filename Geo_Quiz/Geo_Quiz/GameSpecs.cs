@@ -4,7 +4,7 @@
     {
         private int category;
         private string[] continents;
-        private int questionCount;   
+        private int questionCount;
 
         public GameSpecs() { }
 

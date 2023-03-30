@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_SignIn));
             this.B_SignUp = new System.Windows.Forms.Button();
             this.B_SignIn = new System.Windows.Forms.Button();
-            this.B_Guest = new System.Windows.Forms.Button();
+            this.B_MainMenu = new System.Windows.Forms.Button();
             this.B_Exit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.L_Logo = new System.Windows.Forms.Label();
@@ -69,21 +69,21 @@
             this.B_SignIn.UseVisualStyleBackColor = false;
             this.B_SignIn.Click += new System.EventHandler(this.B_SignIn_Click);
             // 
-            // B_Guest
+            // B_MainMenu
             // 
-            this.B_Guest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.B_Guest.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tableLayoutPanel1.SetColumnSpan(this.B_Guest, 2);
-            this.B_Guest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.B_Guest.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_Guest.Location = new System.Drawing.Point(322, 416);
-            this.B_Guest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.B_Guest.Name = "B_Guest";
-            this.B_Guest.Size = new System.Drawing.Size(335, 50);
-            this.B_Guest.TabIndex = 3;
-            this.B_Guest.Text = "Enter main menu";
-            this.B_Guest.UseVisualStyleBackColor = false;
-            this.B_Guest.Click += new System.EventHandler(this.B_Guest_Click);
+            this.B_MainMenu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.B_MainMenu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tableLayoutPanel1.SetColumnSpan(this.B_MainMenu, 2);
+            this.B_MainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.B_MainMenu.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.B_MainMenu.Location = new System.Drawing.Point(322, 416);
+            this.B_MainMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.B_MainMenu.Name = "B_MainMenu";
+            this.B_MainMenu.Size = new System.Drawing.Size(335, 50);
+            this.B_MainMenu.TabIndex = 3;
+            this.B_MainMenu.Text = "Enter main menu";
+            this.B_MainMenu.UseVisualStyleBackColor = false;
+            this.B_MainMenu.Click += new System.EventHandler(this.B_Guest_Click);
             // 
             // B_Exit
             // 
@@ -112,7 +112,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.B_SignIn, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.B_Guest, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.B_MainMenu, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.L_Logo, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.B_Exit, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.L_CurrentAcc, 1, 2);
@@ -183,7 +183,7 @@
         #endregion
         private System.Windows.Forms.Button B_SignUp;
         private System.Windows.Forms.Button B_SignIn;
-        private System.Windows.Forms.Button B_Guest;
+        private System.Windows.Forms.Button B_MainMenu;
         private System.Windows.Forms.Button B_Exit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label L_Logo;

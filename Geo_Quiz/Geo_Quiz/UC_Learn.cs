@@ -1,17 +1,15 @@
-﻿using Image = System.Drawing.Image;
-using System;
-using System.Windows.Forms;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Xml;
-using System.Text;
 using System.Globalization;
+using System.IO;
+using System.Windows.Forms;
+using Image = System.Drawing.Image;
 
 namespace Geo_Quiz
 {
     public partial class UC_Learn : UserControl
     {
-        private readonly string filepath = UC_Login.filepath;
+        private readonly string filepath = F_SignIn.filepath;
         private readonly string[] continents = UC_GameUI.continents;
 
         private string[] countries;
@@ -82,7 +80,7 @@ namespace Geo_Quiz
             {
                 countryIndex = 0;
             }
-                
+
             SetCountryText();
             SetCapitalCityText();
             SetFlagImage();
@@ -97,7 +95,7 @@ namespace Geo_Quiz
             {
                 countryIndex = countries.Length - 1;
             }
-                
+
             SetCountryText();
             SetCapitalCityText();
             SetFlagImage();
@@ -189,7 +187,7 @@ namespace Geo_Quiz
                 capitals[k] = onelineValues[1];
                 population[k] = SplitThousands(onelineValues[2]);
                 area[k] = SplitThousands(onelineValues[3]);
-                
+
                 k++;
             }
         }
@@ -219,7 +217,7 @@ namespace Geo_Quiz
         {
             string path = Path.Combine(filepath, "");
             string[] files;
-            
+
             for (int i = 0; i < continents.Length; i++)
             {
                 string continentPath = Path.Combine(path, continents[i]);
@@ -263,12 +261,12 @@ namespace Geo_Quiz
             string formatted;
 
             if (success == true)
-            { 
-                    //copied from https://stackoverflow.com/a/17527989
+            {
+                //copied from https://stackoverflow.com/a/17527989
                 var nfi = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
                 nfi.NumberGroupSeparator = " ";
                 formatted = result.ToString("#,0", nfi);
-                    //end
+                //end
             }
             else
             {

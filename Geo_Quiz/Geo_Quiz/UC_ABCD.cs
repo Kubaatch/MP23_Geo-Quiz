@@ -1,10 +1,7 @@
 ﻿using Geo_Quiz.Properties;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -22,7 +19,7 @@ namespace Geo_Quiz
         private string labelQuestion;
 
         const int deviation = 2;
-        private int questionNumber = 0;        
+        private int questionNumber = 0;
         private int score = 0;
         private int correctAnswers = 0;
 
@@ -32,7 +29,7 @@ namespace Geo_Quiz
         private readonly string[] answers;
 
         public UC_ABCD(int category, string[] continents, int QCount, object[] setQuestions)
-        {            
+        {
             GS_ABCD.Category = category;
             GS_ABCD.Continents = continents;
             GS_ABCD.QuestionCount = QCount;
@@ -42,7 +39,7 @@ namespace Geo_Quiz
                 qFlags = setQuestions as Image[];
             }
             else
-            {   
+            {
                 Array.Resize(ref questions, QCount);
                 Array.Resize(ref answers, QCount);
 
@@ -83,7 +80,7 @@ namespace Geo_Quiz
                 case 3:
                     categoryPrint = "area";
                     break;
-            }            
+            }
 
             if (GS_ABCD.Category == 0)
             {
@@ -92,7 +89,7 @@ namespace Geo_Quiz
             else
             {
                 labelQuestion = "What is the " + categoryPrint + " of:\n";
-                L_Question.Text = labelQuestion + questions[0];                
+                L_Question.Text = labelQuestion + questions[0];
             }
 
             SetButtonAnswers();
@@ -155,14 +152,14 @@ namespace Geo_Quiz
         private void AnswerFlag(Button[] buttons)
         {
             string correctAnswer = GetAnswer();
-            string[] fakeAnswers = new string[buttons.Length-1];
+            string[] fakeAnswers = new string[buttons.Length - 1];
 
             int randNum;
             string temp;
 
             for (int i = 0; i < buttons.Length - 1; i++)
             {
-                AGAIN:;
+            AGAIN:;
 
                 do
                 {
@@ -190,7 +187,7 @@ namespace Geo_Quiz
                 {
                     b.Text = correctAnswer;
                 }
-                else 
+                else
                 {
                     b.Text = fakeAnswers[j];
                     j++;
@@ -204,14 +201,14 @@ namespace Geo_Quiz
 
             string[] fakecities = Resources.Cities.Split('\n');
             string[] fakeAnswers = new string[buttons.Length - 1];
-            
+
             int randNum;
             string temp;
 
 
             for (int i = 0; i < buttons.Length - 1; i++)
             {
-                AGAIN:;
+            AGAIN:;
 
                 do
                 {
@@ -296,17 +293,15 @@ namespace Geo_Quiz
         private void Button_Click_Answer(object sender, EventArgs e)
         {
             stopwatch.Stop();
-            
-            string answer = GetAnswer();
 
-                //copied from https://stackoverflow.com/questions/13853028/how-to-detect-which-button-was-clicked-in-code-behind
+            //copied from https://stackoverflow.com/questions/13853028/how-to-detect-which-button-was-clicked-in-code-behind
             Button clickedButton = sender as Button;
-                //end
+            //end
             Button[] buttons = new Button[] { Button_A, Button_B, Button_C, Button_D };
 
             int tempscore;
 
-            if (clickedButton.Text == answer)
+            if (clickedButton.Tag.ToString() == "Correct")
             {
                 L_Result.Text = "Correct!";
                 L_Result.ForeColor = Color.ForestGreen;
@@ -325,9 +320,9 @@ namespace Geo_Quiz
                 clickedButton.BackColor = Color.Red;
                 foreach (Button b in buttons)
                 {
-                    if (b.Text == answer)
+                    if (b.Tag.ToString() == "Correct")
                     {
-                        b.BackColor = Color.ForestGreen;                        
+                        b.BackColor = Color.ForestGreen;
                     }
                 }
 
@@ -346,7 +341,7 @@ namespace Geo_Quiz
             L_Result.Visible = true;
             B_Next.Visible = true;
         }
-        
+
         private void B_Next_Click(object sender, EventArgs e)
         {
             questionNumber++;
@@ -358,7 +353,7 @@ namespace Geo_Quiz
             else
             {
                 if (questionNumber + 1 == GS_ABCD.QuestionCount)
-                {   
+                {
                     B_Next.Text = "End quiz";
                 }
 
@@ -398,7 +393,7 @@ namespace Geo_Quiz
 
             L_QCount.Text = "1 / " + GS_ABCD.QuestionCount;
             L_QCount.Visible = true;
-                        
+
             PBar.Maximum = GS_ABCD.QuestionCount;
 
             Button_A.Visible = true;
@@ -423,14 +418,14 @@ namespace Geo_Quiz
         }
 
         private void SetStartButton()
-        {            
+        {
             B_Start.Text = "Start";
             B_Start.Font = new Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            B_Start.BackColor = SystemColors.ButtonHighlight;                            
-            B_Start.Size = new Size(200, 100);                        
+            B_Start.BackColor = SystemColors.ButtonHighlight;
+            B_Start.Size = new Size(200, 100);
             B_Start.UseVisualStyleBackColor = false;
             B_Start.Click += new EventHandler(this.B_Start_Click);
-            B_Start.Anchor = AnchorStyles.Bottom| AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top;
+            B_Start.Anchor = AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Top;
 
             tableLayoutPanel1.SetColumnSpan(B_Start, 2);
             tableLayoutPanel1.SetRowSpan(B_Start, 2);

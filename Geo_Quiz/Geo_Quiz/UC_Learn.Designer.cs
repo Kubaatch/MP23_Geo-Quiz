@@ -177,6 +177,7 @@ namespace Geo_Quiz
             this.PB_Image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.PB_Image.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PB_Image.Image = global::Geo_Quiz.Properties.Resources.Dall_E_flag;
+            this.PB_Image.InitialImage = global::Geo_Quiz.Properties.Resources.Dall_E_flag;
             this.PB_Image.Location = new System.Drawing.Point(584, 163);
             this.PB_Image.Name = "PB_Image";
             this.tableLayoutPanel1.SetRowSpan(this.PB_Image, 2);

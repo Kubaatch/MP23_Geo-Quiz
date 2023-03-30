@@ -13,7 +13,7 @@ namespace Geo_Quiz
         }
 
         private void B_Testing_Click(object sender, EventArgs e)
-        {            
+        {
             UC_GameUI uc = new UC_GameUI();
             uc.Dock = DockStyle.Fill;
             Controls.Add(uc);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Geo_Quiz
@@ -10,9 +11,24 @@ namespace Geo_Quiz
         public static bool loggedIn = false;
         public static string loggedInAccount;
 
+        public static string filepath = GetPath();
+
         public F_SignIn()
         {
             InitializeComponent();
+        }
+
+        static string GetPath()
+        {
+            string path = Directory.GetCurrentDirectory();
+
+#if !DEBUG
+            path = Path.Combine(path, "..", "..");
+#endif
+
+            path = Path.Combine(path, "Data");
+
+            return path;
         }
 
         private void B_Guest_Click(object sender, EventArgs e)
@@ -94,16 +110,16 @@ namespace Geo_Quiz
         public void SetGuestLabel()
         {
             loggedIn = false;
-            
+
             L_CurrentAcc.Text = "Not yet logged in...";
         }
 
         private void OpenLogin()
         {
-            B_Guest.Enabled = false;
+            B_MainMenu.Enabled = false;
             B_SignIn.Enabled = false;
             B_SignUp.Enabled = false;
-            
+
             UC_Login uc = new UC_Login();
             Controls.Add(uc);
             uc.Location = new System.Drawing.Point(80, 130);
@@ -112,9 +128,9 @@ namespace Geo_Quiz
 
         public void EnableButtons()
         {
-            B_Guest.Enabled = true;
+            B_MainMenu.Enabled = true;
             B_SignIn.Enabled = true;
-            B_SignUp.Enabled= true;
+            B_SignUp.Enabled = true;
         }
 
         private void B_Exit_Click(object sender, EventArgs e)

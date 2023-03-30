@@ -13,7 +13,7 @@ namespace Geo_Quiz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new F_SignIn());            
+            Application.Run(new F_SignIn());
         }
     }
 }

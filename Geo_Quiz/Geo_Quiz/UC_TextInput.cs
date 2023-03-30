@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Image = System.Drawing.Image;
-using System.Diagnostics;
 
 namespace Geo_Quiz
 {
@@ -24,13 +24,13 @@ namespace Geo_Quiz
         private int correctAnswers = 0;
 
         private readonly Image[] qFlags = new Image[0];
-        
+
         private readonly string[] questions;
         private readonly string[] answers;
 
         public UC_TextInput(int category, string[] continents, int QCount, object[] setQuestions)
-        {            
-            GS_Text.Category = category;                        
+        {
+            GS_Text.Category = category;
             GS_Text.Continents = continents;
             GS_Text.QuestionCount = QCount;
 
@@ -66,17 +66,17 @@ namespace Geo_Quiz
 
         private void TB_Answer_KeyUpEnter(object sender, KeyEventArgs f)
         {
-            if ( f.KeyCode == Keys.Enter)
+            if (f.KeyCode == Keys.Enter)
             {
-                SelCheckAnswer();             
+                SelCheckAnswer();
             }
         }
-        
+
         private void B_Enter_Click(object sender, EventArgs e)
         {
             SelCheckAnswer();
         }
-        
+
         private void SelCheckAnswer()
         {
             stopwatch.Stop();
@@ -109,7 +109,7 @@ namespace Geo_Quiz
                 IfWrong(answer, minuspoints);
             }
 
-            ControlsEdit();                        
+            ControlsEdit();
         }
 
         private void CheckAnswer_1()
@@ -163,7 +163,7 @@ namespace Geo_Quiz
             L_Result.Visible = true;
 
             if (GS_Text.Category > 1)
-            {            
+            {
                 L_CorrectResult.Text = "The exact number is: ";
                 L_CorrectResult.Text += answer;
                 L_CorrectResult.Visible = true;
@@ -190,7 +190,7 @@ namespace Geo_Quiz
             score -= minusPoints;
             L_Score.Text = "Score: " + score;
         }
-        
+
         private void B_Next_Click(object sender, EventArgs e)
         {
             questionNumber++;
@@ -257,7 +257,7 @@ namespace Geo_Quiz
                     PB_Flag.Visible = true;
                     break;
                 case 1:
-                    categoryPrint = "capital city";                    
+                    categoryPrint = "capital city";
                     break;
                 case 2:
                     categoryPrint = "population";
@@ -343,7 +343,7 @@ namespace Geo_Quiz
             if (e.KeyCode == Keys.Enter)
             {
                 e.Handled = true;
-                e.SuppressKeyPress = true;                
+                e.SuppressKeyPress = true;
             }
         }
 

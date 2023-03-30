@@ -9,7 +9,7 @@ namespace Geo_Quiz
 {
     public partial class UC_Statistics : UserControl
     {
-        private readonly string filepath = UC_Login.filepath;
+        private readonly string filepath = F_SignIn.filepath;
         private readonly List<string> stats4Variants;
         private readonly List<string> statsTextInput;
 
@@ -32,7 +32,7 @@ namespace Geo_Quiz
         public UC_Statistics()
         {
             InitializeComponent();
-            
+
             SetFilters();
 
             string fullpath1 = Path.Combine(filepath, file4Variants);
@@ -160,7 +160,7 @@ namespace Geo_Quiz
             StatsTable.Rows.Clear();
 
             List<string> filteredStats;
-            
+
             string fullpath = Path.Combine(filepath, selectedGamemode);
             while (true)
             {
@@ -264,13 +264,13 @@ namespace Geo_Quiz
 
         private void StatsTable_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
         {
-                //copied from https://stackoverflow.com/a/18923791
+            //copied from https://stackoverflow.com/a/18923791
             if (e.Column.Index == 1 || e.Column.Index == 2)
             {
                 e.SortResult = int.Parse(e.CellValue1.ToString().Replace("%", string.Empty)).CompareTo(int.Parse(e.CellValue2.ToString().Replace("%", string.Empty)));
                 e.Handled = true;
             }
-                //end
+            //end
         }
 
         private void F_Username_SelectedValueChanged(object sender, EventArgs e)
