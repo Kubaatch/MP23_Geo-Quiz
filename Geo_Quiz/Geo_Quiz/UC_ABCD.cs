@@ -409,8 +409,6 @@ namespace Geo_Quiz
 
         private void OpenStatistics()
         {
-            //PBar.Visible = false;
-
             TimeSpan ts = stopwatchTotal.Elapsed;
 
             DisableButtons();
@@ -459,6 +457,9 @@ namespace Geo_Quiz
 
             if (result == DialogResult.Yes)
             {
+                UC_GameUI parent = Parent as UC_GameUI;
+                parent.EnableButtons();
+                
                 Dispose();
             }
         }

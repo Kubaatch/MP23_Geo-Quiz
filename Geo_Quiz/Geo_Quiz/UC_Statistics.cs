@@ -314,6 +314,9 @@ namespace Geo_Quiz
 
         private void B_Exit_Click(object sender, EventArgs e)
         {
+            UC_MainMenu parent = Parent as UC_MainMenu;
+            parent.EnableButtons();
+
             Dispose();
         }
     }

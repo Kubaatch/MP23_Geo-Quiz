@@ -148,7 +148,7 @@ namespace Geo_Quiz
 
         private void B_Exit_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            Application.Exit();
         }
     }
 }

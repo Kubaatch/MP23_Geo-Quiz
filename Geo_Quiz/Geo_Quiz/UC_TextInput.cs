@@ -291,6 +291,8 @@ namespace Geo_Quiz
 
             TimeSpan ts = stopwatchTotal.Elapsed;
 
+            DisableButtons();
+
             UC_QuizResult uc = new UC_QuizResult(score, ts, GS_Text, "Text", correctAnswers);
             uc.Dock = DockStyle.Fill;
             Controls.Add(uc);
@@ -367,6 +369,9 @@ namespace Geo_Quiz
 
             if (result == DialogResult.Yes)
             {
+                UC_GameUI parent = Parent as UC_GameUI;
+                parent.EnableButtons();
+
                 Dispose();
             }
         }
