@@ -18,3 +18,4 @@ Guest	592	20%	00hrs., 00min., 02s.	5	Flags	Oceania
 anicka	2076	25%	00hrs., 00min., 06s.	Max	Flags	South America
 Guest	2078	25%	00hrs., 00min., 05s.	Max	Flags	South America
 anicka	985	16%	00hrs., 00min., 05s.	Max	Flags	South America
+Guest	3847	80%	00hrs., 00min., 03s.	5	Capitals	Oceania

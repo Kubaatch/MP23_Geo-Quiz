@@ -53,7 +53,7 @@
             this.B_Testing.TabIndex = 1;
             this.B_Testing.Text = "Quiz time!";
             this.B_Testing.UseVisualStyleBackColor = false;
-            this.B_Testing.Click += new System.EventHandler(this.B_Testing_Click);
+            this.B_Testing.Click += new System.EventHandler(this.B_Click_Open);
             // 
             // B_LogOut
             // 
@@ -142,7 +142,7 @@
             this.B_Training.TabIndex = 2;
             this.B_Training.Text = "Database";
             this.B_Training.UseVisualStyleBackColor = false;
-            this.B_Training.Click += new System.EventHandler(this.B_Training_Click);
+            this.B_Training.Click += new System.EventHandler(this.B_Click_Open);
             // 
             // B_ShowStats
             // 
@@ -156,7 +156,7 @@
             this.B_ShowStats.TabIndex = 3;
             this.B_ShowStats.Text = "Open Statistics";
             this.B_ShowStats.UseVisualStyleBackColor = false;
-            this.B_ShowStats.Click += new System.EventHandler(this.B_ShowStats_Click);
+            this.B_ShowStats.Click += new System.EventHandler(this.B_Click_Open);
             // 
             // UC_MainMenu
             // 

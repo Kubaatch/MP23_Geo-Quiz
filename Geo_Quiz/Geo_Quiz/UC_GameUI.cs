@@ -38,6 +38,7 @@ namespace Geo_Quiz
             "Max"
         };
 
+        public static Button[] buttons;
         private readonly string filepath = F_SignIn.filepath;
 
         private Image[] qFlags = new Image[0];
@@ -53,10 +54,10 @@ namespace Geo_Quiz
         {
             InitializeComponent();
 
+            buttons = new Button[] { B_ABCD, B_TextBox, B_Exit};
+
             LB_Category.Items.AddRange(categories);
-
             LB_Continents.Items.AddRange(continents);
-
             SetQCount.Items.AddRange(questionCounts);
         }
 
@@ -248,6 +249,8 @@ namespace Geo_Quiz
             Button clickedButton = sender as Button;
             UserControl uc;
 
+            DisableButtons();
+
             if (clickedButton == B_ABCD)
             {
                 uc = new UC_ABCD(SelectedCategory, SelectedContinents, QuestionCount, questions);
@@ -261,8 +264,27 @@ namespace Geo_Quiz
             uc.BringToFront();
         }
 
+        public void DisableButtons()
+        {
+            foreach (Button b in buttons)
+            {
+                b.Enabled = false;
+            }
+        }
+
+        public void EnableButtons()
+        {
+            foreach (Button b in buttons)
+            {
+                b.Enabled = true;
+            }
+        }
+
         private void B_Exit_Click(object sender, EventArgs e)
         {
+            UC_MainMenu parent = Parent as UC_MainMenu;
+            parent.EnableButtons();
+
             Dispose();
         }
     }

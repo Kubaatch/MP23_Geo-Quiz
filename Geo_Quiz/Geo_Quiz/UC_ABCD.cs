@@ -14,6 +14,7 @@ namespace Geo_Quiz
         private readonly Random random = new Random();
         private readonly Stopwatch stopwatch = new Stopwatch();
         private readonly Stopwatch stopwatchTotal = new Stopwatch();
+        public static Button[] buttonsDE;
 
         private string categoryPrint = "";
         private string labelQuestion;
@@ -47,6 +48,7 @@ namespace Geo_Quiz
             }
 
             InitializeComponent();
+            buttonsDE = new Button[] { B_Start, B_Next, B_Exit, Button_A, Button_B, Button_C, Button_D };
 
             SetStartButton();
         }
@@ -301,7 +303,7 @@ namespace Geo_Quiz
 
             int tempscore;
 
-            if (clickedButton.Tag.ToString() == "Correct")
+            if (clickedButton.Tag != null && clickedButton.Tag.ToString() == "Correct")
             {
                 L_Result.Text = "Correct!";
                 L_Result.ForeColor = Color.ForestGreen;
@@ -320,7 +322,7 @@ namespace Geo_Quiz
                 clickedButton.BackColor = Color.Red;
                 foreach (Button b in buttons)
                 {
-                    if (b.Tag.ToString() == "Correct")
+                    if (clickedButton.Tag != null && b.Tag.ToString() == "Correct")
                     {
                         b.BackColor = Color.ForestGreen;
                     }
@@ -407,9 +409,11 @@ namespace Geo_Quiz
 
         private void OpenStatistics()
         {
-            PBar.Visible = false;
+            //PBar.Visible = false;
 
             TimeSpan ts = stopwatchTotal.Elapsed;
+
+            DisableButtons();
 
             UC_QuizResult uc = new UC_QuizResult(score, ts, GS_ABCD, "ABCD", correctAnswers);
             uc.Dock = DockStyle.Fill;
@@ -430,6 +434,22 @@ namespace Geo_Quiz
             tableLayoutPanel1.SetColumnSpan(B_Start, 2);
             tableLayoutPanel1.SetRowSpan(B_Start, 2);
             tableLayoutPanel1.Controls.Add(B_Start, 1, 3);
+        }
+
+        public void DisableButtons()
+        {
+            foreach (Button b in buttonsDE)
+            {
+                b.Enabled = false;
+            }
+        }
+
+        public void EnableButtons()
+        {
+            foreach (Button b in buttonsDE)
+            {
+                b.Enabled = true;
+            }
         }
 
         private void B_Exit_Click(object sender, EventArgs e)

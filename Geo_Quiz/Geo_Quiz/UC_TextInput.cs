@@ -13,6 +13,7 @@ namespace Geo_Quiz
         private readonly Button B_Start = new Button();
         private readonly Stopwatch stopwatch = new Stopwatch();
         private readonly Stopwatch stopwatchTotal = new Stopwatch();
+        public static Control[] controls;
 
         private string categoryPrint;
         private string labelQuestion;
@@ -50,6 +51,8 @@ namespace Geo_Quiz
 
             InitializeComponent();
             StartSetup();
+
+            controls = new Control[] { B_Start, B_Next, B_Enter, B_Exit, TB_Answer };
         }
 
         private void SetQuestions(object[] sentQuestions)
@@ -327,17 +330,6 @@ namespace Geo_Quiz
             stopwatchTotal.Start();
         }
 
-        private void B_Exit_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Are you sure you want to exit the game?\n" +
-            "You will lose all your progress and your stats will be lost...", "¯\\_(ツ)_/¯", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
-            {
-                Dispose();
-            }
-        }
-
         private void TB_Answer_KeyDownEnter(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -350,6 +342,33 @@ namespace Geo_Quiz
         private void TB_Answer_GotFocus(object sender, EventArgs e)
         {
             TB_Answer.Text = string.Empty;
+        }
+        
+        public void DisableButtons()
+        {
+            foreach (Control c in controls)
+            {
+                c.Enabled = false;
+            }
+        }
+
+        public void EnableButtons()
+        {
+            foreach (Control c in controls)
+            {
+                c.Enabled = true;
+            }
+        }
+
+        private void B_Exit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to exit the game?\n" +
+            "You will lose all your progress and your stats will be lost...", "¯\\_(ツ)_/¯", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                Dispose();
+            }
         }
     }
 }

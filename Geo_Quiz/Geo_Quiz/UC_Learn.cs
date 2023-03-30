@@ -11,6 +11,7 @@ namespace Geo_Quiz
     {
         private readonly string filepath = F_SignIn.filepath;
         private readonly string[] continents = UC_GameUI.continents;
+        public static Control[] controls;
 
         private string[] countries;
         private string[] capitals;
@@ -27,6 +28,7 @@ namespace Geo_Quiz
         public UC_Learn()
         {
             InitializeComponent();
+            controls = new Control[] { B_Next, B_Previous, B_Exit, TB_Capital, TB_Country, TB_Capital };
 
             LoadDatabase();
             LoadFlags();
@@ -286,8 +288,27 @@ namespace Geo_Quiz
             TB_Capital.Text = capitals[countryIndex];
         }
 
+        public void DisableButtons()
+        {
+            foreach (Control c in controls)
+            {
+                c.Enabled = false;
+            }
+        }
+
+        public void EnableButtons()
+        {
+            foreach (Control c in controls)
+            {
+                c.Enabled = true;
+            }
+        }
+
         private void B_Exit_Click(object sender, EventArgs e)
         {
+            UC_MainMenu parent = Parent as UC_MainMenu;
+            parent.EnableButtons();
+
             Dispose();
         }
     }

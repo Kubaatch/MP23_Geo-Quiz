@@ -222,6 +222,18 @@ namespace Geo_Quiz
                 }
             }
 
+            if (gameMode == "ABCD")
+            {
+                UC_ABCD parent = Parent as UC_ABCD;
+                parent.EnableButtons();
+            }
+            else
+            {
+                UC_TextInput parent = Parent as UC_TextInput;
+                parent.EnableButtons();
+            }
+
+
             CloseAllUserControls(this.Parent.Parent.Parent);
         }
 

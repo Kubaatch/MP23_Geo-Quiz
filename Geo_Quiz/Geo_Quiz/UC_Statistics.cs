@@ -13,6 +13,8 @@ namespace Geo_Quiz
         private readonly List<string> stats4Variants;
         private readonly List<string> statsTextInput;
 
+        public static Control[] controls;
+
         private string selectedGamemode;
         const string file4Variants = "Stats4Variants.txt";
         const string fileTextInput = "StatsTextInput.txt";
@@ -32,6 +34,7 @@ namespace Geo_Quiz
         public UC_Statistics()
         {
             InitializeComponent();
+            controls = new Control[] { B_Exit, B_GameMode, B_ResetFilters, B_SaveFilters, F_Category, F_Continents, F_QCount, F_Username };
 
             SetFilters();
 
@@ -291,6 +294,22 @@ namespace Geo_Quiz
         private void F_QCount_SelectedValueChanged(object sender, EventArgs e)
         {
             qCountValueChanged = true;
+        }
+
+        public void DisableButtons()
+        {
+            foreach (Control c in controls)
+            {
+                c.Enabled = false;
+            }
+        }
+
+        public void EnableButtons()
+        {
+            foreach (Control c in controls)
+            {
+                c.Enabled = true;
+            }
         }
 
         private void B_Exit_Click(object sender, EventArgs e)

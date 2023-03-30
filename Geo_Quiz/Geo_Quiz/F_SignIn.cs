@@ -6,6 +6,8 @@ namespace Geo_Quiz
 {
     public partial class F_SignIn : Form
     {
+        public static Button[] buttons;
+
         public static string header;
         public static string type;
         public static bool loggedIn = false;
@@ -16,6 +18,8 @@ namespace Geo_Quiz
         public F_SignIn()
         {
             InitializeComponent();
+
+            buttons = new Button[] { B_MainMenu, B_SignIn, B_SignUp };
         }
 
         static string GetPath()
@@ -50,6 +54,8 @@ namespace Geo_Quiz
 
         private void OpenMainMenu()
         {
+            DisableButtons();
+
             UC_MainMenu uc = new UC_MainMenu();
             uc.Dock = DockStyle.Fill;
             Controls.Add(uc);
@@ -116,9 +122,7 @@ namespace Geo_Quiz
 
         private void OpenLogin()
         {
-            B_MainMenu.Enabled = false;
-            B_SignIn.Enabled = false;
-            B_SignUp.Enabled = false;
+            DisableButtons();
 
             UC_Login uc = new UC_Login();
             Controls.Add(uc);
@@ -126,11 +130,20 @@ namespace Geo_Quiz
             uc.BringToFront();
         }
 
+        public void DisableButtons()
+        {
+            foreach (Button b in buttons)
+            {
+                b.Enabled = false;
+            }
+        }
+
         public void EnableButtons()
         {
-            B_MainMenu.Enabled = true;
-            B_SignIn.Enabled = true;
-            B_SignUp.Enabled = true;
+            foreach (Button b in buttons)
+            {
+                b.Enabled = true;
+            }
         }
 
         private void B_Exit_Click(object sender, EventArgs e)
