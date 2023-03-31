@@ -210,7 +210,7 @@ namespace Geo_Quiz
 
             for (int i = 0; i < buttons.Length - 1; i++)
             {
-            AGAIN:;
+                AGAIN:;
 
                 do
                 {
@@ -250,44 +250,64 @@ namespace Geo_Quiz
             string answer = GetAnswer();
             int.TryParse(answer, out int intAnswer);
 
-            int fakeAnswer;
+            int[] fakeAnswers = new int[buttons.Length-1];
+            int temp;
 
-            foreach (Button b in buttons)
+            int minValue = intAnswer / deviation;
+
+            for (int i = 0; i < buttons.Length - 1; i++)
             {
+                AGAIN:;
 
-                if (b.Tag != null && b.Tag.ToString() == "Correct")
+                if (intAnswer >= 2147483647 / 2)
                 {
-                    b.Text = answer;
+                    do
+                    {
+                        temp = random.Next(minValue, 2147483647);
+                    }
+                    while ((intAnswer / 1.05) < temp && temp < (intAnswer * 1.05));
+                }
+                else if (intAnswer < 10)
+                {
+                    do
+                    {
+                        temp = random.Next(10);
+                    }
+                    while (temp == intAnswer);
                 }
                 else
                 {
-                    int minValue = intAnswer / deviation;
                     int maxValue = intAnswer * deviation;
 
-                    if (questions[questionNumber] == "China" || questions[questionNumber] == "India")
+                    do
                     {
-                        fakeAnswer = random.Next(minValue, 2147483647);
-                        b.Text = fakeAnswer.ToString();
+                        temp = random.Next(minValue, maxValue);
                     }
-                    else
-                    {
-                        fakeAnswer = random.Next(minValue, maxValue);
-                        b.Text = fakeAnswer.ToString();
-                    }
+                    while ((intAnswer / 1.05) < temp && temp < (intAnswer * 1.05));
+                }
 
-                    while (fakeAnswer == intAnswer)
+                foreach (int s in fakeAnswers)
+                {
+                    if (s == temp)
                     {
-                        if (questions[questionNumber] == "China" || questions[questionNumber] == "India")
-                        {
-                            fakeAnswer = random.Next(minValue, 2147483647);
-                            b.Text = fakeAnswer.ToString();
-                        }
-                        else
-                        {
-                            fakeAnswer = random.Next(minValue, maxValue);
-                            b.Text = fakeAnswer.ToString();
-                        }
+                        goto AGAIN;
                     }
+                }
+
+                fakeAnswers[i] = temp;
+            }
+
+            int j = 0;
+            foreach (Button button in buttons)
+            {
+                if (button.Tag != null && button.Tag.ToString() == "Correct")
+                {
+                    button.Text = intAnswer.ToString();
+                }
+                else
+                {
+                    button.Text = fakeAnswers[j].ToString();
+                    j++;
                 }
             }
         }
@@ -322,7 +342,7 @@ namespace Geo_Quiz
                 clickedButton.BackColor = Color.Red;
                 foreach (Button b in buttons)
                 {
-                    if (clickedButton.Tag != null && b.Tag.ToString() == "Correct")
+                    if (b.Tag != null && b.Tag.ToString() == "Correct")
                     {
                         b.BackColor = Color.ForestGreen;
                     }

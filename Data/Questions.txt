@@ -45,7 +45,7 @@ Switzerland	Bern	8654622	39516
 Turkey	Ankara	84339067	769630
 Ukraine	Kyiv	43733762	579320
 United Kingdom	London	67886011	241930
-Vatican City	Vatican City	801	0
+Vatican City	Vatican City	801	1
 
 Asia
 Afghanistan	Kabul	38928346	652860
