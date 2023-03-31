@@ -18,8 +18,7 @@ namespace Geo_Quiz
 
         private string categoryPrint = "";
         private string labelQuestion;
-
-        const int deviation = 2;
+        private const int deviation = 2;
         private int questionNumber = 0;
         private int score = 0;
         private int correctAnswers = 0;
@@ -210,7 +209,7 @@ namespace Geo_Quiz
 
             for (int i = 0; i < buttons.Length - 1; i++)
             {
-                AGAIN:;
+            AGAIN:;
 
                 do
                 {
@@ -250,14 +249,14 @@ namespace Geo_Quiz
             string answer = GetAnswer();
             int.TryParse(answer, out int intAnswer);
 
-            int[] fakeAnswers = new int[buttons.Length-1];
+            int[] fakeAnswers = new int[buttons.Length - 1];
             int temp;
 
             int minValue = intAnswer / deviation;
 
             for (int i = 0; i < buttons.Length - 1; i++)
             {
-                AGAIN:;
+            AGAIN:;
 
                 if (intAnswer >= 2147483647 / 2)
                 {
@@ -479,7 +478,7 @@ namespace Geo_Quiz
             {
                 UC_GameUI parent = Parent as UC_GameUI;
                 parent.EnableButtons();
-                
+
                 Dispose();
             }
         }

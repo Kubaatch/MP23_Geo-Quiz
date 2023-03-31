@@ -54,7 +54,7 @@ namespace Geo_Quiz
         {
             InitializeComponent();
 
-            buttons = new Button[] { B_ABCD, B_TextBox, B_Exit};
+            buttons = new Button[] { B_ABCD, B_TextBox, B_Exit };
 
             LB_Category.Items.AddRange(categories);
             LB_Continents.Items.AddRange(continents);

@@ -16,10 +16,10 @@ namespace Geo_Quiz
         public static Control[] controls;
 
         private string selectedGamemode;
-        const string file4Variants = "Stats4Variants.txt";
-        const string fileTextInput = "StatsTextInput.txt";
-        const string gMode4Variants = "4 Options";
-        const string gModeTextInput = "Written answer";
+        private const string file4Variants = "Stats4Variants.txt";
+        private const string fileTextInput = "StatsTextInput.txt";
+        private const string gMode4Variants = "4 Options";
+        private const string gModeTextInput = "Written answer";
 
         private string filterUsername;
         private string filterCategory;

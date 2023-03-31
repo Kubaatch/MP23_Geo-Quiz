@@ -21,7 +21,7 @@ namespace Geo_Quiz
         private string answer;
         private int questionNumber = 0;
         private int score = 0;
-        const int minuspoints = 100;
+        private const int minuspoints = 100;
         private int correctAnswers = 0;
 
         private readonly Image[] qFlags = new Image[0];
@@ -345,7 +345,7 @@ namespace Geo_Quiz
         {
             TB_Answer.Text = string.Empty;
         }
-        
+
         public void DisableButtons()
         {
             foreach (Control c in controls)

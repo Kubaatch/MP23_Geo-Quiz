@@ -18,10 +18,9 @@ namespace Geo_Quiz
         private string[] population;
         private string[] area;
         private readonly List<Image> flags = new List<Image>();
-
-        const string labelAreaText = "Area: ";
-        const string areaUnit = " km²";
-        const string labelPopulationText = "Population: ";
+        private const string labelAreaText = "Area: ";
+        private const string areaUnit = " km²";
+        private const string labelPopulationText = "Population: ";
 
         private int countryIndex = 0;
 

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Geo_Quiz
@@ -20,11 +19,11 @@ namespace Geo_Quiz
         {
             InitializeComponent();
             MaximizeBox = false;
-            
+
             buttons = new Button[] { B_MainMenu, B_SignIn, B_SignUp, B_Exit };
         }
 
-        static string GetPath()
+        private static string GetPath()
         {
             string path = Directory.GetCurrentDirectory();
 
@@ -126,8 +125,8 @@ namespace Geo_Quiz
         {
             DisableButtons();
 
-            int pointX = Width/2 - 300;
-            int pointY = Height/2 - 125;
+            int pointX = Width / 2 - 300;
+            int pointY = Height / 2 - 125;
 
             UC_Login uc = new UC_Login();
             Controls.Add(uc);
