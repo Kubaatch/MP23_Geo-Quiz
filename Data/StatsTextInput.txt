@@ -1,4 +1,0 @@
-Guest	576	115	00hrs., 00min., 17s.	5	Capitals	Oceania
-Guest	-500	-100	00hrs., 00min., 10s.	5	Capitals	Oceania
-Guest	-1400	-100	00hrs., 00min., 09s.	14	Capitals	Oceania
-Guest	-500	-100	00hrs., 00min., 02s.	5	Capitals	Oceania
