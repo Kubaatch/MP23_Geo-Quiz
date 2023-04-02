@@ -18,6 +18,8 @@ namespace Geo_Quiz
         public F_SignIn()
         {
             InitializeComponent();
+
+            //can be removed, but visuals look terrible afterwards
             MaximizeBox = false;
 
             buttons = new Button[] { B_MainMenu, B_SignIn, B_SignUp, B_Exit };
