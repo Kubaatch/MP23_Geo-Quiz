@@ -27,9 +27,12 @@ namespace Geo_Quiz
         {
             string path = Directory.GetCurrentDirectory();
 
-#if !DEBUG
-            path = Path.Combine(path, "..", "..");
-#endif
+            //copied from https://social.msdn.microsoft.com/Forums/vstudio/en-US/221c9385-e2a8-4630-b2f5-f4eabfd62df5/programmatically-detect-whenever-test-run-is-in-debug-mode?forum=vsunittest
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                path = Path.Combine(path, "..", "..");
+            }
+            //end
 
             path = Path.Combine(path, "Data");
 
