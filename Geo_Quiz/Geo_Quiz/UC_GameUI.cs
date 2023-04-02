@@ -250,7 +250,13 @@ namespace Geo_Quiz
                     }
                     catch (Exception e)
                     {
-                        MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue.");
+                        DialogResult result = MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue." +
+                            $"Click on retry to try again, cancelling fully closes the app.", "¯\\_(ツ)_/¯", MessageBoxButtons.RetryCancel);
+
+                        if (result == DialogResult.Retry)
+                        {
+                            Environment.Exit(0);
+                        }
                     }
                 }
                 flags.Add(image);

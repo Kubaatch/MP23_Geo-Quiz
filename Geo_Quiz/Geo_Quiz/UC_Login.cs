@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -29,8 +28,6 @@ namespace Geo_Quiz
 
             while (true)
             {
-                RETRY:;
-
                 try
                 {
                     fileAccounts = File.ReadAllLines(fullpath);
@@ -38,14 +35,10 @@ namespace Geo_Quiz
                 }
                 catch (Exception e)
                 {
-                    DialogResult result = MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue." +
+                    DialogResult result = MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue. " +
                         $"Click on retry to try again, cancelling fully closes the app.", "¯\\_(ツ)_/¯", MessageBoxButtons.RetryCancel);
 
-                    if (result == DialogResult.Retry)
-                    {
-                        goto RETRY;
-                    }
-                    else
+                    if (result == DialogResult.Cancel)
                     {
                         Environment.Exit(0);
                     }

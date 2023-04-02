@@ -207,7 +207,7 @@ namespace Geo_Quiz
             if (questionNumber == GS_Text.QuestionCount)
             {
                 stopwatchTotal.Stop();
-                OpenStatistics();
+                OpenQuizResult();
             }
             else
             {
@@ -285,10 +285,9 @@ namespace Geo_Quiz
             ControlsSetup();
         }
 
-        private void OpenStatistics()
+        private void OpenQuizResult()
         {
             PBar.Visible = false;
-
             TimeSpan ts = stopwatchTotal.Elapsed;
 
             DisableButtons();

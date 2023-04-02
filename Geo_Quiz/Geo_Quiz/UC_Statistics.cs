@@ -299,14 +299,6 @@ namespace Geo_Quiz
             }
         }
 
-        public void EnableButtons()
-        {
-            foreach (Control c in controls)
-            {
-                c.Enabled = true;
-            }
-        }
-
         private void B_Exit_Click(object sender, EventArgs e)
         {
             UC_MainMenu parent = Parent as UC_MainMenu;
