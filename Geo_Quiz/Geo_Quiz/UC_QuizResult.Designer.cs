@@ -169,11 +169,11 @@ namespace Geo_Quiz
             this.L_AvgScore.BackColor = System.Drawing.SystemColors.Menu;
             this.tableLayoutPanel1.SetColumnSpan(this.L_AvgScore, 2);
             this.L_AvgScore.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.L_AvgScore.Location = new System.Drawing.Point(408, 195);
+            this.L_AvgScore.Location = new System.Drawing.Point(371, 195);
             this.L_AvgScore.Name = "L_AvgScore";
-            this.L_AvgScore.Size = new System.Drawing.Size(184, 30);
+            this.L_AvgScore.Size = new System.Drawing.Size(258, 30);
             this.L_AvgScore.TabIndex = 4;
-            this.L_AvgScore.Text = "Average score: ";
+            this.L_AvgScore.Text = "% of correct answers: ";
             // 
             // StatsTable
             // 
@@ -266,7 +266,7 @@ namespace Geo_Quiz
             this.Username.Name = "Username";
             this.Username.ReadOnly = true;
             this.Username.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Username.Width = 150;
+            this.Username.Width = 160;
             // 
             // Score
             // 
@@ -276,7 +276,7 @@ namespace Geo_Quiz
             this.Score.Name = "Score";
             this.Score.ReadOnly = true;
             this.Score.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Score.Width = 70;
+            this.Score.Width = 60;
             // 
             // Avg_Score
             // 
@@ -286,7 +286,7 @@ namespace Geo_Quiz
             this.Avg_Score.Name = "Avg_Score";
             this.Avg_Score.ReadOnly = true;
             this.Avg_Score.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Avg_Score.Width = 75;
+            this.Avg_Score.Width = 70;
             // 
             // Time_Spent
             // 
@@ -297,18 +297,17 @@ namespace Geo_Quiz
             this.Time_Spent.ReadOnly = true;
             this.Time_Spent.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Time_Spent.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Time_Spent.Width = 115;
+            this.Time_Spent.Width = 110;
             // 
             // QCount
             // 
             this.QCount.Frozen = true;
-            this.QCount.HeaderText = "Question Count";
+            this.QCount.HeaderText = "# of questions";
             this.QCount.MinimumWidth = 6;
             this.QCount.Name = "QCount";
             this.QCount.ReadOnly = true;
             this.QCount.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.QCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.QCount.Width = 110;
             // 
             // UC_QuizResult
             // 

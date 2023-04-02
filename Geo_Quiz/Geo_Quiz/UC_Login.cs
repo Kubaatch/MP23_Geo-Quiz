@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -9,7 +10,7 @@ namespace Geo_Quiz
 {
     public partial class UC_Login : UserControl
     {
-        private readonly string[] fileAccounts;
+        private string[] fileAccounts;
         private string newAccount;
 
         private string enteredUsername;
@@ -21,19 +22,35 @@ namespace Geo_Quiz
 
         public UC_Login()
         {
-            fullpath = Path.Combine(F_SignIn.filepath, "Accounts.txt");
-
-            try
-            {
-                fileAccounts = File.ReadAllLines(fullpath);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue.");
-            }
-
             InitializeComponent();
             L_Header.Text = F_SignIn.header;
+
+            fullpath = Path.Combine(F_SignIn.filepath, "Accounts.txt");
+
+            while (true)
+            {
+                RETRY:;
+
+                try
+                {
+                    fileAccounts = File.ReadAllLines(fullpath);
+                    break;
+                }
+                catch (Exception e)
+                {
+                    DialogResult result = MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue." +
+                        $"Click on retry to try again, cancelling fully closes the app.", "¯\\_(ツ)_/¯", MessageBoxButtons.RetryCancel);
+
+                    if (result == DialogResult.Retry)
+                    {
+                        goto RETRY;
+                    }
+                    else
+                    {
+                        Environment.Exit(0);
+                    }
+                }
+            }
 
             SetUsernamesAndPasswords();
         }

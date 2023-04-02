@@ -15,6 +15,7 @@ namespace Geo_Quiz
         private readonly Stopwatch stopwatch = new Stopwatch();
         private readonly Stopwatch stopwatchTotal = new Stopwatch();
         public static Button[] buttonsDE;
+        private readonly Button[] answerButtons;
 
         private string categoryPrint = "";
         private string labelQuestion;
@@ -48,6 +49,7 @@ namespace Geo_Quiz
 
             InitializeComponent();
             buttonsDE = new Button[] { B_Start, B_Next, B_Exit, Button_A, Button_B, Button_C, Button_D };
+            answerButtons = new Button[] { Button_A, Button_B, Button_C, Button_D };
 
             SetStartButton();
         }
@@ -251,39 +253,34 @@ namespace Geo_Quiz
 
             int[] fakeAnswers = new int[buttons.Length - 1];
             int temp;
+            int integerLimit = 2147483647;
 
             int minValue = intAnswer / deviation;
+            int maxValue;
 
             for (int i = 0; i < buttons.Length - 1; i++)
             {
-            AGAIN:;
+                AGAIN:;
 
-                if (intAnswer >= 2147483647 / 2)
+                if (intAnswer >= integerLimit / 2)
                 {
-                    do
-                    {
-                        temp = random.Next(minValue, 2147483647);
-                    }
-                    while ((intAnswer / 1.05) < temp && temp < (intAnswer * 1.05));
+                    maxValue = integerLimit;
                 }
                 else if (intAnswer < 10)
                 {
-                    do
-                    {
-                        temp = random.Next(10);
-                    }
-                    while (temp == intAnswer);
+                    minValue = 1;
+                    maxValue = 10;
                 }
                 else
                 {
-                    int maxValue = intAnswer * deviation;
-
-                    do
-                    {
-                        temp = random.Next(minValue, maxValue);
-                    }
-                    while ((intAnswer / 1.05) < temp && temp < (intAnswer * 1.05));
+                    maxValue = intAnswer * deviation;
                 }
+
+                do
+                {
+                    temp = random.Next(minValue, maxValue);
+                }
+                while ((intAnswer / 1.05) < temp && temp < (intAnswer * 1.05));
 
                 foreach (int s in fakeAnswers)
                 {
@@ -318,7 +315,6 @@ namespace Geo_Quiz
             //copied from https://stackoverflow.com/questions/13853028/how-to-detect-which-button-was-clicked-in-code-behind
             Button clickedButton = sender as Button;
             //end
-            Button[] buttons = new Button[] { Button_A, Button_B, Button_C, Button_D };
 
             int tempscore;
 
@@ -339,7 +335,7 @@ namespace Geo_Quiz
                 L_Result.Text = "Wrong...";
                 L_Result.ForeColor = Color.Red;
                 clickedButton.BackColor = Color.Red;
-                foreach (Button b in buttons)
+                foreach (Button b in answerButtons)
                 {
                     if (b.Tag != null && b.Tag.ToString() == "Correct")
                     {
@@ -353,7 +349,7 @@ namespace Geo_Quiz
             score += tempscore;
             L_Score.Text = "Score: " + score.ToString();
 
-            foreach (Button b in buttons)
+            foreach (Button b in answerButtons)
             {
                 b.Enabled = false;
                 b.Tag = null;
@@ -382,9 +378,7 @@ namespace Geo_Quiz
                 L_Result.Visible = false;
                 PBar.Increment(1);
 
-                Button[] buttons = new Button[] { Button_A, Button_B, Button_C, Button_D };
-
-                foreach (Button b in buttons)
+                foreach (Button b in answerButtons)
                 {
                     b.BackColor = Color.White;
                     b.Enabled = true;
@@ -458,14 +452,6 @@ namespace Geo_Quiz
             foreach (Button b in buttonsDE)
             {
                 b.Enabled = false;
-            }
-        }
-
-        public void EnableButtons()
-        {
-            foreach (Button b in buttonsDE)
-            {
-                b.Enabled = true;
             }
         }
 

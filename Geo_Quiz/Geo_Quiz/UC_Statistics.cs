@@ -39,30 +39,25 @@ namespace Geo_Quiz
             SetFilters();
 
             string fullpath1 = Path.Combine(filepath, file4Variants);
+            string fullpath2 = Path.Combine(filepath, fileTextInput);
+            
             while (true)
             {
                 try
                 {
                     stats4Variants = File.ReadAllLines(fullpath1).ToList();
-                    break;
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue.");
-                }
-            }
-
-            string fullpath2 = Path.Combine(filepath, fileTextInput);
-            while (true)
-            {
-                try
-                {
                     statsTextInput = File.ReadAllLines(fullpath2).ToList();
                     break;
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue.");
+                    DialogResult result = MessageBox.Show($"{e.Message}\nPlease resolve the problem to continue." +
+                        $"Click on retry to try again, cancelling fully closes the app.", "¯\\_(ツ)_/¯", MessageBoxButtons.RetryCancel);
+
+                    if (result == DialogResult.Cancel)
+                    {
+                        Environment.Exit(0);
+                    }
                 }
             }
 
