@@ -120,19 +120,17 @@ namespace Geo_Quiz
                     break;
             }
 
-            Button[] buttons = new Button[] { Button_A, Button_B, Button_C, Button_D };
-
             switch (GS_ABCD.Category)
             {
                 case 0:
-                    AnswerFlag(buttons);
+                    AnswerFlag(answerButtons);
                     break;
                 case 1:
-                    AnswerCapitalCity(buttons);
+                    AnswerCapitalCity(answerButtons);
                     break;
                 case 2:
                 case 3:
-                    AnswerPopulationArea(buttons);
+                    AnswerPopulationArea(answerButtons);
                     break;
             }
         }
@@ -256,7 +254,10 @@ namespace Geo_Quiz
             int integerLimit = 2147483647;
 
             int minValue = intAnswer / deviation;
-            int maxValue;
+            int maxValue = intAnswer * deviation;
+
+            int aboveCorrectNum = random.Next(4);
+            int aboveCorrectCount = 0;
 
             for (int i = 0; i < buttons.Length - 1; i++)
             {
@@ -271,16 +272,23 @@ namespace Geo_Quiz
                     minValue = 1;
                     maxValue = 10;
                 }
+
+                if (aboveCorrectCount < aboveCorrectNum)
+                {
+                    do
+                    {
+                        temp = random.Next(intAnswer, maxValue);
+                    }
+                    while (temp < (intAnswer * 1.05));
+                }
                 else
                 {
-                    maxValue = intAnswer * deviation;
+                    do
+                    {
+                        temp = random.Next(minValue, intAnswer);
+                    }
+                    while (temp > (intAnswer / 1.05));
                 }
-
-                do
-                {
-                    temp = random.Next(minValue, maxValue);
-                }
-                while ((intAnswer / 1.05) < temp && temp < (intAnswer * 1.05));
 
                 foreach (int s in fakeAnswers)
                 {
@@ -291,6 +299,7 @@ namespace Geo_Quiz
                 }
 
                 fakeAnswers[i] = temp;
+                aboveCorrectCount++;
             }
 
             int j = 0;

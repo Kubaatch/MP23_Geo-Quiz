@@ -221,13 +221,13 @@
             // 
             this.PB_Flag.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.PB_Flag.BackColor = System.Drawing.Color.Transparent;
-            this.PB_Flag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PB_Flag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tableLayoutPanel1.SetColumnSpan(this.PB_Flag, 2);
             this.PB_Flag.Location = new System.Drawing.Point(331, 63);
             this.PB_Flag.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.PB_Flag.Name = "PB_Flag";
             this.PB_Flag.Size = new System.Drawing.Size(338, 237);
-            this.PB_Flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB_Flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB_Flag.TabIndex = 9;
             this.PB_Flag.TabStop = false;
             this.PB_Flag.Visible = false;

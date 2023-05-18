@@ -299,14 +299,6 @@ namespace Geo_Quiz
             TB_Capital.Text = capitals[countryIndex];
         }
 
-        public void DisableButtons()
-        {
-            foreach (Control c in controls)
-            {
-                c.Enabled = false;
-            }
-        }
-
         private void B_Exit_Click(object sender, EventArgs e)
         {
             UC_MainMenu parent = Parent as UC_MainMenu;

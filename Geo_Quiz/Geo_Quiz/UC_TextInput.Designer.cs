@@ -187,13 +187,13 @@ namespace Geo_Quiz
             // 
             this.PB_Flag.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PB_Flag.BackColor = System.Drawing.Color.Transparent;
-            this.PB_Flag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PB_Flag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tableLayoutPanel1.SetColumnSpan(this.PB_Flag, 3);
             this.PB_Flag.Location = new System.Drawing.Point(323, 90);
             this.PB_Flag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PB_Flag.Name = "PB_Flag";
             this.PB_Flag.Size = new System.Drawing.Size(352, 204);
-            this.PB_Flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB_Flag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB_Flag.TabIndex = 5;
             this.PB_Flag.TabStop = false;
             this.PB_Flag.Visible = false;
